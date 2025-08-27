@@ -1,0 +1,74 @@
+
+
+
+
+.callout-tip {
+  background-color: #e6f4ea;  /* Very light green */
+  border-color: #a3d9a5;      /* A matching soft green border */
+  color: #2f4f2f;             /* Dark green text for contrast */
+}
+
+
+.callout-note {
+  background-color: #e8f0fe;   /* Very light blue background */
+  border-color: #a2c4fc;       /* Soft blue border */
+  color: #1a3e72;              /* Dark blue text */
+}
+
+
+.callout .callout-icon {
+  display: none;
+}
+
+/* styles.scss */
+#refs > div, #refs > p {
+  margin-bottom: 1em;  /* Adjust this as needed */
+}
+
+.hover-image {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed #3b82f6;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+.hover-image:hover img {
+  display: block;
+}
+
+.hover-image img {
+  display: none;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 4px;
+  z-index: 100;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px white;
+}
+
+
+.figure .caption, 
+figure figcaption {
+  color: 		#181867	 !important;
+  text-decoration: underline;
+}

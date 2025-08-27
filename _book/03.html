@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Minimum Wage – Econ 139: Labor Economics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04.html" rel="next">
+<link href="./02.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-52ddebe548e3f724c9ed357238656d03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c1966a8c70583a3816b1e3a216c1caf1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./03.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Econ 139: Labor Economics</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Big Questions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Perfect Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monopsony: Empirics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Datasets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Current Population Survey</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-brief-history" id="toc-a-brief-history" class="nav-link active" data-scroll-target="#a-brief-history"><span class="header-section-number">3.1</span> A Brief History</a></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory"><span class="header-section-number">3.2</span> Theory</a></li>
+  <li><a href="#confounding-factors" id="toc-confounding-factors" class="nav-link" data-scroll-target="#confounding-factors"><span class="header-section-number">3.3</span> Confounding Factors</a></li>
+  <li><a href="#empirics-difference-in-differences" id="toc-empirics-difference-in-differences" class="nav-link" data-scroll-target="#empirics-difference-in-differences"><span class="header-section-number">3.4</span> Empirics: Difference-in-Differences</a></li>
+  <li><a href="#card-and-krueger-1994" id="toc-card-and-krueger-1994" class="nav-link" data-scroll-target="#card-and-krueger-1994"><span class="header-section-number">3.5</span> Card and Krueger (1994)</a></li>
+  <li><a href="#critiques" id="toc-critiques" class="nav-link" data-scroll-target="#critiques"><span class="header-section-number">3.6</span> Critiques</a></li>
+  <li><a href="#modern-studies" id="toc-modern-studies" class="nav-link" data-scroll-target="#modern-studies"><span class="header-section-number">3.7</span> Modern Studies</a>
+  <ul class="collapse">
+  <li><a href="#meta-analyses" id="toc-meta-analyses" class="nav-link" data-scroll-target="#meta-analyses"><span class="header-section-number">3.7.1</span> Meta-Analyses</a></li>
+  <li><a href="#cengiz-et-al.-2019" id="toc-cengiz-et-al.-2019" class="nav-link" data-scroll-target="#cengiz-et-al.-2019"><span class="header-section-number">3.7.2</span> Cengiz et al.&nbsp;(2019)</a></li>
+  <li><a href="#summary-of-current-evidence" id="toc-summary-of-current-evidence" class="nav-link" data-scroll-target="#summary-of-current-evidence"><span class="header-section-number">3.7.3</span> Summary of Current Evidence</a></li>
+  </ul></li>
+  <li><a href="#non-employment-margins" id="toc-non-employment-margins" class="nav-link" data-scroll-target="#non-employment-margins"><span class="header-section-number">3.8</span> Non-Employment Margins</a>
+  <ul class="collapse">
+  <li><a href="#prices" id="toc-prices" class="nav-link" data-scroll-target="#prices"><span class="header-section-number">3.8.1</span> Prices</a></li>
+  <li><a href="#nonwage-benefits" id="toc-nonwage-benefits" class="nav-link" data-scroll-target="#nonwage-benefits"><span class="header-section-number">3.8.2</span> Nonwage Benefits</a></li>
+  </ul></li>
+  <li><a href="#inequality" id="toc-inequality" class="nav-link" data-scroll-target="#inequality"><span class="header-section-number">3.9</span> Inequality</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3.10</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./03.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="a-brief-history" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="a-brief-history"><span class="header-section-number">3.1</span> A Brief History</h2>
+<p>In the US, a federal minimum wage was first passed in 1938 as part of the Fair Labor Standards Act. The Fair Labor Standards Act was a key part of the New Deal, a large economic stimulus bill aimed at pulling the US out of the Great Depression.</p>
+<p>But ever since its inception, minimum wages have been hotly debated. <a href="#fig-minimum-wage-opinions" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> shows a few famous pairs of politicians that had opposing views on the minimum wage. Franklin D. Roosevelt, the 32nd peresident of the United States, was a strong supporter of the minimum wage. The mastermind of the New Deal, Franklin D. Roosevelt felt that minimum wages were necessary to protect the most vulnerable workers in society, and would provide a much-needed boost to the economy by increasing the spending power of workers. At the time, there were many critics of the minimum wage, even those who supported the broader New Deal legislation. For example, Ellison D. Smith was a prominent Democratic senator from South Carolina who opposed the minimum wage, arguing that it would lead to economic collapse in the South. His argument was that his constituency in the South paid lower wages and would have a hard time adjusting to the new minimum wage. Businesses would fail. The workers the minimum wage was supposed to help would actually be hurt the most.</p>
+<p>Later, in the 1970 and 80s, two prominent Republicans had somewhat different views. Richard Nixon was skeptical of large minimum wage changes (he might protest being labelled as pro-minimum wage). However, in 1974, he igned a bill that would raise the minimum wage from $1.60 to $2.30 over the course of three years, a roughly 43% increase. After signing the bill, Nixon stated, “raising the minimum wage is now a matter of justice that can no longer be fairly delayed.”</p>
+<p>His opinions however do stand in stark contrast to another prominent Republican, Ronald Reagan. Reagan was a strong opponent of the minimum wage. In an address to Congress, he stated he would vigorously oppose any attempt to increase the minimum wage, arguing “Raising the level of the minimum wage would cause many adult workers to lose their jobs.”</p>
+<p>Today we have similar debates. Bernie Sanders, a Democratic senator from Vermont, is a strong proponent of increasing the minimum wage to $15 per hour. He argues that the current federal minimum wage of $7.25 is insufficient to provide a decent standard of living for workers and that raising it would help reduce poverty and inequality. On the other hand, Senator Ted Cruz is staunchly opposed. He argues, “Every time you raise the minimum wage, the people who are hurt the most is the most vulnerable.”</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-minimum-wage-opinions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minimum-wage-opinions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><img src="images/03_images/debate1.png" class="img-fluid figure-img"></p>
+<p><img src="images/03_images/debate2.png" class="img-fluid figure-img"></p>
+<p><img src="images/03_images/debate3.png" class="img-fluid figure-img"></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-opinions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Minimum Wage Opinions Through Time
+</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="cell-fig-major-events" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-major-events" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-major-events-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-major-events-output-1.png" width="470" height="907" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-major-events-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Major Minimum Wage Events
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>There are two perhaps surprsing things about these opposing views. First, the arguments have been basically the same for nearly a century. Individuals who support the minimum wage argue that employers need to provide a living wage to their workers. Having a minimum wage ensures those most vulnerable are not taken advantage of by employers. Those who oppose the minimum wage argue the exact opposite. The minimum wage is not protection for vulnerable workers, but reduces employment and destroys businesses. The individuals who are the worst off are those workers who lose their jobs as a result of the minimum wage.</p>
+<p>Therefore, the key question is this: does increases in the minimum wage lead to job losses? We will explore this question in steps. First, to better understand the minimum wage, we will study how it has changed over time. <a href="#fig-major-events" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> plots a timeline of major events that we will consider. First, the federal minimum wage was established in 1938. Since that time, there have been many increases, but also periods of stagnation. The 1980s, in particular, were a period in which the real value of the minimum wage fell significantly. This suggests that a minimum wage may be a contributor to one of our three big trends: the rise in wage inequality. If the minimum wage has fallen in real terms, then this may be one reason why the wages of low-income workers have stagnated. In the first part of our analysis, we will explore these descriptives further.</p>
+<p>However, to have the complete picture, we need to understand the impacts on employment. It could be that even if the minimum wage has fallen in real terms, low-wage workers are still better off because there are more jobs available. To understand the relationship between minimum wages and employment, we will explore the seminal study of David Card and Alan Krueger (1994). While there are prior studies, <span class="citation" data-cites="card1994minimum">Card and Krueger (<a href="references.html#ref-card1994minimum" role="doc-biblioref">1994</a>)</span> introduced a new empirical approach that not only led to important insights into the employment effects of the minimum wage, but has made a lasting impression on empirics in economics. It is one of the first and most famous examples of a “natural experiment” in economics. “Natural experiments” are now ubiquitous in economics, and are useful for identifying causal effects, something that is notoriously difficult in practice.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="📜 A Maximum Wage in the Middle Ages">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+📜 A Maximum Wage in the Middle Ages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the 14th century, Black Death swept through much of Europe, killing large portions of the population. This led to a large labor shortage in England. The labor supply curve in medieval England shifted massively to the left. This resulted in widespread wage increases.</p>
+<p>Landowners were unhappy with the rising wages and used their influence in politics to pass the Statute of Laborers in 1351. This law set the wage for laborers equal to the wage rate that had been paid before the Black Death. In other words, instead of a minimum wage, medieval England had a maximum wage. Essentially, the landowners were unhappy with competition in the labor market and so passed legislation to limit competition among owners of land. If there is a law that sets a maximum wage, then you know your competitor will not outbid you for labor.</p>
+<p>You can probably guess that a maximum wage was not very popular among workers. It was one of the main contributing factors that led to the Peasants’ Revolt of 1381, a major uprising in the history of England.</p>
+</div>
+</div>
+</section>
+<section id="theory" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="theory"><span class="header-section-number">3.2</span> Theory</h2>
+<p>While politicians have more-or-less always been divided, economists, for a long time, were actually in broad agreement. In 1980, economist Charles Brown, in a Journal of Economic Perspectives article, asked the question: “Are minimum wage laws overrated?” At the time, the consensus was generally, “yes.”</p>
+<p>To see why this was such a widely-held view, let’s again consider the case of a perfectly competitive labor market. In the figure below, we plot a labor-demand curve vs.&nbsp;the labor supply curve. Let’s assume that the equilibrium wage is $5.00 in this market. Now, suppose the federal minimum wage is set to $7.25.</p>
+<div id="cell-fig-minimum-wage-theory" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-minimum-wage-theory" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minimum-wage-theory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-minimum-wage-theory-output-1.png" width="758" height="569" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-theory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Minimum Wage in a Perfectly Competitive Labor Market
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Well at $7.25, firms are not willing to hire as many workers. The quantity of labor demanded falls from Q1 to Q2. However, at this higher wage, more workers are willing to work. The quantity of labor supplied increases from Q1 to Q3. The result is a surplus of labor, or unemployment. The number of unemployed workers is the difference between the quantity supplied and the quantity demanded, or Q3 - Q2.</p>
+<p>The key insight here is that employment does drop from Q1 to Q2. This is a key reason why many economists and politicians believed that minimum wages are not particularly effective policies. It is true you are helping some vulnerable workers (those who keep their jobs are better off), but what about those who lose their jobs? The minimum wage did not help these indivduals.</p>
+<p>While the theoretical prediction is clear here, the theory doesn’t tell us how much employment drops by. This depends on the shape of the supply and demand curves. Therefore, this is an empirical question.</p>
+</section>
+<section id="confounding-factors" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="confounding-factors"><span class="header-section-number">3.3</span> Confounding Factors</h2>
+<p>How do we measure the impact of the minimum wage on employment? One simple idea is to use variation across states. In the US, some states pass higher minimum wages than others. For example, in 2025, the state with the highest minimum wage is Washington, at $16.66 per hour. Alabama, in contrast, has no state-level minimum wage. Therefore, the prevailining minimum wage in Alabama is $7.25, the federal minimum wage.</p>
+<p>If we look the current unemployment numbers, the unemployment rate in Washington is equal to 4.5%, while in Alabama it is equal to 3.3%. What can we conclude from this exercise? Can we say that a minimum wage of $16.66 relative to $7.25 causes a 1.2 percentage point increase in unemployment?</p>
+<p>Not really. There are massive differences between the two states. For one, the cost of living in Washington may be very different than in Alabama, so maybe we should attempt to control for local prices. But are there other differences? Well, the types of jobs in the two locations may also be very different. Alabama and Washington have different industries present. The individuals who work in these locations may also be very different. They may have different education, different skills, and different preferences.</p>
+<p>This is a perennial issue in economics and science more generally. Our goal here is to understand the <strong>causal effect</strong> of a minimum wage increase on employment. However, we cannot simply compare two states with different minimum wages because there may be <strong>confounding factor</strong>. A confounding factor is a variable that is correlated with our variable of interest (the minimum wage) and our outcome of interest (employment).</p>
+<p>The idea of confounding factors is an extremely important concept, not only studying the minimum wage, not only in all of empirical economics generally, but also more broadly to science. Many question in science can be undestood in a causal framework. We want to know whether a change in X has a causal impact on Y. However, we cannot simply compare two groups with different X values because there may be confounding factors.</p>
+<p>So what do we do? How can we measure the causal effect of a minimum wage increase on employment? In medicine, researchers have found a solution to this problem: the randomized controlled trial (RCT). In an RCT, individuals are randomly assigned to a treatment group or a control group. In the context of our example, this would be akin to randomly assigning some states to a high-minimum wage and others to a low-minimum wage. Because the assignment is now random, the two groups will be similar on average.</p>
+<p>In the context of minimum wage, conducting an RCT is impossible. We cannot randomly assign individuals to different minimum wage levels. However, instead, researchers have taken advantages <strong>natural experiments</strong>. The key idea in a natural experiment is that sometimes you can look out into the world and find a situation that looks similar to an RCT. You can identify a group of individuals, firms, or states that receive a policy, but another group of individuals, firms, or states do not. Let’s study how we might find a natural experiment in the context of minimum wage.</p>
+</section>
+<section id="empirics-difference-in-differences" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="empirics-difference-in-differences"><span class="header-section-number">3.4</span> Empirics: Difference-in-Differences</h2>
+<p>In 1992, New Jersey raised its minimum wage from $4.25 per hour to $5.05 per hour. At the time, this gave New Jersey the highest minimum wage in the country. Our goal here is to understand how the increase from $4.25 to $5.05 impacted employment in New Jersey.</p>
+<p>Our goal is to understand how the increase from $4.25 to $5.05 impacted employment in New Jersey. To focus our discussion, we will consider employment in fast-food restaurants. These are a natural choice. Fast-food restaurants are a larger industry and are more likely to be affected by the minimum wage change than other industries. Our goal is to measure the change in employment in New Jersey fast-food restaurants before and after the minimum wage increase.</p>
+<p>A simple way to potentially do this would be to compute the employment rate in New Jersey before and after the minimum wage increase. How is this exactly useful? Well, remember all those confounding factors we discussed? For example, the cost of living, the education level, the industries present. All of these things may vary between New Jersey and other states, but within New Jersey, these factors are likely to be similar before and after the minimum wage increase. The magic of comparing across time is that we don’t actually need to figure out the entire list of confounding factors. We just need to assume that they are constant over time. The change in employment in New Jersey before and after the minimum wage increase is likely to be due to the minimum wage increase, not these confounding factors.</p>
+<p>Let’s write out the change in employment in New Jersey as follows: <span class="math display">\[
+\Delta E_{NJ} = E_{NJ, 1992} - E_{NJ, 1991}
+\]</span></p>
+<p>Now, before we take <span class="math inline">\(E_{NJ}\)</span> as the causal impact of the minimum wage, let’s think carefully about what this would imply. If we were to make this leap, then we would be saying that any change in employment in New Jersey between 1991 and 1992 is due to the minimum wage increase.</p>
+<p>This is a strong assumption. Employment changes all the time through the years even though there are often no policy changes. By taking this difference we have controlled for confounding factors specific to New Jersey, but now that we are comparing across time, we have a new set of confounding factors. For example, what if the economy went into a recession in 1992? Then we might accidently attribute a fall in employment to the minimum wage increase, when in fact it was due to the recession.</p>
+<p>To control for this, we essentially need to understand what would have been the change in employment in New Jersey if the minimum wage had not changed. This is referred to as a <strong>counterfactual</strong>.</p>
+<p>One way to construct a counterfactual is to find a state that is similar to New Jersey, but did not change its minimum wage. In nearby Pennsylvania, the minimum wage was $4.25 in 1991 and did not change in 1992. New Jersey and Pennsylvania, especially on the border of the two, are quite similar. It is often difficult to tell that you’ve crossed the state line when travelling between the two states. Therefore, maybe we can use changes in Pennsylvania to understand what the time trend would have looked like in New Jersey if the minimum wage had not changed.</p>
+<p>Let’s write out the change in employment in Pennsylvania as follows: <span class="math display">\[\Delta E_{PA} = E_{PA, 1992} - E_{PA, 1991}\]</span></p>
+<p>Now let’s go back to New Jersey. Let’s form a <strong>counterfactual</strong>, which is the change in employment in New Jersey if the minimum wage had not changed. To do this, let’s take some concrete numbers. Let’s say that on average in 1991, employment in New Jersey fast-food restaurants was 20 workers. Our counterfactual asks if the minimum wage had not changed, how many workers would there have been in 1992? We can’t look in the actual data for this. The fact of the matter is that the minimum wage did change.</p>
+<p>However, to get a clue about what the counterfactual would have been, we can look at Pennsylvania. Let’s say that in Pennsylvania, employment in fast-food restaurants was 25 workers in 1991 and 22 workers in 1992. So, on average, employment in Pennsylvania fell by 3 workers.</p>
+<p>Therefore, let’s use this as our counterfactual. We will assume that if the minimum wage had not changed in New Jersey, then employment would have fallen by 3 workers, just like it did in Pennsylvania. Now, we can look in the data to see what actually happened in New Jersey. Let’s say that in 1992, employment in New Jersey fast-food restaurants was 15 workers. In this case, the fall in employment in New Jersey was 5 workers. Therefore, we would conclude that the minimum wage decreased employment in New Jersey by 2 workers. Based on Pennsylvania, we would have expected employment to fall by 3 workers, but in fact it fell by 5 workers. Therefore, the minimum wage must have caused a fall in employment of 2 workers.</p>
+<p>Now let’s be a bit more general. Let’s call <span class="math inline">\(\Delta E\)</span>, the effect of the minimum wage on employment. To estimate this, we take two differences. First, we take the difference in employment between New Jersey before and after the minimum wage change (<span class="math inline">\(Delta E_{NJ}\)</span>). To understand what would have happened in New Jersey if the minimum wage had not changed, we take the difference in employment in Pennsylvania before and after the minimum wage change (<span class="math inline">\(\Delta E_{PA}\)</span>). To compute the effect of the minimum wage on employment in New Jersey, we can then write this as follows: <span class="math display">\[\Delta E = \Delta E_{NJ} - \Delta E_{PA}\]</span></p>
+<p>This is referred to as a <strong>difference-in-differences</strong> (or DiD) estimator. The name stems from the idea that we are taking two differences: the difference in employment in New Jersey before and after the minimum wage change, and the difference in employment in Pennsylvania before and after the minimum wage change.</p>
+<p>A common way to visualize this is to plot the employment in New Jersey and Pennsylvania before and after the minimum wage change. In the figure below, we plot the employment in New Jersey and Pennsylvania before and after the minimum wage change for the illustrative example. The blue line represents New Jersey, while the orange line represents Pennsylvania. The vertical dashed line represents the time of the minimum wage change.</p>
+<div id="cell-fig-did-illustration" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-did-illustration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-did-illustration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-did-illustration-output-1.png" width="758" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-did-illustration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Difference-in-Differences Illustration: Employment in New Jersey and Pennsylvania
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To solidify the intuition here, let’s walk through another example. This time, let’s assume employment is growing rapidly in the area. Let’s assume that in Pennsylvania, employment increased from 25 workers in 1991 to 30 workers in 1992 (an increase of 5 workers). In New Jersey, let’s assume employment increased from 20 workers in 1991 to 21 workers in 1992 (an increase of 1 worker). Now let’s plot the trends over time and compute the difference-in-differences estimator.</p>
+<div id="cell-fig-did-growing-employment" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-did-growing-employment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-did-growing-employment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-did-growing-employment-output-1.png" width="758" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-did-growing-employment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: Difference-in-Differences with Growing Employment Example
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>If we use Pennsylvania as our counterfactual, we would have expected New Jersey employment to grow by 5 workers (from 20 to 25). However, it only grew by 1 worker (from 20 to 21). Therefore, the difference-in-differences estimator is ΔE = D1 - D2 = 1 - 5 = -4 workers. This suggests that the minimum wage reduced employment in New Jersey by 4 workers relative to what would have happened without the policy change, even though employment still increased in absolute terms.</p>
+<p>This example illustrates why the difference-in-differences approach is so powerful. If we use only variation across states in the minimum wage, we would get the wrong answer. Pennsylvania has higher employment both before and after the minimum wage change, so at least a portion of this difference is due to differences across the states. If we use only variation across time, then we might falsely conclude here that minimum wages actually increase employment. But by using both dimensions of variation, it allows us to separate the effect of the policy from differences across states and differences across time.</p>
+</section>
+<section id="card-and-krueger-1994" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="card-and-krueger-1994"><span class="header-section-number">3.5</span> Card and Krueger (1994)</h2>
+<p>Now, let’s recreate this figure, but using the actual data from Card and Krueger (1994). In the figure below, we plot the actual employment in New Jersey and Pennsylvania before and after the minimum wage change.</p>
+<div id="cell-fig-card-krueger-data" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-card-krueger-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-card-krueger-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-card-krueger-data-output-1.png" width="755" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-card-krueger-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.6: Card and Krueger (1994) Data: Employment in New Jersey and Pennsylvania Fast-Food Restaurants
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The actual data tell a very different story than the theoretical prediction. To start, let’s consider employment in New Jersey and Pennsylvania before the minimum wage change. In New Jersey, employment was 20.44 workers per fast-food restaurant, while in Pennsylvania it was 23.33 workers per fast-food restaurant. Therefore, employment in Pennsylvania was higher than in New Jersey by about 3 workers per restaurant. This is one reason we might not want to use a simple comparison across states. Before the policy, employment was already higher in Pennsylvania than in New Jersey. Instead, we are going to look how their changes over time differ.</p>
+<p>In Pennsylvania, employment dropped from 23.33 to 21.17 workers (D2=-2.16). If we assume that New Jersey would have experienced the same trend, then we would have expected employment in New Jersey to fall by 2.16 workers, from 20.44 to 18.28 workers. This is our counterfactual dashed line in the figure.</p>
+<p>However, you can see the actual change in employment in New Jersey was quite different. Employment in New Jersey actually increased from 20.44 to 21.03 workers (D1 =0.59). Therefore, the difference-in-differences estimator is ΔE = D1 - D2 = 0.59 - (-2.16) = 2.75 workers. This suggests that the minimum wage actually increased employment in New Jersey by about 2.75 workers per restaurant, contradicting the theoretical prediction of job losses.</p>
+<p>We should take a moment here to pause and appreciate how surprising this result is. The theoretical prediction from a perfectly competitive labor market is that the minimum wage should reduce employment. Intuitively, if you raise the price of something, then you should buy less of it, right? However, the empirical evidence from Card and Krueger (1994) suggests the opposite: the minimum wage increase in New Jersey actually increased employment in fast-food restaurants.</p>
+<p>The Card and Krueger (1994) result was extremely influential for two reasons. First, it challenged the conventional wisdom among economists that minimum wages reduce employment. Second, it is considered one of the most influential examples of a difference-in-differences design in economics. While this method had been around for some time (see <span class="citation" data-cites="ashenfelter1978estimating">Ashenfelter (<a href="references.html#ref-ashenfelter1978estimating" role="doc-biblioref">1978</a>)</span> for an early example estimating the impact of a job training program), the Card and Krueger (1994) study is often credited with popularizing it in economics. Today, many applied papers in economics use a difference-in-differences design to estimate causal effects.</p>
+</section>
+<section id="critiques" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="critiques"><span class="header-section-number">3.6</span> Critiques</h2>
+<p>In economics, and science more generally, when a very surprising result is found, it is often analyzed very carefully. For the minimum wage result in Card and Krueger (1994), this is especially true. Since the publishing of this article, there have many, many articles studying the minimum wage.</p>
+<p>Before getting to the more specific critiques, we can first talk about critiques of difference-in-differences designs more generally. The key assumption in a difference-in-differences design is that the treatment and control groups would have experienced the same trends over time in the absence of the treatment. This is referred to as the <strong>parallel trends assumption</strong>. In our example, one critique of the study could be while New Jersey and Pennsylvania are similar, this doesn’t necessarily prove that they would have experienced the same trends over time in the absence of the minimum wage. We already showed that employment was higher in Pennsylvania than in New Jersey before the minimum wage change. Maybe the trends in employment were also quite different.</p>
+<p>In our example, we have only two time periods: 1991 and 1992. But what if Card and Krueger had collected data from 1988 onwards? How could we use this data to assess the credibility of the parallel trends assumption? Let’s take some hypothetical examples and see how they would change our understanding of the Card and Krueger (1994) results. Let’s consider the figure below which plots hypothetical employment data from 1988 to 1992 for New Jersey and Pennsylvania.</p>
+<div id="cell-fig-pre-trends-violation" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="fig-pre-trends-violation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pre-trends-violation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-pre-trends-violation-output-1.png" width="758" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pre-trends-violation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: Hypothetical Pre-Trends Assumption Violation
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>How does this picture change our interpretation of the Card and Krueger (1994) result? In this example, we see that employment in New Jersey was increasing steadily from 1988 to 1991. However, in nearby Pennsylvania, employment was decreasing steadily from 1988 to 1991. This violates the logic of our difference-in-differences design. If I just plotted the data between 1988 and 1991 and asked you, do you expect employment in New Jersey to increase in 1992, you would probably say yes. If I asked you, do you expect employment in Pennsylvania to increase in 1992, you would probably say no. Therefore, we can’t use Pennsylvania as a control group for New Jersey. The trends in employment were already quite different before the minimum wage change.</p>
+<p>Let’s take another hypothetical example. This time, let’s assume that employment in both New Jersey and Pennsylvania were stable from 1988 to 1991.</p>
+<div id="cell-fig-did-stable-pretrends" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="fig-did-stable-pretrends" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-did-stable-pretrends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-did-stable-pretrends-output-1.png" width="951" height="567" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-did-stable-pretrends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.8: Hypothetical example with stable pre-trends (1988-1991)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In this case, the trends in New Jersey and Pennsylvania are very similar. It is fine that Pennsylvania has higher employment than New Jersey, as long as the trends are similar. In this case, it looks like Pennsylvania provides a reasonable way to construct a counterfactual for New Jersey. Therefore, this hypothetical example supports the credibility of the parallel trends assumption. For this set of hypothetical data, we would be more confident that our difference-in-differences estimator is valid and therefore identifies the causal effect of the minimum wage on employment.</p>
+<p>In modern studies that use difference-in-differences designs, studying the trends before the event is essential. It is unlikely that results will be taken seriously if the researchers are unable to establish that the treatment and control groups had similar trends before the event. For minimum wage studies, the concern over this issue is especially severe. Minimum wage changes are not random. They are passed in response to potentially changing economic conditions. For example, if a state is experiencing a boom in the economy, then politicians may be more likely to pass a minimum wage increase. If the economy is booming, then employment may be increasing. Therefore, if we see employment increasing after a minimum wage increase, it may be due to the booming economy, not the minimum wage increase.</p>
+</section>
+<section id="modern-studies" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="modern-studies"><span class="header-section-number">3.7</span> Modern Studies</h2>
+<p>Since the publishing of Card and Krueger (1994), there have been a range of more modern studies of the minimum wage. In the public discourse, the opinions on the minimum wage and its impact on workers is still extremely divided. Well, it turns out in this case, the academic literature is also divided.</p>
+<section id="meta-analyses" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="meta-analyses"><span class="header-section-number">3.7.1</span> Meta-Analyses</h3>
+<p>Recently, there have been many meta-analyses of the minimum wage literature. A meta-analysis is a study that looks across many different studies to summarize the overall evidence. For example, <span class="citation" data-cites="neumark2022myth">Neumark and Shirley (<a href="references.html#ref-neumark2022myth" role="doc-biblioref">2022</a>)</span> is a recent survey of the minimum wage literature. They review 67 studies on the minimum wage to summarize overall impacts. The studies they review differ along some important dimensions. Some use variation in the federal minimum wage over time, while others use variation across states. Some studies look at the impact of small changes in the minimum wage, while others look at large changes. Some studies look at teen workers, while other looks at low-wage industries (like fast-food restaurants), or individuals with low education levels.</p>
+<p>Overall, their reading of the literature does not support the results of Card and Krueger (1994). They find that just under 80% of the studies they review find negative employment effects of minimum wage increases. The remaining 20% of studies find either no effect or positive effects.</p>
+<p>Even among meta-analyses, there is disagreement on what one should take away from the literature on the minimum wage. <span class="citation" data-cites="wolfson201915">Wolfson and Belman (<a href="references.html#ref-wolfson201915" role="doc-biblioref">2019</a>)</span> is another recent meta-analysis that uses a different methodology to aggregate the results of many different studies. They find that the minimum wage has negative impacts on employment overall, but the magnitude is quite small. They report that they find “no support for the proposition that the minimum wage has had an important effect on U.S. employment.”</p>
+</section>
+<section id="cengiz-et-al.-2019" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="cengiz-et-al.-2019"><span class="header-section-number">3.7.2</span> Cengiz et al.&nbsp;(2019)</h3>
+<p><span class="citation" data-cites="cengiz2019effect">Cengiz et al. (<a href="references.html#ref-cengiz2019effect" role="doc-biblioref">2019</a>)</span> is another important contribution to the minimum wage literature. One argument in the paper (which occurs in other papers by the authors as well) is that considering many different studies at a time can be misleading. Some of the studies cited in <span class="citation" data-cites="neumark2022myth">Neumark and Shirley (<a href="references.html#ref-neumark2022myth" role="doc-biblioref">2022</a>)</span> look at small changes in the minimum wage, while others look at large changes. Some look at teen workers, while others look at low-wage industries. Some use different controls.</p>
+<p><span class="citation" data-cites="cengiz2019effect">Cengiz et al. (<a href="references.html#ref-cengiz2019effect" role="doc-biblioref">2019</a>)</span> provide a new framework for understanding the impact of the minimum wage overall. Their methodology does not require picking a specific group of workers they think are targetted by the policy, such as restaurant workers or teen workers. Instead, they look at the entire distribution of wages. They find that minimum wage changes have small positive impacts on minimum wage. The results are quite similar qualitatively to the original results in Card and Krueger (1994) result.</p>
+</section>
+<section id="summary-of-current-evidence" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="summary-of-current-evidence"><span class="header-section-number">3.7.3</span> Summary of Current Evidence</h3>
+<p>To summarize, there is still some disagreement over the overall impact of the minimum wage on employment. However, the predictions of large negative employment effects from minimum wage increases seem to be largely unsupported by the evidence. Most studies find small negative effects or no effects at all. Some studies even find small positive effects.</p>
+<p>There are two important points to keep in mind when interpreting the evidence. First, many of the minimum wage changes studied are relatively small. One recent political movement has called for a $15 minimum wage (the Fight for $15). This would be an increase from $7.25 to $15.00, much larger than most of the changes studied in the U.S. context. It is unclear whether the results from small changes in the minimum wage can be extrapolated to large changes. Of course there will be a point in which the minimum wage is so high that it will cause large employment losses. However, we really don’t know where this point is at the moment.</p>
+<p>Second, we have studied one margin of adjustment: employment. However, firms have many margins through which they can adjust to the minimum wage. They can reduce hours, increase prices, reduce benefits, or change the types of workers they hire. We will discuss these other margins next.</p>
+</section>
+</section>
+<section id="non-employment-margins" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="non-employment-margins"><span class="header-section-number">3.8</span> Non-Employment Margins</h2>
+<p>The (potential) employment effects of the minimum wage dominate headlines. However, firms have many margins through which they can adjust to the minimum wage. While theoretical models often conceptualize firms as choosing employment, they actually choose a wide range of things. They make a choice on what type of job requirements to include when hiring workers. They don’t just pay wages, but they also offer amenities, like health insurance. They choose the prices that they charge to consumers. The minimum wage could also impact these other margins of adjustment. <span class="citation" data-cites="clemens2021firms">Clemens (<a href="references.html#ref-clemens2021firms" role="doc-biblioref">2021</a>)</span> offers a recent survey of the literature on how firms respond to minimum wage increases.</p>
+<p>We can think through how these margins might impact workers with our simple supply and demand framework. First, it is helpful to review marginal revenue product of labor. The marginal revenue product of labor is the additional revenue that a firm earns from hiring one more worker. This can be decomposed into two parts: the marginal product of labor (MPL) and the price (P) that the firm charges. In Chapter 2, we showed that a firm’s demand for labor is equal to the marginal revenue product of labor.</p>
+<p><a href="#fig-clemens0" class="quarto-xref">Figure&nbsp;<span>3.9</span></a> shows our standard analysis of the labor market that we previously discussed in <a href="#fig-minimum-wage-theory" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>. This figure is taken from <span class="citation" data-cites="clemens2021firms">Clemens (<a href="references.html#ref-clemens2021firms" role="doc-biblioref">2021</a>)</span> and studies a change in the minimum wage from <span class="math inline">\(w_1\)</span> to <span class="math inline">\(w_{min,2}\)</span>. In this graph, the minimum wage causes a decline from <span class="math inline">\(L_1\)</span> to <span class="math inline">\(L_2\)</span>. Next, we are going to discuss how other margins of adjustment could impact this analysis, and in particular, the magnitude of the employment decline.</p>
+<div id="fig-clemens0" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clemens0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/03_images/clemens0.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clemens0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.9: Textbook Minimum Wage Analysis
+</figcaption>
+</figure>
+</div>
+<section id="prices" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="prices"><span class="header-section-number">3.8.1</span> Prices</h3>
+<p>In the standard analysis, we assume that the demand curve for firms remains the same when the minimum wage changes. However, what if price also changes? This is often discussed by detractors of the minimum wage. How will an increase in price impact the impact of the minimum wage on employment?</p>
+<div id="fig-clemens1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clemens1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/03_images/clemens1.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clemens1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.10: Partial Offset Through Price Pass-Through
+</figcaption>
+</figure>
+</div>
+<p>If prices increase, this will shift the demand curve outwards. Why? Because if price is higher, then for each additional amount of output, the firm can earn more. This increases the marginal revenue product of labor. In the cafe example from Chapter 2, if the price of a latte increases, then the money earned from the workers also increases. Therefore, the marginal revenue product of labor increases.</p>
+<p>As can be seen in the graph, there is still a decline in employment from <span class="math inline">\(L_1\)</span> to <span class="math inline">\(L_2\)</span>. However, the decline is smaller than in the original analysis. Therefore, if firms can pass on some of the cost of the minimum wage to consumers through higher prices, then this will reduce the negative employment effects of the minimum wage. This could be one reason why the empirical evidence does not find large negative employment effects of the minimum wage.</p>
+<p>But this might be different than what proponents of the minimum wage had in mind. If the minimum wage is paid by consumers, then this is basically a transfer from consumers to workers. Most proponents envision that it is a transfer from firm owners to workers.</p>
+<p>So what is the empirical evidence on price pass-through? <span class="citation" data-cites="harasztosi2019pays">Harasztosi and Lindner (<a href="references.html#ref-harasztosi2019pays" role="doc-biblioref">2019</a>)</span> is one of the most compelling studies on this question. They study the impact of a large minimum wage increase in Hungary. In 2001, the minimum wage in Hungary increased by a substantial amount. Before the increase, the minimum wage in Hungary was about 35% of the median wage. In the US in 2024, it was estimated that the median weekly earnings was around $1,134, so 35% of the median weekly earnings would be about $399. This would be equivalent to a wage of about $10 per hour for a full-time worker.</p>
+<p>After the increase, the minimum wage in Hungary was about 55% of the median wage. Therefore, converting to US dollars this would be about $623 per week, or about $15.60 per hour for a full-time worker. So this is a somewhat unique, very large in the minimum wage.</p>
+<p><span class="citation" data-cites="harasztosi2019pays">Harasztosi and Lindner (<a href="references.html#ref-harasztosi2019pays" role="doc-biblioref">2019</a>)</span> use adminstrative data to document a large increase in the cost of labor after a minimum wage change. They then ask, who pays for this increase in labor costs? They find that about 75% of the increase in labor costs is passed on to consumers through higher prices. The remaining 25% is paid for by the firm owners. Therefore, this suggests that in this context, price pass-through is an important margin of adjustment for firms in response to minimum wage increases.</p>
+</section>
+<section id="nonwage-benefits" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="nonwage-benefits"><span class="header-section-number">3.8.2</span> Nonwage Benefits</h3>
+<p>Another margin of adjustment for firms is nonwage benefits. Firms don’t just pay wages, they also provide other benefits to workers. This could include health insurance, paid leave, retirement plans, or even amenities like free food or gym memberships. If the minimum wage increases, firms may be able to reduce other forms of compensation to offest the increase in wages.</p>
+<p>To be more general, let’s write out compensation as follows: <span class="math display">\[C = w + A\]</span> where <span class="math inline">\(C\)</span> is total compensation, <span class="math inline">\(w\)</span> is the wage, and <span class="math inline">\(A\)</span> is the value of amenities, which could be things like health care and overtime pay, but also more abstract things like workplace culture. If the minimum wage increases, then <span class="math inline">\(w\)</span> increases. If firms can decrease <span class="math inline">\(A\)</span>, and workers are indifferent between <span class="math inline">\(w\)</span> and <span class="math inline">\(A\)</span>, then total compensation <span class="math inline">\(C\)</span> may not change. The presence of amenities is a much deeper point. It applies to many aspects of labor economics. Many of the models we use abstract from amenities, but if you think about the real world, amenities are important for deciding where to work.</p>
+<p>To see how this works, we can go back to our cafe example. Imagine the cafe provides free food to its workers. They are paid a daily wage of $50, but also receive $10 worth of free food each day. Therefore, their total compensation is $60. If the minimum wage increases to $60, then the cafe may be able to reduce the value of free food provided to workers from $10 to $0. Therefore, total compensation remains at $60, but the cafe is able to comply with the minimum wage law.</p>
+<p>How empirically relevant is this margin of adjustment? <span class="citation" data-cites="clemens2018minimum">Clemens, Kahn, and Meer (<a href="references.html#ref-clemens2018minimum" role="doc-biblioref">2018</a>)</span> study the impact of minimum wage laws on employer-provided health insurance. They find that low-wage occupations are about 2 percentage less likely to receive employer-provided health insurance after a minimum wage increase. This decrease in health insurance offsets about 9% of the increase in wages from the minimum wage.</p>
+</section>
+</section>
+<section id="inequality" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="inequality"><span class="header-section-number">3.9</span> Inequality</h2>
+<p>Let’s return to the original question we asked at the beginning of this chapter: does the minimum wage reduce inequality? We are going to focus on the period between 1979 and 1989, which saw some of the largest increases in inequality in the U.S. This was also a period in which the real value of the minimum wage declined. Basically, at the federal level, the minimum wage was not changed much during this period. Due to inflation, the real value of the minimum wage declined.</p>
+<p>As we discussed in a previous chapter, there are many ways to measure inequality. In this section, we are going to focus on the 90/10 wage ratio. This is the ratio of the wage at the 90th percentile of the wage distribution to the wage at the 10th percentile of the wage distribution. A higher 90/10 ratio indicates more inequality. If you are above the 90th percentile of wages, that means you make more than 90 percent of workers. If you are below the 10th percentile of wages, that means you make less than 90 percent of workers. Therefore, the 90-10 ratio tells you about the spread in wages between relatively rich workers and relatively poor workers.</p>
+<p>In 1979, the 90/10 wage ratio was about 3.6. This means that the wage at the 90th percentile was about 3.6 times higher than the wage at the 10th percentile. <a href="#fig-90-10" class="quarto-xref">Figure&nbsp;<span>3.11</span></a> shows how the 90/10 wage ratio changed over time. Throughout the 1980s, the 90/10 wage ratio increased substantially, reaching about 4.5 in 1989.</p>
+<div id="fig-90-10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-90-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/03_images/inequality_rise.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-90-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.11: 90-10 Ratio Over Time
+</figcaption>
+</figure>
+</div>
+<p>Now, the 90/10 ratio can go up for two reasons. First, wages at the top could be going up. For example, the 1980s were a time in which computers were introduced in the workplace. If high-wage workers were more likely to use computers, then this could have increased their productivity and therefore their wages. We will explore this channel in a future chapter. Second, wages at the bottom could be going down. For example, if the real value of the minimum wage declined, then this could have reduced wages for low-wage workers. In this case, the 90/10 ratio would increase even if the wages of high-wage workers remained constant. Our goal is to understand potentially how much of the increase in the 90/10 ratio was due to changes at the bottom of the wage distribution.</p>
+<p>To understand how to do this, we are going to plot the distribution of wages in 1989. In this plot, We are using data from the March Current Population Survey (CPS). The CPS is a large, nationally representative survey of households in the U.S. It is conducted by the U.S. Census Bureau and is the primary source of data on employment and unemployment in the U.S. The data presented here uses additional cleaning made availably in <span class="citation" data-cites="autor2016contribution">Autor, Manning, and Smith (<a href="references.html#ref-autor2016contribution" role="doc-biblioref">2016</a>)</span>.</p>
+<div id="cell-fig-wage-distribution" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div id="fig-wage-distribution" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wage-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-wage-distribution-output-1.png" width="951" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wage-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.12: Distribution of Hourly Wages in 1989
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-wage-distribution" class="quarto-xref">Figure&nbsp;<span>3.12</span></a>, we are plotting the distribution of hourly wages in 1989. The x-axis shows the hourly wage, while the y-axis shows the frequency of workers at each wage level. The higher the bar, the more workers in that range.</p>
+<p>The red dashed line shows the actual minimum wage in 1989, which was $3.35 per hour. As you can see, there are a few workers who are paid below the minimum wage. This is likely due to some combination of non-compliance with the law and measurement error in the data.</p>
+<p>Our goal with this figure is to ask: what would this look like if the minimum wage had kept up with inflation since 1979? In 1979, the federal minimum wage was $2.90 per hour. If we adjust this for inflation, the minimum wage would have been about $4.77 per hour in 1989. The orange dashed line shows this counterfactual minimum wage. Therefore, the distance between the red and orange dashed lines shows how much the real value of the minimum wage declined between 1979 and 1989.</p>
+<p>Next, we are going to form a counteractual wage distribution in 1989. To do so, we are going to make some strong assumptions. First, we will assume that everyone below the counterfactual minimum wage of $4.77 per hour is paid exactly $4.77 per hour. This is a strong assumption, but it allows us to form a clear counterfactual wage distribution. What are potential issues with this assumption? First, as we have discussed in length, the minimum wage may have negative employment effects, so if the minimum wage was in fact $4.77 per hour, then there may be fewer workers overall. We are going to take the view of the literature that these effects are small.</p>
+<p>Second, it is possible that there are spillovers on other workers. There are strong norms in the workplace that may generate spillovers. Earnings often grow with tenure at the firm. If a new minimum wage makes it so that new hires are making the same amount as existing workers, there may be pressures to increase the wages of existing workers. This could push up wages for workers above the minimum wage. We are going to ignore this possibility in our counterfactual, although there is evidence showing this is an important margin of adjustment for firms.</p>
+<p>Third, firms may adjust in other ways, such as reducing hours or benefits, as we have discussed in the prior section. Lastly, we assume compliance is now perfect, meaning no workers are paid below the minimum wage.</p>
+<p>Below we plot the counterfactual wage distribution in 1989 if the minimum wage had kept up with inflation since 1979.</p>
+<div id="cell-fig-counterfactual-wage-distribution" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div id="fig-counterfactual-wage-distribution" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-counterfactual-wage-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03_files/figure-html/fig-counterfactual-wage-distribution-output-1.png" width="951" height="950" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-counterfactual-wage-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.13: Counterfactual Wage Distribution in 1989 with Minimum Wage Adjusted for Inflation
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This figure shows how the wage distribution would have looked if the minimum wage had kept up with inflation since 1979. In the counterfactual distribution, all workers who were earning less than $4.77 per hour are now earning exactly $4.77 per hour. This creates a large spike at the minimum wage level, showing how many workers would have been directly affected by the higher minimum wage.</p>
+<p>Now let’s go back to our original question: how much of the increase in the 90/10 wage ratio between 1979 and 1989 was due to changes at the bottom of the wage distribution? In 1989, the actual 90/10 wage ratio was about 4.5. In our counterfactual scenario, where the minimum wage had kept up with inflation, the 90/10 wage ratio would have been about 3.8. This is quite close to the 90/10 wage ratio in 1979, which was 3.6. Therefore, according to this simple exercise, the falling minimum wage can explain a significant portion of the increase in inequality during this period ((4.5-3.8)/(4.5-3.6) <span class="math inline">\(\approx\)</span> 78%).</p>
+<p>This is an extremely suprising result. The rise in inequality during the 1980s led to a swarm of research tyring to understand the sources. Most papers studied supply and demand factors. Supply-side factors include things like changes in immigration. Demand-side factors include things like technology change. Supply and demand-side factors certainly impact wage levels and therefore, likely impact inequality in wages. However, this simple exercise suggests that the falling minimum wage can explain a large portion of the increase in inequality during this period. Policy-induced changes are often referred to as institutional factors. Other institutional factors that may impact inequality include changes in unionization rates and changes in tax policies.</p>
+<p>Now, as we have discussed before, this is a simplified example. We assumed there would be no employment effects, no spillovers, and perfect compliance. So what do more careful studies find? <span class="citation" data-cites="dinardo1996labor">DiNardo, Fortin, and Lemieux (<a href="references.html#ref-dinardo1996labor" role="doc-biblioref">1996</a>)</span> is a seminal study in the literature. They provide methods to perform counterfactual exercises like this one, but with more advanced statistical techniques than we will cover in this class. They find that about 40-65 percent of the rise in the 90/10 wage ratio between 1979 and 1988 can be explained by changes in the minimum wage. More recent analysis by <span class="citation" data-cites="autor2016contribution">Autor, Manning, and Smith (<a href="references.html#ref-autor2016contribution" role="doc-biblioref">2016</a>)</span> finds similar results. They find that about 30-40 percent of the rise in the 90/10 wage ratio between 1979 and 2012 can be explained by changes in the minimum wage. Therefore, while it is unlikely that minimum wage can explain all of the rise in inequality, it seems to be a relatively important factor.</p>
+</section>
+<section id="summary" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.10</span> Summary</h2>
+<p>Minimum wage research has a long history in economics. The original theoretical predictions seemed clear: minimum wages should reduce employment.</p>
+<p>However, the empirical evidence has been surprising. The seminal study by Card and Krueger (1994) found that a minimum wage increase in New Jersey actually increased employment in fast-food restaurants. This challenged the conventional wisdom among economists and led to a resurgence in minimum wage research. Overall, the evidence suggests having a nuanced view. The large employment effects of detractors do not seem to manifest in practice. However, there are other effects that may not be intended. In certain settings we have evidence of large price increases paid for by consumers.</p>
+<p>In this chapter, we viewed the minimum wage through the lens of a perfectly competitive labor market. However, the finding in Card and Krueger (1994) and subsequent findings has led some to question whether this is really the right model for understanding the labor market. In the next chapter, we will deviate from perfect competition and turn to an alternative, more realistic way to think about the labor market: monopsony.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ashenfelter1978estimating" class="csl-entry" role="listitem">
+Ashenfelter, Orley. 1978. <span>“Estimating the Effect of Training Programs on Earnings.”</span> <em>The Review of Economics and Statistics</em>, 47–57.
+</div>
+<div id="ref-autor2016contribution" class="csl-entry" role="listitem">
+Autor, David H, Alan Manning, and Christopher L Smith. 2016. <span>“The Contribution of the Minimum Wage to US Wage Inequality over Three Decades: A Reassessment.”</span> <em>American Economic Journal: Applied Economics</em> 8 (1): 58–99.
+</div>
+<div id="ref-card1994minimum" class="csl-entry" role="listitem">
+Card, David, and Alan Krueger. 1994. <span>“Minimum Wages and Employment: A Case Study of the Fast-Food Lndustry in New Jersey and Pennsylvania.”</span> <em>The American Economic Review</em> 84 (4): 772–93.
+</div>
+<div id="ref-cengiz2019effect" class="csl-entry" role="listitem">
+Cengiz, Doruk, Arindrajit Dube, Attila Lindner, and Ben Zipperer. 2019. <span>“The Effect of Minimum Wages on Low-Wage Jobs.”</span> <em>The Quarterly Journal of Economics</em> 134 (3): 1405–54.
+</div>
+<div id="ref-clemens2021firms" class="csl-entry" role="listitem">
+Clemens, Jeffrey. 2021. <span>“How Do Firms Respond to Minimum Wage Increases? Understanding the Relevance of Non-Employment Margins.”</span> <em>Journal of Economic Perspectives</em> 35 (1): 51–72.
+</div>
+<div id="ref-clemens2018minimum" class="csl-entry" role="listitem">
+Clemens, Jeffrey, Lisa B Kahn, and Jonathan Meer. 2018. <span>“The Minimum Wage, Fringe Benefits, and Worker Welfare.”</span> National Bureau of Economic Research.
+</div>
+<div id="ref-dinardo1996labor" class="csl-entry" role="listitem">
+DiNardo, John, Nicole M Fortin, and Thomas Lemieux. 1996. <span>“Labor Market Institutions and the Distribution of Wages, 1973-1992: A Semiparametric Approach.”</span> <em>Econometrica</em> 64 (5): 1001–44.
+</div>
+<div id="ref-harasztosi2019pays" class="csl-entry" role="listitem">
+Harasztosi, Peter, and Attila Lindner. 2019. <span>“Who Pays for the Minimum Wage?”</span> <em>American Economic Review</em> 109 (8): 2693–2727.
+</div>
+<div id="ref-neumark2022myth" class="csl-entry" role="listitem">
+Neumark, David, and Peter Shirley. 2022. <span>“Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States?”</span> <em>Industrial Relations: A Journal of Economy and Society</em> 61 (4): 384–417.
+</div>
+<div id="ref-wolfson201915" class="csl-entry" role="listitem">
+Wolfson, Paul, and Dale Belman. 2019. <span>“15 Years of Research on US Employment and the Minimum Wage.”</span> <em>Labour</em> 33 (4): 488–506.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="enlarged image" style="max-width:90%; max-height:90%; box-shadow:0 0 20px white;">
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02.html" class="pagination-link" aria-label="Perfect Competition">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Perfect Competition</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04.html" class="pagination-link" aria-label="Monopsony: Theory">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

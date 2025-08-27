@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+
+
+## A Two-Factor Model
+
+In a previous chapter we introduced a single-factor production model. In that model the output produced firm depended only on the input, labor. Now, let's assume there are two types of workers, high-skilled and low-skilled. You can think of this as college educated vs. less-than college education. We will now assume that the total output of a firm depends on the amount of workers that a firm hires that are high skilled (H) and low skilled (L). In the next figure, we plot an example of a production function that shows you how much output is produced for a given number of high skilled and low skilled workers.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# CES production function parameters
+a = 0.5      # share parameter
+rho = 0.5    # substitution parameter
+
+# Grid of low-skilled (L) and high-skilled (H) workers
+L = np.linspace(1, 100, 50)
+H = np.linspace(1, 100, 50)
+L_grid, H_grid = np.meshgrid(L, H)
+
+# CES production function
+Y = (a * L_grid**rho + (1 - a) * H_grid**rho)**(1/rho)
+
+# Plot
+fig = plt.figure(figsize=(8,6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(L_grid, H_grid, Y, cmap='viridis', alpha=0.8)
+ax.set_xlabel('Low-skilled workers (L)')
+ax.set_ylabel('High-skilled workers (H)')
+ax.set_zlabel('Output (Y)')
+ax.set_title('CES Production Function: Output by Skill Type')
+plt.tight_layout()
+plt.show()
+```
+

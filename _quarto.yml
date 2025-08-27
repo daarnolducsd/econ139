@@ -1,0 +1,39 @@
+project:
+  type: book
+
+book:
+  title: "Econ 139: Labor Economics"
+  author: "David Arnold"
+  date: "2/23/2025"
+  chapters:
+  - part: "Main Text"
+    chapters:
+    - index.qmd
+    - 01.qmd
+    - 02.qmd
+    - 03.qmd
+    - 04.qmd
+    - 05.qmd
+    - 06.qmd
+    - references.qmd
+  - part: "Datasets"
+    chapters:
+    - cps.qmd
+  
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cerulean
+      dark: darkly
+    css: styles.scss
+    fig-align: center
+    include-after-body: _includes/after-body.html
+    js: lightbox.js
+  pdf:
+    documentclass: scrreprt
+
+
+

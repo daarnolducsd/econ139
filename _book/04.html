@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Monopsony: Theory – Econ 139: Labor Economics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05.html" rel="next">
+<link href="./03.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-52ddebe548e3f724c9ed357238656d03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c1966a8c70583a3816b1e3a216c1caf1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./04.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Econ 139: Labor Economics</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Big Questions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Perfect Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monopsony: Empirics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Datasets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Current Population Survey</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-brief-history" id="toc-a-brief-history" class="nav-link active" data-scroll-target="#a-brief-history"><span class="header-section-number">4.1</span> A Brief History</a></li>
+  <li><a href="#equilibrium-in-monopsony" id="toc-equilibrium-in-monopsony" class="nav-link" data-scroll-target="#equilibrium-in-monopsony"><span class="header-section-number">4.2</span> Equilibrium in Monopsony</a></li>
+  <li><a href="#inefficiency-in-monopsony" id="toc-inefficiency-in-monopsony" class="nav-link" data-scroll-target="#inefficiency-in-monopsony"><span class="header-section-number">4.3</span> Inefficiency in Monopsony</a></li>
+  <li><a href="#measuring-monopsony-power" id="toc-measuring-monopsony-power" class="nav-link" data-scroll-target="#measuring-monopsony-power"><span class="header-section-number">4.4</span> Measuring Monopsony Power</a></li>
+  <li><a href="#sources-of-monopsony-power" id="toc-sources-of-monopsony-power" class="nav-link" data-scroll-target="#sources-of-monopsony-power"><span class="header-section-number">4.5</span> Sources of Monopsony Power</a>
+  <ul class="collapse">
+  <li><a href="#search-frictions" id="toc-search-frictions" class="nav-link" data-scroll-target="#search-frictions"><span class="header-section-number">4.5.1</span> Search Frictions</a></li>
+  <li><a href="#differentiated-jobs" id="toc-differentiated-jobs" class="nav-link" data-scroll-target="#differentiated-jobs"><span class="header-section-number">4.5.2</span> Differentiated Jobs</a></li>
+  <li><a href="#concentration" id="toc-concentration" class="nav-link" data-scroll-target="#concentration"><span class="header-section-number">4.5.3</span> Concentration</a></li>
+  </ul></li>
+  <li><a href="#policy-and-monopsony-power" id="toc-policy-and-monopsony-power" class="nav-link" data-scroll-target="#policy-and-monopsony-power"><span class="header-section-number">4.6</span> Policy and Monopsony Power</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.7</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./04.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="a-brief-history" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="a-brief-history"><span class="header-section-number">4.1</span> A Brief History</h2>
+<div class="img-float">
+<div class="quarto-figure quarto-figure-center" style="float: right; margin: 5px; width: 200px;">
+<figure class="figure">
+<p><img src="./images/04_images/adamsmith.png" class="img-fluid figure-img"></p>
+<figcaption>Adam Smith</figcaption>
+</figure>
+</div>
+</div>
+<p>Adam Smith is often called the “father of economics”. In 1776 he published his magnum opus <em>The Wealth of Nations</em>. The goal of the book was to understand how nations build wealth. In it, he introduced a number of concepts that became extremely influential in modern economics. One of the most famous concepts is the “invisible hand”. If markets are free and unregulated, Smith argues that individual self-interest will lead to efficient outcomes. Even though there is not an overall planner of the economy, this invisible hand will guide the economy to an efficient outcome.</p>
+<p>But Adam Smith recognized that there are settings in which these effcient outcomes won’t be realized. In particular, he writes the following about the labor market:</p>
+<blockquote class="blockquote">
+<p>What are the common wages of labor, depends everywhere upon the contract usually made between [employers and employees], whose interests are by no means the same… The masters, being fewer in number, can combine much more easily … Masters are always and everywhere in a sort of tacit, but constant and uniform, combination, not to raise the wages of labor above their actual rate.</p>
+<p><em>—Adam Smith, The Wealth of Nations</em></p>
+</blockquote>
+<p>This aspect of the labor market, that employers may exercise market power over their workers, did not really receive much attention. The next big development came in 1933, when Joan Robinson published <em>The Economics of Imperfect Competition</em>. Robinson coined the term “monopsony” to describe a market with a single buyer. She used the term to describe the labor market, where employers are the buyers of labor. In Adam Smith’s quotation, he is arguing that employers have monopsony power, although the term did not yet exist at the time.</p>
+<p>Again, after Joan Robinson’s work, studying monopsony power in labor markets did not really catch on. While it generated some initial interest, for much of the 20th century, the dominant paradigm in labor economics was a framework of perfect competition. Robinson herself said in 1969, “All this had no effect. Perfect competition, supply and demand…and marginal products still reign supreme in orthodox teaching.” (See <span class="citation" data-cites="card2022set">Card (<a href="references.html#ref-card2022set" role="doc-biblioref">2022</a>)</span> for more discussion on Robinson’s work and its impact.)</p>
+<p>After all, there are a lot employers. That’s really a core assumption of the competitive model. However, are you interested in working at every single firm? Is every firm interested in hiring you? Of course not. Assuming the number of firms is the size of the labor market is clearly not a good assumption.</p>
+<p>To see another potential problem with the competitive model, consider the following scenario: a firm is going through a downturn in sales and decides that it can’t afford to offer a 3% raise to its employees as usual, and so keeps wages as they are. Other firms in the area, however, are doing well and are offering 3% raises. Do you think the firm will lose all of its employees to other firms?</p>
+<p>Probably not. Workers have some attachment to their current employer. They can’t costlessly quit their job and find a new one that pays better. But in perfectly competitive models, that is the assumption. There is a market wage. If you pay below that wage (i.e.&nbsp;don’t meet that 3% raise), you lose all your workers. For our textbook model in the next section, we will change this assumption.</p>
+</section>
+<section id="equilibrium-in-monopsony" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="equilibrium-in-monopsony"><span class="header-section-number">4.2</span> Equilibrium in Monopsony</h2>
+<p>In perfect competition, we assumed firms are wage takers. This implies that if a firm decides to pay a wage below the market wage, it will immediately lose all of its workers. In this section, we will make a very simple change to this assumption. We will assume that the wage a firm offers depends on the amount of labor it wants to hire. In particular, we will assume that the higher the wage, the more workers a firm can attract. We will denote <span class="math inline">\(w(L)\)</span> as the inverse labor supply curve. This function tells the firm that how much it needs to pay in order to attract a certain number of workers. For example, if a firm needs to pay a wage of $15 to attract 5 workers, then <span class="math inline">\(w(5) = 15\)</span>.</p>
+<p>Now you might hear some arguments against monopsony power because it is assumed to be a monopsonist you need to be the only employer in the area. This is the classic “factory town” example, where there is literally only one employer in the town. But monopsony power is much more general than this. Monopsony power can exist even when there are many employers. The key distinction will be whether the firm faces an upward sloping labor supply curve. If a firm can hire as many workers as it wants at a fixed wage, then it is a wage taker and does not have monopsony power. If a firm has to raise the wage in order to attract more workers, then it has some monopsony power.</p>
+<p>Let’s go back to the example we considered in the perfect competition section. Suppose we have a cafe hiring baristas. First, we are going to specify the labor supply curve to the cafe. We will assume that the labor supply curve is given in the following figure:</p>
+<div id="cell-fig-labor-supply" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-labor-supply" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-labor-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-labor-supply-output-1.png" width="451" height="374" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-labor-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Labor Supply Curve to a Cafe
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s consider the decision of the cafe owner of hiring the first worker. To hire one worker, the cafe needs to pay a wage of $5. Is this worth opening at all. To answer this question, we need to know the marginal revenue product of the worker. How much revenue is going to be brought in by the first worker? Let’s assume that the worker can make 14 lattes an hour, each of which sells for $5, implying the worker generates $70 in revenue per hour. The cost of hiring the worker is $5, so the cafe owner should definitely hire the first worker.</p>
+<p>Now let’s consider the decision of hiring a second worker. To hire two workers the firm needs to pay a wage of $10. Is this worth it? Well, it depends on again on the marginal revenue product of the second worker. Let’s assume that the second worker produces 13 lattes an hour, so $65 in revenue per hour.</p>
+<p>Now, what do we compare the $65 in revenue to? One common pitfall is to compare it to the wage you are paying: $10. This is what we did in the perfectly competitive model. But this isn’t right anymore. What you need to compute is the additional cost of hiring the second worker. To hire the second worker, you need to pay that worker $10, but you also need to pay the first worker $5 more (from $5 to $10).</p>
+<p>The increase in cost of hiring an additional worker is referred to the marginal factor cost (MFC). The MFC of the second worker is $15 ($10 + $5). The marginal revenue product of the second worker is $65, which is greater than the MFC of $15, so the cafe owner should hire the second worker.</p>
+<p>What’s the marginal factor cost of the third worker? To hire the third worker, you need to pay that worker $15, but you also need to pay the first two workers $5 more than they were previously being paid (from $10 to $15). So the MFC of the third worker is $25 ($15 + $5 + $5). Now that we understand conceptually how to compute the MFC, let’s compute it for the entire range of the possible number of workers.</p>
+<div id="cell-fig-mfc-curve" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-mfc-curve" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mfc-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-mfc-curve-output-1.png" width="566" height="566" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mfc-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Labor Supply Curve and Marginal Factor Cost Curve
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, to determine how many workers the cafe will hire, we need to find where the marginal revenue product of labor (MRPL) equals the marginal factor cost (MFC). Again, the MRPL is the additional revenue generated by hiring one more worker. We’ve already assumed the MRPL of the first worker is $70 and the second worker is $65 Let’s assume that the MRPL of each additional worker is given in the figure below.</p>
+<div id="cell-fig-monopsony-equilibrium" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-monopsony-equilibrium" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-monopsony-equilibrium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-monopsony-equilibrium-output-1.png" width="681" height="614" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-equilibrium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Monopsony Equilibrium: MRP, MFC, and Labor Supply
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>When will a firm stop hiring workers? As soon as the marginal factor cost (MFC) of hiring an additional worker is greater than the marginal revenue product of labor (MRPL) of that worker. In our case, the firm will hire 5 workers. For the 6th worker, the marginal factor cost is $55. This is because the firm needs to pay $30 to attract this 6th worker, plus the increase in pay for all the previous workers (from $25 to $30). Therefore the total increase in costs of hiring the 6th worker is $30+$25=$55. The MRPL of the 6th worker is only $40, so from the firm’s perspective, it is not worth hiring the 6th worker. It will be losing money by hiring that worker.</p>
+<p>So we have figured out equilibrium employment. But what about the equilibrium wage? Well, if the firm is hiring 5 workers, then it needs to pay a wage high enough to attract 5 workers. In our case, this is a wage of $25. So the equilibrium wage is $25 and the equilibrium employment is 5 workers. In our case that value comes directly from the inverse labor supply curve. To attract 5 workers, the firm needs to pay a wage of $25.</p>
+</section>
+<section id="inefficiency-in-monopsony" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="inefficiency-in-monopsony"><span class="header-section-number">4.3</span> Inefficiency in Monopsony</h2>
+<p>Now that we’ve figured out the equilibrium employment and wage, let’s try and understand why monopsonistic markets are inefficient.</p>
+<p>To do so, let’s consider the case of hiring the 6th worker. The 6th worker is willing to work for a wage of $30. This tells us that the 6th worker would prefer to work for $30 than not work at all. Let’s consider the value the 6th worker brings to the firm. The marginal revenue product of the 6th worker is $40. This means that the firm would gain $40 in revenue from hiring this worker.</p>
+<p>So if we were to consider this in isolation, it seems like a good idea to hire the 6th worker. So why doesn’t the firm hire the 6th worker? Again, the firm takes into account that it can’t offer the 6th worker a wage of $30 without also raising the wages of the first 5 workers. The increase is wages of the first 5 workers is referred to as a inframarginal cost. An inframarginal worker is one that is already working at the previous wage. So increasing the wage does not attract this worker.</p>
+<p>What is the size of the inefficiency. It depends on two things. First, how many workers are not being hired even though the marginal revenue product of labor is higher (or equal to) than the wage they are willing to work for. In our case, this is the 6th and 7th worker. It also depends on the gap between the marginal revenue product of labor and the wage they are willing to work for. In our case, the 6th worker is willing to work for $30 and has a MRPL of $40, so there is a large gap. For the 7th worker, the MRPL is equal to the wage ($35), so there is no inefficiency from not hiring this worker.</p>
+<p>Often we allow fractional employment. For example, what if you could hire 5.1 workers. Well there would be a large inefficiency from not hiring this 0.1 worker because the MRPL at 5.1 is much higher than the wage of $25. This is often a background assumption in introductory economics courses. It allows us to calculate the inefficiency of monopsony more easily.</p>
+<p>For example, in the figure below we have shaded in the inefficiency of monopsony. These are all the units in which the MRPL is greater than the wage, but are not being hired by the firm.</p>
+<div id="cell-fig-monopsony-deadweight-loss" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-monopsony-deadweight-loss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-monopsony-deadweight-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-monopsony-deadweight-loss-output-1.png" width="681" height="614" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-deadweight-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Deadweight Loss of Monopsony
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, let’s see how the inefficiency of monopsony changes when we change the labor supply curve. In particular, let’s see how the inefficiency changes when we make the labor supply flatter.</p>
+<div id="cell-fig-monopsony-flat-supply" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-monopsony-flat-supply" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-monopsony-flat-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-monopsony-flat-supply-output-1.png" width="681" height="614" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-flat-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Monopsony with Flatter Labor Supply Curve
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that with the flatter labor supply curve, the deadweight loss area is much smaller compared to the steeper supply curve in the previous figure. Why does this make sense.</p>
+<p>Well, let’s again think about the marginal factor cost. To go from 5 to 6 workers, you need to pay a slightly higher wage (about $33 to $35). But you also need to pay the first 5 workers a higher wage. But this inframarginal cost is not as large anymore. Instead of having to pay an additional $5 to each of the first 5 workers, you only need to pay an additional $2. The gap between the labor supply curve and the marginal factor cost curve is much smaller when the labor supply curve is flatter. This means that our employment levels and wages will be closer to the efficient levels.</p>
+<p>Intuitively, what is going on here? Let’s take the firm’s perspective. In the extreme case of perfect competition, the firm can hire as many workers as it wants at a given wage. This means that the firm does not have to worry about inframarginal costs. There is no inframarginal cost because you don’t need to hire the wage to attract more workers. For a very flat labor supply curve, the inframarginal cost is small. You need to increase the wage a little bit to attract more workers, but you don’t need to increase it by much. The fact that inframarginal costs are small limits the inefficiencies of monopsony.</p>
+<p>The key parameter here is the elasticity of labor supply. The elasticity of labor supply is a measure of how responsive the quantity of labor supplied is to changes in the wage. If the elasticity of labor supply is high, then small changes in the wage will lead to large changes in the quantity of labor supplied. What does this mean in terms of the slope of the labor supply curve? A high elasticity of labor supply means that the labor supply curve is flat. In contrast a low elasticity of labor supply means that the labor supply curve is steep.</p>
+<p>In math, the elasticity of labor supply to the firm is defined as:</p>
+<p><span class="math display">\[
+\eta = \frac{\Delta L / L}{\Delta w / w} = \frac{\% \Delta L}{ \% \Delta w}
+\]</span></p>
+<p>where <span class="math inline">\(L\)</span> is the quantity of labor supplied, <span class="math inline">\(w\)</span> is the wage, and <span class="math inline">\(\Delta\)</span> indicates a change in the variable. This is a central parameter in the literature on monopsony in labor economics. Let’s again consider perfect competition. In a perfectly competitive market, if there is a tiny change in the wage, the firm either loses all its workers or gains all the workers in the market. In other words, a small change in the wage leads to an infinite change in the quantity of labor supplied to the firm. Therefore, under perfect competition, <span class="math inline">\(\eta = \infty\)</span>.</p>
+<p>The smaller <span class="math inline">\(\eta\)</span> is in magnitude, the more monopsony power the firm has. Why, because even if the firm decreases its wage substantially, it will not lose many workers. This will tells us the scope of monopsony power in the labor market.</p>
+</section>
+<section id="measuring-monopsony-power" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="measuring-monopsony-power"><span class="header-section-number">4.4</span> Measuring Monopsony Power</h2>
+<p>In actual empirical studies of monopsony power, it is often difficult to estimate the entire supply curve to the firm. While we have plotted linear supply curves, they could be more general in practice. Identifying the entire supply curve is extremely difficult.</p>
+<p>Instead, researchers often focus on a statistics that are informative about the degree of monopsony power. The statistic that has been most commonly estimated is the elasticity of labor supply to the firm. Again, a low elasticity of labor supply to the firm indicates that the firm has a lot of monopsony power, so it makes sense to focus on this statistic.</p>
+<p>However, there are other potential statistics. Some researchers have focused on the gap between the marginal revenue product of labor and the wage. This is often referred to as the wage markdown. Mathematically, the wage markdown is often defined as: <span class="math display">\[
+\text{Wage Markdown} = \frac{MRPL-w}{MRPL}
+\]</span></p>
+<p>So in our example, at the equilibrium, the MRPL is $45 and the wage is $25. Therefore, the wage markdown is (45-25)/45 = 0.444. This means that workers receive 44.4% of the marginal revenue product of labor.</p>
+<p>I personally like this statistic because of its interpretability. The elasticity of labor supply to the firm is certainly useful, and in simple models, the elasticity of labor supply to the firm directly determines the wage markdown.</p>
+<p>Wage markdowns, instead, have some intuitive appeal. If the wage markdown is going up over time, for example, then we can interpret this as workers receiving a smaller and smaller share of the marginal value they create. If the elasticity of labor supply to the firm is going down over time, then the scope for monopsony power is increasing. However, we really need the model to be correct. If our model is wrong, then it isn’t actually clear if workers are receiving a smaller share of the marginal value they create or not.</p>
+<p>Lastly, other measures that have been used in the literature are things that are relatively easy to measure, but require perhaps more assumptions on how they translate to monopsony. Concentration indices, for example, are commonly used. The idea is that the scope for monopsony power is higher when there are fewer firms in the market. Therefore, if concentration is going up over time, then we might expect monopsony power to be increasing as well.</p>
+</section>
+<section id="sources-of-monopsony-power" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sources-of-monopsony-power"><span class="header-section-number">4.5</span> Sources of Monopsony Power</h2>
+<p>So far, we have assumed that the labor supply curve to the firm is upward sloping and that this leads to lower employment, lower wages, and inefficiency. But why is the labor supply curve upward sloping? What are the sources of monopsony power?</p>
+<p>When you think about sources of monopsony power, you should think about why a worker may not leave his or her firm if the firm lowers the wage. That really is what is generating these upward sloping labor supply curves. So let’s consider a few that have been discussed in the literature.</p>
+<section id="search-frictions" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="search-frictions"><span class="header-section-number">4.5.1</span> Search Frictions</h3>
+<p>The assumption of perfect competition is that workers can effortlessly move between firms. They know what other firms in their area are paying and they can immediately start working at a new firm if they are offered a higher wage.</p>
+<p>This is clearly not true in practice. Workers need to search for jobs. They need to apply for jobs and go through interviews. These <strong>search frictions</strong> are a source of monopsony power. The presence of search frictions became particularly influential in the 1980s with the work of Peter Diamond, Dale Mortensen, and Christopher Pissarides. Their goal was less about monopsony power and more about understanding aggregate unemployment dynamics. A consequence of their work, however, is that workers are paid less than their marginal revenue product of labor. Hence, there is monopsony power in the labor market.</p>
+<p>Some search frictions occur naturally, like the job search process, while others are created by firms. For example, some firms require non-compete agreements. These agreements prevent workers from working for a competitor for a certain period of time after they leave the firm. This is a source of monopsony power because it again limits the ability of workers to move between firms.</p>
+</section>
+<section id="differentiated-jobs" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="differentiated-jobs"><span class="header-section-number">4.5.2</span> Differentiated Jobs</h3>
+<p>Another source of monopsony power is job differentiation. So far, we have assumed that all jobs are the same and that workers prefer the job with the highest wage. But this is not true in practice. Some individuals may prefer a job because it is closer to their house. Some may particularly like the work environment or colleagues at a certain firm. All of these factors can lead to monopsony power. Why? Because these factors tie individuals to their jobs. They won’t move in response to a small change in the wage because they like their job for other reasons.</p>
+<p>Differentiated products is a classic way to model imperfect competition in product markets. The same idea can be applied to labor markets. If jobs are differentiated, then firms have some monopsony power over their workers</p>
+</section>
+<section id="concentration" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="concentration"><span class="header-section-number">4.5.3</span> Concentration</h3>
+<p>We started this chapter from a quote from Adam Smith. He argued that employers have monopsony power because they are few in number and can collude to keep wages low. This is another potential source of monopsony power.</p>
+<p>Outright collusion is illegal in the United States, but we do have some evidence that it occurs in certain settings. For example, in 2010 the Department of Justice brought a case against many of the major firms in Silicon Valley, including Apple, Google, and Intel. The case alleged that these firms had agreed not to poach each other’s workers. In the end, the firms settled the case and agreed to pay hundreds of millions of dollars.</p>
+<p>Even without explicit collusion, a small number of firms can lead to monopsony power. Oligopsony models are a workhorse set of models from industrial organization. In these models, there are a small number of firms that compete with each other. These markets lead to higher prices and lower output. Antitrust in the United States is explicitly concerned with markets getting too concentrated because of the belief that concentrated markets lead to higher prices and lower output.</p>
+</section>
+</section>
+<section id="policy-and-monopsony-power" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="policy-and-monopsony-power"><span class="header-section-number">4.6</span> Policy and Monopsony Power</h2>
+<p>Why does it matter whether we think the labor market is perfectly competitive or monopsonistic? One very good reason is that our policy decisions depend on the answer to this question. Even if politicians don’t necessarily say the words “perfect competition” or “monopsony”, they are implicitly making assumptions about the labor market when they make policy decisions.</p>
+<p>For example, let’s return to the minimum wage. As we discussed in a previous chapter, the standard model of perfect competition predicts that a minimum wage will lead to unemployment. Increasing the cost of labor will lead to firm’s demanding less of it. Makes perfect sense.</p>
+<p>But let’s see what happens in a monopsonistic labor market. Recall in that original example, the firm was hiring 5 workers at a wage of $25. The efficient level of employment was 7 workers at a wage of $35. What happens if we impose a minimum wage of $35?</p>
+<p>The key in analyzing this is to consider the marginal factor cost curve. Let’s consider the marginal factor cost of the 6th worker. To hire the 7th worker, the firm needs to pay that worker $35 to attract the worker. In the previous setup, that would mean increasing the wage for the previous 6 workers by $5. But now the firm is already paying the $35 in order to meet the minimum wage. Therefore, the marginal factor cost of the 6th worker is $35. There are no inframarginal costs anymore. This is true for every single worker below the minimum wage. The marginal factor cost of every worker below the minimum wage is just equal to the minimum wage.</p>
+<p>But once you get above the minimum wage, then you need to again consider inframarginal costs. For example, to hire the 8th worker you need to pay that worker $40, but you also need to pay the first 7 workers $5 more. Therefore, the marginal factor cost of the 8th worker is ($40 + $7*5) = $75. So the marginal factor cost curve with a minimum wage is flat at the minimum wage until you reach the number of workers that are willing to work at that wage. After that, the marginal factor cost curve is equal to the original marginal factor cost curve.</p>
+<div id="cell-fig-minimum-wage-mfc" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="fig-minimum-wage-mfc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minimum-wage-mfc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-minimum-wage-mfc-output-1.png" width="681" height="614" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-mfc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: Marginal Factor Cost with Minimum Wage
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>So what will the firm decide to do. It’s decision follows the exact same process. Keep hiring workers until the marginal factor cost of hiring an additional worker is greater than the marginal revenue product of that worker. In our case, the firm will hire 7 workers at a wage of $35, because that is where the marginal factor cost curve intersects the marginal revenue product curve.</p>
+<p>This is a very surprising result! We’ve made a seemingly simple change to our model: firms face upward sloping labor supply curves. This change has led to a completely different prediction about the effects of a minimum wage. In this model, we can actually get increases in the minimum wage <strong>increasing</strong> employment. If you recall, that is exactly what the original Card and Krueger (1994) paper found.</p>
+<p>However, we have to a bit careful here. Increases in the minimum wage <strong>can</strong> increase employment in monopsonistic models, but they don’t have to. Imagine the minimum wage in this market was set to $50. Let’s see what happens in this case.</p>
+<div id="cell-fig-minimum-wage-too-high" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="fig-minimum-wage-too-high" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minimum-wage-too-high-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_files/figure-html/fig-minimum-wage-too-high-output-1.png" width="681" height="614" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-too-high-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: Minimum Wage Set Too High
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now the firm will hire only 4 workers at a wage of $50. This is fewer workers than both the original monopsony equilibrium (5 workers) and the efficient outcome (7 workers). When the minimum wage is set too high, it can actually reduce employment below even the monopsony level, demonstrating that there is an optimal range for minimum wage policy in monopsonistic markets.</p>
+</section>
+<section id="summary" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.7</span> Summary</h2>
+<p>Monopsony power in labor markets can stem from many sources. The consequence of monopsony power is that firms will pay lower wages and hire fewer workers than in a perfectly competitive market. Modelling labor markets as monopsonistic is important because it can lead to very different predictions about the effects of labor market policies.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-card2022set" class="csl-entry" role="listitem">
+Card, David. 2022. <span>“Who Set Your Wage?”</span> <em>American Economic Review</em> 112 (4): 1075–90.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="enlarged image" style="max-width:90%; max-height:90%; box-shadow:0 0 20px white;">
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.html" class="pagination-link" aria-label="Minimum Wage">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05.html" class="pagination-link" aria-label="Monopsony: Empirics">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monopsony: Empirics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
