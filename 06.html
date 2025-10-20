@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Technology: A Task Approach – Econ 139: Labor Economics</title>
+<title>6&nbsp; Human Capital – Econ 139: Labor Economics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -91,6 +91,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.scss">
 </head>
@@ -104,7 +133,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./06.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./06.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,7 +209,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -218,23 +247,19 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-luddites" id="toc-the-luddites" class="nav-link active" data-scroll-target="#the-luddites"><span class="header-section-number">6.1</span> The Luddites</a></li>
-  <li><a href="#a-brief-history-of-computing" id="toc-a-brief-history-of-computing" class="nav-link" data-scroll-target="#a-brief-history-of-computing"><span class="header-section-number">6.2</span> A Brief History of Computing</a></li>
-  <li><a href="#the-computer" id="toc-the-computer" class="nav-link" data-scroll-target="#the-computer"><span class="header-section-number">6.3</span> The Computer</a></li>
-  <li><a href="#routine-vs.-non-routine-tasks" id="toc-routine-vs.-non-routine-tasks" class="nav-link" data-scroll-target="#routine-vs.-non-routine-tasks"><span class="header-section-number">6.4</span> Routine vs.&nbsp;Non-Routine Tasks</a></li>
-  <li><a href="#the-demand-for-tasks" id="toc-the-demand-for-tasks" class="nav-link" data-scroll-target="#the-demand-for-tasks"><span class="header-section-number">6.5</span> The Demand for Tasks</a></li>
-  <li><a href="#job-polarization" id="toc-job-polarization" class="nav-link" data-scroll-target="#job-polarization"><span class="header-section-number">6.6</span> Job Polarization</a></li>
-  <li><a href="#job-polarization-and-tasks" id="toc-job-polarization-and-tasks" class="nav-link" data-scroll-target="#job-polarization-and-tasks"><span class="header-section-number">6.7</span> Job Polarization and Tasks</a></li>
-  <li><a href="#tasks-and-inequality" id="toc-tasks-and-inequality" class="nav-link" data-scroll-target="#tasks-and-inequality"><span class="header-section-number">6.8</span> Tasks and Inequality</a></li>
+  <li><a href="#human-capital" id="toc-human-capital" class="nav-link active" data-scroll-target="#human-capital"><span class="header-section-number">6.1</span> Human Capital</a></li>
+  <li><a href="#mincer-equation" id="toc-mincer-equation" class="nav-link" data-scroll-target="#mincer-equation"><span class="header-section-number">6.2</span> Mincer Equation</a></li>
+  <li><a href="#identification-strategies" id="toc-identification-strategies" class="nav-link" data-scroll-target="#identification-strategies"><span class="header-section-number">6.3</span> Identification Strategies</a></li>
+  <li><a href="#regression-discontinuity-design" id="toc-regression-discontinuity-design" class="nav-link" data-scroll-target="#regression-discontinuity-design"><span class="header-section-number">6.4</span> Regression Discontinuity Design</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./06.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./06.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></h1>
 </div>
 
 
@@ -251,253 +276,300 @@ div.csl-indent {
 </header>
 
 
-<section id="the-luddites" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="the-luddites"><span class="header-section-number">6.1</span> The Luddites</h2>
-<p>In the early 19th century, the textile industry was one of the most important industries in England. One in four workers were employed in the industry, making it a key source of employment. But the early 19th century was also a time of dramatic technological change. Driven by the industrial revolution, owners of factories were continually introducing more and more machinery. Not everyone was excited about this. Textile workers were worried the new mechanized weavers would replace them in the long run. According to legend, one weaver in Leicester grew so enraged by a new mechanical loom that he smashed it in a fit of fury. His name, reportedly, was Ned Ludd.</p>
-<div class="img-float">
-<div class="quarto-figure quarto-figure-center" style="float: left; margin: 5px; width: 250px;">
-<figure class="figure">
-<p><img src="./images/06_images/ludd.png" class="img-fluid figure-img"></p>
-<figcaption>1812 Cartoon of Ned Ludd</figcaption>
+<section id="human-capital" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="human-capital"><span class="header-section-number">6.1</span> Human Capital</h2>
+<p>So far in this book we have generally considered workers skills as fixed. But individuals invest a lot into their skills. We call the accumulation of an individual’s skills their human capital.</p>
+<p>Human capital has always played a key role in Economics. One of the earliest discussions comes from Adam Smith, who recognized that investments in education, training, and health improve worker productivity. Modern growth theory also emphasizes the importance of human capital in explaining differences in income across countries. Below we consider data that was made available by Gapminder, an organization that collects data from around the world to make cross-country comparisons.</p>
+<p>In <a href="#fig-edu-gpd-men" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> we plot on the vertical axis the GDP per capita of a country. This is a common measure of the average wealth of a country. A higher GDP per capita implies the country produces more (in dollar terms) per person relative a lower GDP per capita country. Note that this scale is on the logarithmic scale. That is, each tick mark is double the previous tick mark. On the horizontal axis we plot the mean years of schooling for men 25 years and older. <a href="#fig-edu-gpd-wommen" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> plots the same variables, but for women 25 years and older. The size of the bubble indicates the population of the country. The color indicates the region with blue indicating Africa, red indicating Asia, yellow indicating Europe, and green indicating the Americas.</p>
+<div id="fig-edu-gpd-men" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-edu-gpd-men-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/gap1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edu-gpd-men-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: GDP Per Capita and Mean Schooling (Men)
+</figcaption>
 </figure>
 </div>
+<div id="fig-edu-gpd-wommen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-edu-gpd-wommen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/gap2.png" class="img-fluid figure-img">
 </div>
-<p>Whether or not Ned Ludd actually existed, his story spread across England and he became a folk hero to workers anxious about the advance of machinery. A political movement emerged with Ludd as its symbolic figurehead. The so-called “Luddites” organized nighttime raids on factories and destroyed the machines they saw as threats to their livelihoods. In one dramatic incident at Rawfolds Mill, a group of 100 armed Luddites clashed with local soldiers. The violence triggered a harsh government crackdown and eventually brought the movement to an end.</p>
-<p>Today, the term <em>luddite</em> is often used pejoratively to describe someone opposed to new technology. Economists have typically argued that even labor-displacing innovations benefit society in the long run. In the case of the Industrial Revolution, the initial disruption to jobs eventually gave way to widespread economic growth and rising living standards. If you had told a textile worker in 1800 that by the year 2000, employment in English textile mills would be virtually nonexistent, they might have assumed disaster had struck. But instead, employment shifted to other sectors, often ones with higher wages and better working conditions.</p>
-<p>This will be the first in two chapters on how technology has shaped the labor market over time. As we have seen with the luddites debates on the impact of technology on labor markets has been around for a long time. There are still two basic views on technology. First, there is a view you may often hear in Silicon Valley, the view that new technology leads to new prosperity, automatically. This certainly has some appeal when looking at the long sweep of history. Real incomes have risen dramatically over time and we owe a lot of this to new technology. But even if technology does lead to growth in aggregate, there is nothing that implies that these gains will be shared equally. This will be the topic of this chapter. How has technology impacted inequality in the 20th century.</p>
-</section>
-<section id="a-brief-history-of-computing" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="a-brief-history-of-computing"><span class="header-section-number">6.2</span> A Brief History of Computing</h2>
-<p>There are many places that one could start when talking about the impact of technology on labor markets. The industrial revolution is an obvious place since it fundamentally changed the occupational structure of economies, shifting individuals from farms into cities and factories. There are a large range of inventions during this time that had enormous impact on workers, including the steam engine, the expansion of railways, automatic sewing machines, new industrial processes, among others. There are volumes of books on these topics and their impact on not only workers, but history more generally.</p>
-<p>Electrification is another potential place to begin. The National Academy of Engineering calls electrificaton “the greatest engineering achievement of the 20th century”. Electrification brough tremendous changes to the economy, leading to further innovations and growth which impacted all facets of life, includng the labor market.</p>
-<div class="img-float">
-<div class="quarto-figure quarto-figure-center" style="float: right; margin: 5px; width: 250px;">
-<figure class="figure">
-<p><img src="./images/06_images/roman_abacus.png" class="img-fluid figure-img"></p>
-<figcaption>Roman Abacus</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edu-gpd-wommen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: GDP Per Capita and Mean Schooling (Women)
+</figcaption>
 </figure>
 </div>
-</div>
-<p>Modern labor economics, however, has had much more focus on more recent technological advancements. And one has garnered more attention than others because of its now ubiquitous use in nearly all industries: the computer. A computer is at its core an information processing system. One of the simplest historical information processing systems is the abacus. Throughout human civilization, a constant need for societies everywhere was to collect taxes. Collecting taxes often involves adding large sums together to figure out the total tax owed or the total taxed paid in a given jurisdiction. The abacus was a tool that has been around for millenia that has aided workers in keeping track of large sums. It is, at its core, an information processing system. The data inputs are often beads on a series of rods, which can be moved to represent numbers. By manipulating the beads according to simple rules, users could quickly perform addition, subtraction, multiplication, and division. Many of these tools were used in a time before the zero was invented, making these even more difficult!</p>
-<p>There were a number of conceptual breakthroughs that occurred between the ancient times of using abacuses and the modern computer. First, Charles Babbage invented the idea of a programmable computer. Calculators and abacus prior to this time were hardwired to do certain operations. They could do basically one task and they performed that task no matter what the inputs where. A programmable computer is different. It can do several tasks, you just need to give it information on what it should do. This is the birth of programming (a set of instructions for a computer to follow so that it accomplishes a given task). Ada Lovelace ( daughter of notable English poet Lord Byron) was the first to identify that Babbage’s computer had applications beyond calculating numbers. For her insights into the use of Babbage’s machine she is often credited as the first programmer.</p>
-<p>Babbage’s idea was revolutionary, but the true power of computation was not realized until the conceptual work of Alan Turing. It seemed intuitive at the time that very different tasks would need entirely different machines. To take two examples from this era, let’s consider the calculator and a tabulating machine. Mechanical calculators are much like calculators we have today. The exact mathematical operation could depend on the settings (i.e.&nbsp;be programmable like Babbage envisioned), but its scope was limited to certain mathematical operations: often addition, subtraction, multiplaction, and division.</p>
-<div class="img-float">
-<div class="quarto-figure quarto-figure-center" style="float: left; margin: 5px; width: 270px;">
-<figure class="figure">
-<p><img src="./images/06_images/census_table.png" class="img-fluid figure-img"></p>
-<figcaption>Herman Hollerith’s Tabulating Machine</figcaption>
-</figure>
-</div>
-</div>
-<p>The tabulating machine was invented by Herman Hollerith in order to aid the U.S. Census in its data-gathering mission. The way it worked is that Census workers encoded individuals responses on punch cards. The tabulating machine would read the holes in the cards and count or sort the data. This would allow the Census to quickly count up the number of individuals, and because the cards were also sorted, one could count the number of females, number of individuals of different ages, etc.</p>
-<p>But try to put yourself into the shoes of people at the time. Does it seem intuitive that you could build a single machine that both does mathematical calculations and counts and sorts data? A machine where you could input the data and then perform complex mathematical operations. The two machines don’t appear to have much in common. Maybe you think it seems possible to somehow combine the two in some way, but what if you also want to write text on the machine. That seems like it would take even more hardware to add to the machine.</p>
-<p>Alan Turing’s insight was the idea of a universal machine. He showed that you can construct a machine that can simulate the behavior of any other machine. This is referred to now as a universal Turing machine. The machine just requires the correct instructions. The insight was purely theoretical. But it set the stage for the foundation of general-use computers. A key idea here is the difference between hardware and software. The hardware is the universal machine, the software tells the universal machine what to do. With one set of software it is a calculator. With another it is a tabulating machine. Today, our personal computers, phones, tables, these are universal turing machines.</p>
-<p>Since Turing’s insight, there have been many more revolutionary insights into computing, including the design of the architecture of the first modern computer by John von Neuman, it’s practical implementation in the invention of the EINAC, the invention of programming languages, microprocessors, and finally, the personal computer, the focus of our next section on inequality.</p>
+<p>The patterns in both of these figures is clear. Places with higher levels of schooling tend to have higher GDP per Capita. Of course we can’t explain all of the variation with schooling alone, but the patterns are striking.</p>
+<p>Schooling is often conceptualized as the primary way to increase the human capital of a citizenry. Since it is so tightly linked to growth across countries, it has been a key focus of economic policy for centuries. The importance of human capital has been understood for a very long time in Economic theory. For example, Alfred Marshall in his seminal work <em>Principles of Economics</em>, states “The most valuable of all capital is that invested in human beings.”</p>
+<p>What the Gapminder data allows us to do is show that countries that invest in education tend to be wealthier. What we can also ask is: “within a country, do individuals that invest more in education earn more as well?”</p>
+<p>Gary Becker in his 1964 book <em>Human Capital</em> outlined the individual investment decision. He conceptualized human capital in the same way previous work had conceptualized investment in physical capital (i.e.&nbsp;better machines and technology.) The overall structure of the problem is actually relatively simple.</p>
+<p>The investment decision for human capital is similar to other investment decisions. To be concrete, let’s consider the decision to attend college or not. What does the decision depend on? Well, it depends first on how much you think this will increase your income in future periods. Let <span class="math inline">\(Y_t^1\)</span> be the income you would earn in period <span class="math inline">\(t\)</span> if you attend college. Let <span class="math inline">\(Y_t^0\)</span> be the income you would earn in period <span class="math inline">\(t\)</span> if you don’t attend college. For example, let’s start time at age 18 so <span class="math inline">\(t=0\)</span> when a person is 18 years old. If the person is in college, then they are likely paying some amount for tuition and living expenses, and earning little current income. If they are not in college, they don’t need to pay tuition and may be able to earn more by working in a full-time job. So initially, <span class="math inline">\(Y_1^1 &lt; Y_0^1\)</span>.</p>
+<p>Of course we don’t expect this to always be the case. Let’s move forward 10 years, after you have graduated college. We will assume that college has given you training and opened doors that would have otherwise remained shut. So we expect <span class="math inline">\(Y_{10}^1 &gt; Y_{10}^0\)</span>. So how do we decide whether to invest in college or not? In one scenario, you start with lower amounts of income, but eventually gain more income in later periods. Becker suggests analyzing this decision in the same way as firms analyze investment decisions. This is done by computing the <strong>net present value</strong> of the investment.</p>
+<p>The net present value (NPV) of the education decision can be calculated as:</p>
+<p><span class="math display">\[NPV = \sum_{t=0}^{T} \frac{Y_t^1 - Y_t^0}{(1+r)^t}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(Y_t^1\)</span> = income in period <span class="math inline">\(t\)</span> with college education</li>
+<li><span class="math inline">\(Y_t^0\)</span> = income in period <span class="math inline">\(t\)</span> without college education<br>
+</li>
+<li><span class="math inline">\(r\)</span> = discount rate (interest rate)</li>
+</ul>
+<p>If <span class="math inline">\(NPV &gt; 0\)</span>, then the investment in education is worthwhile from a financial perspective. This is the exact same formulation as a firm would make in deciding whether to buy a new machine or not.</p>
+<p>Now, why is the discount rate in the equation? The idea is that income today is more valuable than income tomorrow. Why? Because if you have income today, then you can invest it and get a rate of return equal to r. For example, if you have 100 dollars today, the interest rate is 5 percent, then you will have 105 dollars tomorrow. Therefore, having 100 dollars today is equivalent to having 105 dollars in a year from now.</p>
+<p>To put it another way, say in a year from now, I have 250 dollars. How much money would I need to have today so that I can ensure that I have 250 dollars in a year? Well, this depends on the interest rate. If the interest rate is 5 percent, then if I have <span class="math inline">\(\frac{250}{1.05} \approx 238\)</span>, I could put that money in the bank, collect my interest, and have 250 a year from now.</p>
+<p>To see clearly how this equation works, let’s take a more standard example of a physical investment. Imagine you are considering buying a machine for your factory. If you buy the machine, you expect your profits will be zero in the current year (because you need to pay for the machine which is expensive), but then for the next two years you expect your profits to be 100 dollars per year. If you don’t buy the machine, you can continue business as usual. You expect to earn 20 dollars for the next three years. To keep this simple, let’s assume we are only considering the next three years, after which you plan to shut down the business.</p>
+<p>The question is, what is more valuable, an income stream of (0, 100, 100) or an income stream of (20, 20, 20). To answer this, we need to know the interest rate. Let’s assume the interest rate is 10 percent. To compute the NPV of buying the machine, we calculate the sum total of the discounted income streams:</p>
+<p>For buying the machine, I receive zero today, 100 a year from now, and 100 two years from now. The value of a 100 dollars is equivalent to <span class="math inline">\(\frac{100}{1.1} \approx 90.91\)</span> today. Why? Because if I had 90.91 today and invested it at 10 percent, in a year I would have 100 dollars. The value of 100 dollars two years from now is equivalent to <span class="math inline">\(\frac{100}{1.1^2} \approx 82.64\)</span> today. Again, if I had 82.64 today and invested it at 10 percent, in one year I would have 90.91. If I invest that again at 10 percent, in two years I would have 100 dollars. Therefore, the total NPV of buying the machine is: <span class="math display">\[NPV_{buy} = \frac{0}{1.1^0} + \frac{100}{1.1^1} + \frac{100}{1.1^2} \approx 0 + 90.91 + 82.64 = 173.55\]</span></p>
+<p>Now we can do the exact same thing for the other income stream. If I don’t buy the machine, I receive 20 dollars today, 20 dollars a year from now, and 20 dollars two years from now. The NPV of this income stream is: <span class="math display">\[NPV_{no\_buy} = \frac{20}{1.1^0} + \frac{20}{1.1^1} + \frac{20}{1.1^2} \approx 20 + 18.18 + 16.53 = 54.71\]</span></p>
+<p>So clearly in this case it is more valuable to buy the machine. Now, instead of conceptualizing this decision as buying a machine, Becker conceptualizes this as investing in human capital. The same logic applies. You give up some income today (paying tuition and not working full-time) in exchange for higher income in the future. If the NPV of investing in education is greater than the NPV of not investing, then it is worthwhile to invest in education.</p>
+<p>For our purposes, we are going to focus much more on the term <span class="math inline">\(Y_t^1-Y_t^0\)</span> in Becker’s theory, rather than studying how choices vary by discount rates. For much of the discussion, we won’t actually need to keep track of the time period. Of course the impact of education on your earnings may vary over the career. For now let’s just consider the average across all periods as: <span class="math inline">\(Y^1-Y^0\)</span>. In other words, we will think about <span class="math inline">\(Y^1-Y^0\)</span> as the average increase in income from attending college.</p>
+<p>An enormous literature in labor economics has sought to estimate <span class="math inline">\(Y^1-Y^0\)</span>. It is notoriously difficult as we will discuss in the next section. The key issue is that what we are conceptualizing is a world in which you go to college vs.&nbsp;a world in which you don’t. But for any individual, they can only do one of those two things. So when we think about the data, we will need to compare across people who go to college vs.&nbsp;people who do not.</p>
+<p>But that again raises the fundamental issue of identification: what if people who attend college are different than people who do not attend college in unobservable ways? Then, how can we be sure education is driving income differences?</p>
+<p>Second, while the original Becker formulation assumes that individuals understand the future income streams from a college decision, this is clearly not how it works in reality. Instead individuals form <strong>expectations</strong> over future income streams. A recent literature has studied how accurate these predictions are in practice.</p>
+<p>Lastly, this framework does not leave a lot of room for different types of education. If you get certain degrees you may get different future income streams. We will also consider returns to different college majors to see if the type of education makes a difference.</p>
 </section>
-<section id="the-computer" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="the-computer"><span class="header-section-number">6.3</span> The Computer</h2>
-<p>The widespread use of personal computers began in the U.S. in the 1980s. Now, try to imagine you are an accountant before the rise of personal-use computers. Let’s say you have a relatively straightforward task for the day. You need to calculate the payroll for all the employees. This would involve adding up the hours for each employee, multiplying by the wage and then adding it to the payroll ledger. It’s a simple task, but could take an extremely long time depending on the number of workers in the firm. And you might make some errors. Those errors might be costly to correct if the paychecks go out with the wrong information.</p>
-<p>Now imagine your firm purchases the new Apple computers which come with a spreadsheet. You’ve got a column for wages and a column for hours. Computing payroll adds up to a few keystrokes on the computer. If you’re the accountant you might have two very different reactions. You might be relieved. What used to be an extremely tedious error-prone process has become simple. You can focus your effort on less tedious, more conceptually difficult tasks. Your productivity is going to skyrocket.</p>
-<p>But you might have an entirely different reaction. You might be extremely worried. Do they need all these accountants now that computers can do these operations so quickly and with fewer errors. This isn’t a productivity boost, it’s a replacement. In 1980, it was not at all obvious which of these two scenarios would play out. But to fully understand the picture of how the wage structure evolved, we have to add another type of worker to our example: the support staff.</p>
-</section>
-<section id="routine-vs.-non-routine-tasks" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="routine-vs.-non-routine-tasks"><span class="header-section-number">6.4</span> Routine vs.&nbsp;Non-Routine Tasks</h2>
-<p>To understand the impact of computers on the labor market, we are going to use a framework that is referred to as a “task model”, which was first proposed in 2003 in an article by David Autor, Frank Levy, and Richard J. Murname. Before the task model, economists typically thought of workers as being high-skilled or low-skilled, high-productivity or low-productivity. High-skill workers were able to produce more output than low-skilled workers. But this framework had many shortcomings. In reality, workers are not directly producing output. If you think of basically any firm there are a wide range of tasks that must be accomplished in order to produce some output. For example, to produce a phone, you need a team of engineers to design the phone. You need a team to source the inputs for the phone. You need a team and machinery to assemble the parts into a phone. Finally, you need a team to market and distribute the phone. You can think of each of these steps as a task that must be accomplished. These tasks can be performed by different types of workers or they can be performed by machines. In this section, we will think about what types of tasks the computers can perform, and how this will impact different types of workers.</p>
-<p>Until recently, there was basically a single dominant paradigm for how to get a computer to do something. You needed to write a computer program that told the computer exactly what to do. You specify each step carefully in code. We are going to refer to tasks that can be accomplished by following a set of rules as <em>routine tasks</em>. Routine tasks can further be broken down into two types: cognitive and manual. Examples of cognitive routine tasks include record keeping, performing calculations, and simple customer service interactions, like taking money out of an ATM. Examples of manual routine tasks include things like sorting items or assembling items on a production line.</p>
-<p>In contrast to routine tasks, we have <em>non-routine tasks</em>. Non-routine tasks are tasks that would be very difficult by following a set of rules, often because the task may vary greatly depending on the setting. For example, take a truck driver. While most people can drive a truck relatively easily, imagine trying to write a set of rules for a machine to follow. You would need to figure out all the potential situations the truck would find itself in and come up with a solution for each individual one. While humans can react quickly and figure out a solution, it would be difficult to codify this in a set of rules. Non-routine tasks can also be broken down into two types: cognitive and manual. Examples of non-routine cognitive tasks include things like medical diagnoses, legal writing, managing a team. Examples of non-routine manual tasks include things like cleaning a house, driving a truck, or cooking a meal.</p>
-<p>Until very recently, computers were not very good at performing non-routine tasks. The machine-learning breakthrough has changed this. To understand why, let’s consider a very simple example. Imagine we are watching someone throw a baseball and we want to predict where the ball will land. This is relatively easy to figure out by writing a traditional computer program. The code would be Newton’s laws of motion. You can write a program that takes the initial position, velocity, and angle of the throw and then uses these rules to predict where the ball will land. We know the rules of motion, so we can write a program that will work very well. This will be a simple program.</p>
-<p>Now, imagine we didn’t know Newton’s laws of motion. Instead, we had a large dataset of baseball throws. A machine-learning approach would use this data to figure out how baseballs generally behave. The machine-learning algorithm would look for patterns in the data and use these patterns to make predictions. This is a very different approach than writing a traditional program. We don’t need to understand the laws of physics, we just need a lot of data.</p>
-<p>The machine-learning approach is very powerful because it can be used in situations where we don’t know the underlying rules. For example, let’s take the self-driving car example. It would be extremely difficult to write a traditional program that could handle all the potential situations a car might find itself in. But with enough data, a machine-learning algorithm can learn to recognize patterns and make decisions based on those patterns. Writing human language turns out to be similar. You could hypothetically write a chatbot that follows a set of rules to respond to questions. But then you would need to come up with rules for every possible question. Machine-learning approaches have proven to be much more tractable in this setting.</p>
-<p>While conceptually machine learning has been around since the middle of the 20th century, it had very limited impact until recently. Therefore, for this section in which we seek to understand changes in the labor market from 1980 to 2010, we will focus on the traditional computer programming approach. For traditional computers, they are very good at performing routine tasks, both cognitive and manual. They are not very good at performing non-routine tasks, either cognitive or manual. In a later chapter, we will return to the machine-learning revolution and how it has changed the landscape of what computers can do.</p>
-</section>
-<section id="the-demand-for-tasks" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="the-demand-for-tasks"><span class="header-section-number">6.5</span> The Demand for Tasks</h2>
-<p>To understand how computers will impact the labor market, let’s return to our example of the accountant. For an accountant, the work is entirely cognitive. Some of the tasks are likely routine, like calculating payroll. Other tasks are likely non-routine, like researching tax codes, advising management and organizing clerical staff. One source of information on what occupations do is the Dictionary of Occupational Titles (DOT). The DOT was a massive effort by the U.S. Department of Labor to classify occupations and describe what tasks are performed in each occupation. The DOT was first published in 1939 and was updated several times until it was replaced by the O*NET database in the 1990s. Let’s look at the DOT description for accountants in the 1965 version, before the introduction of computers into the workplace.</p>
-<blockquote class="blockquote">
-<p>Work activities in this group primarily involve the application of the principles of accounting, cost analysis, and statistical analysis to problems of fiscal management, auditing, and the like. Typically, workers are engaged in devising accounting systems and procedures; appraising assets and evaluating costing methods, investment programs, and monetary risks and rates; and preparing statistical tabulations and diagrams and financial reports, statements, and schedules for use by management.</p>
-<p>— <em>Dictionary of Occupational Titles</em>, 1965</p>
-</blockquote>
-<p>Now let’s think about how the introduction of computers will impact the demand for accountants. To be very concrete, let’s pick out one task mentioned in this prior description: “preparing statistical tabulations and diagrams and financial reports, statements, and schedules for use by management.”</p>
-<p>Performing this task is actually a mix of routine and non-routine tasks. First, someone needs to actually collect the data. This is often not done by the accountant themselves, but rather by support staff. Once the data is collected, the accountant needs to perform the statistical tabulation. But the accountant needs to further decide how to interpret and present the results. This last part is highly non-routine. It could require judgment, creativity, and an understanding of the audience.</p>
-<p>Now, what does a computer do well? It can perform the statistical tabulation very quickly and accurately. This means that the demand for accountants to perform this routine task will fall. But the non-routine part of the task, interpreting and presenting the results, is not something a computer can do well (at least until very recently).</p>
-<p>In this example, there are two forces at work. First, some of the tasks the accountant performs are routine and can be automated by computers. This will reduce the demand for accountants to perform these tasks. However, the accountant has become much more productive. The accountant can now focus on the non-routine tasks that require judgment and creativity, and not on spending hours and hours tracking down small calculation errors. If this increase in productivity is large enough, it could actually lead to an increase in the demand for accountants overall. If you are a firm deciding whether to hire an accountant, you might be willing to pay more for an accountant who can use computers to quickly prepare financial reports. Maybe the computer has made the accountant so productive that you want to hire accountants not just for payroll, but also to help with budgeting, forecasting, tax planning, etc.</p>
-<p>But what about the support staff of the accountant? The support staff may have been performing routine tasks, like data entry. Before computers, keeping track of data was a huge task. But with spreadsheets and databases, much of this work can be automated. You may need someone to enter the data initially, but keeping track of it and updating it is much easier. Therefore, the demand for support staff may fall.</p>
-<p>At the end of the day, what happened is an empirical question. We can probably come up with alternative stories that make sense, so let’s see what actually happened in the data. To do so, we are going to take advantage of the fact that the US Census has been collecting data on the occupations of workers for a long time. In particular, we are going to look at the 1980 Census, which was the last Census before computers were widely used in the workplace, and compare it to the 1990 Census. We will compare accountants and auditors. These workers tend to be highly educated and as described above, perform a number of non-routine cognitive tasks. We will compare them to bookkeeping, accounting, and auditing clerks. These workers tend to perform more routine cognitive tasks.</p>
-<p>The figure below shows the change in employment and wages for these two occupations between 1980 and 2000, the period in which computers were introduced into the workforce. To compute these changes, I utilized the IPUMS USA database, which provides microdata for a 5% sample of the US Census. I identified individuals in the 1980 and 2000 Censuses who reported their occupation as either “Accountants and Auditors” or “Bookkeeping, Accounting, and Auditing Clerks”.</p>
-<p>To compute changes in employment, I calculated the fraction of the total workforce in each year that reported being in each occupation. I then computed the percentage change in this fraction between 1980 and 2000. The figure below shows the results.</p>
-<div id="cell-fig-employment-change-accountants" class="cell" data-execution_count="1">
+<section id="mincer-equation" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="mincer-equation"><span class="header-section-number">6.2</span> Mincer Equation</h2>
+<p>One of the most famous uses of Gary Becker’s theory on human capital investment is the Mincer Equation, derived by Jacob Mincer. The goal of the Mincer Equation is to try and model the earnings of workers using a relatively simple list of variables which are inspired by Gary Becker’s theoretical formulation (which in practice is much more involved than what was presented in the previous section). The Mincer Equation is presented below:</p>
+<p><span class="math display">\[\ln(w) = \alpha + \beta_1 S + \beta_2 E + \beta_3 E^2 + \varepsilon\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(w\)</span> = earnings (wage or income)</li>
+<li><span class="math inline">\(S\)</span> = years of schooling/education</li>
+<li><span class="math inline">\(E\)</span> = years of work experience (often approximated as age - schooling - 6)</li>
+<li><span class="math inline">\(\alpha\)</span> = intercept term</li>
+<li><span class="math inline">\(\beta_1\)</span> = return to education (approximately the percent increase in earnings per additional year of schooling)</li>
+<li><span class="math inline">\(\beta_2, \beta_3\)</span> = parameters capturing the relationship between experience and earnings</li>
+<li><span class="math inline">\(\varepsilon\)</span> = error term</li>
+</ul>
+<p>This is probably one of the most famous and analyzed equations in all of labor economics. Our main focus will be in understanding the parameter <span class="math inline">\(\beta_1\)</span>, which is the return to an additional year of schooling. This has been a parameter that researchers have long been interested in. Before we address this parameter, let’s first understand the other parameters.</p>
+<p>The Mincer Equation has two main variables that are used to explain wages: schooling and experience. Both of these reflect investments in human capital. The basic idea is that the more schooling and individual has, the higher their productivity will be, yielding higher earnings. However, individuals also accumulate human capital through work experience.</p>
+<p>Work experience is often modeled as a quadratic. The basic idea is that initially, you learn a lot in your new job. These new schools will allow you to be more productive and earn more. But we don’t think this return to experience continues forever. Eventually, you stop accumulating new skills on your job and so the return to experience starts to decline. Having a squared term allows us to capture this relationship.</p>
+<p>To see this in action, let’s ignore schooling for a moment and just consider experience. The equation becomes:</p>
+<p><span class="math display">\[\ln(w) = \alpha + \beta_2 E + \beta_3 E^2 + \varepsilon\]</span></p>
+<p>Let’s choose some arbitrary values for the parameters and plot this relationship. We’ll set <span class="math inline">\(\alpha = 10\)</span>, <span class="math inline">\(\beta_2 = 0.02\)</span>, and <span class="math inline">\(\beta_3 = -0.0005\)</span>. Now we can plot the relationship between earnings and experience.</p>
+<div id="2192e7f0" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-employment-change-accountants" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-employment-change-accountants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06_files/figure-html/fig-employment-change-accountants-output-1.png" width="663" height="470" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-accountants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Change in Employment by Occupation, 1980-1990
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="06_files/figure-html/cell-2-output-1.png" width="837" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>These are some pretty striking results. The employment of accountants and auditors increased by 35% between 1980 and 2000. In contrast, the employment of bookkeeping, accounting, and auditing clerks decreased by 27%. This is consistent with our theory that computers have increased the productivity of accountants, leading to higher demand for their services, while reducing the demand for routine clerical tasks which accountants use as inputs and can often be performed by computers. To be clear, it is not as if the raw number of accountants is much larger than the number of clerks. In 2000, there are still many clerks. About 0.8 percent of all workers are in these bookkeeping, accounting, and auditing clerk roles. This is actually similar to the total number of accountants and auditors.</p>
-<p>The key here is the growth rates vary wildly. In 1980, about 0.5 percent of all workers were accountants and auditors. By 1990, this had grown to about 0.67 percent. In contrast, bookkeeping, accounting, and auditing clerks made up about 1.0 percent of all workers in 1980, but this had fallen to about 0.8 percent by 2000.</p>
+<p>The Mincer Equation assumes a shape for how earnings change with respect to experience. But we don’t need to necessarily believe this shape is correct. We can look in the data and see the shape for ourselves.</p>
+<p>To do this, we are going to use data from the American Community Survey (ACS). Now, for this particular graph, we could have also used the Current Population Survey (CPS) data. The CPS and ACS are both surveys run by the U.S. Census Bureau that collect information on individuals’ demographics, employment, and income. The CPS is conducted monthly and is primarily used to measure labor force statistics, while the ACS is conducted annually and provides more detailed information on social, economic, housing, and demographic characteristics. Additionally, the sample size for the ACS is larger than the CPS. While the two overlap considerably, each has its own strengths and weaknesses.</p>
+<p>In the plots below, we will show the relationship between experience and two different measures of earnings using ACS data from 2023. The ACS does not actually keep track of a person’s work experience. To construct this variable, we are going to use a common rule-of-thumb:</p>
+<p><span class="math display">\[Experience = Age - Years Of Schooling - 6\]</span></p>
+<p>This assumes that a person starts school at age 6 and goes straight through school without any breaks. While this is not perfect, it is a common approximation used in the literature.</p>
+<p>In <a href="#fig-experience-earnings" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>, we show the relationship between experience and annual wage income. However, the Mincer Equation we used above modeled log wages, therefore in <a href="#fig-experience-earnings-log" class="quarto-xref">Figure&nbsp;<span>6.4</span></a> we show the relationship between experience and log annual wage income. We plotted this for experience values between 0 and 40 years. Once you get to very high years of experience, the sample size starts to get quite small, so the estimates become noisy. The size of the markers in this graph are proportional to the number of observations. As you can see, they are all roughly the same size, indicating we have a similar sample size for various experience levels.</p>
+<div id="fig-experience-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-experience-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/experience.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Experience and Annual Wage Income
+</figcaption>
+</figure>
+</div>
+<div id="fig-experience-earnings-log" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-experience-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/experience_log.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Experience and Log Annual Wage Income
+</figcaption>
+</figure>
+</div>
+<p>In both of these figures, we see rapid earnings growth at the beginning of a person’s career, which eventually slows down. This type of relationship is consistent with Mincer’s equation.</p>
+<p>Now the key parameter we are actually interested in is the return to schooling, <span class="math inline">\(\beta_1\)</span>. This parameter tells us how much an additional year of schooling increases a person’s earnings. So let’s next turn to this parameter. Again in the ACS we can study how earnings depend on the number of years of schooling.</p>
+<p>As in the experience figures, the size of the dots is proportional to the number of individuals in the sample with that level of schooling. In the U.S. there are compulsory schooling laws that mandate children stay in school until a certain age, which can vary across state from a minimum of 16 to a maximum of 18. This may be one reason that we have very few individuals with low levels of schooling. Until we hit 12 years of schooling, we have very few observations.</p>
+<div id="fig-school-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-school-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/schooling.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-school-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Years of Schooling and Annual Wage Income
+</figcaption>
+</figure>
+</div>
+<div id="fig-school-earnings-log" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-school-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/schooling_log.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-school-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.6: Years of Schooling and Log Annual Wage Income
+</figcaption>
+</figure>
+</div>
+<p>If we consider the part of the figure where we have ample data (12 or more years of schooling), we can see a stark increase in earnings for each additional year of school.</p>
+<p>Now let’s get to an estimate of the Mincer Equation. Generally, this equation would be estimated by Ordinary Least Squares (OLS). This chooses the coefficients <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span> and <span class="math inline">\(\beta_3\)</span> that best fit the data. A key focus of your econometrics courses will be to understand what the statistical definition of “best-fit” means. In our case, we are going to take estimates and try to understand how to interpret them.</p>
+<p>A typical estimated Mincer equation might look like:</p>
+<p><span class="math display">\[\ln(w) = 7.069 + 0.173 \cdot S + 0.100 \cdot E - 0.002 \cdot E^2 + \varepsilon\]</span></p>
+<p>These are the numbers that I retrieved when estimating the parameters using the 2023 ACS sample restricted to individuals with non-missing income between the ages 18-65.</p>
+<p>What this equation is trying to tell us is how to predict an individual’s log wage from their schooling in years and overall experience. For example, imagine a person graduated college (<span class="math inline">\(S=16\)</span>) and has spent ten years in the workforce (<span class="math inline">\(E=10\)</span>). Their predicted log wage is equal to:</p>
+<p><span class="math display">\[\ln(w) = 7.069 + 0.173 \times 16 + 0.100 \times 10 - 0.002 \times 10^2\]</span></p>
+<p><span class="math display">\[\ln(w) = 7.069 + 2.768 + 1.000 - 0.200 = 10.637\]</span></p>
+<p>Now imagine we consider another person who has the same experience, but has 17 years of schooling (i.e.&nbsp;they went to graduate school for one year). Their predicted log wage is equal to:</p>
+<p><span class="math display">\[\ln(w) = 7.069 + 0.173 \times 17 + 0.100 \times 10 - 0.002 \times 10^2\]</span></p>
+<p><span class="math display">\[\ln(w) = 7.069 + 2.941 + 1.000 - 0.200 = 10.810\]</span></p>
+<p>What is the difference in log wages between these two individuals? <span class="math display">\[\Delta \ln(w) = 10.810 - 10.637 = 0.173\]</span></p>
+<p>So the coefficient on schooling, <span class="math inline">\(\beta_1 = 0.173\)</span>, tells us that an additional year of schooling is associated with a 0.173 increase in log wages. But what does this mean in terms of actual wages? Well, there is a simple formula that allows us to convert changes in log wages to percent changes in wages. The formula is: <span class="math display">\[\% \Delta w \approx 100 \times exp(\beta_1)-1\]</span></p>
+<p>For this course, you don’t need to memorize this formula or understand how it is derived. The point of this exercise is to understand how to interpret the coefficient on schooling. Since you are probably less familiar with log wages, we want to convert this into a more interpretable number: percent changes in wages.</p>
+<p>Using the formula above, we can compute the percent change in wages from an additional year of schooling as: <span class="math display">\[\% \Delta w \approx 100 \times exp(0.173)-1 \approx 18.9\%\]</span></p>
+<p>So the interpretation of the coefficient on schooling is that an additional year of schooling is associated with an 18.9 percent increase in wages.</p>
+<p>Now, so far what we have done is show that there is a strong correlation between wages and schooling. But we have not yet established that there is a causal impact of schooling on wages. There are many reasons why people with more schooling may earn more. For example, people who attend college may come from wealthier families and have better connections that help them get higher paying jobs. Or, people who attend college may be more motivated which could help later in finding jobs and being promoted.</p>
+<p>Establishing the causal impact of education on earnings is a central question in labor economics. There have been many different strategies attempted to answer this question. We will discuss briefly here some of the more prominent strategies used in the literature, but only briefly. Instead our focus in this chapter will be on other aspects of human capital choice, which includes how individuals predict their own returns to education, and how returns vary by the type of education, such as college major or college quality.</p>
 </section>
-<section id="job-polarization" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="job-polarization"><span class="header-section-number">6.6</span> Job Polarization</h2>
-<p>The relative decline in the demand for clerks is notable. One natural question is where might these workers go? One possibility is that they move to occupations that are not as exposed to automation by computers. For example, cashiers are likely not as exposed to automation. While it was easier to monitor revenue and sales with computers, the actual task of checking out customers was not easily automated. In the figure below, we show the change in employment for cashiers between 1980 and 2000, plotted alongside the changes for accountants and clerks.</p>
-<div id="cell-fig-employment-change-three-occupations" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="fig-employment-change-three-occupations" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-employment-change-three-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06_files/figure-html/fig-employment-change-three-occupations-output-1.png" width="759" height="566" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-three-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Change in Employment by Occupation, 1980-1990
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>As can be seen in the figure, cashiers saw a 27% increase in employment between 1980 and 1990, similar to our increase for accountants. As you may have noticed in the figure, we also ordered these occupations by their average wage level in 1980. Cashiers were the lowest paid of the three, clerks were in the middle, and accountants were the highest paid. Therefore, from 1980 to 1990, we see growth in employment at both the low-wage end (cashiers) and the high-wage end (accountants), while we see a decline in employment in the middle (clerks). This pattern is referred to as <em>job polarization</em>. Technology has displaced middle-skill workers.</p>
-<p>So far we have three occupations: accountants, clerks, and cashiers. Let’s map these back to our task framework. Accountants generally perform non-routine cognitive tasks. Clerks generally perform routine cognitive tasks. Cashiers generally perform non-routine manual tasks. This begs the question: what about routine manual tasks? Are there occupations that perform routine manual tasks that have also seen declines in employment? Let’s assume the accountant is an accountant for a firm that produces clothes, and as part of the production process they have workers who operate sewing machines. This is a routine manual task (replacing sewers with machines is a long tradition, with the original luddite movement being a reaction to the mechanized looms). The figure below shows the change in employment for sewing machine operators between 1980 and 2000, alongside our other three occupations.</p>
-<div id="cell-fig-employment-change-four-occupations" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div id="fig-employment-change-four-occupations" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-employment-change-four-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06_files/figure-html/fig-employment-change-four-occupations-output-1.png" width="855" height="566" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-four-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.3: Change in Employment by Occupation, 1980-1990
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>So in this figure, we see that sewing machine operators saw an enormous 72% decline in employment between 1980 and 2000. This is consistent with our theory that routine tasks are being displaced during this period. To summarize, we considered four occupations: - Accountants and Auditors: non-routine cognitive tasks, saw a 35% increase in employment - Bookkeeping, Accounting, and Auditing Clerks: routine cognitive tasks, saw a 27% decrease in employment - Cashiers: non-routine manual tasks, saw a 27% increase in employment - Sewing Machine Operators: routine manual tasks, saw a 72% decrease in employment</p>
-<p>Because the routine tasks (both cognitive and manual) had wages in the middle of the wage distribution (relative to accountants and cashiers), we see a pattern of job polarization: growth in low-wage and high-wage occupations, and decline in middle-wage occupations.</p>
-<p>Now, we’ve done this for a few set of occupations. This is useful as it gives us a concrete way to tell a story about how technology may or may not impact these occupations, but we should be careful not to extrapolate too much from a few examples. Our goal next is to understand whether this pattern of job polarization is a general phenomenon or just holds for these few occupations we happened to pick.</p>
-<p>One way to do this is to look across all occupations and rank them in terms of their average wage in 1980. Then, we can compute the change in employment for each occupation between 1980 and 2000. If job polarization is a general phenomenon, we should see that occupations at the low end and high end of the wage distribution saw increases in employment, while those in the middle saw decreases. The figure below (<span class="citation" data-cites="autor2013growth">Autor and Dorn (<a href="references.html#ref-autor2013growth" role="doc-biblioref">2013</a>)</span>) shows this relationship. The horizontal axis is the rank of the occupation in terms of its average wage in 1980. The vertical axis is the change in employment between 1980 and 2000. So to be concrete, the average wage for accountants in 1980 put them at just above the 70th percentile of this distribution. So 70 percent of occupations had lower average wages than accountants. Accounting clerks were around the 23rd percentile, while cashiers were around the 6th percentile. The figure shows a smoothed version of the relationship between employment changes and the average wage of the occupation. Smoothed in this context means that we are not plotting the raw data for every single occupation, instead we are plotting a smoothed curve that captures the general trend.</p>
-<div id="fig-job-polarization" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-job-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/autor_dorn_2013.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-job-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.4: Employment growth across occupations by initial wage level
-</figcaption>
-</figure>
-</div>
-<p>As we can see in the figure, occupations at the low end of the wage distribution (left side of the figure) saw large increases in employment. Many of these low-wage occupations are in the service sector, things like food preparation, cleaning, and waiting tables. Occupations at the high end of the wage distribution (right side of the figure) also saw increases in employment. Many of these high-wage occupations are in professional and technical fields, like management, law, and medicine. In contrast, occupations in the middle of the wage distribution saw decreases in employment. Many of these middle-wage occupations are in clerical and administrative support roles.</p>
-<p>One remarkable aspect of this story is that it is not at all specific to the United States. For example, <span class="citation" data-cites="acemoglu2011skills">Acemoglu and Autor (<a href="references.html#ref-acemoglu2011skills" role="doc-biblioref">2011</a>)</span> present results for a number of countries. To make things easy-to-visualize, they break occupations into three groups: low-wage (bottom third of the distribution), middle-wage (between 33rd percentile and 66th percentile), and high-wage (top third of the distribution). They then plot the change in employment for each group over time. The figure below shows the results for a number of countries.</p>
-<div id="fig-polarization-countries" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-polarization-countries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/acemoglu_autor_2011.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polarization-countries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.5: Job polarization patterns across multiple countries
-</figcaption>
-</figure>
-</div>
-<p>If we zoom in on the right-most part of the figure, we see the USA, where we know lowest paying jobs and highest paying jobs have grown, while middle-paying jobs have shrunk. But we see this same pattern across many countries. The most stark pattern is the persistent increase in growth of high-wage jobs in many countries, and the persistent decline in middle-wage jobs. The low-wage jobs have more mixed results, but many countries show increases in low-wage jobs as well. Overall for the EU, the pattern is remarkably similar to the US.</p>
+<section id="identification-strategies" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="identification-strategies"><span class="header-section-number">6.3</span> Identification Strategies</h2>
+<p>There have been many different strategies used in the literature to try and estimate the causal impact of education on earnings. Below we briefly describe some of the more prominent strategies.</p>
+<p> Twin studies are a staple of many academic literatures. The idea is that twins share many of the same background characteristics. They come from the same family, have similar genetics (or the same genetics in the case of identical twins), grow up in the same environment. Therefore, if they get different levels of education, maybe we can attribute differences in their earnings to the differences in education. <span class="citation" data-cites="ashenfelter1998income">Ashenfelter and Rouse (<a href="references.html#ref-ashenfelter1998income" role="doc-biblioref">1998</a>)</span> use this strategy on a sample of identical twins. They take advantage of a large twin festival held in Twinsburg each year in order to get a large sample of 700 identical twins. They find in their twin sample that the return to an additional year of schooling is around 9 percent. So that is quite a bit lower than our estimate using the 2023 ACS data. But it goes in line with our intuition. Individuals that attend more schooling may be different in unobservable ways that also help them earn more. By looking at twins, we can control for some of these unobservable differences.</p>
+<p> In the U.S., places often use cutoffs for determining when a child will start school. For a long time this was December 31st. For example, take a child is turning 6 on December 31st. This child would be assigned to start the first grade in the following year. However, take another child that was born on January 1st. This child would not be assigned to start first grade until the year after that. Therefore, even though these two children are only one day apart in age, they will start school a full year apart.</p>
+<p>Now, <span class="citation" data-cites="angrist1991does">Angrist and Krueger (<a href="references.html#ref-angrist1991does" role="doc-biblioref">1991</a>)</span> realized that this might interact with the compulsory schooling laws in the U.S. In most states, children are required to stay in school until they turn 16. Therefore, if you are born on December 31st, you would be required to stay in school for a full year longer than a child born on January 1st. The reason is simply because you started school a year earlier.</p>
+<p>To put concrete numbers into this idea, imagine a child born on December 1st. This child would start first grade at age 6 on the following September. Therefore, this child would turn 16 they would have experienced about 9 1/2 years of schooling. Now, for the child born on January 1st. This child would start first grade at age 7 on the following September. Therefore, this child would turn 16 they would have experienced about 8 1/2 years of schooling.</p>
+<p>So there are a few things to keep in mind with this design. First, this is really only relevant for individuals who are planning to drop out as soon as possible. If you are planning to go to college, then this design won’t impact you. It doesn’t matter if you start school early vs.&nbsp;late, as you plan to continue your education anyways. However, for individuals at the margin of dropping out, this design can have a big impact. <span class="citation" data-cites="angrist1991does">Angrist and Krueger (<a href="references.html#ref-angrist1991does" role="doc-biblioref">1991</a>)</span> finds that spending an additional year in school due to compulsory schooling laws increases earnings about 9 percent. So pretty close to our estimate from the twin study.</p>
+<p>These are two clever designs that have been used in the literature to try and estimate the causal impact of education on earnings. There are many more designs that have been used as well. In general much of the literature finds relatively similar estimates of the return to an additional year of schooling, generally in the range of 7-10 percent.</p>
 </section>
-<section id="job-polarization-and-tasks" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="job-polarization-and-tasks"><span class="header-section-number">6.7</span> Job Polarization and Tasks</h2>
-<p>Let’s revisit our original argument: computers are good at performing routine tasks. For our accountant, clerk and cashier example, we argued that the accountants specialize in non-routine cognitive tasks, clerks specialize in routine cognitive tasks like tracking data, and cashiers specialize in non-routine manual tasks. Now, to show that job polarization is really driven by technology, it would be helpful if we could show that the occupations that are declining in employment are the ones that specialize in routine tasks.</p>
-<p>There are a couple of different ways to do this. One way is to use the Dictionary of Occupational Titles (DOT) to classify occupations by the types of tasks they perform. The DOT has a number of variables that describe the tasks performed in each occupation. This is the approach taken by <span class="citation" data-cites="autor2003skill">Autor, Levy, and Murnane (<a href="references.html#ref-autor2003skill" role="doc-biblioref">2003</a>)</span>, which first introduced the task framework.</p>
-<p>Another option is to use the O<em>NET database, which replaced the DOT in the 1990s. The O</em>NET database has a number of variables that describe the tasks performed in each occupation. One advantage of the O*NET database is that it is more detailed than the DOT. It has over 200 variables that describe the tasks performed in each occupation.</p>
-<p>However, arguably the simplest is to just use broad categories that seem plausible. <span class="citation" data-cites="acemoglu2011skills">Acemoglu and Autor (<a href="references.html#ref-acemoglu2011skills" role="doc-biblioref">2011</a>)</span> use a simple classification of occupations into four categories: routine cognitive, routine manual, non-routine cognitive, and non-routine manual. They argue that professional, managerial, and technical occupations are non-routine cognitive. This group contains many detailed occupations, specific types of engineers, lawyers, doctors, managers, etc.</p>
-<p>The second group is clerical, sales and administrative support occupations. These occupations specialize in routine cognitive tasks. This group contains occupations like secretaries, bookkeepers, and data entry clerks. The third group is service occupations. These occupations specialize in non-routine manual tasks. This group contains occupations like food service workers, janitors, and personal care aides. Lastly, the fourth group is production, craft, repair and operative occupations. These occupations specialize in routine manual tasks. This group contains occupations like assemblers, machine operators, and construction workers.</p>
-<p>The table below summarizes this classification as well as the prediction of how employment should change in each group if computers are driving changes in employment shares. If computers can replace routine tasks, then we should see (relative) employment declines in the routine cognitive and routine manual groups. In contrast, we should see (relative) employment increases in the non-routine cognitive and non-routine manual groups.</p>
-<div class="table-responsive">
-<div id="tbl-task-classification" class="table table-striped table-bordered quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-task-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Task Classification and Predicted Employment Changes
-</figcaption>
-<div aria-describedby="tbl-task-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table table-striped table-bordered caption-top">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 33%">
-<col style="width: 16%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Task Type</th>
-<th>Example Occupations</th>
-<th>Routine/Non-Routine</th>
-<th>Cognitive/Manual</th>
-<th>Predicted Change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Non-Routine Cognitive</strong></td>
-<td>Managers, Engineers, Lawyers, Doctors</td>
-<td>Non-Routine</td>
-<td>Cognitive</td>
-<td>↑ <em>Increase</em></td>
-</tr>
-<tr class="even">
-<td><strong>Routine Cognitive</strong></td>
-<td>Bookkeepers, Secretaries, Data Entry</td>
-<td>Routine</td>
-<td>Cognitive</td>
-<td>↓ <em>Decrease</em></td>
-</tr>
-<tr class="odd">
-<td><strong>Non-Routine Manual</strong></td>
-<td>Food Service, Janitors, Personal Care</td>
-<td>Non-Routine</td>
-<td>Manual</td>
-<td>↑ <em>Increase</em></td>
-</tr>
-<tr class="even">
-<td><strong>Routine Manual</strong></td>
-<td>Assemblers, Machine Operators, Laborers</td>
-<td>Routine</td>
-<td>Manual</td>
-<td>↓ <em>Decrease</em></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</div>
-<p>So let’s see what this looks like in the data. The figure below (<span class="citation" data-cites="acemoglu2011skills">Acemoglu and Autor (<a href="references.html#ref-acemoglu2011skills" role="doc-biblioref">2011</a>)</span>) shows the change in employment shares for each of these four groups between 1959 and 2007. The vertical axis is the change in employment share, which is the fraction of all workers in that group.</p>
-<div id="fig-task-changes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="regression-discontinuity-design" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="regression-discontinuity-design"><span class="header-section-number">6.4</span> Regression Discontinuity Design</h2>
+<p>So far we have considered the return to an additional year of schooling. But surely the impact of a college education, for example, may vary by the major. Maybe different types of colleges have very different returns. In this section we will first introduce a new research design that has proven to be extremely useful in the economics of education: the <strong>regression discontinuity design</strong>. Then we will use this design to study various questions in understanding how different education choices impact earnings.</p>
+<p>To understand the idea behind a regression discontinuity design, we are going to go through the first use of the design, which comes from <span class="citation" data-cites="thistlethwaite1960regression">Thistlethwaite and Campbell (<a href="references.html#ref-thistlethwaite1960regression" role="doc-biblioref">1960</a>)</span>. In their paper, they were interested in studying the effect of receiving a scholarship on various student outcomes, such as whether the individual goes on to purse graduate school or whether the individual goes on to win more scholarships. So this is a slightly different question than we have been considering so far, but it sets us up well to understand the methodological approach. At the college they were studying, a subset of students were given merit-based scholarships based on their results on a standardized test. If a student scored above a certain cutoff, they would receive the scholarship. If they scored below the cutoff, they would not receive the scholarship.</p>
+<p>Now let’s again consider how one might tackle this problem: if we had data on individual students, maybe we could compare the outcomes for students that received the scholarship vs.&nbsp;those that did not. But again, we run into a problem we have already seen: students that received the scholarship are likely different than students that did not receive the scholarship in unobservable ways. For example, maybe students that received the scholarship are more motivated. Due to this inherent motivation, they will be more likely to go on to graduate school or win more scholarships. Therefore, simply comparing the two groups will not give us a causal estimate of the impact of receiving the scholarship.</p>
+<p>The idea in <span class="citation" data-cites="thistlethwaite1960regression">Thistlethwaite and Campbell (<a href="references.html#ref-thistlethwaite1960regression" role="doc-biblioref">1960</a>)</span> is relatively simple. Because they had information on the score the students received on the standardized test, they could compare students that scored just above the cutoff to students that scored just below the cutoff. The idea is that students that scored just above vs.&nbsp;just below the cutoff are likely very similar. They likely have similar levels of motivation, similar family backgrounds, and similar innate abilities. Small differences in a test score are likely due to random chance. Maybe someone guess correct a few more times than another student and got a scholarship. Therefore, if we compare students that scored just above vs.&nbsp;just below the cutoff, we can get a causal estimate of the impact of receiving the scholarship.</p>
+<p>This idea, regression discontinuity design, did not catch on for quite a while. However, recently, more and more researchers have been taking advantage of this relatively simple idea. The plot below shows the number of papers in top economics journals that use a regression discontinuity design. As you can see, there was very little interest in this design until around 2000, after which there has been an explosion of research using this design.</p>
+<div id="fig-rdd-papers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-task-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/aa_11_2.png" class="img-fluid figure-img">
+<div aria-describedby="fig-rdd-papers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/mixtape1.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-task-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.6: Change in Employment Shares by Task Type, 1959-2007
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rdd-papers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.7: Source: Causal Inference the Mixtape
 </figcaption>
 </figure>
 </div>
-<p>Let’s first look at the production and operators group, which tend to perform routine manual tasks. This group has seen an incredibly large decline in employment share, falling from about 40 percent of all workers in 1959 to just over 20 percent in 2007. Clerical and sales support occupations, which are also exposed to automation, saw a rise in the earlier part of the period, but declined throughout the 1990s and 2000s.</p>
-<p>In contrast, non-routine cognitive occupations have seen a steady increase in employment share, rising from about 20 percent of all workers in 1959 to about 35 percent in 2007. Non-routine manual occupations have also seen an increase, though it is more modest, rising from about 14 percent in 1959 to about 18 percent in 2007.</p>
-</section>
-<section id="tasks-and-inequality" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="tasks-and-inequality"><span class="header-section-number">6.8</span> Tasks and Inequality</h2>
-<p>Let’s return to one measure of inequality that we have discussed – the rising college wage premium.</p>
+<p>Now the regression discontinuity design has become influential for a variety of reasons. First, the basic requires that some treatment of interest is determined by a cutoff rule. This ends up being a relatively common in various policy settings. For example, elections also have cutoff rules. Imagine you are interested in the effect of having a Democratic vs.&nbsp;Republican mayor on city outcomes. You could compare cities that just barely elected a Democratic mayor vs.&nbsp;cities that just barely elected a Republican mayor. The idea is that these cities are likely very similar, and the difference in election outcomes is likely due to random chance (i.e.&nbsp;a few more people showing up to vote). Therefore, you can use this design to estimate the causal impact of having a Democratic vs.&nbsp;Republican mayor.</p>
+<p>It was also later clarified that you don’t need to have a strict cutoff rule. As long as the probability of receiving treatment jumps at a certain cutoff, you can still use this design. This is called a fuzzy regression discontinuity design. For example, imagine a scholarship program that gives scholarships to students that score above a certain cutoff on a test, but also gives scholarships to some students that score below the cutoff (maybe due to financial need). In this case, you can still use the regression discontinuity design as long as the probability of receiving the scholarship jumps at the cutoff. This is something you can easily check in the data, so is easily verifiable.</p>
+<p>To see the power of regression discontinuity designs, we are going to go through two recent papers that have used this idea. The first is similar to the original Thistlethwaite and Campbell paper. Instead of a financial scholarship at a single college, we are going to consider merit-based scholarships in Colombia. As we will see these scholarships have a big impact on college attendance and college completion, so we can use the regression discontinuity design to estimate the impact of college attendance on earnings. The second example we will consider is how different college majors impact earnings. In particular, we will study the causal impact of earning an economics degree.</p>
+<p>Our first study comes from <span class="citation" data-cites="londono2020upstream">Londoño-Vélez, Rodrı́guez, and Sánchez (<a href="references.html#ref-londono2020upstream" role="doc-biblioref">2020</a>)</span>. While most of our discussion has focused on the U.S., the setting for this paper is the higher education system in Colombia. In Colombia, there is a large merit-based scholarship program called “Ser Pilo Paga” (Hard Work Pays Off). This program was started in 2014 and provided full scholarships to high-achieving students from low-income backgrounds to attend top universities in Colombia. The goal of the program was to increase access to higher education for talented students who might not otherwise be able to afford it. The scholarships covered full tuition to students who attend a four or five-year degree program at any university with High Quality Accreditation. Therefore, it was a very generous scholarship program, although restricted only to a certain subset of universities.</p>
+<p>The key feature of this program that allowed to use a regression discontinuity design is that scholarships were awarded based on a standardized test score. In Colombia, when students exit high school, they take a national standardized test called the “SABER 11” exam. This is similar to the SAT or ACT exams in the U.S., but more widely used. The test is taken even by students that don’t plan to attend college. In order to be eligible for the Ser Pilo Paga scholarship, students needed to score above a certain cutoff on the SABER 11 exam.</p>
+<p>The plot below shows the probability of receiving the scholarship based on the SABER 11 exam score. As you can see, there is a big jump in the probability of receiving the scholarship at the cutoff. However, you might also notice that it is not a perfect jump from 0 percent to 100 percent. Instead, it jumps from 0 to about 60 percent (0.6 in the graph). The reason is because passing the cutoff implies you are eligible for the scholarship, not that you are required to take it. Some of these individuals may choose not to attend college. If they do attend college, they may not be attending a High Quality Accredited university for which the scholarship is valid. This is therefore an example of a fuzzy regression discontinuity design. The treatment here is receiving a scholarship. Because it does not jump from 0 to 1, we have a fuzzy design.</p>
+<div id="fig-scholarship-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scholarship-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/velez1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scholarship-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.8: Probability of Receiving Scholarship by SABER 11 Score
+</figcaption>
+</figure>
+</div>
+<p>Now, the key assumption of a regression discontinuity design is that individuals just above vs.&nbsp;just below the cutoff are similar. This is true if students cannot precisely manipulate their test scores. The definition of precisely manipulate has a statistical definition. However, the intuition is the following: imagine a subset of students were given access to the electronic records where their SABER 11 test score was held.</p>
+<p>If they wanted the scholarship, they could change their score to be just above the cutoff. Therefore, for all these students that are given the ability to cheat, they can precisely manipulate where their score will fall relative to the cutoff.</p>
+<p>Now, how will this manifest in the data? If we look at the distribution of test scores, then we would see an unusual spike in test scores right at the cutoff. This is because the students who could cheat would all change their scores to be just above the cutoff so there would be “more than expected” students just above the cutoff.</p>
+<p>Well, this sounds like a pretty convoluted story, right? And that suggests that being able to precisely manipulate test scores is unlikely. Studying long hours, working hard, these are ways to improve your score, but not precisely manipulate it. But the great thing about the regression discontinuity design is that we can check for this in the data.</p>
+<p>The plot below shows the distribution of SABER 11 test scores. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is no unusual spike in test scores right at the cutoff. This implies that students are not able to precisely manipulate their test scores. This is a valid regression discontinuity design.</p>
+<div id="fig-saber-scores" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-saber-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/velez2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-saber-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.9: Distribution of SABER 11 Test Scores
+</figcaption>
+</figure>
+</div>
+<p>Now let’s get to some results. What is the impact of receiving financial assistance on college attendance and future earnings. In the plot below, we see the impact of receiving the scholarship on college attendance. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is a big jump in college attendance at the cutoff. Receiving the scholarship increases college attendance by about 40 percentage points. This is a huge impact! These students at the cutoff are very high achieving students, in the top decile of test scores. Yet, receiving the scholarship increases their college attendance by 32 percentage points. This shows that in this setting the financial constraints play an enormous role in determining college attendance.</p>
+<div id="fig-college-attendance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-college-attendance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/velez3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-college-attendance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.10: Impact of Scholarship on College Attendance
+</figcaption>
+</figure>
+</div>
+<p>In a follow-up study, <span class="citation" data-cites="londono2025financial">Londoño-Vélez et al. (<a href="references.html#ref-londono2025financial" role="doc-biblioref">2025</a>)</span> study the impact of the financial aid on future earnings. The literature on financial aid often considers two potential impacts. First, if financial aid is given to students that would have attended college anyways then the impact on future earnings may be small. This is not to discount the importance of financial aid for equity reasons, but if the goal is to increase future earnings, then giving aid to students that would have attended college anyways may not be the most effective way to do this. From what we’ve seen above, this seems unlikely to be the case here, but we can also directly study the impact of being eligible for the scholarship on future earnings. This is one of the goals of <span class="citation" data-cites="londono2025financial">Londoño-Vélez et al. (<a href="references.html#ref-londono2025financial" role="doc-biblioref">2025</a>)</span>.</p>
+<p>Below, we show the plot of the impact of receiving the scholarship on future earnings. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is a big jump in earnings at the cutoff. The y-axis is denoted in multiples of the monthly minimum wage in Colombia. If you receive zero formal earnings, you would be coded as having zero multiples of the minimum wage, so this is why averages can be well below one.</p>
+<div id="fig-future-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-future-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/velez4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-future-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.11: Impact of Scholarship on Future Earnings
+</figcaption>
+</figure>
+</div>
+<p>As you can see in <a href="#fig-future-earnings" class="quarto-xref">Figure&nbsp;<span>6.11</span></a>, individuals just below the cutoff earning about 1.0 times the monthly minimum wage, while individuals just above the cutoff earn about 1.2 times the monthly minimum wage. Therefore, one way to interpret this is that being eligible for the scholarship increases monthly earnings by 0.2 times the monthly minimum wage. Now, recall that not everyone even takes up the scholarship or attends college due to being eligible. So this isn’t exactly the impact of attending college on earnings. To scale this up to get the impact of attending college on earnings, we need to divide this estimate by the increase in college attendance at the cutoff. In this context, we would then get an increase of about 0.35 times the monthly minimum wage. Since the average earnings for individuals just below the cutoff was about 1 monthly minimum wage, this represents a 35 percent increase in earnings from attending college.</p>
+<p>Next, we are going to turn to our second example which brings us back to the U.S. and even within the UC system. In many universities, there are certain majors that have requirements to get into the major. At UC Santa Cruz, in order to get into any of the Economics majors, you must receive a combined GPA of 2.8 in the prerequisite courses (Econ 1 and Econ 2). Therefore, again, whether you receive an Economics degree depends partially on a cutoff rule. Therefore, we can use regression discontinuity design to estimate the causal impact of receiving an Economics degree on future earnings.</p>
+<p>This is exactly what <span class="citation" data-cites="bleemer2022will">Bleemer and Mehta (<a href="references.html#ref-bleemer2022will" role="doc-biblioref">2022</a>)</span> does. As always, the first thing to check in a regression discontinuity design is does the threshold rule have an effect. The plot below shows the probability of receiving an Economics degree based on the combined GPA in Econ 1 and Econ 2. The vertical dashed line indicates the cutoff GPA of 2.8. As you can see, there is a big jump in the probability of receiving an Economics degree at the cutoff.</p>
+<div id="fig-ec-deg-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ec-deg-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/bleemer1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-deg-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.12: Probability of Receiving Economics Degree by GPA
+</figcaption>
+</figure>
+</div>
+<p>This is again a fuzzy regression discontinuity design. Why, because not everyone that passes the cutoff will receive an Economics degree, and some of the individuals that do not pass the cutoff may still receive an Economics degree. Individuals to the left of the cutoff can petition to be admitted into the major, and some of them are successful. Additionally, some individuals that pass the cutoff may decide to switch to a different major later on. Therefore, we have a fuzzy design. Regardless, we can see that the threshold is influential on whether an individual receives an Economics degree. If you fall just below, your probability of receiving an Economics degree is about 40 percent. If you fall just above, your probability of receiving an Economics degree is about 80 percent. Therefore, passing the cutoff increases your probability of receiving an Economics degree by about 40 percentage points.</p>
+<p>Now, again, what is the key assumption of a regression discontinuity design? That individuals just above vs.&nbsp;just below the cutoff are similar. This will be true as long as individuals cannot precisely manipulate their GPA in these courses. While we can check for this in the data, it is a bit harder than for our prior example with SABER 11. This is because SABER 11 takes on many many values. We get a clear continuous distribution of test scores. However, GPA only takes on a few discrete values. Looking for spikes in a distribution with only a few discrete values is a bit harder.</p>
+<p>Therefore, another way to check for this is to look at other characteristics of individuals just above vs.&nbsp;just below the cutoff. Our real goal is to argue that individuals just below vs.&nbsp;just above the cutoff are similar in all characteristics except for receiving an Economics degree. In <span class="citation" data-cites="bleemer2022will">Bleemer and Mehta (<a href="references.html#ref-bleemer2022will" role="doc-biblioref">2022</a>)</span>, the authors have a rich set of characteristics to study. For example, one compelling characteristic is the SAT score of individuals. If individuals just above vs.&nbsp;just below the cutoff have similar SAT scores, that is evidence that they are similar in terms of overall academic ability.</p>
+<div id="fig-ec-sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ec-sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/bleemer6.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.13: SAT Score by GPA
+</figcaption>
+</figure>
+</div>
+<p>As can be seen in the graph, there is no clear break around the cutoff. It is true that individuals that had higher SAT scores tend to have higher GPAs in Econ 1 and Econ 2. But there is no unusual jump in SAT scores at the cutoff. This suggests that individuals just above vs.&nbsp;just below the cutoff are similar in terms of academic ability, at least measured by the SAT. The authors check many other characteristics as well and find similar results. Therefore, we can be more confident that this is a valid regression discontinuity design.</p>
+<p>So let’s get to the results. Below we plot earnings by GPA in Econ 1 and Econ 2. The vertical dashed line indicates the cutoff GPA of 2.8. These earnings are for the years 2017 and 2018, which implies that the students in the sample are between 23 and 28 years old. Therefore, this should be interpreted as an estimate of the change in earnings early in a person’s career.</p>
+<div id="fig-ec-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ec-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/06_images/bleemer2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.14: Earnings by GPA
+</figcaption>
+</figure>
+</div>
+<p>Individuals just below the cutoff earn about $47,000 per year, while individuals just above the cutoff earn about $55,000 per year. Therefore, being eligible for an Economics degree increases earnings by about $8,000. Again, recall that not everyone that passes the cutoff will receive an Economics degree, and some of the individuals that do not pass the cutoff may still receive an Economics degree. Therefore, if we scale this impact by the increase in probability of receiving an Economics degree at the cutoff (40 percentage points), we get that receiving an Economics degree increases earnings by about $20,000 per year. This is what the term IV is referring to in the figure (although we have just approximated the numbers, the exact effect of a Economics degree is $22,123).</p>
+<p>Now, this is an enormous effect. Remember, we have been consider the impact of an additional year of schooling on earnings. Typical estimates are in the range of 7-10 percent. Here, receiving an Economics degree relative to another college decrease increases earnings early in your career by over 40 percent!</p>
+<p>And the amazing thing that the regression discontinuity design allows us to do is argue that this is causal. However, one nice feature of this study is that the authors also consider what the observational data would suggest. For an observational study, one could take all the students at UC Santa Cruz and compute earnings by major. Then to estimate the return to an Economics degree, one could compare the average earnings of Economics majors to the average earnings of non-Economics majors. Or to perhaps be more realistic, you could compare Economics majors to other popular social science majors, such as Psychology or Sociology.</p>
+<p>When the authors do this, they estimate that Economics majors earn about $20,000 more than other social science majors. This is remarkably close to the causal estimate of $22,123 they get from the regression discontinuity design. Now, to emphasize, just because the observational estimate is close to the causal estimate in this particular case does not mean that we didn’t need the regression discontinuity design. If you had just shown someone the observational estimate, there would be a number of counterarguments. Maybe Economics majors tend to have higher GPAs and would earn more anyways. Maybe Economics majors are interested in different careers, but even if they were unable to get an Economics degree, they would have still pursued those careers. These arguments are all valid for observational studies. The power of the regression discontinuity design is that it allows us to get around these concerns and estimate a causal impact. So in this context, there is a clear causal impacto of receiving an Economics degree on earnings.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-acemoglu2011skills" class="csl-entry" role="listitem">
-Acemoglu, Daron, and David Autor. 2011. <span>“Skills, Tasks and Technologies: Implications for Employment and Earnings.”</span> In <em>Handbook of Labor Economics</em>, 4:1043–1171. Elsevier.
+<div id="ref-angrist1991does" class="csl-entry" role="listitem">
+Angrist, Joshua D, and Alan B Krueger. 1991. <span>“Does Compulsory School Attendance Affect Schooling and Earnings?”</span> <em>The Quarterly Journal of Economics</em> 106 (4): 979–1014.
 </div>
-<div id="ref-autor2013growth" class="csl-entry" role="listitem">
-Autor, David H, and David Dorn. 2013. <span>“The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market.”</span> <em>American Economic Review</em> 103 (5): 1553–97.
+<div id="ref-ashenfelter1998income" class="csl-entry" role="listitem">
+Ashenfelter, Orley, and Cecilia Rouse. 1998. <span>“Income, Schooling, and Ability: Evidence from a New Sample of Identical Twins.”</span> <em>The Quarterly Journal of Economics</em> 113 (1): 253–84.
 </div>
-<div id="ref-autor2003skill" class="csl-entry" role="listitem">
-Autor, David H, Frank Levy, and Richard J Murnane. 2003. <span>“The Skill Content of Recent Technological Change: An Empirical Exploration.”</span> <em>The Quarterly Journal of Economics</em> 118 (4): 1279–1333.
+<div id="ref-bleemer2022will" class="csl-entry" role="listitem">
+Bleemer, Zachary, and Aashish Mehta. 2022. <span>“Will Studying Economics Make You Rich? A Regression Discontinuity Analysis of the Returns to College Major.”</span> <em>American Economic Journal: Applied Economics</em> 14 (2): 1–22.
+</div>
+<div id="ref-londono2025financial" class="csl-entry" role="listitem">
+Londoño-Vélez, Juliana, Catherine Rodriguez, Fabio Sanchez, and Luis E Alvarez-Arango. 2025. <span>“Financial Aid and Upward Mobility: Evidence from Colombia’s Ser Pilo Paga.”</span> <em>National Bureau of Economic Research</em>.
+</div>
+<div id="ref-londono2020upstream" class="csl-entry" role="listitem">
+Londoño-Vélez, Juliana, Catherine Rodrı́guez, and Fabio Sánchez. 2020. <span>“Upstream and Downstream Impacts of College Merit-Based Financial Aid for Low-Income Students: Ser Pilo Paga in Colombia.”</span> <em>American Economic Journal: Economic Policy</em> 12 (2): 193–227.
+</div>
+<div id="ref-thistlethwaite1960regression" class="csl-entry" role="listitem">
+Thistlethwaite, Donald L, and Donald T Campbell. 1960. <span>“Regression-Discontinuity Analysis: An Alternative to the Ex Post Facto Experiment.”</span> <em>Journal of Educational Psychology</em> 51 (6): 309.
 </div>
 </div>
 </section>
