@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Econ 139: Labor Economics</title>
+<title>9&nbsp; The American Community Survey (ACS) – Econ 139: Labor Economics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,37 +20,17 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cps.html" rel="next">
-<link href="./07.html" rel="prev">
+<link href="./cps.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -89,6 +69,9 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.scss">
@@ -103,7 +86,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./acs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,7 +173,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -213,7 +196,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./acs.html" class="sidebar-item-text sidebar-link">
+  <a href="./acs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span></a>
   </div>
 </li>
@@ -224,15 +207,25 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#brief-introduction" id="toc-brief-introduction" class="nav-link active" data-scroll-target="#brief-introduction"><span class="header-section-number">9.1</span> Brief Introduction</a></li>
+  <li><a href="#downloading-the-acs" id="toc-downloading-the-acs" class="nav-link" data-scroll-target="#downloading-the-acs"><span class="header-section-number">9.2</span> Downloading the ACS</a></li>
+  <li><a href="#retirement-policies" id="toc-retirement-policies" class="nav-link" data-scroll-target="#retirement-policies"><span class="header-section-number">9.3</span> Retirement Policies</a></li>
+  <li><a href="#key-variables" id="toc-key-variables" class="nav-link" data-scroll-target="#key-variables"><span class="header-section-number">9.4</span> Key Variables</a></li>
+  <li><a href="#regression-discontinuity-design" id="toc-regression-discontinuity-design" class="nav-link" data-scroll-target="#regression-discontinuity-design"><span class="header-section-number">9.5</span> Regression Discontinuity Design</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./acs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></h1>
 </div>
 
 
@@ -249,219 +242,156 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-abowd1999high" class="csl-entry" role="listitem">
-Abowd, John M, Francis Kramarz, and David N Margolis. 1999. <span>“High
-Wage Workers and High Wage Firms.”</span> <em>Econometrica</em> 67 (2):
-251–333.
-</div>
-<div id="ref-acemoglu2011skills" class="csl-entry" role="listitem">
-Acemoglu, Daron, and David Autor. 2011. <span>“Skills, Tasks and
-Technologies: Implications for Employment and Earnings.”</span> In
-<em>Handbook of Labor Economics</em>, 4:1043–1171. Elsevier.
-</div>
-<div id="ref-angrist1991does" class="csl-entry" role="listitem">
-Angrist, Joshua D, and Alan B Krueger. 1991. <span>“Does Compulsory
-School Attendance Affect Schooling and Earnings?”</span> <em>The
-Quarterly Journal of Economics</em> 106 (4): 979–1014.
-</div>
-<div id="ref-arnold2025mergers" class="csl-entry" role="listitem">
-Arnold, David. 2025. <span>“Mergers and Acquisitions, Local Labor Market
-Concentration, and Worker Outcomes.”</span> <em>Local Labor Market
-Concentration, and Worker Outcomes</em>.
-</div>
-<div id="ref-ashenfelter1978estimating" class="csl-entry" role="listitem">
-Ashenfelter, Orley. 1978. <span>“Estimating the Effect of Training
-Programs on Earnings.”</span> <em>The Review of Economics and
-Statistics</em>, 47–57.
-</div>
-<div id="ref-ashenfelter2024us" class="csl-entry" role="listitem">
-Ashenfelter, Orley, and Štěpán Jurajda. 2024. <span>“The US Low-Wage
-Structure: A McWage Comparison.”</span> <em>Review of Economics and
-Statistics</em>, 1–30.
-</div>
-<div id="ref-ashenfelter1998income" class="csl-entry" role="listitem">
-Ashenfelter, Orley, and Cecilia Rouse. 1998. <span>“Income, Schooling,
-and Ability: Evidence from a New Sample of Identical Twins.”</span>
-<em>The Quarterly Journal of Economics</em> 113 (1): 253–84.
-</div>
-<div id="ref-autor2019work" class="csl-entry" role="listitem">
-Autor, David H. 2019. <span>“Work of the Past, Work of the
-Future.”</span> In <em>AEA Papers and Proceedings</em>, 109:1–32.
-American Economic Association 2014 Broadway, Suite 305, Nashville, TN
-37203.
-</div>
-<div id="ref-autor2013growth" class="csl-entry" role="listitem">
-Autor, David H, and David Dorn. 2013. <span>“The Growth of Low-Skill
-Service Jobs and the Polarization of the US Labor Market.”</span>
-<em>American Economic Review</em> 103 (5): 1553–97.
-</div>
-<div id="ref-autor2003skill" class="csl-entry" role="listitem">
-Autor, David H, Frank Levy, and Richard J Murnane. 2003. <span>“The
-Skill Content of Recent Technological Change: An Empirical
-Exploration.”</span> <em>The Quarterly Journal of Economics</em> 118
-(4): 1279–1333.
-</div>
-<div id="ref-autor2016contribution" class="csl-entry" role="listitem">
-Autor, David H, Alan Manning, and Christopher L Smith. 2016. <span>“The
-Contribution of the Minimum Wage to US Wage Inequality over Three
-Decades: A Reassessment.”</span> <em>American Economic Journal: Applied
-Economics</em> 8 (1): 58–99.
-</div>
-<div id="ref-autor2023unexpected" class="csl-entry" role="listitem">
-Autor, David, Arindrajit Dube, and Annie McGrew. 2023. <span>“The
-Unexpected Compression: Competition at Work in the Low Wage Labor
-Market.”</span> National Bureau of Economic Research.
-</div>
-<div id="ref-azar24" class="csl-entry" role="listitem">
-Azar, José, and Ioana Marinescu Marinescu. 2024. <span>“Monopsony Power
-in the Labor Market.”</span> In <em>Handbook of Labor Economics</em>,
-5:761–827. Elsevier.
-</div>
-<div id="ref-azar2022labor" class="csl-entry" role="listitem">
-Azar, José, Ioana Marinescu, and Marshall Steinbaum. 2022. <span>“Labor
-Market Concentration.”</span> <em>Journal of Human Resources</em> 57
-(S): S167–99.
-</div>
-<div id="ref-bleemer2022will" class="csl-entry" role="listitem">
-Bleemer, Zachary, and Aashish Mehta. 2022. <span>“Will Studying
-Economics Make You Rich? A Regression Discontinuity Analysis of the
-Returns to College Major.”</span> <em>American Economic Journal: Applied
-Economics</em> 14 (2): 1–22.
-</div>
-<div id="ref-caldwell2023gender" class="csl-entry" role="listitem">
-Caldwell, Sydnee, and Emily Oehlsen. 2023. <span>“Gender, Outside
-Options, and Labor Supply: Experimental Evidence from the Gig
-Economy.”</span> <em>University of California, Berkeley Working
-Paper</em>.
-</div>
-<div id="ref-card2022set" class="csl-entry" role="listitem">
-Card, David. 2022. <span>“Who Set Your Wage?”</span> <em>American
-Economic Review</em> 112 (4): 1075–90.
-</div>
-<div id="ref-card2018firms" class="csl-entry" role="listitem">
-Card, David, Ana Rute Cardoso, Joerg Heining, and Patrick Kline. 2018.
-<span>“Firms and Labor Market Inequality: Evidence and Some
-Theory.”</span> <em>Journal of Labor Economics</em> 36 (S1): S13–70.
-</div>
-<div id="ref-card2013workplace" class="csl-entry" role="listitem">
-Card, David, Jörg Heining, and Patrick Kline. 2013. <span>“Workplace
-Heterogeneity and the Rise of West German Wage Inequality.”</span>
-<em>The Quarterly Journal of Economics</em> 128 (3): 967–1015.
-</div>
-<div id="ref-card1994minimum" class="csl-entry" role="listitem">
-Card, David, and Alan Krueger. 1994. <span>“Minimum Wages and
-Employment: A Case Study of the Fast-Food Lndustry in New Jersey and
-Pennsylvania.”</span> <em>The American Economic Review</em> 84 (4):
-772–93.
-</div>
-<div id="ref-cengiz2019effect" class="csl-entry" role="listitem">
-Cengiz, Doruk, Arindrajit Dube, Attila Lindner, and Ben Zipperer. 2019.
-<span>“The Effect of Minimum Wages on Low-Wage Jobs.”</span> <em>The
-Quarterly Journal of Economics</em> 134 (3): 1405–54.
-</div>
-<div id="ref-clemens2021firms" class="csl-entry" role="listitem">
-Clemens, Jeffrey. 2021. <span>“How Do Firms Respond to Minimum Wage
-Increases? Understanding the Relevance of Non-Employment
-Margins.”</span> <em>Journal of Economic Perspectives</em> 35 (1):
-51–72.
-</div>
-<div id="ref-clemens2018minimum" class="csl-entry" role="listitem">
-Clemens, Jeffrey, Lisa B Kahn, and Jonathan Meer. 2018. <span>“The
-Minimum Wage, Fringe Benefits, and Worker Welfare.”</span> National
-Bureau of Economic Research.
-</div>
-<div id="ref-dal2013strengthening" class="csl-entry" role="listitem">
-Dal Bó, Ernesto, Frederico Finan, and Martı́n A Rossi. 2013.
-<span>“Strengthening State Capabilities: The Role of Financial
-Incentives in the Call to Public Service.”</span> <em>The Quarterly
-Journal of Economics</em> 128 (3): 1169–1218.
-</div>
-<div id="ref-dinardo1996labor" class="csl-entry" role="listitem">
-DiNardo, John, Nicole M Fortin, and Thomas Lemieux. 1996. <span>“Labor
-Market Institutions and the Distribution of Wages, 1973-1992: A
-Semiparametric Approach.”</span> <em>Econometrica</em> 64 (5): 1001–44.
-</div>
-<div id="ref-dube2020monopsony" class="csl-entry" role="listitem">
-Dube, Arindrajit, Jeff Jacobs, Suresh Naidu, and Siddharth Suri. 2020.
-<span>“Monopsony in Online Labor Markets.”</span> <em>American Economic
-Review: Insights</em> 2 (1): 33–46.
-</div>
-<div id="ref-falch2010elasticity" class="csl-entry" role="listitem">
-Falch, Torberg. 2010. <span>“The Elasticity of Labor Supply at the
-Establishment Level.”</span> <em>Journal of Labor Economics</em> 28 (2):
-237–66.
-</div>
-<div id="ref-harasztosi2019pays" class="csl-entry" role="listitem">
-Harasztosi, Peter, and Attila Lindner. 2019. <span>“Who Pays for the
-Minimum Wage?”</span> <em>American Economic Review</em> 109 (8):
-2693–2727.
-</div>
-<div id="ref-kaldor1961" class="csl-entry" role="listitem">
-Kaldor, Nicholas. 1957. <span>“A Model of Economic Growth.”</span>
-<em>The Economic Journal</em> 67 (268): 591–624.
-</div>
-<div id="ref-kline2024firm" class="csl-entry" role="listitem">
-Kline, Patrick. 2024. <span>“Firm Wage Effects.”</span> <em>Handbook of
-Labor Economics</em> 5: 115–81.
-</div>
-<div id="ref-londono2025financial" class="csl-entry" role="listitem">
-Londoño-Vélez, Juliana, Catherine Rodriguez, Fabio Sanchez, and Luis E
-Alvarez-Arango. 2025. <span>“Financial Aid and Upward Mobility: Evidence
-from Colombia’s Ser Pilo Paga.”</span> <em>National Bureau of Economic
-Research</em>.
-</div>
-<div id="ref-londono2020upstream" class="csl-entry" role="listitem">
-Londoño-Vélez, Juliana, Catherine Rodrı́guez, and Fabio Sánchez. 2020.
-<span>“Upstream and Downstream Impacts of College Merit-Based Financial
-Aid for Low-Income Students: Ser Pilo Paga in Colombia.”</span>
-<em>American Economic Journal: Economic Policy</em> 12 (2): 193–227.
-</div>
-<div id="ref-manning2011imperfect" class="csl-entry" role="listitem">
-Manning, Alan. 2011. <span>“Imperfect Competition in the Labor
-Market.”</span> In <em>Handbook of Labor Economics</em>, 4:973–1041.
-Elsevier.
-</div>
-<div id="ref-neumark2022myth" class="csl-entry" role="listitem">
-Neumark, David, and Peter Shirley. 2022. <span>“Myth or Measurement:
-What Does the New Minimum Wage Research Say about Minimum Wages and Job
-Loss in the United States?”</span> <em>Industrial Relations: A Journal
-of Economy and Society</em> 61 (4): 384–417.
-</div>
-<div id="ref-piketty2003income" class="csl-entry" role="listitem">
-Piketty, Thomas, and Emmanuel Saez. 2003. <span>“Income Inequality in
-the United States, 1913–1998.”</span> <em>The Quarterly Journal of
-Economics</em> 118 (1): 1–41.
-</div>
-<div id="ref-prager2021employer" class="csl-entry" role="listitem">
-Prager, Elena, and Matt Schmitt. 2021. <span>“Employer Consolidation and
-Wages: Evidence from Hospitals.”</span> <em>American Economic
-Review</em> 111 (2): 397–427.
-</div>
-<div id="ref-staiger2010there" class="csl-entry" role="listitem">
-Staiger, Douglas O, Joanne Spetz, and Ciaran S Phibbs. 2010. <span>“Is
-There Monopsony in the Labor Market? Evidence from a Natural
-Experiment.”</span> <em>Journal of Labor Economics</em> 28 (2): 211–36.
-</div>
-<div id="ref-starr2021noncompete" class="csl-entry" role="listitem">
-Starr, Evan P, James J Prescott, and Norman D Bishara. 2021.
-<span>“Noncompete Agreements in the US Labor Force.”</span> <em>The
-Journal of Law and Economics</em> 64 (1): 53–84.
-</div>
-<div id="ref-thistlethwaite1960regression" class="csl-entry" role="listitem">
-Thistlethwaite, Donald L, and Donald T Campbell. 1960.
-<span>“Regression-Discontinuity Analysis: An Alternative to the Ex Post
-Facto Experiment.”</span> <em>Journal of Educational Psychology</em> 51
-(6): 309.
-</div>
-<div id="ref-wolfson201915" class="csl-entry" role="listitem">
-Wolfson, Paul, and Dale Belman. 2019. <span>“15 Years of Research on US
-Employment and the Minimum Wage.”</span> <em>Labour</em> 33 (4):
-488–506.
-</div>
-</div>
+<section id="brief-introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="brief-introduction"><span class="header-section-number">9.1</span> Brief Introduction</h2>
+<p>The American Community Survey (ACS) is a nationwide survey conducted by the U.S. Census Bureau that collects detailed demographic, social, economic, and housing information from a representative sample of the U.S. population. It overlaps considerably with the Current Population Survey (CPS), although there are some important differences.</p>
+</section>
+<section id="downloading-the-acs" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="downloading-the-acs"><span class="header-section-number">9.2</span> Downloading the ACS</h2>
+<p>IPUMS USA (same organization that produces IPUMS CPS) provides harmonized versions of the ACS. There are a couple different types of data that you can download from IPUMS USA. For example, you can download Decennial census microdata from 1790 to 2010 or the American Community Survey data from 2000 to present. For this chapter, we are going to download the most recent version of the ACS data from 2023.</p>
+<p>Again, like the CPS, there are many variables available in the ACS. For this chapter, we will focus on a subset of variables related to health insurance coverage, labor force participation, and demographics. However, to stress, the ACS can (and has) been used to study a wide variety of topics. If you are interested in exploring the ACS data further, I encourage you to visit the IPUMS USA website. This will allow you to see the massive time span that the ACS and Census data cover as well as the wide variety of variables that are available.</p>
+</section>
+<section id="retirement-policies" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="retirement-policies"><span class="header-section-number">9.3</span> Retirement Policies</h2>
+<p>There are a number of policies in the United States that are tied to age and may impact retirement decisions. The one we are going to focus on is the availability of publicly provided health insurance through Medicare, which begins at age 65. Since health insurance is often tied to employment in the U.S., gaining access to Medicare may influence individuals’ decisions about whether to remain in the labor force or retire.</p>
+<p>However, there are two other important age-based policies. First, at age 62, individuals become eligible to receive Social Security retirement benefits, although these benefits are reduced compared to waiting until full retirement age. At full retirement age (which is 67), individuals can receive their full Social Security benefits. Therefore, the availability of Social Security may impact when individuals choose to retire.</p>
+<p>Since we are focusing on retirement, we are going to limit our sample to individuals aged 55-75.</p>
+</section>
+<section id="key-variables" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="key-variables"><span class="header-section-number">9.4</span> Key Variables</h2>
+<p>The dataset contains several binary indicator variables. These are variables that take on either a value of zero (condition is false) or one (condition is true). For example, let’s first take a look at the variable indicating whether an individual has health insurance coverage. The name of this variable is <code>has_health_insurance</code>. Note: this does not come directly from IPUMS USA, but rather was created by me while cleaning the data. In particular, as part of the cleaning process I dropped all individuals for which this variable was missing and recoded the variable so that it is equal to 1 if the individual has any health insurance coverage and 0 otherwise.</p>
+<div id="6929caf0" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Has Health Insurance</th>
+<th data-quarto-table-cell-role="th">Count</th>
+<th data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>37395</td>
+<td>3.87</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>927643</td>
+<td>96.13</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>So in the data, most individuals do have health insurance coverage. Many of of these individuals likely have private heath insurance through their employer, while others may have public health insurance through programs like Medicare. It is also possible that some individuals younger than 65 may have public health insurance through Medicaid.</p>
+<p>As a quick aside, it is generally very useful to code binary indicator variables as 0/1 variables rather than using string labels like “yes” and “no”. This makes it much easier to work with these variables in statistical software. Additionally, you want the variables to be coded as 0/1, not some other numbers like 1/2 or -1/1. There are many reasons for this. One simple reason is that if you want the proporition of individuals with health insurance, you can just take the mean of the variable when it is coded as 0/1. For example, imagine we have three individuals with health insurance coded as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Individual</th>
+<th>has_health_insurance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>It is easy to see that 2 out of 3 individuals have health insurance, or 66.67%. We can also calculate this by taking the mean of the variable: (1 + 0 + 1) / 3 = 0.6667. This will be useful later when we construct graphs. If we want the fraction in the labor force by age, we can just take the mean of the <code>in_labor_force</code> variable. Now, if the variable were coded as “yes” and “no”, or as 1 and 2, we would not be able to do this.</p>
+<p>Since we are going to be focused on retirement decisions due to Medicare, let’s look directly at this variable as well. This variable is called <code>has_medicare</code> and is again a binary indicator variable equal to 1 if the individual has Medicare coverage and 0 otherwise.</p>
+<div id="459eed0c" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Has Medicare</th>
+<th data-quarto-table-cell-role="th">Count</th>
+<th data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>462326</td>
+<td>47.91</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>502712</td>
+<td>52.09</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="regression-discontinuity-design" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="regression-discontinuity-design"><span class="header-section-number">9.5</span> Regression Discontinuity Design</h2>
+<p>All of these policies are determined by cutoff rules, making them potential candidates for regression discontinuity analysis, which we studied in Chapter 6: Human Capital. First, let’s see how the probability of having Medicare coverage changes at age 65. This will be our “treatment” variable. We will then study how this change in Medicare coverage affects labor force participation.</p>
+<div id="7fbf05f2" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="acs_files/figure-html/cell-4-output-1.png" width="951" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So clearly, turning 65 leads to a large increase in the probability of having Medicare coverage. However, it doesn’t go from zero to 100 percent. There are some rare cases that individuals under 65 may have Medicare coverage (for example, individuals with certain disabilities). There is also potential for measurement error. People may be reporting that they are covered by Medicare when they are actually on Medicaid or insurance program. This could explain why we see a non-negligible fraction of individuals under 65 with Medicare coverage.</p>
+<p>However, it is clear there is an enormous jump in the fraction of individuals with Medicare coverage at age 65. For 65 and older, more than 80 percent of individuals have Medicare coverage. This makes this a fuzzy regression discontinuity design. Crossing the threshold has a large impact on the probability of treatment (having Medicare), but it is not a perfect jump from zero to one.</p>
+<p>Now, for contet, many people do have health insurance through private options, generally provided by employers. So let’s see if this enormous jump in Medicare coverage at age 65 is associated with increased coverage more generally. Therefore, we are going to replace the <code>has_medicare</code> variable with the <code>has_health_insurance</code> variable in the graph above. This variable indicates whether the individual has any health insurance coverage, whether through Medicare, private insurance, Medicaid, or other sources.</p>
+<div id="131d9285" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="acs_files/figure-html/cell-5-output-1.png" width="951" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Again we see a noticeable jump in the fraction of individuals with health insurance coverage at age 65. However, we have to be careful about the scale on the y-axis. As we can see, the fraction of individuals with health insurance before age 65 is already quite high, at 94 percent. However, there is still a noticeable increase in health insurance coverage at age 65 due to the availability of Medicare. The fraction of individuals with health care coverage increases to nearly 98 percent at age 65 and older.</p>
+<p>Finally, let’s see if this increase in health insurance coverage at age 65 is associated with changes in labor force participation. The variable we will use to measure labor force participation is called <code>in_labor_force</code>, which is again a binary indicator variable equal to 1 if the individual is in the labor force (either employed or actively looking for work) and 0 otherwise.</p>
+<div id="0f6bae37" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="acs_files/figure-html/cell-6-output-1.png" width="951" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So perhaps surprisingly, we don’t see a large drop in labor force participation at age 65. There is a gradual decline in labor force participation as individuals age, but there is no clear discontinuity at age 65. This suggests that gaining access to Medicare does not have a large impact on individuals’ decisions to remain in the labor force or retire.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
@@ -1030,14 +960,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07.html" class="pagination-link" aria-label="Technology: A Task Approach">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span>
+      <a href="./cps.html" class="pagination-link" aria-label="The Current Population Survey (CPS)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cps.html" class="pagination-link" aria-label="The Current Population Survey (CPS)">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
