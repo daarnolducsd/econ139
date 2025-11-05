@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; The American Community Survey (ACS) – Econ 139: Labor Economics</title>
+<title>10&nbsp; O*NET – Econ 139: Labor Economics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./onet.html" rel="next">
-<link href="./cps.html" rel="prev">
+<link href="./acs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -87,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./acs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./onet.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">O*NET</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -197,13 +230,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./acs.html" class="sidebar-item-text sidebar-link active">
+  <a href="./acs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./onet.html" class="sidebar-item-text sidebar-link">
+  <a href="./onet.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">O*NET</span></span></a>
   </div>
 </li>
@@ -219,20 +252,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#brief-introduction" id="toc-brief-introduction" class="nav-link active" data-scroll-target="#brief-introduction"><span class="header-section-number">9.1</span> Brief Introduction</a></li>
-  <li><a href="#downloading-the-acs" id="toc-downloading-the-acs" class="nav-link" data-scroll-target="#downloading-the-acs"><span class="header-section-number">9.2</span> Downloading the ACS</a></li>
-  <li><a href="#retirement-policies" id="toc-retirement-policies" class="nav-link" data-scroll-target="#retirement-policies"><span class="header-section-number">9.3</span> Retirement Policies</a></li>
-  <li><a href="#key-variables" id="toc-key-variables" class="nav-link" data-scroll-target="#key-variables"><span class="header-section-number">9.4</span> Key Variables</a></li>
-  <li><a href="#regression-discontinuity-design" id="toc-regression-discontinuity-design" class="nav-link" data-scroll-target="#regression-discontinuity-design"><span class="header-section-number">9.5</span> Regression Discontinuity Design</a></li>
+  <li><a href="#brief-introduction" id="toc-brief-introduction" class="nav-link active" data-scroll-target="#brief-introduction"><span class="header-section-number">10.1</span> Brief Introduction</a></li>
+  <li><a href="#interacting-with-onet" id="toc-interacting-with-onet" class="nav-link" data-scroll-target="#interacting-with-onet"><span class="header-section-number">10.2</span> Interacting with O*NET</a></li>
+  <li><a href="#work-activities" id="toc-work-activities" class="nav-link" data-scroll-target="#work-activities"><span class="header-section-number">10.3</span> Work Activities</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./acs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./onet.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">O*NET</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">O*NET</span></h1>
 </div>
 
 
@@ -249,153 +280,355 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="brief-introduction" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="brief-introduction"><span class="header-section-number">9.1</span> Brief Introduction</h2>
-<p>The American Community Survey (ACS) is a nationwide survey conducted by the U.S. Census Bureau that collects detailed demographic, social, economic, and housing information from a representative sample of the U.S. population. It overlaps considerably with the Current Population Survey (CPS), although there are some important differences.</p>
+<section id="brief-introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="brief-introduction"><span class="header-section-number">10.1</span> Brief Introduction</h2>
+<p>The goal of O*NET (Occupational Information Network) is to provide comprehensive information about different occupations in the US. It replaced the Dictionary of Occupational Titles which was paper-based. It includes information on the tasks that individuals perform in occupations, the skills one needs to perform the occupation, details on the work activities performed, among other information.</p>
+<p>In order to get this information on occupations, O*NET generally sends survey to workers who are current performing the occupation (referred to as incumbents). They are asked various questions about different tasks and skills and asked to rate them on a scale from 1 (not important) to 5 (very important). Some questions are given to all occupations while others are specific. For example, when asking about tasks, it would be unreasonable to ask about certain tasks for certain occupations. Therefore, experts use prior information (just as information from the Dictionary of Occcuapational Titles) to come up with a set of tasks that would be reasonable to ask about.</p>
 </section>
-<section id="downloading-the-acs" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="downloading-the-acs"><span class="header-section-number">9.2</span> Downloading the ACS</h2>
-<p>IPUMS USA (same organization that produces IPUMS CPS) provides harmonized versions of the ACS. There are a couple different types of data that you can download from IPUMS USA. For example, you can download Decennial census microdata from 1790 to 2010 or the American Community Survey data from 2000 to present. For this chapter, we are going to download the most recent version of the ACS data from 2023.</p>
-<p>Again, like the CPS, there are many variables available in the ACS. For this chapter, we will focus on a subset of variables related to health insurance coverage, labor force participation, and demographics. However, to stress, the ACS can (and has) been used to study a wide variety of topics. If you are interested in exploring the ACS data further, I encourage you to visit the IPUMS USA website. This will allow you to see the massive time span that the ACS and Census data cover as well as the wide variety of variables that are available.</p>
+<section id="interacting-with-onet" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="interacting-with-onet"><span class="header-section-number">10.2</span> Interacting with O*NET</h2>
+<p>How one interacts with O*NET likely depends on the user. For example, a job seeker will generally use O*NET online. This is a website that allows users to search for specific occupations. The information will then be clearly presented. Researchers, generally, will tend to prefer to use the raw data downloads. This will allow one to perform statistical analysis on the data, while considering a wide array of occupations at once.</p>
+<p>The raw data, however, can be quite complicated. Unlike when we studied the CPS or ACS, we don’t get one table of information. Instead O*NET comes as a large list of files that can be merged together depending on the analysis that you are trying to perform. We are going to go through the structure of a few of these in this chapter, but there is much more to learn about the O*NET.</p>
 </section>
-<section id="retirement-policies" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="retirement-policies"><span class="header-section-number">9.3</span> Retirement Policies</h2>
-<p>There are a number of policies in the United States that are tied to age and may impact retirement decisions. The one we are going to focus on is the availability of publicly provided health insurance through Medicare, which begins at age 65. Since health insurance is often tied to employment in the U.S., gaining access to Medicare may influence individuals’ decisions about whether to remain in the labor force or retire.</p>
-<p>However, there are two other important age-based policies. First, at age 62, individuals become eligible to receive Social Security retirement benefits, although these benefits are reduced compared to waiting until full retirement age. At full retirement age (which is 67), individuals can receive their full Social Security benefits. Therefore, the availability of Social Security may impact when individuals choose to retire.</p>
-<p>Since we are focusing on retirement, we are going to limit our sample to individuals aged 55-75.</p>
-</section>
-<section id="key-variables" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="key-variables"><span class="header-section-number">9.4</span> Key Variables</h2>
-<p>The dataset contains several binary indicator variables. These are variables that take on either a value of zero (condition is false) or one (condition is true). For example, let’s first take a look at the variable indicating whether an individual has health insurance coverage. The name of this variable is <code>has_health_insurance</code>. Note: this does not come directly from IPUMS USA, but rather was created by me while cleaning the data. In particular, as part of the cleaning process I dropped all individuals for which this variable was missing and recoded the variable so that it is equal to 1 if the individual has any health insurance coverage and 0 otherwise.</p>
-<div id="0c189c4b" class="cell" data-execution_count="1">
+<section id="work-activities" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="work-activities"><span class="header-section-number">10.3</span> Work Activities</h2>
+<p>We are going to start quite broad. As we will show later, O*NET will allow us to drill down much more narrowly to get into exactyl what a person is doing in an occupation. But first we will start with relatively broad <strong>Work Activities</strong>.</p>
+<p>As a case study to begin, we are going to look at Security Guards. If you go to O*NET Online and search for security guards, you will find under the tab Work Activities, a number of different activities that are performed by Security Guards. Below I have pasted the two work activities that appeared highest up in the list.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/onet_images/sg_wa.png" class="img-fluid figure-img"></p>
+<figcaption>Work Activites (First 2) for Security Guards</figcaption>
+</figure>
+</div>
+<p>We are going to focus on the second work activity <strong>Getting Information</strong>. O*NET also makes available the questionnaire that it sends to workers. Let’s go look at exactly how this question is asked.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/onet_images/onet1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>How Important is Getting Information</figcaption>
+</figure>
+</div>
+<p>When we turn to the raw data, we will see that this information will be coded as a numeric variable. If you select not important, than that will be represented by a 1. If you select 5 that will be treated as extremely important. This format for scoring is extremely common in survey questions and is often referred to as a Likert scale (named after its inventor Rensis Likert).</p>
+<p>Now, if you choose anything besides “Not Important”, you will then be asked another question.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/onet_images/onet2.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Complexity of Work Acitivity</figcaption>
+</figure>
+</div>
+<p>This is referred to as the <strong>Level</strong> question. This is also coded as a numeric variable in the raw data, with higher numbers indicating a higher level of complexity. So when we go to the raw data next, we should keep these questions in mind. Unlike the online data, the raw data files will allow us to see exactly how individuals answered these questions.</p>
+<p>The information below comes from a file named “Work Activities”. The way I downloaded the data is through going to the O*NET database website here: https://www.onetcenter.org/database.html. This website allows you to donwload the entire O*NET databse. Like mentioned before, this is a lot of files. You may not need all of these files. You can download individuals files by going to O*NET online and searching O*NET data tab at the top of the site.</p>
+<p>Let’s get a list of the different variables in the Work Activities file.</p>
+<div id="308570de" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Has Health Insurance</th>
-<th data-quarto-table-cell-role="th">Count</th>
-<th data-quarto-table-cell-role="th">Percentage</th>
-</tr>
-</thead>
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0</td>
-<td>37395</td>
-<td>3.87</td>
+<td style="padding: 8px; border: 1px solid #ddd">O*NET-SOC Code</td>
+<td style="padding: 8px; border: 1px solid #ddd">Element ID</td>
+<td style="padding: 8px; border: 1px solid #ddd">Element Name</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>927643</td>
-<td>96.13</td>
+<td style="padding: 8px; border: 1px solid #ddd">Scale ID</td>
+<td style="padding: 8px; border: 1px solid #ddd">Data Value</td>
+<td style="padding: 8px; border: 1px solid #ddd">N</td>
+</tr>
+<tr class="odd">
+<td style="padding: 8px; border: 1px solid #ddd">Standard Error</td>
+<td style="padding: 8px; border: 1px solid #ddd">Lower CI Bound</td>
+<td style="padding: 8px; border: 1px solid #ddd">Upper CI Bound</td>
+</tr>
+<tr class="even">
+<td style="padding: 8px; border: 1px solid #ddd">Recommend Suppress</td>
+<td style="padding: 8px; border: 1px solid #ddd">Not Relevant</td>
+<td style="padding: 8px; border: 1px solid #ddd">Date</td>
+</tr>
+<tr class="odd">
+<td style="padding: 8px; border: 1px solid #ddd">Domain Source</td>
+<td style="padding: 8px; border: 1px solid #ddd"></td>
+<td style="padding: 8px; border: 1px solid #ddd"></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<p>We are going to discuss a few of these. The O*NET-SOC Code is goint to be how we identify occupations in the data. For example, the O*NET-SOC code for security guards is 33-9032.00. Each row in the data is a different question. The Element ID tells us which question we are referencing and Element Name gives us a description of that question. For example, if we look at the first element of Element ID an Element Name in the dataset we get:</p>
+<div id="88f4fe84" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>Element ID: 4.A.1.a.1
+Element Name: Getting Information</code></pre>
+</div>
+</div>
+<p>So the code associated with our Getting Information question is 4.A.1.a.1. However, there are actually two Getting Information questions. One is about the importance of getting information. The other is about the level of complexity of getting information. These questions actually have the same Element ID, but whether you are considering the importance or level question is given by the variable Scaled ID. This variable is either equal to “IM” for the importance questions or “LV” for the level questions. Let’s get a frequency table of IM vs.&nbsp;LV in the dataset.</p>
+<div id="0b8dd8fe" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>Scale ID
+IM    36654
+LV    36654
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>So in total we have 36,654 rows of data that correspond to importance questions, and 36,654 rows of data that correspond to level questions. Before we continue, let’s see how many unique occupations there are in the data:</p>
+<div id="2311af08" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 
-</div>
-</div>
-</div>
-<p>So in the data, most individuals do have health insurance coverage. Many of of these individuals likely have private heath insurance through their employer, while others may have public health insurance through programs like Medicare. It is also possible that some individuals younger than 65 may have public health insurance through Medicaid.</p>
-<p>As a quick aside, it is generally very useful to code binary indicator variables as 0/1 variables rather than using string labels like “yes” and “no”. This makes it much easier to work with these variables in statistical software. Additionally, you want the variables to be coded as 0/1, not some other numbers like 1/2 or -1/1. There are many reasons for this. One simple reason is that if you want the proporition of individuals with health insurance, you can just take the mean of the variable when it is coded as 0/1. For example, imagine we have three individuals with health insurance coded as follows:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Individual</th>
-<th>has_health_insurance</th>
-</tr>
-</thead>
+<style>
+    .onet-table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+    }
+    .onet-table th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .onet-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .onet-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<table class="onet-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>1</td>
+<td data-quarto-table-cell-role="th">Metric</td>
+<td data-quarto-table-cell-role="th">Count</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>1</td>
+<td>Number of Unique Occupations</td>
+<td>894</td>
 </tr>
 </tbody>
 </table>
-<p>It is easy to see that 2 out of 3 individuals have health insurance, or 66.67%. We can also calculate this by taking the mean of the variable: (1 + 0 + 1) / 3 = 0.6667. This will be useful later when we construct graphs. If we want the fraction in the labor force by age, we can just take the mean of the <code>in_labor_force</code> variable. Now, if the variable were coded as “yes” and “no”, or as 1 and 2, we would not be able to do this.</p>
-<p>Since we are going to be focused on retirement decisions due to Medicare, let’s look directly at this variable as well. This variable is called <code>has_medicare</code> and is again a binary indicator variable equal to 1 if the individual has Medicare coverage and 0 otherwise.</p>
-<div id="559d48c6" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+</div>
+</div>
+<p>Now, this data structure isn’t quite as straightforward as the previous datasets we covered, where the unit-of-observation was a person. In this dataset, the unit-of-observation is a question for a specific occupation. The variables O*NET-SOC Code, Element ID and Scale ID together make up the unit-of-observation. <strong>Data Value</strong> is going to be our key variable of interest. This tells us how people are answering the Work Activities Question. But to understand how to use it, let’s focus on a single question first. Let’s restrict our data to the importance version of the Getting Information question. In code, we are going to restrict to rows of the data in which</p>
+<p><code>Element ID == "4.A.1.a.1" &amp; Scale ID == "IM"</code></p>
+<p>How you will restrict to these individuals depends a bit on what program you are using. Below we include Python, Stata and R code snippets that would perform this operation.</p>
+<p><strong>Python:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wa_filtered <span class="op">=</span> wa[(wa[<span class="st">'Element ID'</span>] <span class="op">==</span> <span class="st">'4.A.1.a.1'</span>) <span class="op">&amp;</span> (wa[<span class="st">'Scale ID'</span>] <span class="op">==</span> <span class="st">'IM'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Stata:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> ElementID == <span class="st">"4.A.1.a.1"</span> &amp; ScaleID == <span class="st">"IM"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wa_filtered <span class="ot">&lt;-</span> wa <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Element ID</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"4.A.1.a.1"</span> <span class="sc">&amp;</span> <span class="st">`</span><span class="at">Scale ID</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"IM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will note that sometimes the exact names of the variables have changed a bit. Stata does not allow names to have spaces (generally it is a good idea not to have spaces in variables names. Spaces make the code unnecessarily more complicated).</p>
+<p>Now that we’ve restricted to our question of interest, let’s make a summary statistics table that shows some key percentiles of the Data Value variable (i.e.&nbsp;the answer to how important getting information is for the job).</p>
+<div id="10cfbb20" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
 
+<style>
+    .summary-table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 20px auto;
+    }
+    .summary-table th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .summary-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .summary-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .summary-table tr.obs-row {
+        border-top: 3px solid #4CAF50;
+        font-style: italic;
+        background-color: #e8f5e9 !important;
+    }
+</style>
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Has Medicare</th>
-<th data-quarto-table-cell-role="th">Count</th>
-<th data-quarto-table-cell-role="th">Percentage</th>
-</tr>
-</thead>
+<table class="summary-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0</td>
-<td>462326</td>
-<td>47.91</td>
+<td data-quarto-table-cell-role="th">Statistic</td>
+<td data-quarto-table-cell-role="th">Value</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>502712</td>
-<td>52.09</td>
+<td>Mean</td>
+<td>4.22</td>
+</tr>
+<tr class="odd">
+<td>10th Percentile</td>
+<td>3.71</td>
+</tr>
+<tr class="even">
+<td>75th Percentile</td>
+<td>4.48</td>
+</tr>
+<tr class="obs-row odd">
+<td>Number of Observations</td>
+<td>894</td>
 </tr>
 </tbody>
 </table>
-
 </div>
 </div>
-</div>
-</section>
-<section id="regression-discontinuity-design" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="regression-discontinuity-design"><span class="header-section-number">9.5</span> Regression Discontinuity Design</h2>
-<p>All of these policies are determined by cutoff rules, making them potential candidates for regression discontinuity analysis, which we studied in Chapter 6: Human Capital. First, let’s see how the probability of having Medicare coverage changes at age 65. This will be our “treatment” variable. We will then study how this change in Medicare coverage affects labor force participation.</p>
-<div id="4112ba07" class="cell" data-execution_count="3">
+<p>Reminder, this question asked on a scale of 1 to 5, how important it is to get information in this job. As you can see the average across all occupation is 4.22, which indicates getting information on average is very important in many jobs. Even the 10th percentile, getting information is around 3.7, indicating it is still close to very important.</p>
+<p>One question we should ask ourselves is: how many people are actually answering this question. This is given by the variable N in the dataset. Each value tells us how many incumbent workers responded to this question. Let’s create a histogram of N across occupations so we can better understand the source of our information.</p>
+<div id="a03be179" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="acs_files/figure-html/cell-4-output-1.png" width="951" height="566" class="figure-img"></p>
+<p><img src="onet_files/figure-html/cell-7-output-1.png" width="682" height="566" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>So clearly, turning 65 leads to a large increase in the probability of having Medicare coverage. However, it doesn’t go from zero to 100 percent. There are some rare cases that individuals under 65 may have Medicare coverage (for example, individuals with certain disabilities). There is also potential for measurement error. People may be reporting that they are covered by Medicare when they are actually on Medicaid or insurance program. This could explain why we see a non-negligible fraction of individuals under 65 with Medicare coverage.</p>
-<p>However, it is clear there is an enormous jump in the fraction of individuals with Medicare coverage at age 65. For 65 and older, more than 80 percent of individuals have Medicare coverage. This makes this a fuzzy regression discontinuity design. Crossing the threshold has a large impact on the probability of treatment (having Medicare), but it is not a perfect jump from zero to one.</p>
-<p>Now, for contet, many people do have health insurance through private options, generally provided by employers. So let’s see if this enormous jump in Medicare coverage at age 65 is associated with increased coverage more generally. Therefore, we are going to replace the <code>has_medicare</code> variable with the <code>has_health_insurance</code> variable in the graph above. This variable indicates whether the individual has any health insurance coverage, whether through Medicare, private insurance, Medicaid, or other sources.</p>
-<div id="cc25b0e9" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="acs_files/figure-html/cell-5-output-1.png" width="951" height="566" class="figure-img"></p>
-</figure>
+<p>So the first thing to note is that there are not a tremendous number of respondents per occupation. Most occupations have around 20. This is why O*NET also provides standard errors and confidence bounds for questions. While we will not discuss these statistics in the class, they are ways to understand the uncertainty around an answer. For example, if an occupation reports a 4.5, but there is a large standard error on this estimate, then that implies we are relatively less certain about the true value for this question (where the true vale would be given by a very large sample size of individuals in that occupation).</p>
+<p>Now, let’s go back to our case study of security guards. Let’s create a dataset that restricts only to the security guard SOC code so that we can understand this occupation in more detail. Below, we should the Work Activities that were rated most important for Security Guards.</p>
+<div id="9a8c475d" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+
+<style>
+    .sg-table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .sg-table th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .sg-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .sg-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<table class="sg-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">O*NET-SOC Code</td>
+<td data-quarto-table-cell-role="th">Element Name</td>
+<td data-quarto-table-cell-role="th">Data Value</td>
+<td data-quarto-table-cell-role="th">N</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Identifying Objects, Actions, and Events</td>
+<td>4.76</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>33-9032.00</td>
+<td>Getting Information</td>
+<td>4.58</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Communicating with Supervisors, Peers, or Subordinates</td>
+<td>4.54</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>33-9032.00</td>
+<td>Documenting/Recording Information</td>
+<td>4.48</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Establishing and Maintaining Interpersonal Relationships</td>
+<td>4.45</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p>One small aside to note here. You will notice that two of the top 5 work activities involves information. For a security guard, this is likely a physical task. They have to go to a place to record the information. Now, you may have seen headlines that reports X percent of jobs can be done by AI. Getting information is a task that AI can do very well. But it is fundamentally different than the type of information that security guards retrieve and document. In other words, within a given task or work activity, there is likely a lot of variation in exactly what that means. However, methods that don’t take into account the context of the occupation may falsely label security guards as likely to be replaced by AI.</p>
+<p>What might also be informative is to see the work activities that security guards deem the least important in their jobs.</p>
+<div id="65ff473d" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+<style>
+    .sg-table-low {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .sg-table-low th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .sg-table-low td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .sg-table-low tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<table class="sg-table-low caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">O*NET-SOC Code</td>
+<td data-quarto-table-cell-role="th">Element Name</td>
+<td data-quarto-table-cell-role="th">Data Value</td>
+<td data-quarto-table-cell-role="th">N</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Repairing and Maintaining Mechanical Equipment</td>
+<td>2.07</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>33-9032.00</td>
+<td>Repairing and Maintaining Electronic Equipment</td>
+<td>2.15</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment</td>
+<td>2.42</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>33-9032.00</td>
+<td>Handling and Moving Objects</td>
+<td>2.61</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>33-9032.00</td>
+<td>Controlling Machines and Processes</td>
+<td>2.61</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
 </div>
-<p>Again we see a noticeable jump in the fraction of individuals with health insurance coverage at age 65. However, we have to be careful about the scale on the y-axis. As we can see, the fraction of individuals with health insurance before age 65 is already quite high, at 94 percent. However, there is still a noticeable increase in health insurance coverage at age 65 due to the availability of Medicare. The fraction of individuals with health care coverage increases to nearly 98 percent at age 65 and older.</p>
-<p>Finally, let’s see if this increase in health insurance coverage at age 65 is associated with changes in labor force participation. The variable we will use to measure labor force participation is called <code>in_labor_force</code>, which is again a binary indicator variable equal to 1 if the individual is in the labor force (either employed or actively looking for work) and 0 otherwise.</p>
-<div id="5047c84e" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="acs_files/figure-html/cell-6-output-1.png" width="951" height="566" class="figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<p>So perhaps surprisingly, we don’t see a large drop in labor force participation at age 65. There is a gradual decline in labor force participation as individuals age, but there is no clear discontinuity at age 65. This suggests that gaining access to Medicare does not have a large impact on individuals’ decisions to remain in the labor force or retire.</p>
+<p>Now, this only scratches the surface of what O*NET provides, but it gives us a starting point. If we are interested in how future technology may impact security guards, we can think about the work activities they perform. How do we think these work activities will be replaced (or augmented) by technology in the future.</p>
 
 
 </section>
@@ -967,14 +1200,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./cps.html" class="pagination-link" aria-label="The Current Population Survey (CPS)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span>
+      <a href="./acs.html" class="pagination-link" aria-label="The American Community Survey (ACS)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./onet.html" class="pagination-link" aria-label="O*NET">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">O*NET</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
