@@ -339,7 +339,7 @@ div.csl-indent {
 <p>Now, what does a computer do well? It can perform the statistical tabulation very quickly and accurately. This means that the demand for accountants to perform this routine task will fall. But the non-routine part of the task, interpreting and presenting the results, is not something a computer can do well (at least until very recently).</p>
 <p>In this example, there are two forces at work. First, some of the tasks the accountant performs are routine and can be automated by computers. This will reduce the demand for accountants to perform these tasks. However, the accountant has become much more productive. The accountant can now focus on the non-routine tasks that require judgment and creativity, and not on spending hours and hours tracking down small calculation errors. If this increase in productivity is large enough, it could actually lead to an increase in the demand for accountants overall. If you are a firm deciding whether to hire an accountant, you might be willing to pay more for an accountant who can use computers to quickly prepare financial reports. Maybe the computer has made the accountant so productive that you want to hire accountants not just for payroll, but also to help with budgeting, forecasting, tax planning, etc.</p>
 <p>But what about the support staff of the accountant? The support staff may have been performing routine tasks, like data entry. Before computers, keeping track of data was a huge task. But with spreadsheets and databases, much of this work can be automated. You may need someone to enter the data initially, but keeping track of it and updating it is much easier. Therefore, the demand for support staff may fall.</p>
-<p>At the end of the day, what happened is an empirical question. We can probably come up with alternative stories that make sense, so let’s see what actually happened in the data. To do so, we are going to take advantage of the fact that the US Census has been collecting data on the occupations of workers for a long time. In particular, we are going to look at the 1980 Census, which was the last Census before computers were widely used in the workplace, and compare it to the 1990 Census. We will compare accountants and auditors. These workers tend to be highly educated and as described above, perform a number of non-routine cognitive tasks. We will compare them to bookkeeping, accounting, and auditing clerks. These workers tend to perform more routine cognitive tasks.</p>
+<p>At the end of the day, what happened is an empirical question. We can probably come up with alternative stories that make sense, so let’s see what actually happened in the data. To do so, we are going to take advantage of the fact that the US Census has been collecting data on the occupations of workers for a long time. In particular, we are going to look at the 1980 Census, which was the last Census before computers were widely used in the workplace, and compare it to the 2000 Census. We will compare accountants and auditors. These workers tend to be highly educated and as described above, perform a number of non-routine cognitive tasks. We will compare them to bookkeeping, accounting, and auditing clerks. These workers tend to perform more routine cognitive tasks.</p>
 <p>The figure below shows the change in employment and wages for these two occupations between 1980 and 2000, the period in which computers were introduced into the workforce. To compute these changes, I utilized the IPUMS USA database, which provides microdata for a 5% sample of the US Census. I identified individuals in the 1980 and 2000 Censuses who reported their occupation as either “Accountants and Auditors” or “Bookkeeping, Accounting, and Auditing Clerks”.</p>
 <p>To compute changes in employment, I calculated the fraction of the total workforce in each year that reported being in each occupation. I then computed the percentage change in this fraction between 1980 and 2000. The figure below shows the results.</p>
 <div id="cell-fig-employment-change-accountants" class="cell" data-execution_count="1">
@@ -350,14 +350,14 @@ div.csl-indent {
 <img src="07_files/figure-html/fig-employment-change-accountants-output-1.png" width="663" height="470" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-accountants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Change in Employment by Occupation, 1980-1990
+Figure&nbsp;7.1: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>These are some pretty striking results. The employment of accountants and auditors increased by 35% between 1980 and 2000. In contrast, the employment of bookkeeping, accounting, and auditing clerks decreased by 27%. This is consistent with our theory that computers have increased the productivity of accountants, leading to higher demand for their services, while reducing the demand for routine clerical tasks which accountants use as inputs and can often be performed by computers. To be clear, it is not as if the raw number of accountants is much larger than the number of clerks. In 2000, there are still many clerks. About 0.8 percent of all workers are in these bookkeeping, accounting, and auditing clerk roles. This is actually similar to the total number of accountants and auditors.</p>
-<p>The key here is the growth rates vary wildly. In 1980, about 0.5 percent of all workers were accountants and auditors. By 1990, this had grown to about 0.67 percent. In contrast, bookkeeping, accounting, and auditing clerks made up about 1.0 percent of all workers in 1980, but this had fallen to about 0.8 percent by 2000.</p>
+<p>The key here is the growth rates vary wildly. In 1980, about 0.5 percent of all workers were accountants and auditors. By 2000, this had grown to about 0.67 percent. In contrast, bookkeeping, accounting, and auditing clerks made up about 1.0 percent of all workers in 1980, but this had fallen to about 0.8 percent by 2000.</p>
 </section>
 <section id="job-polarization" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="job-polarization"><span class="header-section-number">7.6</span> Job Polarization</h2>
@@ -370,13 +370,13 @@ Figure&nbsp;7.1: Change in Employment by Occupation, 1980-1990
 <img src="07_files/figure-html/fig-employment-change-three-occupations-output-1.png" width="759" height="566" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-three-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Change in Employment by Occupation, 1980-1990
+Figure&nbsp;7.2: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>As can be seen in the figure, cashiers saw a 27% increase in employment between 1980 and 1990, similar to our increase for accountants. As you may have noticed in the figure, we also ordered these occupations by their average wage level in 1980. Cashiers were the lowest paid of the three, clerks were in the middle, and accountants were the highest paid. Therefore, from 1980 to 1990, we see growth in employment at both the low-wage end (cashiers) and the high-wage end (accountants), while we see a decline in employment in the middle (clerks). This pattern is referred to as <em>job polarization</em>. Technology has displaced middle-skill workers.</p>
+<p>As can be seen in the figure, cashiers saw a 27% increase in employment between 1980 and 2000, similar to our increase for accountants. As you may have noticed in the figure, we also ordered these occupations by their average wage level in 1980. Cashiers were the lowest paid of the three, clerks were in the middle, and accountants were the highest paid. Therefore, from 1980 to 2000, we see growth in employment at both the low-wage end (cashiers) and the high-wage end (accountants), while we see a decline in employment in the middle (clerks). This pattern is referred to as <em>job polarization</em>. Technology has displaced middle-skill workers.</p>
 <p>So far we have three occupations: accountants, clerks, and cashiers. Let’s map these back to our task framework. Accountants generally perform non-routine cognitive tasks. Clerks generally perform routine cognitive tasks. Cashiers generally perform non-routine manual tasks. This begs the question: what about routine manual tasks? Are there occupations that perform routine manual tasks that have also seen declines in employment? Let’s assume the accountant is an accountant for a firm that produces clothes, and as part of the production process they have workers who operate sewing machines. This is a routine manual task (replacing sewers with machines is a long tradition, with the original luddite movement being a reaction to the mechanized looms). The figure below shows the change in employment for sewing machine operators between 1980 and 2000, alongside our other three occupations.</p>
 <div id="cell-fig-employment-change-four-occupations" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
@@ -386,7 +386,7 @@ Figure&nbsp;7.2: Change in Employment by Occupation, 1980-1990
 <img src="07_files/figure-html/fig-employment-change-four-occupations-output-1.png" width="759" height="470" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-four-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.3: Change in Employment by Occupation, 1980-1990
+Figure&nbsp;7.3: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
 </div>
