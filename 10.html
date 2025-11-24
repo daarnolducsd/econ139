@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Trade – Econ 139: Labor Economics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./09.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-52ddebe548e3f724c9ed357238656d03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c1966a8c70583a3816b1e3a216c1caf1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Econ 139: Labor Economics</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Big Questions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Perfect Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monopsony: Empirics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Labor Supply</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Datasets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./onet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">O*NET</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
+  <li><a href="#trends-in-trade" id="toc-trends-in-trade" class="nav-link" data-scroll-target="#trends-in-trade"><span class="header-section-number">10.2</span> Trends in Trade</a></li>
+  <li><a href="#comparative-advantage" id="toc-comparative-advantage" class="nav-link" data-scroll-target="#comparative-advantage"><span class="header-section-number">10.3</span> Comparative Advantage</a></li>
+  <li><a href="#the-china-shock" id="toc-the-china-shock" class="nav-link" data-scroll-target="#the-china-shock"><span class="header-section-number">10.4</span> The China Shock</a></li>
+  <li><a href="#cross-country-evidence" id="toc-cross-country-evidence" class="nav-link" data-scroll-target="#cross-country-evidence"><span class="header-section-number">10.5</span> Cross-Country Evidence</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
+<p>The Clark Center at University of Chicago regularly surveys many of the leading economists in the world on a variety of topics. In 2012, they asked the following question:</p>
+<blockquote class="blockquote">
+<p>“Freer trade improves productive efficiency and offers consumers better choices, and in the long run these gains are much larger than any effects on employment”</p>
+</blockquote>
+<div id="79655a88" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-2-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The fact that free trade generally makes countries richer is one of the least controversial opinions among economists. The next question in this survey asked particularly about the North American Free Trade Agreement (NAFTA). This is a trade agreement between the United States, Canada, and Mexico that went into effect in 1994 and reduced trade barriers between the countries. Similarly to the question above, the vast majority agreed that, on average, NAFTA improved welfare for U.S. citizens.</p>
+<p>However, this is often not the general opinion among the public. For example, in 2012, the American National Election Studies (ANES) asked a question about free trade to a representative sample of U.S. adults:</p>
+<blockquote class="blockquote">
+<p>Some people have suggested placing new limits on foreign imports in order to protect American jobs. Others say that such limits would raise consumer prices and hurt American exports. Do you FAVOR or OPPOSE placing new limits on imports, or haven’t you thought much about this?</p>
+</blockquote>
+<p>Below are the results.</p>
+<div id="477a2143" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-3-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In contrast to economists, generally people have more mixed opinions on free trade. For the ANES question, most people were actually unsure, while a significant portion favored placing new limits on imports. This is in stark contrast to the overwhelming agreement among economists that free trade is beneficial.</p>
+<p>This is also reflected in policy. Historically, many countries have placed tariffs (taxes on imports) in order to protect domestic industries. For example, in the U.S., high tariff rates were common in the 19th century and early 20th century. For example, the plot below shows the average tariff rate in the U.S. from 1821 to 2020. This figure comes from <span class="citation" data-cites="irwin2020trade">Irwin (<a href="references.html#ref-irwin2020trade" role="doc-biblioref">2020</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/10_images/tariffs.png" class="img-fluid figure-img"></p>
+<figcaption>Average Tariff Rate in the U.S. over Time</figcaption>
+</figure>
+</div>
+<p>Something that has long been recognized is that trade creates winners and losers. Often the losers are concentrated in very specific industries or regions. You hear of specific stories of manufacturing plants being shut down due to competition from imports. On the flip side, the gains from trade may be more spread out through the economy. People benefit from lower prices. Lower prices on imports will increase the purchasing power of consumers, leading them to spend more in their local economies. These benefits are there, but maybe a bit harder to see.</p>
+<p>In this chapter we will explore first the economic theory of free trade. Why do economists generally agree that free trade raises the standard of living of individuals? Then we will consider the losses. What happens in places where industries are harmed by trade? How can we think about policies to help those who are negatively affected by trade?</p>
+</section>
+<section id="trends-in-trade" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="trends-in-trade"><span class="header-section-number">10.2</span> Trends in Trade</h2>
+<p>To set the context of what we are going to discuss, let’s look at some data on trade over time. The following figure shows imports into the U.S. over time. The blue line shows total imports from all countries, while the orange dashed line shows imports from China only. The left axis corresponds to all imports, while the right axis corresponds to imports from China only.</p>
+<p>As can be seen in the figure, imports into the U.S. have increased dramatically over time. These are in nominal terms, so some of the increase is due to inflation, although the bulk is due to real increases in trade over time.</p>
+<div id="2bd7cef8" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-4-output-1.png" width="662" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, one key focus, both in policy and in academia, has been studying how the rise of trade with China has affected U.S. workers. In 1985 (the first period with data), trade with China was extremely minimal. However, over time, China has steadily increased its exports to the U.S., becoming on the largest trading partners. In 2024, for example, China accounts for about 12% of all U.S. imports (in terms of value of those imports). This is still less than imports from Mexico (16%) and Canada (14%). You may (or may not) find it surprsing that China actually ranks third, given the attention it receives in the media. One potential reason is that both Mexico and Canada have been substantial trading partners for a long time. The rise of trade with China has been much more recent and dramatic, leading many to feat that trade has become the reason for declining manufacturing in the US.</p>
+</section>
+<section id="comparative-advantage" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="comparative-advantage"><span class="header-section-number">10.3</span> Comparative Advantage</h2>
+<p>Stanislaw Ulam was a famous mathematician who met economist Paul Samuelson while they were both at Harvard University. Ulam used to tease Samuelson that the social sciences were not as scientific as the hard sciences. He would teasingly challenge Samuelson to “name one proposition in all of the social sciences which is both true and non-trivial.”</p>
+<p>Paul Samuelson eventually came up with an answer: comparative advantage. As we will find out, it is true. It works. We’ve seen it happen in the real world. And it is also non-trivial. As Paul Samuelson explained, “that [comparative advantage] is not trivial is attested by the thousands of important and intelligent men who have never been able to grasp the doctrine for themselves or to believe it after it was explained to them.”</p>
+<p>The basic idea behind comparative advantage is that trade is mutually beneficial even when one country is better at producing everything relative to another country. To illustrate this, let’s consider two countries: Country A and Country B. Each country can produce two goods: clothing and food.</p>
+<p>It’s intuitive that if Country A can produce clothing more cheaply than Country B, and Country B can grow food more cheaply than Country A, then both countries could benefit from trade. But what remains true is that they will benefit from trade even if one country is better at producing both goods. This is the power of the principle of comparative advantage.</p>
+<p>Let’s put some concrete numbers to this example. Imagine Country A can produce 100 units of clothing if it devotes the entirety of its resources to clothing production. If it instead devotes the entirety of its resources to food production, it can produce 50 units of food. In a world without trade, we say country A is an autarky. It must produce everything it consumes itself. In autarky, since country A needs both goods, it will produce some combination of clothing and food. We will assume this country has a linear production possibilities frontier (PPF). This means if it would like to produce one more unit of clothing, it must give up producing half a unit of food. Let’s plot the production possibilities frontier for Country A.</p>
+<div id="a90f9048" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-5-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, we will consider Country B. Country B is strictly more productive than Country A. If it devotes all its resources to clothing production, it can produce 200 units of clothing. If it devotes all its resources to food production, it can produce 200 units of food. Let’s plot the production possibilities frontier for Country B next to the one for Country A.</p>
+<div id="7a59d720" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-6-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So the naive response might be: well, Country B is better at producing both goods. There is no scope for gains from trade here. However, that would be incorrect. Let’s see why. To do so, we will compute the opportunity costs of producing each good in each country.</p>
+<p>For Country A, what is the opportunity cost of an additional unit of clothing? To produce one more unit of clothing, Country A must give up producing 0.5 units of food. Therefore, the opportunity cost of 1 unit of clothing in Country A is 0.5 units of food.</p>
+<p>In Country B, what is the opportunity cost of an additional unit of clothing? To produce one more unit of clothing, Country B must give up producing 1 unit of food. Therefore, the opportunity cost of 1 unit of clothing in Country B is 1 unit of food.</p>
+<p>Therefore, the opportunity cost of producing clothing is lower in Country A than in Country B. We say that Country A has a <strong>comparative advantage</strong> in producing clothing. To produce another unit of clothing, Country A must give up 0.5 units of food, whereas Country B must give up 1 unit of food.</p>
+<p>Now, to see why both countries can benefit from trade, let’s consider the autarky equilibrium first. Country A and Country B must both be on their respective production possibilities frontiers. The exact point depends on the preferences of individuals in the country. To understand that trade improves outcomes we don’t actually need to know which point they will choose. We will show that with free trade the two countries can consumer more of both good. Hence, they will be better off than under autarky.</p>
+<p>To do so, let’s pick a price of trade. Let’s assume that with trade, that country A can trade 1 unit of clothing to Country B for 0.75 units of food. Let’s first examine how this changes the possibilities of Country A. To do this we will assume that it can exchange as many goods as it wants at this price (note: in equilibrium, the price will adjust so that the amount supplied equals the amount demanded, but we will not worry about that here. Our goal is to show that a given exchange rate can increase total welfare).</p>
+<p>Well, now, instead of getting 0.5 units of food for giving up 1 unit of clothing (its opportunity cost), Country A can get 0.75 units of food for giving up 1 unit of clothing. This means that Country A can effectively consume more food for any given level of clothing production. Therefore, its production possibilities frontier expands outward relative to its original autarky PPF. At an extreme case, imagine it produced 100 units of clothing and then traded all 100 units of clothing to Country B. It would receive 75 units of food in return. Let’s see what this looks like in the figure below.</p>
+<div id="2a13d193" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-7-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So what have we learned. With the exchange rate of 1 clothing = 0.75 food, Country A can now consume combinations of clothing and food that were previously unattainable in autarky. Therefore, country A is better off.</p>
+<p>But remember, Country B is strictly more productive than Country A. So how can Country B benefit from trade? To see this, let’s consider how the production possibilities frontier of Country B changes with trade. Well, Country B has an opportunity cost of 1 unit of food for every 1 unit of clothing. However, with trade, it can get 1 unit of food for giving up only 0.75 units of clothing. Therefore, Country B can also consume more food for any given level of clothing production. Its PPF with trade also expands outward relative to its original PPF in autarky. Now, one thing to consider is that the maximum amount of clothing Country A can produce is 100 units. So we will assume for the first 100 units, Country B can trade at the rate of 1 clothing = 0.75 food. However, if it wants to trade more than 100 units of clothing, it must do so at its opportunity cost of 1 clothing = 1 food (since Country A cannot supply any more clothing beyond 100 units). Therefore, the consumption possibilities frontier for Country B with trade will have a kink in it. Let’s plot this below.</p>
+<div id="25b08abc" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-8-output-1.png" width="663" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Again, we see that Country B can also consume combinations of clothing and food that were previously unattainable in autarky. Therefore, country B is also better off.</p>
+<p>This is the magic of comparative advantage. It doesn’t matter that Country B can produce strictly more of each good. What is always true is that to make something, you must give up production of something else. This is comparative advantage. As long as the opportunity costs differ between countries, there is always scope for mutually beneficial trade.</p>
+<p>Now, this is a highly simplified model, but a powerful one. It has played a significant role in how economists think about gains from trade for centuries. However, one thing that has long been recognized is that it ignores distributional effects. While both countries are better off overall, within each country there may be winners and losers. For example, in Country A, the clothing industry may expand due to trade, while the food industry may contract. Workers in the food industry may lose their jobs. If they can easily transition to working in the clothing industry, then maybe the impact is small. If there are frictions to this transition, then it is certainly possible they are worse off. We will explore these distributional effects of trade later in this chapter.</p>
+<p>This is really the two key forces we will think about in this section. On the one hand, trade can make countries richer overall. However, it may have distributional effects. Another way to say this is that trade increases GDP, but can also increase inequality. We will explore both of these forces in the remainder of this chapter.</p>
+<p>For those interested in trade, it is important to highlight that there are many features of modern international trade systems that are difficult to capture in this simple model. For example, there are many examples of countries trading within the same industry, which we call intra-industry trade. In this simple model, we would never have the countries both producing and trading the same good. There has been extensive work around exploring better models of international trade. For example, Paul Krugman earned the Nobel prize in 2008 for his work on models of trade that incorporate economies of scale and product differentiation. The idea in his model is that consumers love variety in their products. They are willing to pay a premium for more varieties, but as the product market fragments into more specific products, producers struggle to obtain a large enough market to recover their fixed costs of production. Trade acts as a way to increase the market size, allowing firms to produce at a larger scale. We will not get into the details of these models here, as our focus is on the impacts on workers, but there is a rich literature on international trade for those interested in learning more.</p>
+</section>
+<section id="the-china-shock" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="the-china-shock"><span class="header-section-number">10.4</span> The China Shock</h2>
+<p>A central focus of media attention on trade as well as academic work has been the rise of trade with China. One of the key empirical facts that drove this interest is the dramatic decrease in manufacturing employment in the U.S. in the early 2000s. In 2000, there were about 1.7 million workers in manufacturing. By 2007 this had dropped to about 1.3 million workers.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/10_images/manu.png" class="img-fluid figure-img"></p>
+<figcaption>Manufacturing Employment over Time (SOURCE: FRED)</figcaption>
+</figure>
+</div>
+<p>As we saw in the previous section, the decline in manufacturing employment does coincide with a rise from trade with China. Before 2000, there was actually relatively limited trade in manufacturing with low-wage countries. This is one of the reasons that the rise in inequality in the 1980s is generally not attributed to trade, but rather more consistent with changes in technology. However, after China entered the World Trade Organization (WTO) in 2001, trade with China increased dramatically. Since trade with China is mostly concentrated in manufacturing, this led to a natural question: did the rise of trade with China cause the decline in manufacturing employment? As we discussed in the chapters on technology, the early 2000s also saw a rise in automation technologies, including industrial robots. So there are clear confounding factors at play here. We can’t conclude from these two big trends whether trade is <strong>causing</strong> the decline in manufacturing. The second question we might ask is: even if trade is shifting employment to other industries, is this a bad thing? Maybe the manufacturing workers who lost their jobs were able to find similar jobs in other industries.</p>
+<p>To answer these questions, <span class="citation" data-cites="AutorDornHanson2013">Autor, Dorn, and Hanson (<a href="references.html#ref-AutorDornHanson2013" role="doc-biblioref">2013</a>)</span> study how different regional markets in the U.S. were affected by the rise in trade with China. The key idea is that different regions in the U.S. specialized in different types of manufacturing. Some regions specialized in industries that faced a lot of competition from Chinese imports, while other regions specialized in industries that did not face much competition from Chinese imports. Therefore, if trade with China was causing the decline in manufacturing employment, we would expect to see larger declines in manufacturing employment in regions that specialized in industries that faced more competition from Chinese imports. Additionally, we can check if employment and wages are positively or negatively impacted by this increased competition from China. For example, if workers who lost their manufacturing jobs were able to find similar jobs in other industries, then we would expect to see no change in overall employment and wages in regions that faced more competition from China. However, if workers struggled to find new jobs, then we would expect to see declines in overall employment and wages in regions that faced more competition from China.</p>
+<p>So how do we operationalize this idea? To simplify their approach, we are going to consider a setting in which the only industry that faces competition from China is in the manufacturing of electronic computers. This is obviously an enormous simplification. The reason we chose this industry in particular is because this is one in which the total value of imports from China is particularly large.</p>
+<p>The first part of the approach is to get a measure of how much trade with China increased in this industry. Let’s assume that in 2000, the value of all imports of electronic computer manufacturing was 2 billion dollars. In 2007, imagine this had increased to 27 billion (these are roughly correct numbers, although changed slightly to make the math in the next section easier). Then the increase in imports from China in this industry is 25 billion dollars.</p>
+<p>So, intuitively, we think that places that specialized more in electronic computer manufacturing should have been more affected by this increase in imports from China. Our goal now is to basically apportion this 25 billion dollar increase in imports to different commuting zones. We studied commuting zones earlier in this book, but to remind you, these are geographic areas that are meant to capture a notion of a local labor makret. This means people that live in a commuting zone tend to also work in that commuting zone. There are a total of 722 commuting zones in the U.S.</p>
+<p>Let’s assume that in 1991, 50% of all manufacturing of electronic computers occured in San Jose, CA. Therefore, we will say that San Jose should be apportioned 50% of the 25 billion dollar increase in imports from China. This means that San Jose should be assigned 12.5 billion dollars of increased import competition from China. Let’s then assume that 30% of all manufacturing of electronic computers occured in Austin, TX. Therefore, we will say that Austin should be apportioned 30% of the 25 billion dollar increase in imports from China. This means that Austin should be assigned 7.5 billion dollars of increased import competition from China. Finally, let’s assume the remaining 20% of all manufacturing of electronic computers occured in Boston. Therefore, we will say that Boston should be apportioned 20% of the 25 billion dollar increase in imports from China. This means that Boston should be assigned 5 billion dollars of increased import competition from China.</p>
+<p>Below is a table summarizing this example.</p>
+<div id="272e0b66" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_73723 th {
+  background-color: #64B5F6;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 11pt;
+}
+#T_73723 td {
+  padding: 8px;
+  text-align: center;
+}
+#T_73723 tr:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+#T_73723 tr:last-child {
+  font-weight: bold;
+  border-top: 2px solid #64B5F6;
+}
+#T_73723_row0_col0, #T_73723_row0_col1, #T_73723_row0_col2, #T_73723_row1_col0, #T_73723_row1_col1, #T_73723_row1_col2, #T_73723_row2_col0, #T_73723_row2_col1, #T_73723_row2_col2, #T_73723_row3_col0, #T_73723_row3_col1, #T_73723_row3_col2 {
+  text-align: left;
+  font-size: 11pt;
+}
+</style>
+
+<table id="T_73723" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_73723_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Commuting Zone</th>
+<th id="T_73723_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Share of Electronic Computer Manufacturing (1991)</th>
+<th id="T_73723_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Apportioned Increase in Imports</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_73723_row0_col0" class="data row0 col0">San Jose, CA</td>
+<td id="T_73723_row0_col1" class="data row0 col1">50%</td>
+<td id="T_73723_row0_col2" class="data row0 col2">$12.5 billion</td>
+</tr>
+<tr class="even">
+<td id="T_73723_row1_col0" class="data row1 col0">Austin, TX</td>
+<td id="T_73723_row1_col1" class="data row1 col1">30%</td>
+<td id="T_73723_row1_col2" class="data row1 col2">$7.5 billion</td>
+</tr>
+<tr class="odd">
+<td id="T_73723_row2_col0" class="data row2 col0">Boston, MA</td>
+<td id="T_73723_row2_col1" class="data row2 col1">20%</td>
+<td id="T_73723_row2_col2" class="data row2 col2">$5.0 billion</td>
+</tr>
+<tr class="even">
+<td id="T_73723_row3_col0" class="data row3 col0">Total</td>
+<td id="T_73723_row3_col1" class="data row3 col1">100%</td>
+<td id="T_73723_row3_col2" class="data row3 col2">$25.0 billion</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Now, we shouldn’t just stop here. We need to get a sense of the scale of a 12.5 billion increase in imports in electronics is for San Jose. If San Jose has a lot more workers than Austin, for example, maybe the impact is actually smaller per worker. Therefore, we will normalize this increase in imports by the total number of workers in each commuting zone. Let’s assume that San Jose has 1 million workers, and Boston and Austin both have 500,000 workers. Therefore, the increase in imports from China per worker in San Jose is $12,500 per worker. In Austin, it is $15,000 per worker. In Boston, it is $10,000 per worker. Below is a table summarizing this information. Let’s create a new table summarizing this information. We are going to call this measure the import exposure per worker.</p>
+<div id="9bb99064" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_5f6de th {
+  background-color: #64B5F6;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 11pt;
+}
+#T_5f6de th:last-child {
+  background-color: #FF9800;
+}
+#T_5f6de td {
+  padding: 8px;
+  text-align: center;
+}
+#T_5f6de tr:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+#T_5f6de_row0_col0, #T_5f6de_row0_col1, #T_5f6de_row0_col2, #T_5f6de_row1_col0, #T_5f6de_row1_col1, #T_5f6de_row1_col2, #T_5f6de_row2_col0, #T_5f6de_row2_col1, #T_5f6de_row2_col2 {
+  text-align: left;
+  font-size: 11pt;
+}
+#T_5f6de_row0_col3, #T_5f6de_row1_col3, #T_5f6de_row2_col3 {
+  text-align: left;
+  font-size: 11pt;
+  background-color: #FFF9C4;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+
+<table id="T_5f6de" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_5f6de_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Commuting Zone</th>
+<th id="T_5f6de_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total Workers</th>
+<th id="T_5f6de_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Apportioned Increase in Imports</th>
+<th id="T_5f6de_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Import Exposure per Worker</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_5f6de_row0_col0" class="data row0 col0">San Jose, CA</td>
+<td id="T_5f6de_row0_col1" class="data row0 col1">1,000,000</td>
+<td id="T_5f6de_row0_col2" class="data row0 col2">$12.5 billion</td>
+<td id="T_5f6de_row0_col3" class="data row0 col3">$12,500</td>
+</tr>
+<tr class="even">
+<td id="T_5f6de_row1_col0" class="data row1 col0">Austin, TX</td>
+<td id="T_5f6de_row1_col1" class="data row1 col1">500,000</td>
+<td id="T_5f6de_row1_col2" class="data row1 col2">$7.5 billion</td>
+<td id="T_5f6de_row1_col3" class="data row1 col3">$15,000</td>
+</tr>
+<tr class="odd">
+<td id="T_5f6de_row2_col0" class="data row2 col0">Boston, MA</td>
+<td id="T_5f6de_row2_col1" class="data row2 col1">500,000</td>
+<td id="T_5f6de_row2_col2" class="data row2 col2">$5.0 billion</td>
+<td id="T_5f6de_row2_col3" class="data row2 col3">$10,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The Import Exposure per Worker is the key variable studied in Autor, Dorn, and Hanson (2013). Instead of doing this just for electronic computer manufacturing, they do this for all manufacturing industries. For example, if San Jose also specialized in furniture manufacturing, they would also apportion some of the increase in imports from China in furniture manufacturing to San Jose. They then sum up all of these apportioned increases in imports across all manufacturing industries to get a total import exposure per worker for each commuting zone.</p>
+<p>Now, the first question we are going to ask is: how did commuting zones with higher import exposure from China fare in terms of changes in manufacturing employment? To answer this question, we are going to plot changes in percent manufacturing employment against import exposure per worker. For example, if in San Jose, 10% of all workers were employed in manufacturing in 1991, and by 2007 only 5% of all workers were employed in manufacturing, then the change in percent manufacturing employment is -5 percentage points. Below is a scatter plot showing this relationship across all commuting zones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/10_images/adh1.png" class="img-fluid figure-img"></p>
+<figcaption>Change in Manufacturing Employment vs Import Exposure</figcaption>
+</figure>
+</div>
+<p>The first thing to note is that the x-axis is depicting import exposure per worker in thousands of dollars. Therefore, a value of 10 on the x-axis corresponds to $10,000 of import exposure per worker. Also, it is possible that there are some commuting zones that actually had negative import exposure. This would happen if a commuting zone specialized in industries that actually saw a decline in imports from China. The y-axis is depicting the change in percent manufacturing employment in percentage points. Therefore, a value of -5 on the y-axis corresponds to a decline of 5 percentage points in manufacturing employment. The line shows the relationship between import exposure and changes in manufacturing employment. As can be seen, there is a negative relationship. Commuting zones that faced more import exposure from China saw larger declines in manufacturing employment. To put this into a clear magnitude, an increase in import exposure of $1,000 per worker is associated with a decline in manufacturing employment of about 0.34 percentage points. This is clear graphical evidence, but in the paper they further control for other factors that may be correlated with both import exposure and changes in manufacturing employment. After controlling for these other factors, they find a preferred estimate of -0.6 percentage points decline in manufacturing employment for every $1,000 increase in import exposure per worker.</p>
+<p>Now there are two important points here. First, it is clear from this graph that other factors are impacting manufacturing employment. There are commuting zones with equal exposure that have very different levels of manufacturing employment change. Clearly, trade with China is not the only factor affecting manufacturing employment.</p>
+<p>Second, this finding doesn’t necessarily tell us how the workers in these manufacturing jobs are doing overall. It could be that they move to other areas, with more opportunities, for example. This is often a hidden assumption in many models of the labor market. Workers can quickly adapt to changes. However, they find no evidence of this in the data. Places with higher import exposure, for example, do not see decreases in population.</p>
+<p>Therefore, this leaves two remaining options. It could be that the non-manufacturing firms in the area expand and hire the displaced manufacturing workers. Or it could be that these workers struggle to find new jobs. This would be reflected in the data as high unemployment rates and/or lower labor force participation rates.</p>
+<p><span class="citation" data-cites="AutorDornHanson2013">Autor, Dorn, and Hanson (<a href="references.html#ref-AutorDornHanson2013" role="doc-biblioref">2013</a>)</span> find strong evidence for this. A $1,000 per worker import shock increases the number of unemployed and nonparticipating individuals by 4.9 and 2.1 percent, respectively. Overall, this paper finds some striking results that highlight the negative distributional effects of trade. This clear evidence is potentially one reason while public sentiment towards free trade is generally more mixed than the opinion of economists. The stories you hear of workers losing jobs due to trade are clear in news stories and also realized in the data. The adjustment costs are significant, leading to higher unemployment and lower labor force participation in places that faced more competition from China.</p>
+<p>Now, the fact that trade had these negative distributional effects was not necessarily a surprise. There are aspects of the results that are certainly not obvious. It is not clear why the adjustment costs are so high leading to long-term increases in nonparticipation. But the basic takeaway: some individuals lose from trade while others gain was never particularly controversial. For example, in 2012, the Clark Center asked an expert panel of economists the following question:</p>
+<blockquote class="blockquote">
+<p>Some Americans who work in the production of competing goods, such as clothing and furniture, are made worse off by trade with China.</p>
+</blockquote>
+<p>The results of this survey question are shown below. The vast majority of economists agreed with this statement. Therefore, the findings of <span class="citation" data-cites="AutorDornHanson2013">Autor, Dorn, and Hanson (<a href="references.html#ref-AutorDornHanson2013" role="doc-biblioref">2013</a>)</span> are largely consistent with the consensus view among economists.</p>
+<div id="46123833" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-11-output-1.png" width="665" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>However, they were also asked another question about trade with China:</p>
+<blockquote class="blockquote">
+<p>Trade with China makes most Americans better off because, among other advantages, they can buy goods that are made or assembled more cheaply in China.</p>
+</blockquote>
+<p>While the majority of economist agree that some workers are harmed, they also overwhelmingly agree that trade with China makes most Americans better off. 45% strongly agree with this statement.</p>
+<div id="18859cd3" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_files/figure-html/cell-12-output-1.png" width="665" height="566" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So what is the analysis of <span class="citation" data-cites="AutorDornHanson2013">Autor, Dorn, and Hanson (<a href="references.html#ref-AutorDornHanson2013" role="doc-biblioref">2013</a>)</span> missing? As we discussed, the costs of trade are concentrated among certain workers that were employed in manufacturing. The winners are a bit harder to see. Cheaper items from China will benefit consumers, who will have more purchasing power to stimulate other domestic industries. Additionally, firms that use imported goods as inputs will also benefit from lower costs. But we don’t expect these benefits to be concentrated in local areas. These are benefits that are spread out across the country. Therefore, this analysis is not informative of this piece of the puzzle.</p>
+<p>These are generally referred to as general equilibrium effects, and they are extremely difficult to identify (as we discussed in the chapter on technology, in particular, robots). For the remainder of the chaper, we will explore some attempts to understand these general equilibrium effects of trade.</p>
+</section>
+<section id="cross-country-evidence" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="cross-country-evidence"><span class="header-section-number">10.5</span> Cross-Country Evidence</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-AutorDornHanson2013" class="csl-entry" role="listitem">
+Autor, David H., David Dorn, and Gordon H. Hanson. 2013. <span>“The China Syndrome: Local Labor Market Effects of Import Competition in the United States.”</span> <em>American Economic Review</em> 103 (6): 2121–68.
+</div>
+<div id="ref-irwin2020trade" class="csl-entry" role="listitem">
+Irwin, Douglas A. 2020. <span>“Trade Policy in American Economic History.”</span> <em>Annual Review of Economics</em> 12 (1): 23–44.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="enlarged image" style="max-width:90%; max-height:90%; box-shadow:0 0 20px white;">
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09.html" class="pagination-link" aria-label="Labor Supply">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Labor Supply</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
