@@ -285,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-variables" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="key-variables"><span class="header-section-number">12.4</span> Key Variables</h2>
 <p>The dataset contains several binary indicator variables. These are variables that take on either a value of zero (condition is false) or one (condition is true). For example, let’s first take a look at the variable indicating whether an individual has health insurance coverage. The name of this variable is <code>has_health_insurance</code>. Note: this does not come directly from IPUMS USA, but rather was created by me while cleaning the data. In particular, as part of the cleaning process I dropped all individuals for which this variable was missing and recoded the variable so that it is equal to 1 if the individual has any health insurance coverage and 0 otherwise.</p>
-<div id="a3333e3c" class="cell" data-execution_count="1">
+<div id="38e3613b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -344,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>It is easy to see that 2 out of 3 individuals have health insurance, or 66.67%. We can also calculate this by taking the mean of the variable: (1 + 0 + 1) / 3 = 0.6667. This will be useful later when we construct graphs. If we want the fraction in the labor force by age, we can just take the mean of the <code>in_labor_force</code> variable. Now, if the variable were coded as “yes” and “no”, or as 1 and 2, we would not be able to do this.</p>
 <p>Since we are going to be focused on retirement decisions due to Medicare, let’s look directly at this variable as well. This variable is called <code>has_medicare</code> and is again a binary indicator variable equal to 1 if the individual has Medicare coverage and 0 otherwise.</p>
-<div id="adc532e1" class="cell" data-execution_count="2">
+<div id="7e36d57d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -381,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="regression-discontinuity-design" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="regression-discontinuity-design"><span class="header-section-number">12.5</span> Regression Discontinuity Design</h2>
 <p>All of these policies are determined by cutoff rules, making them potential candidates for regression discontinuity analysis, which we studied in Chapter 6: Human Capital. First, let’s see how the probability of having Medicare coverage changes at age 65. This will be our “treatment” variable. We will then study how this change in Medicare coverage affects labor force participation.</p>
-<div id="c25cf690" class="cell" data-execution_count="3">
+<div id="f5a0dde4" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -393,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 <p>So clearly, turning 65 leads to a large increase in the probability of having Medicare coverage. However, it doesn’t go from zero to 100 percent. There are some rare cases that individuals under 65 may have Medicare coverage (for example, individuals with certain disabilities). There is also potential for measurement error. People may be reporting that they are covered by Medicare when they are actually on Medicaid or insurance program. This could explain why we see a non-negligible fraction of individuals under 65 with Medicare coverage.</p>
 <p>However, it is clear there is an enormous jump in the fraction of individuals with Medicare coverage at age 65. For 65 and older, more than 80 percent of individuals have Medicare coverage. This makes this a fuzzy regression discontinuity design. Crossing the threshold has a large impact on the probability of treatment (having Medicare), but it is not a perfect jump from zero to one.</p>
 <p>Now, for contet, many people do have health insurance through private options, generally provided by employers. So let’s see if this enormous jump in Medicare coverage at age 65 is associated with increased coverage more generally. Therefore, we are going to replace the <code>has_medicare</code> variable with the <code>has_health_insurance</code> variable in the graph above. This variable indicates whether the individual has any health insurance coverage, whether through Medicare, private insurance, Medicaid, or other sources.</p>
-<div id="bdd37a4b" class="cell" data-execution_count="4">
+<div id="a66351ac" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -404,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Again we see a noticeable jump in the fraction of individuals with health insurance coverage at age 65. However, we have to be careful about the scale on the y-axis. As we can see, the fraction of individuals with health insurance before age 65 is already quite high, at 94 percent. However, there is still a noticeable increase in health insurance coverage at age 65 due to the availability of Medicare. The fraction of individuals with health care coverage increases to nearly 98 percent at age 65 and older.</p>
 <p>Finally, let’s see if this increase in health insurance coverage at age 65 is associated with changes in labor force participation. The variable we will use to measure labor force participation is called <code>in_labor_force</code>, which is again a binary indicator variable equal to 1 if the individual is in the labor force (either employed or actively looking for work) and 0 otherwise.</p>
-<div id="ad31da1e" class="cell" data-execution_count="5">
+<div id="d4a7287c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
