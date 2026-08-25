@@ -15,10 +15,16 @@ book:
     - 04.qmd
     - 05.qmd
     - 06.qmd
+    - 07.qmd
+    - 08.qmd
+    - 09.qmd
+    - 10.qmd
     - references.qmd
   - part: "Datasets"
     chapters:
     - cps.qmd
+    - acs.qmd
+    - onet.qmd
   
 
 bibliography: references.bib

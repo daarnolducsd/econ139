@@ -3,3 +3,507 @@ title: "The Current Population Survey (CPS)"
 format: html
 jupyter: python3
 ---
+
+## Brief Introduction 
+
+Modern labor economics started with the advent of large-scale surveys of individuals and households which began shortly after World War II. One of the most important, widely used, and to this day, influential surveys is undoubtedly the Current Population Survey (CPS).
+
+## The Current Population Survey (CPS)
+
+The current population survey (CPS) is a monthly survey of about 60,000 households conducted by the U.S. Census Bureau and the Bureau of Labor Statistics. The CPS is the primary source of information on the labor force characteristics of the U.S. population, as well as the source for unemployment rates. To discuss the CPS, we are going to compute the unemployment rate and construct a measure of median personal income. 
+
+The CPS is what is referred to as a panel survey, implying it follows individuals over time. It has a somewhat complex design, where households are interviewed for four consecutive months, then not interviewed for the next eight months, and then interviewed again for four consecutive months. For example Figure 1 below illustrates the design for a household that was first interviewed in January 2024.
+
+```{python}
+#| echo: false
+#| label: fig-cps-design
+#| fig-cap: "Current Population Survey Design"
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import numpy as np
+
+# CPS interview pattern: 1=interviewed, 0=not interviewed
+# First 4 months interviewed, then 8 months not interviewed, then 4 months interviewed again
+interview_pattern = [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+
+# Months and years for the full 16-month period
+months_years = [
+    ('Jan', '2024'), ('Feb', '2024'), ('Mar', '2024'), ('Apr', '2024'),
+    ('May', '2024'), ('Jun', '2024'), ('Jul', '2024'), ('Aug', '2024'),
+    ('Sep', '2024'), ('Oct', '2024'), ('Nov', '2024'), ('Dec', '2024'),
+    ('Jan', '2025'), ('Feb', '2025'), ('Mar', '2025'), ('Apr', '2025')
+]
+
+plt.figure(figsize=(8, 8))
+ax = plt.gca()
+
+# Create boxes arranged in 4 rows of 4 boxes each
+box_width = 1.2
+box_height = 1.2
+rows = 4
+cols = 4
+
+for i, ((month, year), status) in enumerate(zip(months_years, interview_pattern)):
+    row = i // cols
+    col = i % cols
+    
+    x_position = col * 1.5 + 1
+    y_position = (rows - 1 - row) * 1.5 + 1
+    
+    # Choose color based on interview status
+    color = '#2E86AB' if status == 1 else '#E74C3C'  # Stylish blue for interviewed, modern red for not
+    
+    # Choose border style based on outgoing rotation group
+    if i == 3 or i == 15:  # 4th interview (April 2024) or 8th interview (April 2025)
+        linewidth = 4
+        edgecolor = '#FFD700'  # Gold border for outgoing rotation groups
+    else:
+        linewidth = 2
+        edgecolor = 'black'
+    
+    # Create rectangle
+    rect = patches.Rectangle((x_position - box_width/2, y_position - box_height/2), 
+                           box_width, box_height, 
+                           linewidth=linewidth, edgecolor=edgecolor, facecolor=color, alpha=0.8)
+    ax.add_patch(rect)
+    
+    # Add month and year label
+    plt.text(x_position, y_position + 0.1, month, ha='center', va='center', 
+             fontweight='bold', fontsize=12, color='white')
+    plt.text(x_position, y_position - 0.2, year, ha='center', va='center', 
+             fontweight='bold', fontsize=10, color='white')
+
+# Customize the plot
+plt.xlim(-0.5, 7)
+plt.ylim(-0.5, 7)
+plt.title('Current Population Survey Design\n(Household First Interviewed in January 2024)', 
+          fontsize=14, fontweight='bold', pad=20)
+
+# Remove axes
+plt.axis('off')
+
+# Add legend
+legend_elements = [
+    patches.Patch(color='#2E86AB', label='Interviewed'),
+    patches.Patch(color='#E74C3C', label='Not Interviewed'),
+    patches.Rectangle((0, 0), 1, 1, linewidth=4, edgecolor='#FFD700', facecolor='none', label='Outgoing Rotation Group')
+]
+plt.legend(handles=legend_elements, loc='upper right', fontsize=10)
+
+plt.tight_layout()
+plt.show()
+```
+
+The 4th and 8th interview are referred to as outgoing rotation groups. These groups are often given extra consideration in analysis because in these interviews, respondents are asked additional questions about work and income. So if you are doing an analysis that requires an individual's income, you may need to restrict your sample to just the outgoing rotation groups. If you are more interested in labor force status, then you don't need to restrict your sample.
+
+The variable MISH indicates the month-in-sample of the individual. For example, if MISH=1, then the individual is in their first month of being interviewed. If MISH=4, then the individual is in their fourth month of being interviewed and is part of an outgoing rotation group. If MISH=5, then the individual is in their fifth month of being interviewed and so on. If you want to restrict to outgoing rotation group, you need to restrict to MISH=4 or MISH=8.
+
+## Downloading the CPS 
+
+There are two main ways to access the CPS data. The first is directly through the [Bureau of Labor Statistics website](https://www.census.gov/data/datasets/time-series/demo/cps/cps-basic.html). The second is through the IPUMS-CPS project, which provides harmonized CPS data. This is much easier for a number of reasons. First, the IPUMS-CPS project (IPUMS stands for Integrated Public Use Microdata Series). IPUMS provides a user-friendly interface to select variables and download data. You can also select the samples you want, implying you can select information from multiple years and download it all in one file. The raw data files provided by the Bureau of Labor Statistics require much more data cleaning and processing. Second, the IPUMS-CPS project provides harmonized variables that are consistent over time, which is especially useful if you are working with data from multiple years. Lastly, the IPUMS-CPS project provides detailed documentation and support for users. For example, if you are confused about what a variable in the CPS means, you can often google the variable name and find a relevant IPUMS-CPS documentation page that explains the variable in detail. For example, when you submit an extract request, it comes with a codebook that provides detailed information about each variable, including its coding scheme.
+
+## Computing the Unemployment Rate
+
+For our first foray into the CPS, we are going to compute the unemployment rate. We are going to do this for August 2025 data (see course website for link to the data file `cps_aug_25.csv`).
+
+Let's first load the data and take a look at the variables that are included. 
+
+```{python}
+#| echo: false
+import pandas as pd
+from IPython.display import HTML
+
+cps_data = pd.read_csv('/Users/davidarnold/Dropbox/Teaching/ECON139/data/cps/cps_aug_25.csv')
+
+# Get column names and organize them into a DataFrame for display
+column_names = list(cps_data.columns)
+
+# Create a DataFrame with multiple columns for better layout
+n_cols = 4  # Number of columns in the table
+n_rows = len(column_names) // n_cols + (1 if len(column_names) % n_cols != 0 else 0)
+
+# Pad the list to make it evenly divisible
+padded_names = column_names + [''] * (n_cols * n_rows - len(column_names))
+
+# Reshape into a table format
+table_data = []
+for i in range(n_rows):
+    row = []
+    for j in range(n_cols):
+        idx = j * n_rows + i
+        if idx < len(padded_names):
+            row.append(padded_names[idx])
+        else:
+            row.append('')
+    table_data.append(row)
+
+# Create DataFrame for nice HTML table display
+display_df = pd.DataFrame(table_data)
+
+# Style the table
+styled_table = display_df.style.set_table_styles([
+    {'selector': 'th', 'props': [('display', 'none')]},  # Hide column headers
+    {'selector': 'td', 'props': [('text-align', 'left'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd'), ('vertical-align', 'top')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px')]}
+]).hide(axis='index').set_caption(f"CPS Dataset Variables (Total: {len(column_names)} variables)")
+
+display(styled_table)
+```
+
+Let's compute the unemployment rate among these group of workers. The unemployment rate is defined as the number of unemployed individuals divided by the labor force. Remember from Chapter 1 that if you are not currently employed and not actively looking for work, then you are not part of the labor force. Before we compute the unemployment rate, let's first see how many individuals are in the labor force. We can do this by looking at the variable `LABFORCE`, which indicates whether an individual is in the labor force or not.
+
+```{python}
+#| echo: false
+# Create a frequency table for LABFORCE variable
+labforce_freq = cps_data['LABFORCE'].value_counts().sort_index()
+
+# Create a nice DataFrame for display
+freq_table = pd.DataFrame({
+    'Labor Force Status': labforce_freq.index,
+    'Count': labforce_freq.values,
+    'Percentage': (labforce_freq.values / labforce_freq.sum() * 100).round(2)
+})
+
+# Add descriptive labels
+status_labels = {
+    0: 'NIU (Not in Universe)',
+    1: 'No, not in labor force',
+    2: 'Yes, in labor force'
+}
+
+freq_table['Description'] = freq_table['Labor Force Status'].map(status_labels)
+
+# Reorder columns
+freq_table = freq_table[['Labor Force Status', 'Description', 'Count', 'Percentage']]
+
+# Style the table
+styled_freq_table = freq_table.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Distribution of Labor Force Status (LABFORCE Variable)")
+
+# Format the percentage column
+styled_freq_table = styled_freq_table.format({'Percentage': '{:.2f}%'})
+
+display(styled_freq_table)
+```
+
+In the CPS, variables are generally coded numerically. To understand what the numbers represent, however, you need to use the codebook. This is where the labels for the numbers come from. The first thing you might notice is that a larger share of people are recorded as "Not in Universe". This implies the labor force status is not applicable for these individuals. This can happen for two reasons, basically. First, the CPS does ask about individuals who are under 16 years old, and these individuals are not part of the labor force. For these individuals, often the parents will fill out the survey on their behalf. For our purposes, let's restrict to individuals that are 16 years old or older. We can do this by restricting to individuals with `AGE>=16`. This restriction drops most of the 16,167 individuals who are "Not in Universe", but there remain a few left. In this case, these individuals should have been asked this question, but for some reason, they were not. This can happen for a variety of reasons, such as the individual refusing to answer the question or the interviewer making a mistake. For our purposes, we are going to drop these individuals from our analysis.
+
+```{python}
+#| echo: false
+# Restrict to individuals aged 16 or older
+cps_data = cps_data[cps_data['AGE'] >= 16]# 
+cps_data = cps_data[cps_data['LABFORCE'].isin([1, 2])]#
+
+# Recreate the frequency table for LABFORCE variable after restriction
+labforce_freq = cps_data['LABFORCE'].value_counts().sort_index()
+
+# Create a nice DataFrame for display
+freq_table_restricted = pd.DataFrame({
+    'Labor Force Status': labforce_freq.index,
+    'Count': labforce_freq.values,
+    'Percentage': (labforce_freq.values / labforce_freq.sum() * 100).round(2)
+})
+
+# Add descriptive labels
+status_labels = {
+    0: 'NIU (Not in Universe)',
+    1: 'No, not in labor force',
+    2: 'Yes, in labor force'
+}
+
+freq_table_restricted['Description'] = freq_table_restricted['Labor Force Status'].map(status_labels)
+
+# Reorder columns
+freq_table_restricted = freq_table_restricted[['Labor Force Status', 'Description', 'Count', 'Percentage']]
+
+# Style the table
+styled_freq_table_restricted = freq_table_restricted.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Distribution of Labor Force Status (Ages 16+)")
+
+# Format the percentage column
+styled_freq_table_restricted = styled_freq_table_restricted.format({'Percentage': '{:.2f}%'})
+
+display(styled_freq_table_restricted)
+```        
+
+So in our relevant sample, just above 60% are in the labor force and just below 40% are not in the labor force. This is a pretty standard estimate of this statistic. To compute the unemployment rate, we need to know how many individuals among those in the labor force are not currently employed. This information is contained in the variable `EMPSTAT`, which includes a more thorough breakdown that indicates whether an individual is employed, unemployed, or not in the labor force. Let's take a look at the distribution of this variable among our remaining sample. 
+
+```{python}
+#| echo: false
+# Create a frequency table for EMPSTAT variable
+empstat_freq = cps_data['EMPSTAT'].value_counts().sort_index()
+
+# Create a nice DataFrame for display
+empstat_table = pd.DataFrame({
+    'Employment Status': empstat_freq.index,
+    'Count': empstat_freq.values,
+    'Percentage': (empstat_freq.values / empstat_freq.sum() * 100).round(2)
+})
+
+# Add descriptive labels for EMPSTAT codes
+empstat_labels = {
+    0: 'NIU (Not in Universe)',
+    1: 'Armed Forces',
+    10: 'At work',
+    12: 'Has job, not at work last week',
+    20: 'Unemployed',
+    21: 'Unemployed, experienced worker',
+    22: 'Unemployed, new worker',
+    30: 'Not in labor force',
+    31: 'Not in labor force, housework',
+    32: 'Not in labor force, unable to work',
+    33: 'Not in labor force, school',
+    34: 'Not in labor force, other',
+    36: 'Not in labor force, retired'
+}
+
+empstat_table['Description'] = empstat_table['Employment Status'].map(empstat_labels)
+
+# Reorder columns
+empstat_table = empstat_table[['Employment Status', 'Description', 'Count', 'Percentage']]
+
+# Style the table
+styled_empstat_table = empstat_table.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Distribution of Employment Status (EMPSTAT Variable)")
+
+# Format the percentage column
+styled_empstat_table = styled_empstat_table.format({'Percentage': '{:.2f}%'})
+
+display(styled_empstat_table)
+```
+
+The Not In Labor Force categories match what we saw before (19035+9190+3704=31929). The employed categories (10 and 12) sum to 46,417, while the unemployed categories (21 and 22) sum to 2,031. The unemployment rate is then computed as:
+
+\begin{align}
+\text{Unemployment Rate} &= \frac{\text{Number of Unemployed}}{\text{Labor Force}} \\
+&= \frac{2031}{2031 + 46417} \\
+&= 4.4\%
+\end{align}
+
+You might see a slightly different unemployment rate reported in the news or on the BLS website. This is because the BLS uses a slightly different sample and also applies weights to the data to make it representative of the U.S. population. The weights are provided in the CPS data (`WTFINL`). The basic reason behind the weights is that the CPS purposely oversamples some populations. For example, imagine you want to understand the age distribution of a University, but also wanted to understand what fraction of seniors at a University have already found a job. You may want to oversample seniors to get a better estimate of this statistic. However, if you oversample seniors, then your sample will not be representative of the overall population. If you take the average age, then it will be biased upwards because seniors are older. To correct for this, you would apply weights to the data so that seniors are weighted less and other groups are weighted more. This is the basic idea behind weights in survey data. Weights are often provided in survey data to make the sample representative of the population. For our purposes, the weights will not actually make too much of a difference and would complicate the analysis, so we will ignore them for now.
+
+::: {.callout-warning title="AI for Data Analysis"}
+AI is undoubtedly an extremely useful tool for data analysis. Much of the code written to clean and organize data is fairly simple and has been performed thousands of times before by many different people. This makes it ideal for AI to help generate code snippets and explanations. 
+
+However, AI tools can also make mistakes. For example, when constructing the frequency tables above, the AI I used (Claude) provided suggestions for the labels of the different numeric codes in the CPS. While most were correct, a few were incorrect. If I had not cross-referenced with the official documentation, I would have classified a large number of workers that were not in the labor force as not in universe. This would lead to big issues if your goal was to study labor force participation. Additionally, the AI sometimes made simple mathematical mistakes (such as incorrectly summing up a list of numbers). 
+:::
+
+## Occupation 
+
+In this course, one important focus will be on occupations. In particular, when we study how technological changes impact the labor market, our predictions will depend crucially on the types of tasks performed in different occupations. Therefore, let's dig into the occupation variable in the CPS. 
+
+The occupation variable, by necessity, has gone through some changes over time. When the CPS was created in the 1940s, there simply weren't occupations like "Software Developer" or "Data Scientist". Therefore, the CPS has periodically updated the occupation codes to reflect changes in the labor market. The occupation variable in the CPS is called `OCC`. Since we are using the 2025 data, we are going to use the classification system that was introduced in 2018. 
+
+Let's see what the five most common occupations are in our sample.
+
+```{python}
+#| echo: false
+# Filter to only employed individuals (those with valid occupation codes)
+employed_data = cps_data[cps_data['EMPSTAT'].isin([10, 12])]
+
+# Get the top 5 most common occupations
+occ_freq = employed_data['OCC'].value_counts().head(5)
+
+# Create a DataFrame for display
+top_occ_table = pd.DataFrame({
+    'Occupation Code': occ_freq.index,
+    'Count': occ_freq.values,
+    'Percentage': (occ_freq.values / len(employed_data) * 100).round(2)
+})
+
+# Add occupation titles (these are common SOC codes - would need full codebook for complete mapping)
+occ_titles = {
+    440: 'Managers, all other',
+    3255: 'Registered Nurses', 
+    3600: 'Driver/sales workers and truck drivers',
+    2310: 'Elementary and middle school teachers',
+    4700: 'First-line supervisors of retail sales workers'
+    }
+
+# Map occupation titles, use 'Unknown' if not in our mapping
+top_occ_table['Occupation Title'] = top_occ_table['Occupation Code'].map(occ_titles).fillna('Unknown Occupation')
+
+# Reorder columns
+top_occ_table = top_occ_table[['Occupation Code', 'Occupation Title', 'Count', 'Percentage']]
+
+# Style the table
+styled_occ_table = top_occ_table.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Top 5 Most Common Occupations Among Employed Workers")
+
+# Format the percentage column
+styled_occ_table = styled_occ_table.format({'Percentage': '{:.2f}%'})
+
+display(styled_occ_table)
+```
+
+Depending on your analysis and what you are interested in, you may need to either aggregate data from many more time periods or group some occupations together. For the most popular occupation (Managers, all other), we have 1,707 observations in August 2025. 
+
+## Earnings 
+
+Next, we are going to study earnings. As discussed before, earnings information is primarily studied using the outgoing rotation group (i.e. MISH=4 or MISH=8). There are a few things about earnings data that are important to note. 
+
+First, because earnings information is only asked in the outgoing rotation group, many people have a numeric code that indicates that they were not asked this question. The variable we will be using is `EARNWEEK2`, which indicates the total earnings in the past week. If you use earlier versions of the CPS, we could have used `EARNWEEK`, which is similar. The only difference between these two variables is that `EARNWEEK2` rounds numbers to preserve confidentiality of the respondent. This was introduced in April 2023. If you are using data from before this date, you should just use `EARNWEEK`.
+
+If you go to the codebook for `EARNWEEK2`, you will see that there are a number of numeric codes that indicate the respondent was not asked this question. For example, the codebook reports that `EARNWEEK2=999999.99`, indicates that the person is not in universe for this question. 
+
+```{python}
+#| echo: false
+# Count people with EARNWEEK2 = 999999.99 (Not in Universe code)
+niu_count = (cps_data['EARNWEEK2'] == 999999.99).sum()
+total_count = len(cps_data)
+
+# Create a simple table showing the count
+niu_table = pd.DataFrame({
+    'EARNWEEK2 Value': ['999999.99', 'All Other Values'],
+    'Count': [niu_count, total_count - niu_count],
+    'Percentage': [
+        (niu_count / total_count * 100).round(2),
+        ((total_count - niu_count) / total_count * 100).round(2)
+    ]
+})
+
+# Style the table
+styled_niu_table = niu_table.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Distribution of EARNWEEK2 = 999999.99 (Not in Universe)")
+
+# Format the percentage column
+styled_niu_table = styled_niu_table.format({'Percentage': '{:.2f}%'})
+
+display(styled_niu_table)
+```
+
+The individuals with missing earnings information are either individuals who are not working or individuals not in the outgoing rotation group. That is why the fraction with earnings information appears relatively low. Not dropping individuals with missing earnings information from the sample would be extremely problematic. Because the missing data is stored as a numeric variable, imagine we tried to compute the average weekly earnings. If we failed to drop the missing individuals, then the average would be around 900,000 dollars per week. This is obviously not correct. So we need to drop these individuals from our sample. Then, let's compute some summary statistics for weekly earnings.
+
+```{python}
+#| echo: false
+# Filter out individuals with missing earnings data (999999.99)
+earnings_data = cps_data[cps_data['EARNWEEK2'] != 999999.99]
+
+# Compute summary statistics
+mean_earnings = earnings_data['EARNWEEK2'].mean()
+median_earnings = earnings_data['EARNWEEK2'].median()
+p10_earnings = earnings_data['EARNWEEK2'].quantile(0.10)
+p90_earnings = earnings_data['EARNWEEK2'].quantile(0.90)
+count_with_earnings = len(earnings_data)
+total_sample = len(cps_data)
+
+# Create a summary statistics table
+earnings_summary = pd.DataFrame({
+    'Statistic': ['Mean Weekly Earnings', 'Median Weekly Earnings', 
+                  '10th Percentile', '90th Percentile', 'Observations'],
+    'Value': [
+        f"${mean_earnings:,.2f}",
+        f"${median_earnings:,.2f}",
+        f"${p10_earnings:,.2f}",
+        f"${p90_earnings:,.2f}",
+        f"{count_with_earnings:,}"
+    ]
+})
+
+# Style the table
+styled_earnings_summary = earnings_summary.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#2E86AB'), ('color', 'white'), 
+                                 ('font-weight', 'bold'), ('text-align', 'center'), ('padding', '10px')]},
+    {'selector': 'td', 'props': [('text-align', 'center'), ('padding', '8px'), 
+                                 ('border-bottom', '1px solid #ddd')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f8f9fa')]},
+    {'selector': 'table', 'props': [('border-collapse', 'collapse'), ('width', '100%'),
+                                    ('font-family', 'Arial, sans-serif'), ('font-size', '14px'), 
+                                    ('margin', 'auto')]}
+]).hide(axis='index').set_caption("Weekly Earnings Summary Statistics (Excluding Missing Values)")
+
+display(styled_earnings_summary)
+```
+
+This table gives us a sense of the distribution of weekly earnings among workers in our sample. The median weekly earnings is $1,076.00. Assuming a 52-week year, this implies median annual earnings of about $55,952. The average is quite a bit higher at $1,464.58. This is common in earnings data, which tends to be right-skewed. When there are some really large value, this will pull the average up, while the median doesn't depend on the magnitude of the values, just their rank.
+
+To see this clearly, imagine we had only 5 workers with weekly earnings of $500, $500, $1000, $1,500, and $1,500. In this example, both the mean and median are $1,000. Now imagine the 5th worker sees an increase in their weekly earnings, growing all the way to $10,000. This has no impact on the median, which remains $1,000. However, the mean increases to $2,700. 
+
+To see the entire distribution of weekly earnings, let's plot a histogram.
+
+```{python}
+#| echo: false
+#| label: fig-earnings-histogram
+#| fig-cap: "Distribution of Weekly Earnings"
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create histogram of weekly earnings
+plt.figure(figsize=(7, 5))
+plt.hist(earnings_data['EARNWEEK2'], bins=50, edgecolor='black', alpha=0.7, color='#2E86AB')
+
+# Add vertical lines for mean and median
+plt.axvline(mean_earnings, color='red', linestyle='--', linewidth=2, label=f'Mean: ${mean_earnings:,.0f}')
+plt.axvline(median_earnings, color='orange', linestyle='--', linewidth=2, label=f'Median: ${median_earnings:,.0f}')
+
+# Customize the plot
+plt.xlabel('Weekly Earnings ($)', fontsize=12)
+plt.ylabel('Frequency', fontsize=12)
+plt.title('Distribution of Weekly Earnings (CPS August 2025)', fontsize=14, fontweight='bold')
+plt.legend()
+plt.grid(True, alpha=0.3)
+
+# Format x-axis to show dollar signs
+ax = plt.gca()
+ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}'))
+
+plt.tight_layout()
+plt.show()
+```
+
+This distribution has a long right tail, which is typical of earnings data. The mean is pulled up by the high earners, while the median is more representative of a typical worker's earnings. One thing you might notice is that there seems to be a spike just below $8,000 a week. It seems unlikely that so many people would have exactly that amount of earnings. Additionally, it is surprising that there is basically no one with earnings between $5,000 and $7,000. What is going on here?
+
+If you look carefully in the data, you will find that there are a non-negligible fraction of individuals with weekly earnings reported as exactly equal to $7,785.88. But wasn't this supposed to be a rounded earnings variable? The reason this is not rounded is because these individuals earnings have been top-coded. For earnings above a certain amount, there are concerns that the individual would be identifiable based on their earnings. Therefore, to preserve confidentiality, the CPS top-codes earnings at a certain level. For 2025, the Census top-codes the top 3 percent of earners and sets the value of their weekly earnings to the average earnings of the top 3 percent of earners.
+
+If you look even more closely at the data, you'll find that the largest value that is not top-coded is $4,300. So if you make more than $4,300 a week, that implies you are in the top 3 percent of earners. Among individuals that make more than $4,300 a week, the average is $7,785.88. This is why there is a spike at this value because anyone with earnings above $4,300 is recorded as having earnings of $7,785.88.
+
+Top-coding has changed over time. The threshold has changed, and in prior years, it was static. In other words, instead of top-coding the top 3 percent of earners, the CPS would top-code anyone making more than a certain amount. 
+
+## Conclusion
+
+The Current Population Survey is one of the most important and influential surveys in labor economics. It remains important today as the source for up-to-date unemployment numbers. However, using the CPS for research requires one to be careful. Without a thorough understanding of how variables are coded, the structure of the survey, and changes to the survey over time, it is easy to make mistakes that can lead to incorrect conclusions.

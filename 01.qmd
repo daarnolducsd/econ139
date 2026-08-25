@@ -7,23 +7,23 @@ jupyter: python3
 
 ## The Rise of Wage Inequality 
 
-The early 20th century was marked by the rise of many  titans of industry. Figures like John D. Rockefeller, Andrew Carnegie, Henry Ford and J.P. Morgan amassed enormous fortunes. The roaring twentires, a period of massive economic growth, was accompanied by tremendous inequality. For example, in 1929, if you consider the top 1% of all earners, these indviduals took home just over 20% of all income in the U.S. In contrast, the bottom 50% took home just under 15%. 
+The early 20th century was marked by the rise of many titans of industry. Figures like John D. Rockefeller, Andrew Carnegie, Henry Ford and J.P. Morgan amassed enormous fortunes. The roaring twenties, a period of massive economic growth, was accompanied by tremendous inequality. For example, in 1929, if you consider the top 1% of all earners, these individuals took home just over 20% of all income in the U.S. In contrast, the bottom 50% took home just under 15%. 
 
-World War II however brought about a dramatic change in the U.S. economy. The post-war boom led to a period of tremendous growth that benefited not only the wealthy, but also dramatically grew the middle class. Throughout the 1950s, for example, the share of income going to the top 1% fell dramatically. By 1970, it was just above 10% of total income, whereas the bottom 50% were earning just above 20% of all income. 
+World War II, however, brought about a dramatic change in the U.S. economy. The post-war boom led to a period of tremendous growth that benefited not only the wealthy, but also dramatically grew the middle class. Throughout the 1950s, for example, the share of income going to the top 1% fell dramatically. By 1970, it was just above 10% of total income, whereas the bottom 50% were earning just above 20% of all income. 
 
-However, things started change in the 1980s. The dramatic decrease in inequality brought about by the post-war boom was eroded away. In 2020, inequality reached levels not seen since the 1920s. 
+However, things started to change in the 1980s. The dramatic decrease in inequality brought about by the post-war boom was eroded away. In 2020, inequality reached levels not seen since the 1920s. 
 
 ![Income Inequality in the United States](/images/01_images/income_inequality.png){#fig-piketty-saez width=100%}
 
-@fig-piketty-saez shows the complete picture over time. This figure was originally produced by economists Thomas Piketty and Emmanuel Saez in their influential paper *Income Inequality in the United States, 1913-1998* [@piketty2003income]. The more recent data comes from the World Inequality Database, which continues to track income inequality in the U.S. and around the world. Our second big question will focus on one aspect of this figure: the rise in inequality since the 1980s. Before we dig into this question, however, there are two important points to make. First, there is no single definition of inequality. In the figure above, we measured inequality as differences in the share of income going to the top 1% vs. bottome 50%. But why not top 10% vs. bottom 50%. Instead of share of income, we can also measure inequality across groups of people. For example, a common measure of inequality measures differences across individuals of different educational backgrounds. We will return to these different measures shortly, but before we do, let's discuss the second important point about inequality. Inequality doesn't actually tell us anything about how well-off people are in general. Even if inequality is rising, it could be true that everyone is getting richer over time. 
+@fig-piketty-saez shows the complete picture over time. This figure was originally produced by economists Thomas Piketty and Emmanuel Saez in their influential paper *Income Inequality in the United States, 1913-1998* [@piketty2003income]. The more recent data comes from the World Inequality Database, which continues to track income inequality in the U.S. and around the world. Our first big question will focus on one aspect of this figure: the rise in inequality since the 1980s. Before we dig into this question, however, there are two important points to make. First, there is no single definition of inequality. In the figure above, we measured inequality as differences in the share of income going to the top 1% vs. bottom 50%. But why not top 10% vs. bottom 50%? Instead of share of income, we can also measure inequality across groups of people. For example, a common measure of inequality measures differences across individuals of different educational backgrounds. We will return to these different measures shortly, but before we do, let's discuss the second important point about inequality. Inequality doesn't actually tell us anything about how well-off people are in general. Even if inequality is rising, it could be true that everyone is getting richer over time. 
 
-To study how well people are doing over time, we need a way to compare income over time. The average median household income in the U.S. in 1950 was about \$3,000. In 2023, the median household income was \$80,000. Does that mean the median household is richer in 2023? Not necessarily. Prices are dramatically different between these two time periods.  
+To study how well people are doing over time, we need a way to compare income over time. The median household income in the U.S. in 1950 was about \$3,000. In 2023, the median household income was \$80,000. Does that mean the median household is richer in 2023? Not necessarily. Prices are dramatically different between these two time periods.  
 
 The key to comparing income across time is to compute **real income**. This is a measure of income that adjusts for inflation. By computing real income we are measuring how much a household can actually purchase. Therefore, if real income is higher today than in 1950, we interpret this as households being able to purchase more today than in the past. To get a sense of how this works in practice, let's construct a simplified example. Let's assume that households only pay for two things: housing and groceries. 
 
 In 1950, the median monthly rent for housing was \$42 per month. In 2023, the median monthly rent for housing was about \$1,300. Therefore, housing prices have increased by about 30 times since 1950. Now, let's consider groceries. To make things even simpler, let's just look at the case of bread. A single loaf of bread in 1950 cost about \$0.30. In 2023, a loaf of bread costs about \$2.00. Therefore, the price of bread has increased by about 10 times since 1950. For simplicity, let's assume the price of bread is a good indicator for how grocery prices have changed over time. 
 
-So how much have prices risen between 1950 and 2023? Housing has increased 30% but groceries 10%. How do we decide how much prices have risen overall? To do so, we will compute a **price index**. To compute a price index, we weight each price increase by what percent of a household's budge is spent on that good or service. For the sake of this simplified example, let's assume 50% of a household's budget goes to housing, and 50% goes to groceries. Therefore, the aggregate price index is given by:
+So how much have prices risen between 1950 and 2023? Housing has increased 30 times but groceries 10 times. How do we decide how much prices have risen overall? To do so, we will compute a **price index**. To compute a price index, we weight each price increase by what percent of a household's budget is spent on that good or service. For the sake of this simplified example, let's assume 50% of a household's budget goes to housing, and 50% goes to groceries. Therefore, the aggregate price index is given by:
 $$
 \text{Price Index 2023} = \underbrace{0.5 \times 30}_{\text{Housing Increase}} + \underbrace{0.5 \times 10}_{\text{Grocery Increase}} = 20
 $$
@@ -35,7 +35,7 @@ $$
 
 So we finally have our answer. The median household income in 2023, when adjusted for inflation, is about \$4,000 in 1950 dollars. This is higher than the median household income in 1950 of \$3,000. Therefore, we can conclude that the typical household is better off today than in 1950.
 
-Now we have made a number of simplifications. In particular, we have assumed there are only two goods: housing and groceries. We have assumed the cost of bread is a good approximation for the cost of all groceries. This is clearly not a good assumption in practice. In practice, the Bureau of Labor statistics tracks the prices of thousands of goods and services to compute the Consumer Price Index (CPI). The concept is similar to what we have done here. You create a basket of goods that consumers buy. Then you construct a price change for each specific good, aggregating these price changes in order to get an overall price index. When you hear about inflation going up in the news, this is what they are referring to.
+Now we have made a number of simplifications. In particular, we have assumed there are only two goods: housing and groceries. We have assumed the cost of bread is a good approximation for the cost of all groceries. This is clearly not a good assumption in practice. In practice, the Bureau of Labor Statistics tracks the prices of thousands of goods and services to compute the Consumer Price Index (CPI). The concept is similar to what we have done here. You create a basket of goods that consumers buy. Then you construct a price change for each specific good, aggregating these price changes in order to get an overall change in prices. When you hear about inflation going up in the news, this is what they are referring to.
 
 Using publicly available data from the U.S. Census Bureau and the Bureau of Labor Statistics (BLS), we can get a more accurate comparison of price levels between 1950 and 2023:
 
@@ -43,31 +43,31 @@ $$
 \frac{Prices_{2023}}{Prices_{1950}} = \frac{CPI_{2023}}{CPI_{1950}}  \approx 12.6
 $$
 
-So if we take the  median household income in 2023 of \$80,000 and deflate it by this price index, we get:
+So if we take the median household income in 2023 of \$80,000 and deflate it by this price index, we get:
 $$
 \text{Real Income 2023} = \frac{\$80,000}{12.6} \approx \$6,350
 $$
 
-So the real median household income in 2023 is about \$6,350 in 1950 dollars. This is more than double the median household income in 1950 of \$3,000. So in real terms, households have much more income today than they did in the past. This might be a bit surprising to you. You often hear news about the rising cost of living since the 50s and 60s. But even adjusting for this rising cost of living, households earn more today than they did in the past.
+So the real median household income in 2023 is about \$6,350 in 1950 dollars. This is more than double the median household income in 1950 of \$3,000. So in real terms, households have much more income today than they did in the past. This might be a bit surprising to you. You often hear news about the rising cost of living since the 50s and 60s. But even adjusting for this rising cost of living, households earn more today than they did in the past. As we will see later, however, part of this might be coming from the fact that there are more two-earner households today than in the past.
 
-There is one additional complication we should point out before moving on. To compute changes in prices, we assumed there is some basket of goods that consumers are purchasing. But a lot of what consumers buy today did not exist in the 1950s. Streaming subscriptions, smartphones, laptops, acai bowls, and so on. Even for products that do exists in both time periods, like televisions, the quality is dramatically different. This is a fundamentally difficult conceptual problem with no easy solution. Comparing income across time is inherently difficult. That is one nice feature of how inequality is defined in @fig-piketty-saez, which does not require adjusting for inflation.
+There is one additional complication we should point out before moving on. To compute changes in prices, we assumed there is some basket of goods that consumers are purchasing. But a lot of what consumers buy today did not exist in the 1950s. Streaming subscriptions, smartphones, laptops, and so on. Even for products that do exist in both time periods, like televisions, the quality is dramatically different. This is a fundamentally difficult conceptual problem with no easy solution. That is one nice feature of how inequality is defined in @fig-piketty-saez, which does not require adjusting for inflation.
 
 Now that we understand how to compare income over time (and the complications that arise), let's get back to our big question: how has inequality changed over time? We are now going to shift from comparing income shares (as in @fig-piketty-saez) to comparing real incomes across different groups. In particular, we are going to compare how real income has evolved for workers with different education levels. 
 
-Figure @fig-autor-income plots changes in real income for men across different groups over time [@autor2019work]. Unlike the previous example, we are now plotting income for individuals (rather than households, which may have multiple earners). This figure was produced by economist David Autor in his 2019 paper *Work of the Past, Work of the Future*. The figure shows some remarkable patters over time. First, between 1963 and 1972, incomes for all groups were rising dramatically. Incomes rose nearly 40% for individuals with a graduate degree (e.g. medical doctors, lawyers, professors). For those with either a high school degree or less, incomes rose about 20%. Because individuals with higher education saw their incomes rise faster, inequality was rising during this period. But again, no one is worse off, at least in monetary terms. Every group can buy more in 1972 than they could in 1963. This is what real income measures. 
+@fig-autor-income plots changes in real income for men across different groups over time [@autor2019work]. Unlike the previous example, we are now plotting income for individuals (rather than households, which may have multiple earners). This figure was produced by economist David Autor in his 2019 paper *Work of the Past, Work of the Future*. The figure shows some remarkable patterns over time. First, between 1963 and 1972, incomes for all groups were rising dramatically. Incomes rose nearly 40% for individuals with a graduate degree (e.g. medical doctors, lawyers, professors). For those with either a high school degree or less, incomes rose about 20%. Because individuals with higher education saw their incomes rise faster, inequality between these groups was rising during this period. But again, no one is worse off, at least in monetary terms. Every group can buy more in 1972 than they could in 1963. This is what real income measures. 
 
-Throughout the 1970s wage were mostly stagnant. This was a period of high inflation and low growth, commonly known as stagflation, so its not too surprising we don't see rapid increases in real incomes. But then in the 1980s, something dramatic happens. 
+Throughout the 1970s wages were mostly stagnant. This was a period of high inflation and low growth, commonly known as stagflation, so it's not too surprising we don't see rapid increases in real incomes. But then in the 1980s, something dramatic happens. 
 
 ![Real Income by Education Level in the United States](/images/01_images/autor_fig.png){#fig-autor-income width=100%}
 
-For individuals with graduate degrees, real incomes continue to rise steadily over time. For individuals with a college degree, there is some lag, but by the mid 1990s, we are again seeing increases in real incomes. Other groups are not doing so well. For example, for high-school dropouts, all of that income growth in the 60s is eroded away by around 1990 with little to no growth since then. This is why inequality skyrocketed in the 1980s. While highly-educated indivdiuals (who already earned more on average) were seeing large increases in real incomes, less-educated individuals were seeing declines in real incomes. This is our second big question: what drove this rapid increase in inequality that began in the 1980s?
+For individuals with graduate degrees, real incomes continue to rise steadily over time. For individuals with a college degree, there is some lag, but by the mid 1990s, we are again seeing increases in real incomes. Other groups are not doing so well. For example, for high-school dropouts, all of that income growth in the 60s is eroded away by around 1990 with little to no growth since then. This is why inequality skyrocketed in the 1980s. While highly-educated individuals (who already earned more on average) were seeing large increases in real income, less-educated individuals were seeing declines in real income. This is our second big question: what drove this rapid increase in inequality that began in the 1980s?
 
 
 ::: {.callout-tip title="🍔 The McWage"}
 
 One thing that you may have taken away from this chapter is that comparing income over time is perhaps not as straightforward as you might have thought. The same is true when comparing income across countries. For example, if you want to compare income in the U.S. to income in China, you have a number of hurdles. Just as in comparisons across time, the goods purchased might be very different. 
 
-Orley Ashenfelter and Štěpán Jurajda came up with an ingenous way to measure real income differences across countries using the ubiquitous presence of McDonald's [@ashenfelter2024us]. Take a McDonald's worker in the U.S. earning /$10.00 an hour. Let's assume the average price of a Big Mac in the U.S. is about /$5.00 (the  actual price varies by location). This means that in one hour, the worker can buy about 2 Big Macs. This is a measure of the worker's purchasing power. Ashenfelter and Jurajda refer to this as the "McWage".
+Orley Ashenfelter and Štěpán Jurajda came up with an ingenious way to measure real income differences across countries using the ubiquitous presence of McDonald's [@ashenfelter2024us]. Take a McDonald's worker in the U.S. earning \$10.00 an hour. Let's assume the average price of a Big Mac in the U.S. is about \$5.00 (the actual price varies by location). This means that in one hour, the worker can buy about 2 Big Macs. This is a measure of the worker's purchasing power. Ashenfelter and Jurajda refer to this as the "McWage".
 
 Now, let's consider a worker in China. We can also compute the McWage for this worker. In China, because wages are generally lower, a McDonald's worker earns about half a Big Mac per hour. Why is this useful? Well, we now have a very clean comparison across places. We are considering wages for a highly standardized job. McDonald's uses the same technology and production process in all of its locations. We are also comparing a very similar good: a Big Mac. This allows us to make a very clean comparison of purchasing power of these workers that is not confounded by differences in the types of goods or the quality of goods in the different locations. 
 
@@ -78,9 +78,9 @@ Now, let's consider a worker in China. We can also compute the McWage for this w
 
 ## The Fall in the Labor Share 
 
-The labor share of income is the fraction of income that is paid to workers, with the rest being paid to capital owners. Labor shares are often reported at the country level, but to understand this concept, let's consider the case of single firm: Apple. The exact numbers we need to compute the labor share for Apple aren't publicly disclosed, but we can get a good approximation from Apple's annual reports.
+The labor share of income is the fraction of income that is paid to workers, with the rest being paid to capital owners. Labor shares are often reported at the country level, but to understand this concept, let's consider the case of a single firm: Apple. The exact numbers we need to compute the labor share for Apple aren't publicly disclosed, but we can get a good approximation from Apple's annual reports.
 
-In 2024, Apple reported about 390 billion dollars in revenue. While we might be tempted to think of this number as Apple's "income", that's not quite right. Our goal in this exercise is to compute what share of income is going to workers at Apple vs. firm owners and investors. But Apple has a lot of costs. It needs to pay other firms for the materials used in its products. This is money that is not going to either workers or owners of capital, so we shouldn't count it as part of Apple's income. Instead, we want to look at Apple's value added, which is the revenue minus the amount they spend on the inputs. In 2024, Apple's value added was roughly 180 billion dollars. According to annual reports, Apple spent roughly 25 billion dollars on worker compensation. Therefore, labor's share of income is given by:
+In 2024, Apple reported about 390 billion dollars in revenue. While we might be tempted to think of this number as Apple's "income", that's not quite right. Our goal in this exercise is to compute what share of income is going to workers at Apple vs. firm owners and investors. But Apple has a lot of costs. It needs to pay other firms for the materials used in its products. This is money that is not going to either workers or owners of capital, so we shouldn't count it as part of Apple's income. Instead, we want to look at Apple's value added, which is the revenue minus the amount they spend on the inputs. In 2024, Apple's value added was roughly 180 billion dollars. According to annual reports, Apple spent roughly 46 billion dollars on worker compensation. Therefore, labor's share of income is given by:
 $$
 \text{Labor Share} = \frac{\text{Total Labor Compensation}}{\text{Value Added}} = \frac{46}{180} \approx 0.25
 $$
@@ -91,63 +91,63 @@ The labor share of income varies dramatically across companies and industries. F
 
 This example illustrates that the labor share of income may vary widely across firms. We, then, might expect that it also varies widely across time. Firms are constantly going in and out of business, industries are constantly evolving, new technologies emerging. But if we look in the data, we find a somewhat miraculous fact: for much of the 20th century, the labor share of income was remarkably stable.
 
-The first person to draw attention to this fact was Nicholas Kaldor, who wrote a paper called *A Model of Economic Growth* [@kaldor1961]. In this paper, Kaldor documented a number of empirical facts that became extremely influential in the field of macroecnomics. Among these facts was the observation that the labor share of income in the U.S. over time had been stable. To compute the labor share of income for a country (rather than for an individual firm), you can add up all the income paid to workers and then divide by the total GDP of the country. The total GDP represents value of everything produced in the country. So at a national level, the labor share is the amount of value produced in the economy that goes to workers. The figure below plots the labor share of income in the U.S. from 1947 to 2019.
+The first person to draw attention to this fact was Nicholas Kaldor, who wrote a paper called *A Model of Economic Growth* [@kaldor1961]. In this paper, Kaldor documented a number of empirical facts that became extremely influential in the field of macroeconomics. Among these facts was the observation that the labor share of income in the U.S. over time had been stable. To compute the labor share of income for a country (rather than for an individual firm), you can add up all the income paid to workers and then divide by the total GDP of the country. The total GDP represents the value of everything produced in the country. So at a national level, the labor share is the amount of value produced in the economy that goes to workers. The figure below plots the labor share of income in the U.S. from 1947 to 2019.
 
 
 ![Labor Share in the United States](/images/01_images/labor_share.png){#fig-laborshare width=90%}
 
-Kaldor had much less data to work with, but between 1947 and 1961, you can see in @fig-laborshare that the there is no clear trend in the labor share of income. Yes, it sometimes bounces up, sometimes down, but on average it hovers around 65%. From 1961 to 2000, the labor share of income did fluctuate, but again, it was remarkably stable. While overall there is a slight downward trend, it is not particularly pronounced. In 1961, for example, the labor share was about 65% and in 2000 it was about 63%. This is despite the intervening years being a period of great change for the U.S. economy. The 1960s continued the tremendous growth of the post-war period. In 1970s, the economy was hit by oil shocks that caused a large inflationary period with high unemployment. In 1987, the stock market crashed, with the single largest one-day drop in the history of the stock market. In the mid-1990s, the U.S. economy experienced a period of rapid growth brought on by the rise of the internet. Despite all these massive changes, the labor share of income, on average, remained fairly steady. 
+Kaldor had much less data to work with, but between 1947 and 1961, you can see in @fig-laborshare that there is no clear trend in the labor share of income. Yes, it sometimes bounces up, sometimes down, but on average it hovers around 65%. From 1961 to 2000, the labor share of income did fluctuate, but again, it was remarkably stable. While overall there is a slight downward trend, it is not particularly pronounced. In 1961, for example, the labor share was about 65% and in 2000 it was about 63%. This is despite the intervening years being a period of great change for the U.S. economy. The 1960s continued the tremendous growth of the post-war period. In the 1970s, the economy was hit by oil shocks that caused a large inflationary period with high unemployment. In 1987, the stock market crashed, with the single largest one-day drop in the history of the stock market. In the mid-1990s, the U.S. economy experienced a period of rapid growth brought on by the rise of the internet. Despite all these massive changes, the labor share of income, on average, remained fairly steady. 
 
-Then, in 2000, the labor share began to drop. Instead of the usual cycles we see before this time, the drop has been steady. This is the first big question we will tackle in this course: why has the labor share of income been falling since 2000?
+Then, in 2000, the labor share began to drop. Instead of the usual cycles we see before this time, the drop has been steady. This is the second big question we will tackle in this course: why has the labor share of income been falling since 2000?
 
 
 ::: {.callout-tip title="📜 The Labor Share in Ancient Rome"}
 
 
-One of the first sources of any data on labor markets and prices comes from a unique episode of Roman history. In the third century, the Roman empire faced an economic crisis. The government repeatedbly reduced the amount of silver in coins to increase military spending (the modern equivalent is the government printing more money). This caused rampant inflation throughout the Roman Empire. 
+One of the first sources of any data on labor markets and prices comes from a unique episode of Roman history. In the third century, the Roman empire faced an economic crisis. The government repeatedly reduced the amount of silver in coins to increase military spending (the modern equivalent is the government printing more money). This caused rampant inflation throughout the Roman Empire. 
 
 As a response, in 301, Diocletian, the Roman Emperor, issued a series of edicts that set maximum prices for goods and wages. 
- <span class="hover-image" onclick="showLargeImage('images/01_images/edicts.png')">
+ <span class="hover-image-container" onclick="showLargeImage('images/01_images/edicts.png')">
   Stone tablets
-  <img src="images/01_images/edicts.png" alt="edicts preview" />
+  <img src="images/01_images/edicts.png" alt="edicts preview" class="hover-preview" />
 </span>
  with these prices were erected in public squares. These edicts have provided economists and historians a rare glimpse into the ancient economy. With these edicts, we can calculate a (very) approximate labor share of income for Ancient Rome.
 
- To do so, let's take a simplified example. Let's conisder a single product: wheat. The edicts contained both the price of wheat, as well as the wage for an unskilled agriculter worker. 
+ To do so, let's take a simplified example. Let's consider a single product: wheat. The edicts contained both the price of wheat, as well as the wage for an unskilled agricultural worker.
 
- To compute the labor share of income, let's consider an agricultural worker on a single day. According to Diocletian's edicts, the maximum wage for an unskilled agricultural laborer was 25 denarii per day (the denarii is the currency in Ancient Rome). 
+ To compute the labor share of income, let's consider an agricultural worker on a single day. According to Diocletian's edicts, the maximum wage for an unskilled agricultural laborer was 25 denarii per day (the denarius is the currency in Ancient Rome). 
 
- But what is the value of what the worker produced? From other ancient sources, we can get a rough sense of the quantity of wheat that could be harvested in a single day. On an average day, a single worker could harvest about 240 kg of wheat. This would sell for around 1,400 denarii according to Diocletian's edicts 
+ But what is the value of what the worker produced? From other ancient sources, we can get a rough sense of the quantity of wheat that could be harvested in a single day. On an average day, a single worker could harvest about 240 kg of wheat. This would sell for around 1,400 denarii according to Diocletian's edicts.
 
-So what does this imply for the labor share? Well, a worker can earn 25 denarii per day, and the value of what they produce is 1,400 denarii. The labor share of income is then 
+So what does this imply for the labor share? Well, a worker can earn 25 denarii per day, and the value of what they produce is 1,400 denarii. The labor share of income is then equal to just 0.02, or 2%, a miniscule fraction. And this is ignoring the fact that many workers were not paid at all. 
 :::
 
 
  
 ## Dramatic Shifts in Labor Force Participation 
 
-In the news you often see reports about fluctuating unemployment rates. The unemployment rates is the fraction of people (aged 16 or over) who are actively looking for work within the last month, but are not currently employed. It is undoubetdly an important metric of the health of the labor market which we will return to in future sections. However, something that is often overlooked is whether people are even participating in the labor market at all. 
+In the news you often see reports about fluctuating unemployment rates. The unemployment rate is the fraction of the labor force (those aged 16 or over who are either working or actively looking for work) that is not currently employed but has actively looked for work within the last month. It is undoubtedly an important metric of the health of the labor market which we will return to in future sections. However, something that is often overlooked is whether people are even participating in the labor market at all. 
 
 In this section, we will explore the labor force participation rate. This is the fraction of people (aged 16 or over) who are either employed or actively looking for work. It is much less responsive to economic fluctuations. If an economy has a recession, many people will be laid off. If all of these individuals continue to search for work, then the labor force participation rate will not change. Therefore, it is much less informative about the short-run health of the labor market. However, this doesn't mean it is unimportant. In the long-run, we care a lot about what fraction of people are engaging with the labor market. And it turns out there are some important, and somewhat puzzling, trends in labor force participation.
 
-Figure @fig-lfpr plots the labor force participation rate in the U.S. from 1948 to 2023, separately for men and women. For women, labor force participation started at around 30% and rose to around 60% by the mid 1990s, an incredibly rapid increase. You are likely at least somewhat familiar with this trend, even if the exact numbers are new. 
+@fig-lfpr plots the labor force participation rate in the U.S. from 1948 to 2023, separately for men and women. For women, labor force participation started at around 30% and rose to around 60% by the mid 1990s, an incredibly rapid increase. You are likely at least somewhat familiar with this trend, even if the exact numbers are new. 
 
 ![Labor Force Participation Rate in the United States](/images/01_images/lfp_full.png){#fig-lfpr width=100%}
 
-For men, we see a very different trend. The labor force participation rate for men started at just below 90% in 1948 and has gradually declined over tiem. Today, it is just below 70%. Of course, these two trends could be related. The increase in female labor force participation could cause some men to drop out of the labor force in order to take care of children in the household. We will find that this can't explain the entire trend. Even from the data so far, we can see that since the mid 1990s, female labor force has remained pretty stable, even declining somewhat. But male labor force participatiion continued to decline, even picking up speed in the 2010s, with a noticable drop during the COVID-19 pandemic.
+For men, we see a very different trend. The labor force participation rate for men started at just below 90% in 1948 and has gradually declined over time. Today, it is just below 70%. Of course, these two trends could be related. The increase in female labor force participation could cause some men to drop out of the labor force in order to take care of children in the household. We will find that this can't explain the entire trend. Even from the data so far, we can see that since the mid 1990s, female labor force participation has remained pretty stable, even declining somewhat. But male labor force participation continued to decline, even picking up speed in the 2010s, with a noticeable drop during the COVID-19 pandemic.
 
 This is our third big question: what is driving the dramatic changes in labor force participation in the US over time?
 
 
 ## Potential Explanations 
 
-As we will see, there are seldom extremely simple answers to these big questions. Throughout the twentieth century and into the twenty-first century, there have been many important changes in the labor market. Many of the changes may contribute to one, two or all of these big trends we've studied so far. To help organize, we are going to organize different explanations into three broad categories:
+As we will see, there are seldom extremely simple answers to these big questions. Throughout the twentieth century and into the twenty-first century, there have been many important changes in the labor market. Many of the changes may contribute to one, two or all of these big trends we've studied so far. To help, we are going to organize different explanations into three broad categories:
 
 1. **Technology**: This refers to the introduction of new technologies that change how work is done. For example, the rise of computers and automation has dramatically changed the nature of work in many industries. We will study how these changes have affected the labor share of income, wage inequality, and labor force participation.
 
 2. **Competition**: We will study two facets of competition. First, one of the most-discussed changes in the post-war economy is the rise of globalization. This fundamentally changes what is produced by a country, which can have important implications for the labor market. Second, we will study how competition between firms for workers impacts wages. Throughout much of the history of labor economics, economists have assumed that the labor market is perfectly competitive. We will discuss in detail what this implies, and why an imperfectly competitive labor market may be a better description of the labor market.
 
-3. **Institutions**: Policies and institutions also play a pivotal role in the labor market. Unionization rates, minimum wages, and employment protection legislation all shape who works and how much they earn. It is often hotly debated whether policies like the minimum wage are good or bad for the labor market. We will study a number of important institutions and explore how the impact the labor market and how they have changed over time.
+3. **Institutions**: Policies and institutions also play a pivotal role in the labor market. Unionization rates, minimum wages, and employment protection legislation all shape who works and how much they earn. It is often hotly debated whether policies like the minimum wage are good or bad for the labor market. We will study a number of important institutions and explore how they impact the labor market and how they have changed over time.
 
 With each topic we study we will return to these big questions. 
 
@@ -159,9 +159,8 @@ Generally, models are formalized with math. Some people, even academics, are som
 
 In this course we will consider various models of the labor market. The first is a model of a perfectly competitive labor market. This is probably the version you saw in your introductory economics class. For studying technological changes, we will find this is a powerful model. It abstracts from other aspects of the labor market that are perhaps not central to the study of the impact of technology on the labor market. However, it has significant limitations. When turning to institutional factors, like the minimum wage or unionization, it will predict these policies have negative impacts on the labor market. A perfectly competitive labor market is efficient. It's better not to mess with it. 
 
-But the reality is that the labor market is not perfectly competitive. The second model we will introduce is a monopsonistic model of the labor market. In this model, we will assume that firms have some market power over their workers. This implies that wages will not necessarily reflect the value of a worker's ouput. This will also have important implications for how we think about policies like the minimum wage. 
+But the reality is that the labor market is not perfectly competitive. The second model we will introduce is a monopsonistic model of the labor market. In this model, we will assume that firms have some market power over their workers. This implies that wages will not necessarily reflect the value of a worker's output. This will also have important implications for how we think about policies like the minimum wage.
 
-In this chapter, we have introduced some of the big questions that face modern labor economics. In the next chapters, we will introduce potential drivers of one or more of these big questions. Understanding how these potential drivers impact the labor market will necessitate introducing some models of the labor market to guide our thinking. 
 
 
 
@@ -176,5 +175,95 @@ function showLargeImage(src) {
   lightboxImg.src = src;
   lightbox.style.display = 'flex';
 }
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
+}
+
+// Close lightbox when clicking outside the image
+document.addEventListener('DOMContentLoaded', function() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+});
 </script>
+
+<style>
+.hover-image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0066cc;
+}
+
+.hover-preview {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: contain;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  background: white;
+  padding: 2px;
+}
+
+.hover-image-container:hover .hover-preview {
+  display: block;
+}
+
+/* Lightbox styles */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  opacity: 0.7;
+}
+</style>
+
+<!-- Lightbox HTML -->
+<div id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Large view" />
+</div>
 

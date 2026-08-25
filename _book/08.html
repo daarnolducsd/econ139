@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Technology: Automation – Econ 139: Labor Economics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09.html" rel="next">
+<link href="./07.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-71390cc8b9bae10139428574d3aab2c6.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-52ddebe548e3f724c9ed357238656d03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c1966a8c70583a3816b1e3a216c1caf1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./08.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Econ 139: Labor Economics</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Big Questions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Perfect Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minimum Wage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monopsony: Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monopsony: Empirics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Labor Supply</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Datasets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./onet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">O*NET</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">8.1</span> Introduction</a></li>
+  <li><a href="#robots-and-jobs" id="toc-robots-and-jobs" class="nav-link" data-scroll-target="#robots-and-jobs"><span class="header-section-number">8.2</span> Robots and Jobs</a>
+  <ul class="collapse">
+  <li><a href="#the-labor-share" id="toc-the-labor-share" class="nav-link" data-scroll-target="#the-labor-share"><span class="header-section-number">8.2.1</span> The Labor Share</a></li>
+  </ul></li>
+  <li><a href="#inequality" id="toc-inequality" class="nav-link" data-scroll-target="#inequality"><span class="header-section-number">8.3</span> Inequality</a></li>
+  <li><a href="#ai" id="toc-ai" class="nav-link" data-scroll-target="#ai"><span class="header-section-number">8.4</span> AI</a>
+  <ul class="collapse">
+  <li><a href="#fact-1-importance-of-age" id="toc-fact-1-importance-of-age" class="nav-link" data-scroll-target="#fact-1-importance-of-age"><span class="header-section-number">8.4.1</span> Fact 1: Importance of Age</a></li>
+  <li><a href="#fact-2-wages-have-been-flat" id="toc-fact-2-wages-have-been-flat" class="nav-link" data-scroll-target="#fact-2-wages-have-been-flat"><span class="header-section-number">8.4.2</span> Fact 2: Wages Have Been Flat</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./08.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1</span> Introduction</h2>
+<p>In this chapter we are going to dig deeper into one aspect of how technology impacts workers: automation. This will first involve studying some empirical research on how firms and places have adopted AI technology and how this adoption has translated into changes in the labor market. As part of this empirical exploration, we will link back to our three big questions that we began this course with. Lastly, we will consider some early research on the potential impacts of AI on the future of the labor market.</p>
+</section>
+<section id="robots-and-jobs" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="robots-and-jobs"><span class="header-section-number">8.2</span> Robots and Jobs</h2>
+<p>In the last chapter, we studied a general model of how technology may impact workers by studying the tasks that workers perform. While the empirical patterns in the data (i.e.&nbsp;job polarization) were broadly consistent with the theory, we did not have direct evidence on how technology adoption impacted workers. In this section we will first consider a very specific form of automation technology: industrial robots. This is in contrast to what we focused on in the last chapter, which was more general and focused on the use of computers.</p>
+<p>An industrial robot is defined by the International Federation of Robotics as “an automatically controlled, reprogrammable, multipurpose machine.” In simpler terms, these are robots that can perform a variety of tasks in an industrial setting. They are typically used in manufacturing environments. There are a few reasons why industrial robots are particularly useful for studying the impact of technology on workers. First, the International Federation of Robotics keeps track of where industrial robots have been adopted. This will allow us to measure the rate of adoption in different regions of the United States. Second, industrial robots are the type of technology that we can reasonably expect to have a large impact on workers. They are designed to be somewhat general in their use, can perform a variety of tasks, and don’t need a dedicated production worker to operate them. Therefore, they are a good candidate for studying how automation technology impacts workers.</p>
+<div class="img-float">
+<div class="quarto-figure quarto-figure-center" style="float: left; margin: 5px; width: 250px;">
+<figure class="figure">
+<p><img src="./images/08_images/robots1.png" class="img-fluid figure-img"></p>
+<figcaption>Industrial Robots</figcaption>
+</figure>
+</div>
+</div>
+<p><span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> is an extremely influential study that considers how industrial robots have impacted the labor market. Below (from <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span>) is a figure that shows the number of industrial robots per thousand workers. As can be seen from this figure, Germany is by far the leader in industrial robots per worker, with over double the rate as the next highest country by 2014. The US is similar in levels to many European countries, however. In the beginning of the 1990s, there were about 0.5 robots per thousand workers. By 2014, there is about 2 robots per thousand workers. The overall goal in the paper is to answer the question: how much does a single industrial robot decrease (or increase) employment and wages?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/robots2.png" class="img-fluid figure-img"></p>
+<figcaption>Growth in Industrial Robots</figcaption>
+</figure>
+</div>
+<p>Theoretically, the answer is ambiguous. One common approach to the question of how technology will impact workers is to try and predict which jobs can be automated. You may have seen headlines like this for AI, but prior work has done the same for things like industrial robots. But this misses an important feature of the economy. They don’t take into account how other sectors and occupations will respond. For example, if cars become cheaper due to industrial robots, and people have more money to spend on other goods, will other sectors expand? Could these productivity impacts increase overall demand for workers (even if some workers are replaced by robots)? Maybe the workers that are replaced by robots will find new jobs in other sectors relatively quickly?</p>
+<p>So what do Acemoglu and Restrepo (2020) do to answer this question? The analysis is composed of two main parts. First, they take advantage of the fact that different industries are differentially exposed to industrial robots. Some industries, such as automaking, are highly exposed. They will likely adopt the industrial robots as they tend to be highly productive for that production process. Other industries, for example, any service industry, are not exposed to industrial robots. If you look into to the data, this idea pans out. The automotive industry between 2004-2007 had about 20 industrial robots per thousand workers. Services had basically none.</p>
+<p>Next, they compare different areas in the United States that have different industrial composition. For example, Detroit is famously for producing cars. This area, is therefore, heavily exposed to industrial robots. What the authors do is construct an exposure to robots measure for every commuting zone in the United States (a commuting zone is a collection of counties that tend to be connected economically). The exposure measure is somewhat complicated in practice, but we can make a simple example in order to understand the intuition.</p>
+<p>Now, in the actual paper the measure of robots is adjusted penetration ratio (APR) of robots. It is a bit more complicated than what we have discussed here, but the key intuition is the same. In practice, there are additional measurement complications. However, for our purposes, we can think about it in this simple way. The figure below shows the exposure to industrial robots by commuting zone in the United States. The darker the color, the more exposure to industrial robots. The value indicates how many more robots per thousand workers the commuting zone is expected to adopt between 1993 and 2007.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/robots3.png" class="img-fluid figure-img"></p>
+<figcaption>Exposure to Industrial Robots by Commuting Zone</figcaption>
+</figure>
+</div>
+<p>The darker areas around Michigan are likely due to automotive manufacturing. These commuting zones are expected to see an increase in 5-9 robots per thousand workers. However, even within a state, you can sometimes see there is considerable variation. Texas, for example, has areas that are not exposed much at all as well as highly exposed.</p>
+<p><span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> compares places with high exposure to places with low exposure. The figure below shows the main result from the paper.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/robots4.png" class="img-fluid figure-img"></p>
+<figcaption>Impact of Exposure to Robots on Employment to Population Ratio</figcaption>
+</figure>
+</div>
+<p>In this figure, each bubble is a commuting zone, where the size of the bubble is proportional to the employment in the commuting zone. Some bubbles are indicated by the main cities in the commuting zone. For example, you can see the bubble at the far right of the graph is Detroit, Michigan.</p>
+<p>The y-axis is the change in the employment to population ratio. For example, if the employment to population ratio is 60 (indicating 60 percent of individuals are employed), and increases to 65 between 1990 and 2007, then the value on the y-axis would be equal to 5. If it has declined it would be negative.</p>
+<p>As we can see in the figure, some commuting zones had positive increases in employment to population ratio, while others had negative. It is a little difficult to see in this graph given the number of commuting zones, but as we increase the exposure to robots, the growth rates tend to become more negative. For example, Detroit has the highest exposure to robots and also experienced a (relatively) large negative decline in the employment to population ratio.</p>
+<p>The line in the graph shows us the magnitude of this relationship. A steeper slope indicates changes in robot exposure are associated with larger changes in employment. In this setting, <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> found that an increase in 1 robot per thousand workers is associated with a 0.44 percentage point decline in the employment to population ratio.</p>
+<p>Now we have to be careful here. What is the variation we are using here? We are comparing changes across different commuting zones. But what if these commuting zones were already on different trends. For example, what if Detroit was also exposed to global competition for cars during this period and was already declining in demand before industrial robots proliferated. Then we are falsely attributing changes in employment to changes in robots, even though the true mechanism is due to changes in exposure to trade.</p>
+<p><span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> takes this general concern very seriously: what if there are other factors that vary across these commuting zones that are driving the results. They provide a litany of tests to show that this can’t be explained by other factors. One useful test is again studying pretrends. If we look to a period before industrial robots, do we see places like Detroit, that have high exposure to robots, see wage declines. If so, then this implies we should be concerned about the validity of this research design. Places with high exposure to robots were seeing employment declines <strong>before</strong> industrial robots were even available. The figure below performs this test. Unlike our figure before, we see that places exposed to adopting robots in the future saw no differential changes in employment between 1970 and 1990.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/robots6.png" class="img-fluid figure-img"></p>
+<figcaption>Test of Pretrends</figcaption>
+</figure>
+</div>
+<p>So let’s regroup now. We found that commuting zones that were exposed to industrial robots saw declines in employment. Are we ready to conclude that automation resulted in declines in <strong>aggregate demand</strong>? Not quite!</p>
+<p>What is the problem? Again we can take the example of Detroit to reinforce the primary issue. Yes, Detroit saw a decrease in employment. But maybe the productivity of industrial robots lowered the price of cars. People all across the country may benefit from these lower prices and increase consumption in other sectors. Since other sectors will expand, labor demand will increase in these other sectors. This is an extremely difficult conceptual issue that is hard to directly address with data. <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> use a theoretical model to answer this question. How this works in practice is complicated and beyond the scope of this class. Generally, models rely on sometimes strong, sometimes hard to verify assumptions. The price of using a model is that we often have to make these assumptions.</p>
+<p>The benefit, though, can be great. In this case, it allows us to compute the <strong>aggregate</strong> impact of a robot on labor demand. Aggregate in this context refers to the overall effect on the economy, rather than just on individual commuting zones. In other words, it allows us to incorporate the facts that commuting zones can trade goods (like buying cars from Detroit). When <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> do this, they find that one more robot per worker decreases <strong>aggregate</strong> employment by 0.2 percentage points. This is smaller than we found at the commuting zone level, which makes sense. Our story was that robots decrease costs, which could expand opportunities in other areas. To get a better sense of the importance of this result, we can convert this number to an absolute level of jobs by multiplying by the increase in industrial robots. This number implies that the adoption of industrial robots led to the loss of 400,000 jobs in the US.</p>
+<section id="the-labor-share" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="the-labor-share"><span class="header-section-number">8.2.1</span> The Labor Share</h3>
+<p>While we have focused on employment, <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> also study the impact of industrial robots on wages. They find that one more robot per thousand workers decreases wages by about 0.42 percent. So together, the adoption of industrial robots led to lower employment and lower wages. Now, we can link this back to one of our big questions from the start of the course: what is driving the decline in labor share of income?</p>
+<p>Now, industrial robots are pretty specific. They are only one form of automation technology. This was super useful in this paper, as it allowed us to understand clearly the adoption and effects of these robots and put the impact of a robot into clear terms. However, if we are considering the overall impact of technology on the labor share, we are probably missing out on a lot.</p>
+<p>In a follow-up paper, <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span> ask what fraction of an industry’s labor share decline between 1980 and 2016 can be explained by a combination of industrial robots, specialized software and dedicated machinery. Therefore, this notion of technology is quite a bit broader. Specialized software is clearly an important aspect of the rise in computing in the 1980s. Dedicated machines are different than industrial robots. Industrial robots are specifically programmable and can be used for multiple purposes without a technician. Dedicated machines are any machinery in a factory or firm that is used for a specific purpose. They find that, together, these measures of technology can explain 45 percent of the decline in labor shares across industries.</p>
+<p>To put some visuals to this, the figure below depicts the relationship between the adoption of these technologies and the decline in labor share across industries. Each bubble is an industry, where the size of the bubble is proportional to the industry’s employment. The y-axis is the decline in labor share between 1987 and 2016. The x-axis captures the change in use of specialized software and dedicated machinery (i.e.&nbsp;the technologies we have not yet studied in this chapter) between 1987 and 2016. The measure is a bit more complicated than the number of robots. At an intuitive level, industries with positive values are adopting more of this technology over time. For example, if an industry produced 10 billion in revenue in 1987 and used 1 billion worth of specialized software and dedicated machinery, then the ratio of these technology costs to value added would be 0.1. If in 2016, the same industry produced 20 billion in revenue and used 4 billion worth of specialized software and dedicated machinery, then the ratio would be 0.2. The increase in the share of specialized software services and dedicated machinery would be 0.1 or 10 percentage points. This is what is depicted on the x-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/robots7.png" class="img-fluid figure-img"></p>
+<figcaption>Labor Share Decline vs.&nbsp;Technology Adoption</figcaption>
+</figure>
+</div>
+<p>As we can see in this figure, industries that adopted more of these technologies saw larger declines in labor share. For example, the bubble at the far right is the metals industry. This industry adopted a lot of specialized software and dedicated machinery and saw an enormous decline in the labor share (-40%). Of course, this doesn’t explain everything. There are other reasons why the labor share in an industry might be declining. For example, the chemical industry had more or less zero growth in the adoption of these technologies, but still saw a large decline in labor share. <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span> estimate that if you add industrial robots to the mix, about 45 percent of the decline in labor share can be explained by these technologies.</p>
+<p>Their main result can be seen in the figure below. In this figure each bubble is a different demographic group. The demographics split workers into 500 different groups, that are defined by education, gender, age, race and native/immigrant status. For example, one group could be college graduate, age 16-25, Black, male, native born. Another group might be some college, 56-65, Hispanic, female, foreign born. You can view the paper to see how the groups are defined in detail. The y-axis is the change in hourly wages between 1980-2016 (real wages, not nominal). The x-axis is the measure of how exposed workers in this group are to technology based on industries that they tend to work in. As can be seen in the figure, focusing on postgraduate groups, these tend to be groups that saw extremely large increases in wages. These groups also tend to be the least exposed to technology. In contrast, high-school dropouts and high-school graduates tend to be the most exposed to technology and saw real wage declines between 1980 and 2016. <img src="./images/08_images/ap.png" class="img-fluid" alt="Labor Share Decline vs.&nbsp;Technology Adoption"></p>
+</section>
+</section>
+<section id="inequality" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="inequality"><span class="header-section-number">8.3</span> Inequality</h2>
+<p>So far, we have studied how robots impact overall employment and wages. However, another important question is how do robots impact inequality? Do they impact all workers equally, or do they impact some workers more than others? To answer this question, we will take a slightly different approach than we did in <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span>.</p>
+<p>The prior paper by <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span> focused on places. Do places that adopt more robots see changes in employment and wages? Another way to approach this question is to ask: how do firms that adopt robots change their behavior relative to firms that do not adopt robots? This is often more difficult to do as it requires firm-level information, which can be hard to come by. Why is it so useful though? Well, for one, it allows us to consider changes right around the time the firm adopts a robot. This will allow us to verify some of the assumptions we made in the prior approach. For example, we assumed that places that adopted robots were not already on different trends. By looking at firm-level evidence, we can see if firms that adopt robots were already seeing different trends before they adopted robots.</p>
+<p>This firm-level approach is taken in <span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span>. This paper makes use of impressive data in Denmark which allows one to have information on firm robot adoption, as well as information on all of the workers’ earnings at the firm. As we will see, the combination of these two datasets allows us to answer some interesting questions about how robots impact inequality.</p>
+<p>First, <span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span> documents something that might be surprising. Firms that adopt robots tend to <strong>increase</strong> the amount they spend on labor. The Figure below shows this surprising result. The way to interpret this figure is that we are comparing firms that adopt robots to firms that do not adopt robots. The y-axis is the percent change in the wage bill at the firm. The x-axis is time, where time 0 is the year the firm adopts a robot. Therefore, the fact that the blue line jumps up to 5 percent at time 0 indicates that firms that adopt robots see a 5 percent increase in their wage bill relative to firms that do not adopt robots. For our purposes, we are going to focus on the line labeled Data, as this is what actually happens in the data after robot adoption. The “model” line is from a theoretical model developed in the paper, something we will not discuss here.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/humlum1.png" class="img-fluid figure-img"></p>
+<figcaption>Firm Wage Bill Around Robot Adoption</figcaption>
+</figure>
+</div>
+<p>How does this square with our prior evidence from <span class="citation" data-cites="acemoglu2020robots">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2020robots" role="doc-biblioref">2020</a>)</span>? Remember that paper found that places that adopted robots saw declines in employment and wages. There are a couple of ways to reconcile these two findings. First, <span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span> is studying firms that adopt robots relative to firms that do not adopt robots. If we look in the data, firms that adopt robots see a real competitive advantage. Their sales increase significantly relative to firms that do not adopt robots.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/humlum2.png" class="img-fluid figure-img"></p>
+<figcaption>Sales Around Robot Adoption</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="acemoglu2020competing">Acemoglu, Lelarge, and Restrepo (<a href="references.html#ref-acemoglu2020competing" role="doc-biblioref">2020</a>)</span> similarly studies firm-level evidence on robot adoption and finds similar patterns. What is happening is that robots give firms a competitive advantage. They can produce more at lower costs. This allows them to expand their sales significantly relative to firms that do not adopt robots. If your competitor adopts a robot you should be worried. <span class="citation" data-cites="acemoglu2020competing">Acemoglu, Lelarge, and Restrepo (<a href="references.html#ref-acemoglu2020competing" role="doc-biblioref">2020</a>)</span> find that this generally causes large decreases in your sales. Therefore, overall, while robot adoption increases employment at the firm adopting the robot, the impacts on other firms imply that the overall impact on employment in the economy is negative.</p>
+<p>Returning to <span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span>, A key contribution is to study how robot adoption impacts different types of workers. This is very clear at the firm level. We can see how the firm adjusts their employment. What we find is that how you are impacted depends a lot on what type of work you do. Production workers include workers that perform tasks like welding and assembly. These types of tasks are likely to be automated by industrial robots.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/humlum3.png" class="img-fluid figure-img"></p>
+<figcaption>Employment by Skill Level Around Robot Adoption</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span> finds that demand for production workers drops significantly around robot adoption. The figure above shows that production employment drops by about 20 percent relative to firms that do not adopt robots. At the same time, demand for tech workers (such as engineers, scientists, etc.) sees an enormous increase in demand. Relative to firms that do not adopt robots, tech employment increases by about 30 percent. Therefore, robot adoption has shifted the composition of employment at firms significantly away from production workers and towards tech workers.</p>
+<p><span class="citation" data-cites="humlum2019robot">Humlum (<a href="references.html#ref-humlum2019robot" role="doc-biblioref">2021</a>)</span> finds that robots decreased real wages of production workers by about 5.4 percent. In contrast, for other types of workers, robots increase wages, particularly for high-skill technology workers. Therefore, robots have led to increased inequality. This is a very clean and useful study of an important technology. However, again, there are likely many other technologies that cause automation and have important impacts on inequality. Do these other technologies have similar impacts on inequality? How large of a role does technology play in driving inequality generally?</p>
+<p>To answer this question, we can turn back to <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span>, which directly addresses this issue. Their analysis proceeds in two steps. Their idea is that different groups, such as high-school dropouts vs.&nbsp;college graduates, are differentially exposed to technology. As we have seen in earlier chapters, the difference in wages between individuals with different education levels has increased significantly over time. <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span> ask: how much of this increase in inequality can be explained by technology adoption?</p>
+<p>They find a startlingly large impact of technology on inequality. Again, the analysis is conceptually similar to earlier work we have discussed. High-school dropouts, for example, tended to be working in industries with many routine production tasks. <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span> show that technology adoption predicts the removal of these routine production tasks. This in turn leads to declines in wages and employment opportunities for individuals that tended to work in those professions. They estimate that about 50-70 percent of the increase in wage inequality can be attributed to automation technology. This is a massive number. There are tons of other things happening in the labor market that could be driving inequality, such as globalization, changes in labor market institutions among others. Yet, <span class="citation" data-cites="acemoglu2022tasks">Acemoglu and Restrepo (<a href="references.html#ref-acemoglu2022tasks" role="doc-biblioref">2022</a>)</span> find that technology adoption can explain the majority of the increase in wage inequality.</p>
+</section>
+<section id="ai" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="ai"><span class="header-section-number">8.4</span> AI</h2>
+<p>So far, we have focused on studies of automation technology that have been around for a while. Let’s now turn to the question of how AI might impact the labor market. To begin, let’s define exactly what we mean by AI. Artificial Intelligence (AI) is a broad term that has been around for a long time. The field emerged in the 1950s shortly after the first digital computers were invented. The Dartmouth Conference in 1956 is often cited as the founding event of AI as a field of study. This was the first time that researchers were brought together to discuss and brainstorm about artificial intelligence. Below is the proposal for the conference, which is often credited with introducing the term “artificial intelligence.”</p>
+<blockquote class="blockquote">
+<p><em>“We propose that a 2-month, 10-man study of artificial intelligence be carried out during the summer of 1956 at Dartmouth College in Hanover, New Hampshire. The study is to proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it. An attempt will be made to find how to make machines use language, form abstractions and concepts, solve kinds of problems now reserved for humans, and improve themselves. We think that a significant advance can be made in one or more of these problems if a carefully selected group of scientists work on it together for a summer.”</em></p>
+</blockquote>
+<p>One somewhat remarkable fact is that the proposal goes on to describe concepts that are still at the forefront of modern AI research. For example, the proposal discusses “Neuron Nets”. The general concept is now referred to as “Neural Networks”, which are a key component of modern AI systems.</p>
+<p>The overall goals of this conference were massive in scope, and the problems extremely difficult. There were two basic approaches to developing artificial intelligence that emerged after this conference. The first, which dominated the field for a long time, was the symbolic approach. This approach focused on explicitly programming computers to perform tasks that required intelligence. For example, early AI systems were designed to play chess by following a set of rules and strategies. You can think of this as hand-coding the logic of chess into a computer program. The different pieces have different rules for how they can move, and the program would evaluate different possible moves to determine the best one.</p>
+<p>While some tasks can be done this way, for many tasks, this turned out to be extremely difficult. For example, let’s take image recognition. If I show you an image, you can probably very easily tell me whether or not there is a cat in the image. But what if you had to tell a computer exactly how to do this? You would have to write down all of the features that make up a cat. For example, cats have pointy ears, whiskers, fur, and a tail. You would then have to write a program that looks for these features in an image. However, this approach is extremely difficult. There are many different types of cats, and they can appear in many different poses and lighting conditions. Conceptually, even though this is very easy for a human to do, it is extremely difficult for us to write down <em>how</em> we do it.</p>
+<p>This is where the second approach to artificial intelligence comes in: machine learning. Instead of explicitly programming the computer to perform a task, machine learning involves giving the computer a large amount of examples. Instead of telling the computer how to recognize a cat, we can give it thousands or millions of images that are labeled as either containing a cat or not containing a cat. The computer can then learn from these examples and figure out the patterns that distinguish images with cats from those without.</p>
+<p>Machine learning approaches have also been around for a while now, but they didn’t enjoy much success for a long time. For example, the first formal neural networks were proposed in the 1950s. But they didn’t really work. You could have a structure to classify images, but it just didn’t perform well. This changed with the deep learning revolution in the 2010s. The real breakthrough we needed was scale. We needed to be able to have extremely flexible models that are given many, many examples. The combination of large datasets and powerful computers made researchers able to train neural networks on a massive scale. These deep learning approaches first saw success in image classification tasks, before breaking through into natural language processing tasks.</p>
+<p>The key development in natural language processing came in 2017 with the introduction of the Transformer architecture by <span class="citation" data-cites="vaswani2017attention">Vaswani et al. (<a href="references.html#ref-vaswani2017attention" role="doc-biblioref">2017</a>)</span>. This provided a workflow for training extremely large language models (LLMs). By large in this context, we mean models with many, many parameters. In this context, you should think of a parameter as how specific a model can be. A large model (at least theoretically), can potentially be useful in many different, specific contexts.</p>
+<p>Today, the word “AI” has become mostly associated with these large language models, but it is a broader field generally. The most state-of-the-art models are also starting to combine symbolic reasoning with machine learning. The idea is to take advantage of the knowledge we can explicitly program into a system, while also taking advantage of the flexibility of machine learning systems to learn tasks that can’t easily be expressed with symbolic reasoning. For the rest of the chapter, we will focus on the impacts of these modern LLMs on the labor market and use the term “AI” to refer to these systems specifically.</p>
+<p>One of the first papers to study the impact of AI on the labor market is <span class="citation" data-cites="brynjolfsson2025canaries">Brynjolfsson, Chandar, and Chen (<a href="references.html#ref-brynjolfsson2025canaries" role="doc-biblioref">2025</a>)</span>. They take advantage of administrative payroll data to provide some early evidence on the impacts of AI on the labor market. The key aspect of administrative payroll data that is useful is the availability of recent data. For example, the data in this paper ends at July 2025. This is key since AI has only recently been adopted widely. Therefore, we need recent data to study the impacts of AI on the labor market. The timeline below shows some of the key events in the recent history of AI.</p>
+<div id="cell-fig-llm-timeline" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-llm-timeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-llm-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08_files/figure-html/fig-llm-timeline-output-1.png" width="655" height="277" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-llm-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Key Events in the Modern LLM Timeline
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The approach in the paper is similar to approaches we have seen before. The first thing we need to consider is how to measure an occupation’s exposure to AI. For general computers, we used a task-based approach. We considered the tasks that workers performed in different occupations and classified them based on whether they were routine vs.&nbsp;nonroutine, or cognitive vs.&nbsp;manual, with the idea being that computers were able to automate many types of routine tasks.</p>
+<p>Work into AI has taken a similar approach. Some authors have used O*NET task data to classify occupations based on the tasks they perform. One alternative approach, which we will focus on here, is to use data from the AI systems themselves. <span class="citation" data-cites="handa2025economic">Handa et al. (<a href="references.html#ref-handa2025economic" role="doc-biblioref">2025</a>)</span> is a recent working paper that uses data from millions of conversations with Claude to see what types of questions AI tends to be answering. For each query, they link this query to a task in O*NET. For example, take the following query:</p>
+<p><code>Query: Could you look over this code and check for bugs?</code></p>
+<p>This would be labeled as a Computer and Mathematical task. In particular, this would be linked to a task described as “Program and debug computer systems and machinery.” They then repeat this for millions and millions of queries. Overall, they find that 37% of the queries are related to Mathematical and Computational Tasks. For example, specifically, the most common tasks fall under “Develop and Maintain Software Applications and Websites.”</p>
+<p>In O*NET, each occupation is associated with a group of tasks. If the tasks for a given occupation tend to show up a lot in queries, then that occupation would be considered highly exposed to AI. For example, computer programmers tend to perform a lot of the tasks that show up in the queries. Therefore, we would expect computer programmers to be highly exposed to AI. The exposure measure produced by this paper is referred to as the Anthropic Economic Index (the authors of the paper are affiliated with Anthropic, the company that produces Claude).</p>
+<p><span class="citation" data-cites="brynjolfsson2025canaries">Brynjolfsson, Chandar, and Chen (<a href="references.html#ref-brynjolfsson2025canaries" role="doc-biblioref">2025</a>)</span> use this measure as one of the key components of their analysis. They consider how occupations that are more exposed to AI have changed in terms of employment and wages relative to occupations that are less exposed to AI. They go through six key facts about how AI adoption has impacted the labor market so far. We will go through a subset of these.</p>
+<section id="fact-1-importance-of-age" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="fact-1-importance-of-age"><span class="header-section-number">8.4.1</span> Fact 1: Importance of Age</h3>
+<p>The first fact they document is that age seems to be an important factor in how individuals are impacted by AI exposure. For example, they take one of the most exposed occupations: software developers. They then consider how employment and wages have changed for younger vs.&nbsp;older workers in this occupation. The figure below shows the results.</p>
+<p>First, to understand the Figure, the authors are normalizing the employment of each age group to 1 in October 2022. This implies the line tells us the change in employment relative to October 2022. The blue line is for workers early in their career (age 22-25). For this group, there seems to be fewer software developers being employed over time. For example, by mid-2025, there are about 20 percent fewer software developers age 22-25 than there were in October 2022. In contrast, the mid-career groups (ages 35-40 or 41-49) have continued to see increases in employment and do not seem as impacted by the introduction of AI.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/ai_1.png" class="img-fluid figure-img"></p>
+<figcaption>Software Developer Employment by Age</figcaption>
+</figure>
+</div>
+<p>Now, software developers are a good case study. Conceptually, it is clear that they are exposed to recent advances in AI and this is also reflected in queries to Claude, which often are about coding tasks. However, let’s understand if this pattern holds more generally. To begin, we will focus only on those early career workers (age 22-25). It could be that early career workers are generally seeing declines in employment, and so the decline for software developers is not specific to AI exposure. Therefore, let’s see if this decline in employment is only for occupations that are highly exposed to AI. The figure below plots the change in employment for early career workers (age 22-25) for different occupations. The darker the line, the more exposed the occupation is to AI. As we can see, the darker lines tend to see decreases in employment relative to the introduction of AI. But this is not reflected in the lighter lines, which tend to see continued growth in employment. One thing to note is that the drop in employment for early career workers here is much less pronounced than it was for software developers specifically. By 2025, employment has fallen by about 5 percent for early career workers in the most exposed occupations.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/ai_2.png" class="img-fluid figure-img"></p>
+<figcaption>Early Career Employment by AI Exposure</figcaption>
+</figure>
+</div>
+<p>Now, let’s see how this looks for mid-career workers (age 41-49). As can be seen in the figure below, there is no clear relationship between AI exposure and employment for mid-career workers. All of the lines tend to be overlapping.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/ai_3.png" class="img-fluid figure-img"></p>
+<figcaption>Mid Career Employment by AI Exposure</figcaption>
+</figure>
+</div>
+</section>
+<section id="fact-2-wages-have-been-flat" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="fact-2-wages-have-been-flat"><span class="header-section-number">8.4.2</span> Fact 2: Wages Have Been Flat</h3>
+<p>While we see clear evidence of employment declines for early career workers in occupations exposed to AI, wages seem to have seen different patterns. For example, take the four occupations below that are differentially exposed to AI. For example, in Panel A we again return to software developers. Even though we saw large declines in employment for early career workers (the blue line), wages have actually increased for this group relative to other groups. This could be driven by a few different things. First, there could be a selection effect. Maybe only the best software developers are being hired, which is driving up wages. Second, it could be that AI is actually complementing the work of software developers, allowing them to be more productive and therefore command higher wages. Therefore, even though we see declines in employment, the workers that remain are more productive and receive higher wages.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/08_images/ai_4.png" class="img-fluid figure-img"></p>
+<figcaption>Wages in Different Occupations by AI Exposure</figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-acemoglu2020competing" class="csl-entry" role="listitem">
+Acemoglu, Daron, Claire Lelarge, and Pascual Restrepo. 2020. <span>“Competing with Robots: Firm-Level Evidence from France.”</span> <em>AEA Papers and Proceedings</em> 110: 383–88.
+</div>
+<div id="ref-acemoglu2020robots" class="csl-entry" role="listitem">
+Acemoglu, Daron, and Pascual Restrepo. 2020. <span>“Robots and Jobs: Evidence from US Labor Markets.”</span> <em>Journal of Political Economy</em> 128 (6): 2188–2244.
+</div>
+<div id="ref-acemoglu2022tasks" class="csl-entry" role="listitem">
+———. 2022. <span>“Tasks, Automation, and the Rise in US Wage Inequality.”</span> <em>Econometrica</em> 90 (5): 1973–2016.
+</div>
+<div id="ref-brynjolfsson2025canaries" class="csl-entry" role="listitem">
+Brynjolfsson, Erik, Bharat Chandar, and Ruyu Chen. 2025. <span>“Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence.”</span> <em>Stanford Digital Economy Lab. Published August</em>.
+</div>
+<div id="ref-handa2025economic" class="csl-entry" role="listitem">
+Handa, Kunal, Alex Tamkin, Miles McCain, Saffron Huang, Esin Durmus, Sarah Heck, Jared Mueller, et al. 2025. <span>“Which Economic Tasks Are Performed with Ai? Evidence from Millions of Claude Conversations.”</span> <em>arXiv Preprint arXiv:2503.04761</em>.
+</div>
+<div id="ref-humlum2019robot" class="csl-entry" role="listitem">
+Humlum, Anders. 2021. <span>“Robot Adoption and Labor Market Dynamics.”</span> <em>Princeton University</em>.
+</div>
+<div id="ref-vaswani2017attention" class="csl-entry" role="listitem">
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. <span>“Attention Is All You Need.”</span> <em>Advances in Neural Information Processing Systems</em> 30.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="enlarged image" style="max-width:90%; max-height:90%; box-shadow:0 0 20px white;">
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07.html" class="pagination-link" aria-label="Technology: A Task Approach">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09.html" class="pagination-link" aria-label="Labor Supply">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Labor Supply</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

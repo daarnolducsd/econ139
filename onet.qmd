@@ -1,0 +1,408 @@
+---
+title: "O*NET"
+format: html
+jupyter: python3
+---
+
+## Brief Introduction 
+The goal of O\*NET (Occupational Information Network) is to provide comprehensive information about different occupations in the US. It replaced the Dictionary of Occupational Titles which was paper-based. It includes information on the tasks that individuals perform in occupations, the skills one needs to perform the occupation, details on the work activities performed, among other information. 
+
+In order to get this information on occupations, O\*NET generally sends a survey to workers who are currently performing the occupation (referred to as incumbents). They are asked various questions about different tasks and skills and asked to rate them on a scale from 1 (not important) to 5 (very important). Some questions are given to all occupations while others are specific. For example, when asking about tasks, it would be unreasonable to ask about certain tasks for certain occupations. Therefore, experts use prior information (such as information from the Dictionary of Occupational Titles) to come up with a set of tasks that would be reasonable to ask about. 
+
+
+## Interacting with O*NET
+
+How one interacts with O*NET likely depends on the user. For example, a job seeker will generally use O\*NET online. This is a website that allows users to search for specific occupations. The information will then be clearly presented. Researchers, generally, will tend to prefer to use the raw data downloads. This will allow one to perform statistical analysis on the data, while considering a wide array of occupations at once. 
+
+The raw data, however, can be quite complicated. Unlike when we studied the CPS or ACS, we don't get one table of information. Instead O\*NET comes as a large list of files that can be merged together depending on the analysis that you are trying to perform. We are going to go through the structure of a few of these in this chapter, but there is much more to learn about the O\*NET.
+
+## Work Activities
+
+We are going to start quite broad. As we will show later, O\*NET will allow us to drill down much more narrowly to get into exactly what a person is doing in an occupation. But first we will start with relatively broad **Work Activities**. 
+
+As a case study to begin, we are going to look at Security Guards. If you go to O\*NET Online and search for security guards, you will find under the tab Work Activities, a number of different activities that are performed by Security Guards. Below I have pasted the two work activities that appeared highest up in the list.
+
+![Work Activities (First 2) for Security Guards](/images/onet_images/sg_wa.png)
+
+We are going to focus on the second work activity **Getting Information**. O\*NET also makes available the questionnaire that it sends to workers. Let's go look at exactly how this question is asked. 
+
+![How Important is Getting Information](/images/onet_images/onet1.png){width=70%}
+
+When we turn to the raw data, we will see that this information will be coded as a numeric variable. If you select not important, than that will be represented by a 1. If you select 5 that will be treated as extremely important. This format for scoring is extremely common in survey questions and is often referred to as a Likert scale (named after its inventor Rensis Likert).
+
+Now, if you choose anything besides "Not Important", you will then be asked another question. 
+
+![Complexity of Work Activity](/images/onet_images/onet2.png){width=70%}
+
+This is referred to as the **Level** question. This is also coded as a numeric variable in the raw data, with higher numbers indicating a higher level of complexity. So when we go to the raw data next, we should keep these questions in mind. Unlike the online data, the raw data files will allow us to see exactly how individuals answered these questions. 
+
+The information below comes from a file named "Work Activities". The way I downloaded the data is through going to the O\*NET database website here: https://www.onetcenter.org/database.html. This website allows you to download the entire O\*NET database. Like mentioned before, this is a lot of files. You may not need all of these files. You can download individual files by going to O\*NET online and searching O\*NET data tab at the top of the site. 
+
+Let's get a list of the different variables in the Work Activities file.
+
+```{python}
+#| echo: false
+import pandas as pd
+from IPython.display import HTML
+
+# Path to where you unzipped the O*NET database
+onet_path = "/Users/davidarnold/Dropbox/Teaching/ECON139/data/onet/db_30_0_text"
+
+# Load the Work Activities data
+wa = pd.read_csv(f"{onet_path}/Work Activities.txt", sep='\t')
+
+# Get variable names
+variables = list(wa.columns)
+
+# Create HTML table with multiple columns (3 columns per row)
+cols_per_row = 3
+html = '<table style="width:70%; border-collapse: collapse;">\n'
+
+for i in range(0, len(variables), cols_per_row):
+    html += '  <tr>\n'
+    for j in range(cols_per_row):
+        if i + j < len(variables):
+            html += f'    <td style="padding: 8px; border: 1px solid #ddd;">{variables[i+j]}</td>\n'
+        else:
+            html += '    <td style="padding: 8px; border: 1px solid #ddd;"></td>\n'
+    html += '  </tr>\n'
+
+html += '</table>'
+
+HTML(html)
+```
+
+We are going to discuss a few of these. The O\*NET-SOC Code is going to be how we identify occupations in the data. For example, the O\*NET-SOC code for security guards is 33-9032.00. Each row in the data is a different question. The Element ID tells us which question we are referencing and Element Name gives us a description of that question. For example, if we look at the first element of Element ID and Element Name in the dataset we get:
+
+```{python}
+#| echo: false
+# Display the first Element ID and Element Name
+first_element_id = wa['Element ID'].iloc[0]
+first_element_name = wa['Element Name'].iloc[0]
+
+print(f"Element ID: {first_element_id}")
+print(f"Element Name: {first_element_name}")
+```
+
+So the code associated with our Getting Information question is 4.A.1.a.1. However, there are actually two Getting Information questions. One is about the importance of getting information. The other is about the level of complexity of getting information. These questions actually have the same Element ID, but whether you are considering the importance or level question is given by the variable Scaled ID. This variable is either equal to "IM" for the importance questions or "LV" for the level questions. Let's get a frequency table of IM vs. LV in the dataset.
+
+```{python}
+#| echo: false
+
+# Frequency table for Scale ID (IM vs. LV)
+wa['Scale ID'].value_counts().sort_index()
+``` 
+
+So in total we have 36,654 rows of data that correspond to importance questions, and 36,654 rows of data that correspond to level questions. Before we continue, let's see how many unique occupations there are in the data:
+
+```{python}
+#| echo: false
+
+# Count unique occupations
+n_occupations = wa['O*NET-SOC Code'].nunique()
+
+# Create a nicely formatted table
+import pandas as pd
+from IPython.display import HTML
+
+table_data = pd.DataFrame({
+    'Metric': ['Number of Unique Occupations'],
+    'Count': [n_occupations]
+})
+
+# Style the table
+html_table = table_data.to_html(index=False, border=0)
+styled_html = f"""
+<style>
+    .onet-table {{
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+    }}
+    .onet-table th {{
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }}
+    .onet-table td {{
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }}
+    .onet-table tr:nth-child(even) {{
+        background-color: #f2f2f2;
+    }}
+</style>
+<table class="onet-table">
+    <tr>
+        <th>Metric</th>
+        <th>Count</th>
+    </tr>
+    <tr>
+        <td>Number of Unique Occupations</td>
+        <td>{n_occupations:,}</td>
+    </tr>
+</table>
+"""
+
+HTML(styled_html)
+```
+
+Now, this data structure isn't quite as straightforward as the previous datasets we covered, where the unit-of-observation was a person. In this dataset, the unit-of-observation is a question for a specific occupation. The variables O\*NET-SOC Code, Element ID and Scale ID together make up the unit-of-observation. **Data Value** is going to be our key variable of interest. This tells us how people are answering the Work Activities Question. But to understand how to use it, let's focus on a single question first. Let's restrict our data to the importance version of the Getting Information question. In code, we are going to restrict to rows of the data in which 
+
+``Element ID == "4.A.1.a.1" & Scale ID == "IM"``
+
+How you will restrict to these individuals depends a bit on what program you are using. Below we include Python, Stata and R code snippets that would perform this operation.
+
+**Python:**
+```python
+wa_filtered = wa[(wa['Element ID'] == '4.A.1.a.1') & (wa['Scale ID'] == 'IM')]
+```
+
+**Stata:**
+```stata
+keep if ElementID == "4.A.1.a.1" & ScaleID == "IM"
+```
+
+**R:**
+```r
+wa_filtered <- wa %>%
+  filter(`Element ID` == "4.A.1.a.1" & `Scale ID` == "IM")
+``` 
+
+You will note that sometimes the exact names of the variables have changed a bit. Stata does not allow names to have spaces (generally it is a good idea not to have spaces in variable names. Spaces make the code unnecessarily more complicated).
+
+Now that we've restricted to our question of interest, let's make a summary statistics table that shows some key percentiles of the Data Value variable (i.e. the answer to how important getting information is for the job).
+
+```{python}
+#| echo: false
+
+# Filter to the specific question
+wa_filtered = wa[(wa['Element ID'] == '4.A.1.a.1') & (wa['Scale ID'] == 'IM')]
+
+# Calculate summary statistics
+summary_stats = wa_filtered['Data Value'].describe(percentiles=[.10, .75])
+
+# Create a nicely formatted table
+from IPython.display import HTML
+import pandas as pd
+
+stats_df = pd.DataFrame({
+    'Statistic': ['Mean', '10th Percentile', '75th Percentile'],
+    'Value': [
+        f"{summary_stats['mean']:.2f}",
+        f"{summary_stats['10%']:.2f}",
+        f"{summary_stats['75%']:.2f}"
+    ]
+})
+
+styled_html = f"""
+<style>
+    .summary-table {{
+        border-collapse: collapse;
+        width: 60%;
+        margin: 20px auto;
+    }}
+    .summary-table th {{
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }}
+    .summary-table td {{
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }}
+    .summary-table tr:nth-child(even) {{
+        background-color: #f2f2f2;
+    }}
+    .summary-table tr.obs-row {{
+        border-top: 3px solid #4CAF50;
+        font-style: italic;
+        background-color: #e8f5e9 !important;
+    }}
+</style>
+<table class="summary-table">
+    <tr>
+        <th>Statistic</th>
+        <th>Value</th>
+    </tr>
+"""
+
+for _, row in stats_df.iterrows():
+    styled_html += f"""
+    <tr>
+        <td>{row['Statistic']}</td>
+        <td>{row['Value']}</td>
+    </tr>
+"""
+
+styled_html += f"""
+    <tr class="obs-row">
+        <td>Number of Observations</td>
+        <td>{int(summary_stats['count']):,}</td>
+    </tr>"""
+
+styled_html += """
+</table>
+"""
+
+HTML(styled_html)
+```
+
+Reminder, this question asked on a scale of 1 to 5, how important it is to get information in this job. As you can see the average across all occupation is 4.22, which indicates getting information on average is very important in many jobs. Even the 10th percentile, getting information is around 3.7, indicating it is still close to very important.
+
+One question we should ask ourselves is: how many people are actually answering this question. This is given by the variable N in the dataset. Each value tells us how many incumbent workers responded to this question. Let's create a histogram of N across occupations so we can better understand the source of our information.
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+
+# Create histogram of N (number of respondents)
+plt.figure(figsize=(7, 6))
+plt.hist(wa_filtered['N'], bins=30, color='#4CAF50', edgecolor='black', alpha=0.7)
+plt.xlabel('Number of Respondents (N)', fontsize=12)
+plt.ylabel('Frequency', fontsize=12)
+plt.title('Distribution of Number of Respondents Across Occupations', fontsize=14, fontweight='bold')
+plt.grid(axis='y', alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+So the first thing to note is that there are not a tremendous number of respondents per occupation. Most occupations have around 20. This is why O\*NET also provides standard errors and confidence bounds for questions. While we will not discuss these statistics in the class, they are ways to understand the uncertainty around an answer. For example, if an occupation reports a 4.5, but there is a large standard error on this estimate, then that implies we are relatively less certain about the true value for this question (where the true value would be given by a very large sample size of individuals in that occupation).
+
+Now, let's go back to our case study of security guards. Let's create a dataset that restricts only to the security guard SOC code so that we can understand this occupation in more detail. Below, we show the Work Activities that were rated most important for Security Guards.
+
+```{python}
+#| echo: false
+
+# Filter to security guards (SOC code 33-9032.00)
+security_guards = wa[(wa['O*NET-SOC Code'] == '33-9032.00') & (wa['Scale ID'] == 'IM')]
+
+# Create a summary table for security guards
+from IPython.display import HTML
+import pandas as pd
+
+# Extract the relevant information and get top 5 highest Data Values
+sg_data = security_guards[['O*NET-SOC Code', 'Element Name', 'Data Value', 'N']].copy()
+sg_data = sg_data.nlargest(5, 'Data Value')
+
+# Create styled HTML table
+styled_html = """
+<style>
+    .sg-table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .sg-table th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .sg-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .sg-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<table class="sg-table">
+    <tr>
+        <th>O*NET-SOC Code</th>
+        <th>Element Name</th>
+        <th>Data Value</th>
+        <th>N</th>
+    </tr>
+"""
+
+for _, row in sg_data.iterrows():
+    styled_html += f"""
+    <tr>
+        <td>{row['O*NET-SOC Code']}</td>
+        <td>{row['Element Name']}</td>
+        <td>{row['Data Value']:.2f}</td>
+        <td>{int(row['N'])}</td>
+    </tr>
+"""
+
+styled_html += """
+</table>
+"""
+
+HTML(styled_html)
+```
+
+One small aside to note here. You will notice that two of the top 5 work activities involve information. For a security guard, this is likely a physical task. They have to go to a place to record the information. Now, you may have seen headlines that reports X percent of jobs can be done by AI. Getting information is a task that AI can do very well. But it is fundamentally different than the type of information that security guards retrieve and document. In other words, within a given task or work activity, there is likely a lot of variation in exactly what that means. However, methods that don't take into account the context of the occupation may falsely label security guards as likely to be replaced by AI. 
+
+What might also be informative is to see the work activities that security guards deem the least important in their jobs.
+
+```{python}
+#| echo: false
+
+# Get the 5 elements with the lowest Data Values
+sg_data_lowest = security_guards[['O*NET-SOC Code', 'Element Name', 'Data Value', 'N']].copy()
+sg_data_lowest = sg_data_lowest.nsmallest(5, 'Data Value')
+
+# Create styled HTML table
+styled_html_lowest = """
+<style>
+    .sg-table-low {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .sg-table-low th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    .sg-table-low td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .sg-table-low tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<table class="sg-table-low">
+    <tr>
+        <th>O*NET-SOC Code</th>
+        <th>Element Name</th>
+        <th>Data Value</th>
+        <th>N</th>
+    </tr>
+"""
+
+for _, row in sg_data_lowest.iterrows():
+    styled_html_lowest += f"""
+    <tr>
+        <td>{row['O*NET-SOC Code']}</td>
+        <td>{row['Element Name']}</td>
+        <td>{row['Data Value']:.2f}</td>
+        <td>{int(row['N'])}</td>
+    </tr>
+"""
+
+styled_html_lowest += """
+</table>
+"""
+
+HTML(styled_html_lowest)
+``` 
+
+Now, this only scratches the surface of what O\*NET provides, but it gives us a starting point. If we are interested in how future technology may impact security guards, we can think about the work activities they perform. How do we think these work activities will be replaced (or augmented) by technology in the future. 
+
+
+

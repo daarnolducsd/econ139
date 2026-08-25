@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; The Current Population Survey (CPS) – Econ 139: Labor Economics</title>
+<title>11&nbsp; The Current Population Survey (CPS) – Econ 139: Labor Economics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,13 +23,14 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./acs.html" rel="next">
 <link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,7 +70,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.scss">
 </head>
@@ -83,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./cps.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./cps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -123,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -159,7 +192,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Human Capital</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Technology: A Task Approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Technology: Automation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Labor Supply</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trade</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,7 +239,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cps.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./onet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">O*NET</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,15 +261,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#brief-introduction" id="toc-brief-introduction" class="nav-link active" data-scroll-target="#brief-introduction"><span class="header-section-number">11.1</span> Brief Introduction</a></li>
+  <li><a href="#the-current-population-survey-cps" id="toc-the-current-population-survey-cps" class="nav-link" data-scroll-target="#the-current-population-survey-cps"><span class="header-section-number">11.2</span> The Current Population Survey (CPS)</a></li>
+  <li><a href="#downloading-the-cps" id="toc-downloading-the-cps" class="nav-link" data-scroll-target="#downloading-the-cps"><span class="header-section-number">11.3</span> Downloading the CPS</a></li>
+  <li><a href="#computing-the-unemployment-rate" id="toc-computing-the-unemployment-rate" class="nav-link" data-scroll-target="#computing-the-unemployment-rate"><span class="header-section-number">11.4</span> Computing the Unemployment Rate</a></li>
+  <li><a href="#occupation" id="toc-occupation" class="nav-link" data-scroll-target="#occupation"><span class="header-section-number">11.5</span> Occupation</a></li>
+  <li><a href="#earnings" id="toc-earnings" class="nav-link" data-scroll-target="#earnings"><span class="header-section-number">11.6</span> Earnings</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.7</span> Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./cps.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cps.html">Datasets</a></li><li class="breadcrumb-item"><a href="./cps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Current Population Survey (CPS)</span></h1>
 </div>
 
 
@@ -217,8 +298,616 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="brief-introduction" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="brief-introduction"><span class="header-section-number">11.1</span> Brief Introduction</h2>
+<p>Modern labor economics started with the advent of large-scale surveys of individuals and households which began shortly after World War II. One of the most important, widely used, and to this day, influential surveys is undoubtedly the Current Population Survey (CPS).</p>
+</section>
+<section id="the-current-population-survey-cps" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="the-current-population-survey-cps"><span class="header-section-number">11.2</span> The Current Population Survey (CPS)</h2>
+<p>The current population survey (CPS) is a monthly survey of about 60,000 households conducted by the U.S. Census Bureau and the Bureau of Labor Statistics. The CPS is the primary source of information on the labor force characteristics of the U.S. population, as well as the source for unemployment rates. To discuss the CPS, we are going to compute the unemployment rate and construct a measure of median personal income.</p>
+<p>The CPS is what is referred to as a panel survey, implying it follows individuals over time. It has a somewhat complex design, where households are interviewed for four consecutive months, then not interviewed for the next eight months, and then interviewed again for four consecutive months. For example Figure 1 below illustrates the design for a household that was first interviewed in January 2024.</p>
+<div id="cell-fig-cps-design" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-cps-design" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cps-design-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cps_files/figure-html/fig-cps-design-output-1.png" width="758" height="757" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cps-design-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Current Population Survey Design
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The 4th and 8th interview are referred to as outgoing rotation groups. These groups are often given extra consideration in analysis because in these interviews, respondents are asked additional questions about work and income. So if you are doing an analysis that requires an individual’s income, you may need to restrict your sample to just the outgoing rotation groups. If you are more interested in labor force status, then you don’t need to restrict your sample.</p>
+<p>The variable MISH indicates the month-in-sample of the individual. For example, if MISH=1, then the individual is in their first month of being interviewed. If MISH=4, then the individual is in their fourth month of being interviewed and is part of an outgoing rotation group. If MISH=5, then the individual is in their fifth month of being interviewed and so on. If you want to restrict to outgoing rotation group, you need to restrict to MISH=4 or MISH=8.</p>
+</section>
+<section id="downloading-the-cps" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="downloading-the-cps"><span class="header-section-number">11.3</span> Downloading the CPS</h2>
+<p>There are two main ways to access the CPS data. The first is directly through the <a href="https://www.census.gov/data/datasets/time-series/demo/cps/cps-basic.html">Bureau of Labor Statistics website</a>. The second is through the IPUMS-CPS project, which provides harmonized CPS data. This is much easier for a number of reasons. First, the IPUMS-CPS project (IPUMS stands for Integrated Public Use Microdata Series). IPUMS provides a user-friendly interface to select variables and download data. You can also select the samples you want, implying you can select information from multiple years and download it all in one file. The raw data files provided by the Bureau of Labor Statistics require much more data cleaning and processing. Second, the IPUMS-CPS project provides harmonized variables that are consistent over time, which is especially useful if you are working with data from multiple years. Lastly, the IPUMS-CPS project provides detailed documentation and support for users. For example, if you are confused about what a variable in the CPS means, you can often google the variable name and find a relevant IPUMS-CPS documentation page that explains the variable in detail. For example, when you submit an extract request, it comes with a codebook that provides detailed information about each variable, including its coding scheme.</p>
+</section>
+<section id="computing-the-unemployment-rate" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="computing-the-unemployment-rate"><span class="header-section-number">11.4</span> Computing the Unemployment Rate</h2>
+<p>For our first foray into the CPS, we are going to compute the unemployment rate. We are going to do this for August 2025 data (see course website for link to the data file <code>cps_aug_25.csv</code>).</p>
+<p>Let’s first load the data and take a look at the variables that are included.</p>
+<div id="804a1487" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_5ac35 th {
+  display: none;
+}
+#T_5ac35 td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+#T_5ac35 tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_5ac35 table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+</style>
+
+<div id="T_5ac35" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_5ac35-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.1: CPS Dataset Variables (Total: 24 variables)
+</figcaption>
+<div aria-describedby="T_5ac35-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_5ac35" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_5ac35_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">0</th>
+<th id="T_5ac35_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">1</th>
+<th id="T_5ac35_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">2</th>
+<th id="T_5ac35_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_5ac35_row0_col0" class="data row0 col0">YEAR</td>
+<td id="T_5ac35_row0_col1" class="data row0 col1">STATEFIP</td>
+<td id="T_5ac35_row0_col2" class="data row0 col2">AGE</td>
+<td id="T_5ac35_row0_col3" class="data row0 col3">UHRSWORKT</td>
+</tr>
+<tr class="even">
+<td id="T_5ac35_row1_col0" class="data row1 col0">SERIAL</td>
+<td id="T_5ac35_row1_col1" class="data row1 col1">PERNUM</td>
+<td id="T_5ac35_row1_col2" class="data row1 col2">SEX</td>
+<td id="T_5ac35_row1_col3" class="data row1 col3">WHYUNEMP</td>
+</tr>
+<tr class="odd">
+<td id="T_5ac35_row2_col0" class="data row2 col0">MONTH</td>
+<td id="T_5ac35_row2_col1" class="data row2 col1">WTFINL</td>
+<td id="T_5ac35_row2_col2" class="data row2 col2">EMPSTAT</td>
+<td id="T_5ac35_row2_col3" class="data row2 col3">EMPSAME</td>
+</tr>
+<tr class="even">
+<td id="T_5ac35_row3_col0" class="data row3 col0">HWTFINL</td>
+<td id="T_5ac35_row3_col1" class="data row3 col1">CPSIDP</td>
+<td id="T_5ac35_row3_col2" class="data row3 col2">LABFORCE</td>
+<td id="T_5ac35_row3_col3" class="data row3 col3">EDUC</td>
+</tr>
+<tr class="odd">
+<td id="T_5ac35_row4_col0" class="data row4 col0">CPSID</td>
+<td id="T_5ac35_row4_col1" class="data row4 col1">CPSIDV</td>
+<td id="T_5ac35_row4_col2" class="data row4 col2">OCC</td>
+<td id="T_5ac35_row4_col3" class="data row4 col3">UNION</td>
+</tr>
+<tr class="even">
+<td id="T_5ac35_row5_col0" class="data row5 col0">MISH</td>
+<td id="T_5ac35_row5_col1" class="data row5 col1">EARNWEEK2</td>
+<td id="T_5ac35_row5_col2" class="data row5 col2">CLASSWKR</td>
+<td id="T_5ac35_row5_col3" class="data row5 col3">UHRSWORKORG</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s compute the unemployment rate among these group of workers. The unemployment rate is defined as the number of unemployed individuals divided by the labor force. Remember from Chapter 1 that if you are not currently employed and not actively looking for work, then you are not part of the labor force. Before we compute the unemployment rate, let’s first see how many individuals are in the labor force. We can do this by looking at the variable <code>LABFORCE</code>, which indicates whether an individual is in the labor force or not.</p>
+<div id="2bbc45be" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_d10de th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_d10de td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_d10de tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_d10de table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_d10de" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_d10de-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.2: Distribution of Labor Force Status (LABFORCE Variable)
+</figcaption>
+<div aria-describedby="T_d10de-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_d10de" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_d10de_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Labor Force Status</th>
+<th id="T_d10de_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Description</th>
+<th id="T_d10de_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Count</th>
+<th id="T_d10de_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_d10de_row0_col0" class="data row0 col0">0</td>
+<td id="T_d10de_row0_col1" class="data row0 col1">NIU (Not in Universe)</td>
+<td id="T_d10de_row0_col2" class="data row0 col2">16167</td>
+<td id="T_d10de_row0_col3" class="data row0 col3">16.54%</td>
+</tr>
+<tr class="even">
+<td id="T_d10de_row1_col0" class="data row1 col0">1</td>
+<td id="T_d10de_row1_col1" class="data row1 col1">No, not in labor force</td>
+<td id="T_d10de_row1_col2" class="data row1 col2">32988</td>
+<td id="T_d10de_row1_col3" class="data row1 col3">33.75%</td>
+</tr>
+<tr class="odd">
+<td id="T_d10de_row2_col0" class="data row2 col0">2</td>
+<td id="T_d10de_row2_col1" class="data row2 col1">Yes, in labor force</td>
+<td id="T_d10de_row2_col2" class="data row2 col2">48585</td>
+<td id="T_d10de_row2_col3" class="data row2 col3">49.71%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>In the CPS, variables are generally coded numerically. To understand what the numbers represent, however, you need to use the codebook. This is where the labels for the numbers come from. The first thing you might notice is that a larger share of people are recorded as “Not in Universe”. This implies the labor force status is not applicable for these individuals. This can happen for two reasons, basically. First, the CPS does ask about individuals who are under 16 years old, and these individuals are not part of the labor force. For these individuals, often the parents will fill out the survey on their behalf. For our purposes, let’s restrict to individuals that are 16 years old or older. We can do this by restricting to individuals with <code>AGE&gt;=16</code>. This restriction drops most of the 16,167 individuals who are “Not in Universe”, but there remain a few left. In this case, these individuals should have been asked this question, but for some reason, they were not. This can happen for a variety of reasons, such as the individual refusing to answer the question or the interviewer making a mistake. For our purposes, we are going to drop these individuals from our analysis.</p>
+<div id="c916cafa" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_82554 th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_82554 td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_82554 tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_82554 table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_82554" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_82554-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.3: Distribution of Labor Force Status (Ages 16+)
+</figcaption>
+<div aria-describedby="T_82554-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_82554" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_82554_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Labor Force Status</th>
+<th id="T_82554_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Description</th>
+<th id="T_82554_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Count</th>
+<th id="T_82554_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_82554_row0_col0" class="data row0 col0">1</td>
+<td id="T_82554_row0_col1" class="data row0 col1">No, not in labor force</td>
+<td id="T_82554_row0_col2" class="data row0 col2">31929</td>
+<td id="T_82554_row0_col3" class="data row0 col3">39.72%</td>
+</tr>
+<tr class="even">
+<td id="T_82554_row1_col0" class="data row1 col0">2</td>
+<td id="T_82554_row1_col1" class="data row1 col1">Yes, in labor force</td>
+<td id="T_82554_row1_col2" class="data row1 col2">48448</td>
+<td id="T_82554_row1_col3" class="data row1 col3">60.28%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>So in our relevant sample, just above 60% are in the labor force and just below 40% are not in the labor force. This is a pretty standard estimate of this statistic. To compute the unemployment rate, we need to know how many individuals among those in the labor force are not currently employed. This information is contained in the variable <code>EMPSTAT</code>, which includes a more thorough breakdown that indicates whether an individual is employed, unemployed, or not in the labor force. Let’s take a look at the distribution of this variable among our remaining sample.</p>
+<div id="dfd765aa" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_9bfab th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_9bfab td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_9bfab tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_9bfab table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_9bfab" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_9bfab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.4: Distribution of Employment Status (EMPSTAT Variable)
+</figcaption>
+<div aria-describedby="T_9bfab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_9bfab" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_9bfab_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Employment Status</th>
+<th id="T_9bfab_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Description</th>
+<th id="T_9bfab_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Count</th>
+<th id="T_9bfab_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_9bfab_row0_col0" class="data row0 col0">10</td>
+<td id="T_9bfab_row0_col1" class="data row0 col1">At work</td>
+<td id="T_9bfab_row0_col2" class="data row0 col2">44348</td>
+<td id="T_9bfab_row0_col3" class="data row0 col3">55.17%</td>
+</tr>
+<tr class="even">
+<td id="T_9bfab_row1_col0" class="data row1 col0">12</td>
+<td id="T_9bfab_row1_col1" class="data row1 col1">Has job, not at work last week</td>
+<td id="T_9bfab_row1_col2" class="data row1 col2">2069</td>
+<td id="T_9bfab_row1_col3" class="data row1 col3">2.57%</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfab_row2_col0" class="data row2 col0">21</td>
+<td id="T_9bfab_row2_col1" class="data row2 col1">Unemployed, experienced worker</td>
+<td id="T_9bfab_row2_col2" class="data row2 col2">1815</td>
+<td id="T_9bfab_row2_col3" class="data row2 col3">2.26%</td>
+</tr>
+<tr class="even">
+<td id="T_9bfab_row3_col0" class="data row3 col0">22</td>
+<td id="T_9bfab_row3_col1" class="data row3 col1">Unemployed, new worker</td>
+<td id="T_9bfab_row3_col2" class="data row3 col2">216</td>
+<td id="T_9bfab_row3_col3" class="data row3 col3">0.27%</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfab_row4_col0" class="data row4 col0">32</td>
+<td id="T_9bfab_row4_col1" class="data row4 col1">Not in labor force, unable to work</td>
+<td id="T_9bfab_row4_col2" class="data row4 col2">3704</td>
+<td id="T_9bfab_row4_col3" class="data row4 col3">4.61%</td>
+</tr>
+<tr class="even">
+<td id="T_9bfab_row5_col0" class="data row5 col0">34</td>
+<td id="T_9bfab_row5_col1" class="data row5 col1">Not in labor force, other</td>
+<td id="T_9bfab_row5_col2" class="data row5 col2">9190</td>
+<td id="T_9bfab_row5_col3" class="data row5 col3">11.43%</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfab_row6_col0" class="data row6 col0">36</td>
+<td id="T_9bfab_row6_col1" class="data row6 col1">Not in labor force, retired</td>
+<td id="T_9bfab_row6_col2" class="data row6 col2">19035</td>
+<td id="T_9bfab_row6_col3" class="data row6 col3">23.68%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>The Not In Labor Force categories match what we saw before (19035+9190+3704=31929). The employed categories (10 and 12) sum to 46,417, while the unemployed categories (21 and 22) sum to 2,031. The unemployment rate is then computed as:</p>
+<p><span class="math display">\[\begin{align}
+\text{Unemployment Rate} &amp;= \frac{\text{Number of Unemployed}}{\text{Labor Force}} \\
+&amp;= \frac{2031}{2031 + 46417} \\
+&amp;= 4.4\%
+\end{align}\]</span></p>
+<p>You might see a slightly different unemployment rate reported in the news or on the BLS website. This is because the BLS uses a slightly different sample and also applies weights to the data to make it representative of the U.S. population. The weights are provided in the CPS data (<code>WTFINL</code>). The basic reason behind the weights is that the CPS purposely oversamples some populations. For example, imagine you want to understand the age distribution of a University, but also wanted to understand what fraction of seniors at a University have already found a job. You may want to oversample seniors to get a better estimate of this statistic. However, if you oversample seniors, then your sample will not be representative of the overall population. If you take the average age, then it will be biased upwards because seniors are older. To correct for this, you would apply weights to the data so that seniors are weighted less and other groups are weighted more. This is the basic idea behind weights in survey data. Weights are often provided in survey data to make the sample representative of the population. For our purposes, the weights will not actually make too much of a difference and would complicate the analysis, so we will ignore them for now.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="AI for Data Analysis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+AI for Data Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AI is undoubtedly an extremely useful tool for data analysis. Much of the code written to clean and organize data is fairly simple and has been performed thousands of times before by many different people. This makes it ideal for AI to help generate code snippets and explanations.</p>
+<p>However, AI tools can also make mistakes. For example, when constructing the frequency tables above, the AI I used (Claude) provided suggestions for the labels of the different numeric codes in the CPS. While most were correct, a few were incorrect. If I had not cross-referenced with the official documentation, I would have classified a large number of workers that were not in the labor force as not in universe. This would lead to big issues if your goal was to study labor force participation. Additionally, the AI sometimes made simple mathematical mistakes (such as incorrectly summing up a list of numbers).</p>
+</div>
+</div>
+</section>
+<section id="occupation" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="occupation"><span class="header-section-number">11.5</span> Occupation</h2>
+<p>In this course, one important focus will be on occupations. In particular, when we study how technological changes impact the labor market, our predictions will depend crucially on the types of tasks performed in different occupations. Therefore, let’s dig into the occupation variable in the CPS.</p>
+<p>The occupation variable, by necessity, has gone through some changes over time. When the CPS was created in the 1940s, there simply weren’t occupations like “Software Developer” or “Data Scientist”. Therefore, the CPS has periodically updated the occupation codes to reflect changes in the labor market. The occupation variable in the CPS is called <code>OCC</code>. Since we are using the 2025 data, we are going to use the classification system that was introduced in 2018.</p>
+<p>Let’s see what the five most common occupations are in our sample.</p>
+<div id="3d44778a" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_dfb1c th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_dfb1c td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_dfb1c tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_dfb1c table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_dfb1c" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_dfb1c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.5: Top 5 Most Common Occupations Among Employed Workers
+</figcaption>
+<div aria-describedby="T_dfb1c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_dfb1c" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_dfb1c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Occupation Code</th>
+<th id="T_dfb1c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Occupation Title</th>
+<th id="T_dfb1c_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Count</th>
+<th id="T_dfb1c_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_dfb1c_row0_col0" class="data row0 col0">440</td>
+<td id="T_dfb1c_row0_col1" class="data row0 col1">Managers, all other</td>
+<td id="T_dfb1c_row0_col2" class="data row0 col2">1707</td>
+<td id="T_dfb1c_row0_col3" class="data row0 col3">3.68%</td>
+</tr>
+<tr class="even">
+<td id="T_dfb1c_row1_col0" class="data row1 col0">3255</td>
+<td id="T_dfb1c_row1_col1" class="data row1 col1">Registered Nurses</td>
+<td id="T_dfb1c_row1_col2" class="data row1 col2">1035</td>
+<td id="T_dfb1c_row1_col3" class="data row1 col3">2.23%</td>
+</tr>
+<tr class="odd">
+<td id="T_dfb1c_row2_col0" class="data row2 col0">9130</td>
+<td id="T_dfb1c_row2_col1" class="data row2 col1">Unknown Occupation</td>
+<td id="T_dfb1c_row2_col2" class="data row2 col2">1003</td>
+<td id="T_dfb1c_row2_col3" class="data row2 col3">2.16%</td>
+</tr>
+<tr class="even">
+<td id="T_dfb1c_row3_col0" class="data row3 col0">2310</td>
+<td id="T_dfb1c_row3_col1" class="data row3 col1">Elementary and middle school teachers</td>
+<td id="T_dfb1c_row3_col2" class="data row3 col2">959</td>
+<td id="T_dfb1c_row3_col3" class="data row3 col3">2.07%</td>
+</tr>
+<tr class="odd">
+<td id="T_dfb1c_row4_col0" class="data row4 col0">4700</td>
+<td id="T_dfb1c_row4_col1" class="data row4 col1">First-line supervisors of retail sales workers</td>
+<td id="T_dfb1c_row4_col2" class="data row4 col2">893</td>
+<td id="T_dfb1c_row4_col3" class="data row4 col3">1.92%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>Depending on your analysis and what you are interested in, you may need to either aggregate data from many more time periods or group some occupations together. For the most popular occupation (Managers, all other), we have 1,707 observations in August 2025.</p>
+</section>
+<section id="earnings" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="earnings"><span class="header-section-number">11.6</span> Earnings</h2>
+<p>Next, we are going to study earnings. As discussed before, earnings information is primarily studied using the outgoing rotation group (i.e.&nbsp;MISH=4 or MISH=8). There are a few things about earnings data that are important to note.</p>
+<p>First, because earnings information is only asked in the outgoing rotation group, many people have a numeric code that indicates that they were not asked this question. The variable we will be using is <code>EARNWEEK2</code>, which indicates the total earnings in the past week. If you use earlier versions of the CPS, we could have used <code>EARNWEEK</code>, which is similar. The only difference between these two variables is that <code>EARNWEEK2</code> rounds numbers to preserve confidentiality of the respondent. This was introduced in April 2023. If you are using data from before this date, you should just use <code>EARNWEEK</code>.</p>
+<p>If you go to the codebook for <code>EARNWEEK2</code>, you will see that there are a number of numeric codes that indicate the respondent was not asked this question. For example, the codebook reports that <code>EARNWEEK2=999999.99</code>, indicates that the person is not in universe for this question.</p>
+<div id="8f12efb1" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_28dfa th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_28dfa td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_28dfa tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_28dfa table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_28dfa" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_28dfa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.6: Distribution of EARNWEEK2 = 999999.99 (Not in Universe)
+</figcaption>
+<div aria-describedby="T_28dfa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_28dfa" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_28dfa_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">EARNWEEK2 Value</th>
+<th id="T_28dfa_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Count</th>
+<th id="T_28dfa_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_28dfa_row0_col0" class="data row0 col0">999999.99</td>
+<td id="T_28dfa_row0_col1" class="data row0 col1">70372</td>
+<td id="T_28dfa_row0_col2" class="data row0 col2">87.55%</td>
+</tr>
+<tr class="even">
+<td id="T_28dfa_row1_col0" class="data row1 col0">All Other Values</td>
+<td id="T_28dfa_row1_col1" class="data row1 col1">10005</td>
+<td id="T_28dfa_row1_col2" class="data row1 col2">12.45%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>The individuals with missing earnings information are either individuals who are not working or individuals not in the outgoing rotation group. That is why the fraction with earnings information appears relatively low. Not dropping individuals with missing earnings information from the sample would be extremely problematic. Because the missing data is stored as a numeric variable, imagine we tried to compute the average weekly earnings. If we failed to drop the missing individuals, then the average would be around 900,000 dollars per week. This is obviously not correct. So we need to drop these individuals from our sample. Then, let’s compute some summary statistics for weekly earnings.</p>
+<div id="568d8a69" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_0d7bd th {
+  background-color: #2E86AB;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+#T_0d7bd td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#T_0d7bd tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+#T_0d7bd table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: auto;
+}
+</style>
+
+<div id="T_0d7bd" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_0d7bd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.7: Weekly Earnings Summary Statistics (Excluding Missing Values)
+</figcaption>
+<div aria-describedby="T_0d7bd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_0d7bd" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_0d7bd_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
+<th id="T_0d7bd_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_0d7bd_row0_col0" class="data row0 col0">Mean Weekly Earnings</td>
+<td id="T_0d7bd_row0_col1" class="data row0 col1">$1,464.58</td>
+</tr>
+<tr class="even">
+<td id="T_0d7bd_row1_col0" class="data row1 col0">Median Weekly Earnings</td>
+<td id="T_0d7bd_row1_col1" class="data row1 col1">$1,076.00</td>
+</tr>
+<tr class="odd">
+<td id="T_0d7bd_row2_col0" class="data row2 col0">10th Percentile</td>
+<td id="T_0d7bd_row2_col1" class="data row2 col1">$390.00</td>
+</tr>
+<tr class="even">
+<td id="T_0d7bd_row3_col0" class="data row3 col0">90th Percentile</td>
+<td id="T_0d7bd_row3_col1" class="data row3 col1">$2,700.00</td>
+</tr>
+<tr class="odd">
+<td id="T_0d7bd_row4_col0" class="data row4 col0">Observations</td>
+<td id="T_0d7bd_row4_col1" class="data row4 col1">10,005</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>This table gives us a sense of the distribution of weekly earnings among workers in our sample. The median weekly earnings is $1,076.00. Assuming a 52-week year, this implies median annual earnings of about $55,952. The average is quite a bit higher at $1,464.58. This is common in earnings data, which tends to be right-skewed. When there are some really large value, this will pull the average up, while the median doesn’t depend on the magnitude of the values, just their rank.</p>
+<p>To see this clearly, imagine we had only 5 workers with weekly earnings of $500, $500, $1000, $1,500, and $1,500. In this example, both the mean and median are $1,000. Now imagine the 5th worker sees an increase in their weekly earnings, growing all the way to $10,000. This has no impact on the median, which remains $1,000. However, the mean increases to $2,700.</p>
+<p>To see the entire distribution of weekly earnings, let’s plot a histogram.</p>
+<div id="cell-fig-earnings-histogram" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div id="fig-earnings-histogram" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-earnings-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cps_files/figure-html/fig-earnings-histogram-output-1.png" width="662" height="470" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-earnings-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Distribution of Weekly Earnings
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This distribution has a long right tail, which is typical of earnings data. The mean is pulled up by the high earners, while the median is more representative of a typical worker’s earnings. One thing you might notice is that there seems to be a spike just below $8,000 a week. It seems unlikely that so many people would have exactly that amount of earnings. Additionally, it is surprising that there is basically no one with earnings between $5,000 and $7,000. What is going on here?</p>
+<p>If you look carefully in the data, you will find that there are a non-negligible fraction of individuals with weekly earnings reported as exactly equal to $7,785.88. But wasn’t this supposed to be a rounded earnings variable? The reason this is not rounded is because these individuals earnings have been top-coded. For earnings above a certain amount, there are concerns that the individual would be identifiable based on their earnings. Therefore, to preserve confidentiality, the CPS top-codes earnings at a certain level. For 2025, the Census top-codes the top 3 percent of earners and sets the value of their weekly earnings to the average earnings of the top 3 percent of earners.</p>
+<p>If you look even more closely at the data, you’ll find that the largest value that is not top-coded is $4,300. So if you make more than $4,300 a week, that implies you are in the top 3 percent of earners. Among individuals that make more than $4,300 a week, the average is $7,785.88. This is why there is a spike at this value because anyone with earnings above $4,300 is recorded as having earnings of $7,785.88.</p>
+<p>Top-coding has changed over time. The threshold has changed, and in prior years, it was static. In other words, instead of top-coding the top 3 percent of earners, the CPS would top-code anyone making more than a certain amount.</p>
+</section>
+<section id="conclusion" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.7</span> Conclusion</h2>
+<p>The Current Population Survey is one of the most important and influential surveys in labor economics. It remains important today as the source for up-to-date unemployment numbers. However, using the CPS for research requires one to be careful. Without a thorough understanding of how variables are coded, the structure of the survey, and changes to the survey over time, it is easy to make mistakes that can lead to incorrect conclusions.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
@@ -792,6 +1481,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./acs.html" class="pagination-link" aria-label="The American Community Survey (ACS)">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The American Community Survey (ACS)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
