@@ -242,6 +242,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#retirement-policies" id="toc-retirement-policies" class="nav-link" data-scroll-target="#retirement-policies"><span class="header-section-number">12.3</span> Retirement Policies</a></li>
   <li><a href="#key-variables" id="toc-key-variables" class="nav-link" data-scroll-target="#key-variables"><span class="header-section-number">12.4</span> Key Variables</a></li>
   <li><a href="#regression-discontinuity-design" id="toc-regression-discontinuity-design" class="nav-link" data-scroll-target="#regression-discontinuity-design"><span class="header-section-number">12.5</span> Regression Discontinuity Design</a></li>
+  <li><a href="#other-uses-of-the-acs" id="toc-other-uses-of-the-acs" class="nav-link" data-scroll-target="#other-uses-of-the-acs"><span class="header-section-number">12.6</span> Other Uses of the ACS</a></li>
   </ul>
 </nav>
     </div>
@@ -285,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-variables" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="key-variables"><span class="header-section-number">12.4</span> Key Variables</h2>
 <p>The dataset contains several binary indicator variables. These are variables that take on either a value of zero (condition is false) or one (condition is true). For example, let’s first take a look at the variable indicating whether an individual has health insurance coverage. The name of this variable is <code>has_health_insurance</code>. Note: this does not come directly from IPUMS USA, but rather was created by me while cleaning the data. In particular, as part of the cleaning process I dropped all individuals for which this variable was missing and recoded the variable so that it is equal to 1 if the individual has any health insurance coverage and 0 otherwise.</p>
-<div id="cba9cef1" class="cell" data-execution_count="1">
+<div id="65b7fc12" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -318,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>So in the data, most individuals do have health insurance coverage. Many of of these individuals likely have private heath insurance through their employer, while others may have public health insurance through programs like Medicare. It is also possible that some individuals younger than 65 may have public health insurance through Medicaid.</p>
+<p>So in the data, most individuals do have health insurance coverage. Many of these individuals likely have private health insurance through their employer, while others may have public health insurance through programs like Medicare. It is also possible that some individuals younger than 65 may have public health insurance through Medicaid.</p>
 <p>As a quick aside, it is generally very useful to code binary indicator variables as 0/1 variables rather than using string labels like “yes” and “no”. This makes it much easier to work with these variables in statistical software. Additionally, you want the variables to be coded as 0/1, not some other numbers like 1/2 or -1/1. There are many reasons for this. One simple reason is that if you want the proporition of individuals with health insurance, you can just take the mean of the variable when it is coded as 0/1. For example, imagine we have three individuals with health insurance coded as follows:</p>
 <table class="caption-top table">
 <thead>
@@ -344,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>It is easy to see that 2 out of 3 individuals have health insurance, or 66.67%. We can also calculate this by taking the mean of the variable: (1 + 0 + 1) / 3 = 0.6667. This will be useful later when we construct graphs. If we want the fraction in the labor force by age, we can just take the mean of the <code>in_labor_force</code> variable. Now, if the variable were coded as “yes” and “no”, or as 1 and 2, we would not be able to do this.</p>
 <p>Since we are going to be focused on retirement decisions due to Medicare, let’s look directly at this variable as well. This variable is called <code>has_medicare</code> and is again a binary indicator variable equal to 1 if the individual has Medicare coverage and 0 otherwise.</p>
-<div id="0a12fab6" class="cell" data-execution_count="2">
+<div id="278702a0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -381,7 +382,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="regression-discontinuity-design" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="regression-discontinuity-design"><span class="header-section-number">12.5</span> Regression Discontinuity Design</h2>
 <p>All of these policies are determined by cutoff rules, making them potential candidates for regression discontinuity analysis, which we studied in Chapter 6: Human Capital. First, let’s see how the probability of having Medicare coverage changes at age 65. This will be our “treatment” variable. We will then study how this change in Medicare coverage affects labor force participation.</p>
-<div id="eb73f9f5" class="cell" data-execution_count="3">
+<div id="696131ff" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -392,8 +393,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>So clearly, turning 65 leads to a large increase in the probability of having Medicare coverage. However, it doesn’t go from zero to 100 percent. There are some rare cases that individuals under 65 may have Medicare coverage (for example, individuals with certain disabilities). There is also potential for measurement error. People may be reporting that they are covered by Medicare when they are actually on Medicaid or insurance program. This could explain why we see a non-negligible fraction of individuals under 65 with Medicare coverage.</p>
 <p>However, it is clear there is an enormous jump in the fraction of individuals with Medicare coverage at age 65. For 65 and older, more than 80 percent of individuals have Medicare coverage. This makes this a fuzzy regression discontinuity design. Crossing the threshold has a large impact on the probability of treatment (having Medicare), but it is not a perfect jump from zero to one.</p>
-<p>Now, for contet, many people do have health insurance through private options, generally provided by employers. So let’s see if this enormous jump in Medicare coverage at age 65 is associated with increased coverage more generally. Therefore, we are going to replace the <code>has_medicare</code> variable with the <code>has_health_insurance</code> variable in the graph above. This variable indicates whether the individual has any health insurance coverage, whether through Medicare, private insurance, Medicaid, or other sources.</p>
-<div id="beb20900" class="cell" data-execution_count="4">
+<p>Now, for context, many people do have health insurance through private options, generally provided by employers. So let’s see if this enormous jump in Medicare coverage at age 65 is associated with increased coverage more generally. Therefore, we are going to replace the <code>has_medicare</code> variable with the <code>has_health_insurance</code> variable in the graph above. This variable indicates whether the individual has any health insurance coverage, whether through Medicare, private insurance, Medicaid, or other sources.</p>
+<div id="bfebb53e" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -404,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Again we see a noticeable jump in the fraction of individuals with health insurance coverage at age 65. However, we have to be careful about the scale on the y-axis. As we can see, the fraction of individuals with health insurance before age 65 is already quite high, at 94 percent. However, there is still a noticeable increase in health insurance coverage at age 65 due to the availability of Medicare. The fraction of individuals with health care coverage increases to nearly 98 percent at age 65 and older.</p>
 <p>Finally, let’s see if this increase in health insurance coverage at age 65 is associated with changes in labor force participation. The variable we will use to measure labor force participation is called <code>in_labor_force</code>, which is again a binary indicator variable equal to 1 if the individual is in the labor force (either employed or actively looking for work) and 0 otherwise.</p>
-<div id="e2406818" class="cell" data-execution_count="5">
+<div id="06d387bc" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -414,6 +415,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>So perhaps surprisingly, we don’t see a large drop in labor force participation at age 65. There is a gradual decline in labor force participation as individuals age, but there is no clear discontinuity at age 65. This suggests that gaining access to Medicare does not have a large impact on individuals’ decisions to remain in the labor force or retire.</p>
+</section>
+<section id="other-uses-of-the-acs" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="other-uses-of-the-acs"><span class="header-section-number">12.6</span> Other Uses of the ACS</h2>
+<p>The retirement question above is one of many things the ACS can answer. Because the survey records each respondent’s field of degree, occupation, and industry, it is also a natural way to ask: <em>what do graduates of different majors actually end up doing?</em></p>
+<p>The interactive dashboard below summarizes the 2019–2023 5-year ACS for bachelor’s-degree holders aged 22–65. It compares Economics majors, Business Economics majors, a benchmark group of peer business majors (General Business, Accounting, Business Management, Finance), and the rest of the BA+ population. You can browse top occupations and industries for each major, and plot earnings over the lifecycle.</p>
+<iframe src="whatcan.html" width="100%" height="1800" style="border: none; display: block; width: 100%;" scrolling="no" loading="lazy"></iframe>
 
 
 </section>

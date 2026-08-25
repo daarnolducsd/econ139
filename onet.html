@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="brief-introduction" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="brief-introduction"><span class="header-section-number">13.1</span> Brief Introduction</h2>
 <p>The goal of O*NET (Occupational Information Network) is to provide comprehensive information about different occupations in the US. It replaced the Dictionary of Occupational Titles which was paper-based. It includes information on the tasks that individuals perform in occupations, the skills one needs to perform the occupation, details on the work activities performed, among other information.</p>
-<p>In order to get this information on occupations, O*NET generally sends survey to workers who are current performing the occupation (referred to as incumbents). They are asked various questions about different tasks and skills and asked to rate them on a scale from 1 (not important) to 5 (very important). Some questions are given to all occupations while others are specific. For example, when asking about tasks, it would be unreasonable to ask about certain tasks for certain occupations. Therefore, experts use prior information (just as information from the Dictionary of Occcuapational Titles) to come up with a set of tasks that would be reasonable to ask about.</p>
+<p>In order to get this information on occupations, O*NET generally sends a survey to workers who are currently performing the occupation (referred to as incumbents). They are asked various questions about different tasks and skills and asked to rate them on a scale from 1 (not important) to 5 (very important). Some questions are given to all occupations while others are specific. For example, when asking about tasks, it would be unreasonable to ask about certain tasks for certain occupations. Therefore, experts use prior information (such as information from the Dictionary of Occupational Titles) to come up with a set of tasks that would be reasonable to ask about.</p>
 </section>
 <section id="interacting-with-onet" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="interacting-with-onet"><span class="header-section-number">13.2</span> Interacting with O*NET</h2>
@@ -310,12 +310,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="work-activities" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="work-activities"><span class="header-section-number">13.3</span> Work Activities</h2>
-<p>We are going to start quite broad. As we will show later, O*NET will allow us to drill down much more narrowly to get into exactyl what a person is doing in an occupation. But first we will start with relatively broad <strong>Work Activities</strong>.</p>
+<p>We are going to start quite broad. As we will show later, O*NET will allow us to drill down much more narrowly to get into exactly what a person is doing in an occupation. But first we will start with relatively broad <strong>Work Activities</strong>.</p>
 <p>As a case study to begin, we are going to look at Security Guards. If you go to O*NET Online and search for security guards, you will find under the tab Work Activities, a number of different activities that are performed by Security Guards. Below I have pasted the two work activities that appeared highest up in the list.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./images/onet_images/sg_wa.png" class="img-fluid figure-img"></p>
-<figcaption>Work Activites (First 2) for Security Guards</figcaption>
+<figcaption>Work Activities (First 2) for Security Guards</figcaption>
 </figure>
 </div>
 <p>We are going to focus on the second work activity <strong>Getting Information</strong>. O*NET also makes available the questionnaire that it sends to workers. Let’s go look at exactly how this question is asked.</p>
@@ -330,13 +330,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./images/onet_images/onet2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Complexity of Work Acitivity</figcaption>
+<figcaption>Complexity of Work Activity</figcaption>
 </figure>
 </div>
 <p>This is referred to as the <strong>Level</strong> question. This is also coded as a numeric variable in the raw data, with higher numbers indicating a higher level of complexity. So when we go to the raw data next, we should keep these questions in mind. Unlike the online data, the raw data files will allow us to see exactly how individuals answered these questions.</p>
-<p>The information below comes from a file named “Work Activities”. The way I downloaded the data is through going to the O*NET database website here: https://www.onetcenter.org/database.html. This website allows you to donwload the entire O*NET databse. Like mentioned before, this is a lot of files. You may not need all of these files. You can download individuals files by going to O*NET online and searching O*NET data tab at the top of the site.</p>
+<p>The information below comes from a file named “Work Activities”. The way I downloaded the data is through going to the O*NET database website here: https://www.onetcenter.org/database.html. This website allows you to download the entire O*NET database. Like mentioned before, this is a lot of files. You may not need all of these files. You can download individual files by going to O*NET online and searching O*NET data tab at the top of the site.</p>
 <p>Let’s get a list of the different variables in the Work Activities file.</p>
-<div id="9912cbd1" class="cell" data-execution_count="1">
+<div id="25033486" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <tbody>
@@ -369,15 +369,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>We are going to discuss a few of these. The O*NET-SOC Code is goint to be how we identify occupations in the data. For example, the O*NET-SOC code for security guards is 33-9032.00. Each row in the data is a different question. The Element ID tells us which question we are referencing and Element Name gives us a description of that question. For example, if we look at the first element of Element ID an Element Name in the dataset we get:</p>
-<div id="7f01bf50" class="cell" data-execution_count="2">
+<p>We are going to discuss a few of these. The O*NET-SOC Code is going to be how we identify occupations in the data. For example, the O*NET-SOC code for security guards is 33-9032.00. Each row in the data is a different question. The Element ID tells us which question we are referencing and Element Name gives us a description of that question. For example, if we look at the first element of Element ID and Element Name in the dataset we get:</p>
+<div id="2ebace74" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Element ID: 4.A.1.a.1
 Element Name: Getting Information</code></pre>
 </div>
 </div>
 <p>So the code associated with our Getting Information question is 4.A.1.a.1. However, there are actually two Getting Information questions. One is about the importance of getting information. The other is about the level of complexity of getting information. These questions actually have the same Element ID, but whether you are considering the importance or level question is given by the variable Scaled ID. This variable is either equal to “IM” for the importance questions or “LV” for the level questions. Let’s get a frequency table of IM vs.&nbsp;LV in the dataset.</p>
-<div id="58aec18c" class="cell" data-execution_count="3">
+<div id="80e89bff" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>Scale ID
 IM    36654
@@ -386,7 +386,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>So in total we have 36,654 rows of data that correspond to importance questions, and 36,654 rows of data that correspond to level questions. Before we continue, let’s see how many unique occupations there are in the data:</p>
-<div id="fa467977" class="cell" data-execution_count="4">
+<div id="a8f62530" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 
 <style>
@@ -436,9 +436,9 @@ Name: count, dtype: int64</code></pre>
 <p><strong>R:</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wa_filtered <span class="ot">&lt;-</span> wa <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Element ID</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"4.A.1.a.1"</span> <span class="sc">&amp;</span> <span class="st">`</span><span class="at">Scale ID</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"IM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will note that sometimes the exact names of the variables have changed a bit. Stata does not allow names to have spaces (generally it is a good idea not to have spaces in variables names. Spaces make the code unnecessarily more complicated).</p>
+<p>You will note that sometimes the exact names of the variables have changed a bit. Stata does not allow names to have spaces (generally it is a good idea not to have spaces in variable names. Spaces make the code unnecessarily more complicated).</p>
 <p>Now that we’ve restricted to our question of interest, let’s make a summary statistics table that shows some key percentiles of the Data Value variable (i.e.&nbsp;the answer to how important getting information is for the job).</p>
-<div id="18a28e35" class="cell" data-execution_count="5">
+<div id="341fdfc5" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 
 <style>
@@ -497,7 +497,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Reminder, this question asked on a scale of 1 to 5, how important it is to get information in this job. As you can see the average across all occupation is 4.22, which indicates getting information on average is very important in many jobs. Even the 10th percentile, getting information is around 3.7, indicating it is still close to very important.</p>
 <p>One question we should ask ourselves is: how many people are actually answering this question. This is given by the variable N in the dataset. Each value tells us how many incumbent workers responded to this question. Let’s create a histogram of N across occupations so we can better understand the source of our information.</p>
-<div id="5387a43b" class="cell" data-execution_count="6">
+<div id="02111806" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -506,9 +506,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>So the first thing to note is that there are not a tremendous number of respondents per occupation. Most occupations have around 20. This is why O*NET also provides standard errors and confidence bounds for questions. While we will not discuss these statistics in the class, they are ways to understand the uncertainty around an answer. For example, if an occupation reports a 4.5, but there is a large standard error on this estimate, then that implies we are relatively less certain about the true value for this question (where the true vale would be given by a very large sample size of individuals in that occupation).</p>
-<p>Now, let’s go back to our case study of security guards. Let’s create a dataset that restricts only to the security guard SOC code so that we can understand this occupation in more detail. Below, we should the Work Activities that were rated most important for Security Guards.</p>
-<div id="f45142a3" class="cell" data-execution_count="7">
+<p>So the first thing to note is that there are not a tremendous number of respondents per occupation. Most occupations have around 20. This is why O*NET also provides standard errors and confidence bounds for questions. While we will not discuss these statistics in the class, they are ways to understand the uncertainty around an answer. For example, if an occupation reports a 4.5, but there is a large standard error on this estimate, then that implies we are relatively less certain about the true value for this question (where the true value would be given by a very large sample size of individuals in that occupation).</p>
+<p>Now, let’s go back to our case study of security guards. Let’s create a dataset that restricts only to the security guard SOC code so that we can understand this occupation in more detail. Below, we show the Work Activities that were rated most important for Security Guards.</p>
+<div id="31f2a584" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 
 <style>
@@ -576,9 +576,9 @@ Name: count, dtype: int64</code></pre>
 </table>
 </div>
 </div>
-<p>One small aside to note here. You will notice that two of the top 5 work activities involves information. For a security guard, this is likely a physical task. They have to go to a place to record the information. Now, you may have seen headlines that reports X percent of jobs can be done by AI. Getting information is a task that AI can do very well. But it is fundamentally different than the type of information that security guards retrieve and document. In other words, within a given task or work activity, there is likely a lot of variation in exactly what that means. However, methods that don’t take into account the context of the occupation may falsely label security guards as likely to be replaced by AI.</p>
+<p>One small aside to note here. You will notice that two of the top 5 work activities involve information. For a security guard, this is likely a physical task. They have to go to a place to record the information. Now, you may have seen headlines that reports X percent of jobs can be done by AI. Getting information is a task that AI can do very well. But it is fundamentally different than the type of information that security guards retrieve and document. In other words, within a given task or work activity, there is likely a lot of variation in exactly what that means. However, methods that don’t take into account the context of the occupation may falsely label security guards as likely to be replaced by AI.</p>
 <p>What might also be informative is to see the work activities that security guards deem the least important in their jobs.</p>
-<div id="88998324" class="cell" data-execution_count="8">
+<div id="5db45c58" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="8">
 
 <style>
