@@ -32,9 +32,14 @@ bibliography: references.bib
 format:
   html:
     theme:
-      light: cerulean
-      dark: darkly
-    css: styles.scss
+      light: [default, theme-light.scss]
+      dark: [default, theme-dark.scss]
+    css: styles.css
+    grid:
+      body-width: 720px
+      sidebar-width: 230px
+      margin-width: 170px
+      gutter-width: 2rem
     fig-align: center
     include-after-body: _includes/after-body.html
     js: lightbox.js

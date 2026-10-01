@@ -2,14 +2,7 @@
 
 
 
-::: {.columns}
-::: {.column width="50%"}
-![](/images/cover/luddites_cover.png){width=100%}
-:::
-::: {.column width="50%"}
-![](/images/cover/robot_cover.png){width=100%}
-:::
-:::
+![](/images/cover/robot_cover.png){.editorial-cover width=100%}
 
 In this book, we’ll explore some of the biggest questions in labor economics: 
 

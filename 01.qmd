@@ -63,7 +63,7 @@ Throughout the 1970s wages were mostly stagnant. This was a period of high infla
 For individuals with graduate degrees, real incomes continue to rise steadily over time. For individuals with a college degree, there is some lag, but by the mid 1990s, we are again seeing increases in real incomes. Other groups are not doing so well. For example, for high-school dropouts, all of that income growth in the 60s is eroded away by around 1990 with little to no growth since then. This is why inequality skyrocketed in the 1980s. While highly-educated individuals (who already earned more on average) were seeing large increases in real income, less-educated individuals were seeing declines in real income. This is our second big question: what drove this rapid increase in inequality that began in the 1980s?
 
 
-::: {.callout-tip title="🍔 The McWage"}
+::: {.callout-tip .curious-detour title="The McWage"}
 
 One thing that you may have taken away from this chapter is that comparing income over time is perhaps not as straightforward as you might have thought. The same is true when comparing income across countries. For example, if you want to compare income in the U.S. to income in China, you have a number of hurdles. Just as in comparisons across time, the goods purchased might be very different. 
 
@@ -101,7 +101,7 @@ Kaldor had much less data to work with, but between 1947 and 1961, you can see i
 Then, in 2000, the labor share began to drop. Instead of the usual cycles we see before this time, the drop has been steady. This is the second big question we will tackle in this course: why has the labor share of income been falling since 2000?
 
 
-::: {.callout-tip title="📜 The Labor Share in Ancient Rome"}
+::: {.callout-tip .curious-detour title="The Labor Share in Ancient Rome"}
 
 
 One of the first sources of any data on labor markets and prices comes from a unique episode of Roman history. In the third century, the Roman empire faced an economic crisis. The government repeatedly reduced the amount of silver in coins to increase military spending (the modern equivalent is the government printing more money). This caused rampant inflation throughout the Roman Empire. 

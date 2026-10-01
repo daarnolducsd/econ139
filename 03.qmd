@@ -100,7 +100,7 @@ Therefore, the key question is this: do increases in the minimum wage lead to jo
 
 However, to have the complete picture, we need to understand the impacts on employment. It could be that even if the minimum wage has fallen in real terms, low-wage workers are still better off because there are more jobs available. To understand the relationship between minimum wages and employment, we will explore the seminal study of David Card and Alan Krueger (1994). While there are prior studies, @card1994minimum introduced a new empirical approach that not only led to important insights into the employment effects of the minimum wage, but has made a lasting impression on empirics in economics. It is one of the first and most famous examples of a "natural experiment" in economics. "Natural experiments" are now ubiquitous in economics, and are useful for identifying causal effects, something that is notoriously difficult in practice. 
 
-::: {.callout-tip title="📜 A Maximum Wage in the Middle Ages"}
+::: {.callout-tip .curious-detour title="A Maximum Wage in the Middle Ages"}
 
 In the 14th century, the Black Death swept through much of Europe, killing large portions of the population. This led to a large labor shortage in England. The labor supply curve in medieval England shifted massively to the left. This resulted in widespread wage increases. 
 
