@@ -36,27 +36,14 @@ $$Y = f(L)$$
 
 To make this more concrete, let's again consider the case of our cafe. Let's assume the cafe produces a single item: lattes. The number of lattes it can produce is a function of the number of baristas it employs. Let's assume that if the cafe has 1 barista, it can produce 10 lattes in an hour, if it has 2 baristas, it can produce 19 lattes in an hour, and so on. In the graph below the x-axis is the number of baristas and the y-axis is the number of lattes produced. This is a visual representation of the production function for our cafe.
 
-```{python}
-#| echo: false
-#| label: fig-production-function
-#| fig-cap: "Production Function: Baristas vs. Lattes"
+::: {#fig-production-function}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-production-function-light.svg" class="quarto-light" alt="Production Function: Baristas vs. Lattes" style="width:100%">
+<img src="images/02_images/editorial/fig-production-function-dark.svg" class="quarto-dark" alt="Production Function: Baristas vs. Lattes" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-
-# Number of baristas from 1 to 10
-baristas = list(range(1, 11))
-# Corresponding lattes produced
-lattes = [10, 19, 27, 34, 40, 45, 49, 52, 54, 55]
-
-plt.figure(figsize=(6.5, 4))
-plt.plot(baristas, lattes, marker='o')
-plt.xlabel('Number of Baristas')
-plt.ylabel('Number of Lattes Produced in an Hour')
-plt.xticks(baristas)  
-plt.grid(True)
-plt.tight_layout()
-plt.show()
-```
+Production Function: Baristas vs. Lattes
+:::
 
 Now the shape of the production function wasn't an accident. For the production function we have drawn, going from zero workers to one worker increases the number of lattes produced by 10. But going from one worker to two workers increases the number of lattes produced by 9, and going from two workers to three workers increases the number of lattes produced by 8. With each additional worker, the number of lattes produced increases, but at a decreasing rate. This is called **diminishing marginal returns**.
 
@@ -135,41 +122,14 @@ Given this table, when does it make sense for the cafe to stop hiring baristas? 
 
 It is often helpful to visualize this decision graphically. Below, we plot the marginal revenue product of labor and the cost of hiring each barista. The point where the two lines intersect is the point where the cafe should stop hiring baristas.
 
-```{python}
-#| echo: false
-#| label: fig-mrp-vs-cost
-#| fig-cap: "Marginal Revenue Product of Labor vs. Cost of Hiring"
+::: {#fig-mrp-vs-cost}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-mrp-vs-cost-light.svg" class="quarto-light" alt="Marginal Revenue Product of Labor vs. Cost of Hiring" style="width:100%">
+<img src="images/02_images/editorial/fig-mrp-vs-cost-dark.svg" class="quarto-dark" alt="Marginal Revenue Product of Labor vs. Cost of Hiring" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-
-# Data from previous calculations
-workers = list(range(1, 11))
-marginal_revenue_product = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-cost_per_worker = 15
-
-plt.figure(figsize=(8, 6))
-
-# Plot marginal revenue product
-plt.plot(workers, marginal_revenue_product, color='#328ba8', marker='o', linewidth=2, markersize=6, label='Marginal Revenue Product')
-
-# Plot horizontal line for cost
-plt.axhline(y=cost_per_worker, color='r', linestyle='--', linewidth=2, label=f'Cost per Worker (${cost_per_worker})')
-
-# Highlight the intersection point (around 7 workers)
-intersection_worker = 8
-plt.axvline(x=intersection_worker, color='gray', linestyle=':', alpha=0.7)
-plt.plot(intersection_worker, cost_per_worker, 'go', markersize=8, label='Optimal Hiring Point')
-
-# Formatting
-plt.xlabel('Number of Workers')
-plt.ylabel('Marginal Revenue Product of Labor ($)')
-plt.xticks(workers)
-plt.grid(True, alpha=0.3)
-plt.legend()
-plt.tight_layout()
-
-plt.show()
-```
+Marginal Revenue Product of Labor vs. Cost of Hiring
+:::
 
 ## Labor Demand Curve 
 
@@ -255,37 +215,14 @@ Now, let's read through this carefully. When the hourly wage is $50, the cafe wi
 Next, we are going to plot this data in our figure. Note that when we think about the labor demand curve, the input is a given wage, and the output is a number of workers hired. Therefore, if we were to plot the demand curve, the wage would be on the horizontal axis and the number of workers hired would be on the vertical axis. However, because of some longstanding conventions in economics, we will actually plot the number of workers hired on the horizontal axis and the wage on the vertical axis. This is a bit counterintuitive, but it conforms to standard economic conventions. Because the wage is on the vertical axis, you will sometimes hear this curve referred to as the inverse labor demand curve. Whether you call it the labor demand curve or the inverse labor demand curve, it is the same concept, it tells you for each wage, how many workers will be hired.
 
 
-```{python}
-#| echo: false
-#| label: fig-labor-demand-curve
-#| fig-cap: "Labor Demand Curve for the Cafe"
+::: {#fig-labor-demand-curve}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-labor-demand-curve-light.svg" class="quarto-light" alt="Labor Demand Curve for the Cafe" style="width:100%">
+<img src="images/02_images/editorial/fig-labor-demand-curve-dark.svg" class="quarto-dark" alt="Labor Demand Curve for the Cafe" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Data from the labor demand table
-wage_levels = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-workers_hired = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-plt.figure(figsize=(8, 6))
-
-# Create line plot connecting the points
-plt.plot(workers_hired, wage_levels, linewidth=2.5, color='#2E86AB', marker='o', markersize=6, label='Labor Demand Curve')
-
-# Formatting
-plt.xlabel('Number of Baristas')
-plt.ylabel('Hourly Wage ($)')
-plt.title('')
-plt.grid(True, alpha=0.3)
-plt.xticks(range(1, 11))
-
-# Set axis limits for better visualization
-plt.xlim(0.5, 10.5)
-plt.ylim(0, 55)
-
-plt.tight_layout()
-plt.show()
-```
+Labor Demand Curve for the Cafe
+:::
 
 One thing you might notice is that the labor demand curve looks exactly like the marginal revenue product of labor curve we plotted earlier. This is not a coincidence. The labor demand curve is exactly equal to the marginal revenue product of labor curve in perfectly competitive models of the labor market. This is because the firm will hire workers until the marginal revenue product of labor is equal to the wage. Therefore, for any given wage, the number of workers hired is determined by the marginal revenue product of labor.
 
@@ -298,42 +235,16 @@ So far, we have figured out the demand for a single cafe. But what about the ove
 
 To keep things simple, let's first assume there are only two cafes. Our second cafe may not have the exact same production function as the first cafe. The layout of the cafe might be different, it might have different espresso machines. Therefore, the marginal revenue product of labor might be different. 
 
-Below, we show the marginal revenue product of labor for both the first and the second cafe. The first cafe is shown in blue, and the second cafe is shown in orange. As can be seen in the figure, the marginal revenue product of labor for the second cafe is lower than the first cafe. This means that the second cafe will hire fewer baristas at each wage level.
+Below, we show the marginal revenue product of labor for both the first and the second cafe. The first cafe is shown in sage green, and the second cafe is shown in rust. As can be seen in the figure, the marginal revenue product of labor for the second cafe is lower than the first cafe. This means that the second cafe will hire fewer baristas at each wage level.
 
-```{python}
-#| echo: false
-#| label: fig-two-cafes-mrp
-#| fig-cap: "Marginal Revenue Product for Two Cafes"
+::: {#fig-two-cafes-mrp}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-two-cafes-mrp-light.svg" class="quarto-light" alt="Marginal Revenue Product for Two Cafes" style="width:100%">
+<img src="images/02_images/editorial/fig-two-cafes-mrp-dark.svg" class="quarto-dark" alt="Marginal Revenue Product for Two Cafes" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-
-# Data for first cafe (same as before)
-workers = list(range(1, 11))
-mrp_cafe1 = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-
-# Data for second cafe (lower MRP but same at 10 workers)
-mrp_cafe2 = [40, 32, 28, 24, 20, 16, 12, 8, 6, 5]
-
-plt.figure(figsize=(8, 6))
-
-# Plot both demand curves
-plt.plot(workers, mrp_cafe1, linewidth=2.5, color='#2E86AB', marker='o', markersize=6, label='Cafe 1 (Higher MRP)')
-plt.plot(workers, mrp_cafe2, linewidth=2.5, color='#F18F01', marker='s', markersize=6, linestyle='--', label='Cafe 2 (Lower MRP)')
-
-# Formatting
-plt.xlabel('Number of Baristas')
-plt.ylabel('Marginal Revenue Product ($)')
-plt.grid(True, alpha=0.3)
-plt.xticks(range(1, 11))
-plt.legend()
-
-# Set axis limits for better visualization
-plt.xlim(0.5, 10.5)
-plt.ylim(0, 55)
-
-plt.tight_layout()
-plt.show()
-```
+Marginal Revenue Product for Two Cafes
+:::
 
 So how do we go from these marginal revenue product of labor curves to the overall market demand curve? Well, let's start at a wage of 50. If the wage is 50, then the first cafe will hire 1 barista, and the second cafe will hire 0 baristas. Therefore, at a wage of 50, the total number of baristas hired in the market is 1.
 
@@ -343,55 +254,14 @@ Let's continue this process for all the wages. Below, we show a figure that take
 
 At a wage of $5, both cafes would hire their maximum of 10 baristas each. Therefore, at a wage of $5, the total number of baristas hired in the market is 20.
 
-```{python}
-#| echo: false
-#| label: fig-market-demand
-#| fig-cap: "Market Labor Demand: Aggregating Two Cafes"
+::: {#fig-market-demand}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-market-demand-light.svg" class="quarto-light" alt="Market Labor Demand: Aggregating Two Cafes" style="width:100%">
+<img src="images/02_images/editorial/fig-market-demand-dark.svg" class="quarto-dark" alt="Market Labor Demand: Aggregating Two Cafes" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Data for both cafes
-workers = list(range(1, 11))
-mrp_cafe1 = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-mrp_cafe2 = [40, 32, 28, 24, 20, 16, 12, 8, 6, 5]
-
-# Calculate market demand by summing quantities at each wage level
-wage_levels = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-market_quantities = []
-
-for wage in wage_levels:
-    # Count workers hired by cafe 1
-    cafe1_workers = sum(1 for mrp in mrp_cafe1 if mrp >= wage)
-    # Count workers hired by cafe 2  
-    cafe2_workers = sum(1 for mrp in mrp_cafe2 if mrp >= wage)
-    # Total market quantity
-    total_workers = cafe1_workers + cafe2_workers
-    market_quantities.append(total_workers)
-
-plt.figure(figsize=(7, 6))
-
-# Plot individual cafe demand curves (lighter colors)
-plt.plot(range(1, 11), mrp_cafe1, linewidth=2, color='#2E86AB', marker='o', markersize=4, alpha=0.6, label='Cafe 1')
-plt.plot(range(1, 11), mrp_cafe2, linewidth=2, color='#F18F01', marker='s', markersize=4, linestyle='--', alpha=0.6, label='Cafe 2')
-
-# Plot market demand curve (prominent green)
-plt.plot(market_quantities, wage_levels, linewidth=3, color='#27AE60', marker='D', markersize=6, label='Market Demand', zorder=5)
-
-# Formatting
-plt.xlabel('Number of Baristas')
-plt.ylabel('Hourly Wage ($)')
-plt.grid(True, alpha=0.3)
-plt.legend(loc='upper right')
-
-# Set axis limits and ticks
-plt.xlim(0, 21)
-plt.xticks(range(0, 22))
-plt.ylim(0, 55)
-
-plt.tight_layout()
-plt.show()
-```
+Market Labor Demand: Aggregating Two Cafes
+:::
 
 The logic here that was applied for two cafes can be applied to any number of cafes. If there are 100 cafes, then we can simply sum the number of workers hired by each cafe at each wage level to get the overall market demand curve.
 
@@ -407,70 +277,16 @@ To determine this, we need to think about the other side of the market: the work
 
 For our discussion of labor demand, we built up the demand curve for labor by considering how many workers individual firms would hire at each wage level. We can do the same thing for workers as well. Instead of maximizing profits, workers will be maximizing their utility. This means that they will choose to work if the wage is high enough to make it worth their time.
 
-For now, we are not going to go through the details of how to construct the labor supply curve. Instead, we will simply assume that the labor supply curve is upward sloping. For example, let's assume that the labor supply curve for baristas is the red dashed line given in @fig-market-equilibrium. This curve is upward sloping, meaning that as the wage increases, the number of workers willing to work also increases.
+For now, we are not going to go through the details of how to construct the labor supply curve. Instead, we will simply assume that the labor supply curve is upward sloping. For example, let's assume that the labor supply curve for baristas is the rust dashed line given in @fig-market-equilibrium. This curve is upward sloping, meaning that as the wage increases, the number of workers willing to work also increases.
 
-```{python}
-#| echo: false
-#| label: fig-market-equilibrium
-#| fig-cap: "Labor Market Equilibrium: Supply and Demand"
+::: {#fig-market-equilibrium}
+<div class="editorial-figure-pair">
+<img src="images/02_images/editorial/fig-market-equilibrium-light.svg" class="quarto-light" alt="Labor Market Equilibrium: Supply and Demand" style="width:100%">
+<img src="images/02_images/editorial/fig-market-equilibrium-dark.svg" class="quarto-dark" alt="Labor Market Equilibrium: Supply and Demand" style="width:100%">
+</div>
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Use EXACT same market demand data from previous figure
-wage_levels = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-market_quantities = []
-
-# Recalculate market demand exactly as before
-mrp_cafe1 = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-mrp_cafe2 = [40, 32, 28, 24, 20, 16, 12, 8, 6, 5]
-
-for wage in wage_levels:
-    cafe1_workers = sum(1 for mrp in mrp_cafe1 if mrp >= wage)
-    cafe2_workers = sum(1 for mrp in mrp_cafe2 if mrp >= wage)
-    total_workers = cafe1_workers + cafe2_workers
-    market_quantities.append(total_workers)
-
-# Create labor supply curve that intersects at exactly 14 workers
-# From demand curve: at 14 workers, we need to find the corresponding wage
-# Looking at market_quantities and wage_levels, at 14 workers the wage is around 12
-# Let's make supply curve intersect at (14, 12): wage = base + slope * quantity
-# If we want (14, 12), then: 12 = base + slope * 14
-# Let's use slope = 0.6, so: base = 12 - 0.6*14 = 3.6
-supply_quantities = list(range(1, 21))
-supply_wages = [8 + 1 * q for q in supply_quantities]
-
-plt.figure(figsize=(8, 6))
-
-# Plot market demand curve (exactly same as previous figure)
-plt.plot(market_quantities, wage_levels, linewidth=3, color='#27AE60', marker='D', markersize=6, label='Labor Demand')
-
-# Plot labor supply curve
-plt.plot(supply_quantities, supply_wages, linewidth=3, color='#E74C3C', marker='o', markersize=6, label='Labor Supply',linestyle='--')
-
-# Mark equilibrium at 14 workers and corresponding wage
-equilibrium_workers = 12
-equilibrium_wage = 20
-plt.plot(equilibrium_workers, equilibrium_wage, 'ko', markersize=10, label=f'Equilibrium ({equilibrium_workers} workers, ${equilibrium_wage})')
-
-# Add equilibrium lines
-plt.axvline(x=equilibrium_workers, color='gray', linestyle=':', alpha=0.7)
-plt.axhline(y=equilibrium_wage, color='gray', linestyle=':', alpha=0.7)
-
-# Formatting
-plt.xlabel('Number of Baristas')
-plt.ylabel('Hourly Wage ($)')
-plt.grid(True, alpha=0.3)
-plt.legend(loc='upper right')
-
-# Use EXACT same axis limits and ticks as previous figure
-plt.xlim(0, 21)
-plt.xticks(range(0, 22))
-plt.ylim(0, 55)
-
-plt.tight_layout()
-plt.show()
-```
+Labor Market Equilibrium: Supply and Demand
+:::
 
 Now, what determines the market wage? Well, let's see if a $10 wage is a market equilibrium. At a wage of $10, the labor demand curve tells us that firms want to hire about 16 workers. However, at that wage, only about 2 workers are willing to work. Therefore, the labor market is experiencing a shortage.
 

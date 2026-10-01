@@ -141,7 +141,7 @@ Use explicit statuses such as **inventoried**, **source verified**, **preview re
 
 ## Chapter 1 implementation record
 
-Four candidate charts are available in `../outputs/textbook-chapter01-figures/index.html`, with an in-chapter preview in `pages/01.html` inside that directory. Current status: **reviewed and integrated**. David approved all four previews and requested commitment and publication.
+Four candidate charts are available in `../outputs/textbook-chapter01-figures/index.html`, with an in-chapter preview in `pages/01.html` inside that directory. Current status: **reviewed, integrated, and published**. David approved all four previews and requested commitment and publication.
 
 - **1.1 Income inequality:** all 214 input observations retained, 1917–2023; approved Style A extended to paired light/dark assets.
 - **1.2 Education wages:** five male education groups, 1963–2017; preserve analytic weighting, mean-log definition, 1963 normalization, and original float storage. The supporting colors and line patterns were approved with the four-chart preview.
@@ -151,3 +151,9 @@ Four candidate charts are available in `../outputs/textbook-chapter01-figures/in
 Stata's installed license was expired during this exercise. Python calculations were independently checked against scalar implementations of the source formulas; details and hashes are in the candidate directory's `verification.json`. This verifies the local plotted calculations, rather than the original papers' complete underlying empirical analyses.
 
 The maintained Chapter 1 renderer is `code/figures/chapter01.py`; raw-input reconstruction is `code/figures/replicate_chapter01.py`. See `code/figures/README.md` for reproducibility and asset documentation.
+
+## Chapter 2 implementation record
+
+Six figures are **reviewed and approved** in `../outputs/textbook-chapter02-figures/index.html`, with an in-chapter view in `pages/02.html` inside that directory. Maintained code is `code/figures/chapter02.py`; captured deterministic inputs and original curve coordinates are in `code/figures/data/chapter02/models.json`.
+
+All principal x/y coordinates were checked against the original plotting code. Discrete worker quantities, production/MRP values, curve shapes, markers, the $15 cost line, eight-worker hiring point, and 12-worker/$20 market equilibrium are retained. Cafe comparison colors remain consistent between the two-cafe and aggregation charts. The aggregation figure uses labels beside its curves, with short leaders to interior points to distinguish the cafes despite their shared endpoint. Chapter 2 source integration and publication were requested after review. Existing captions and IDs are preserved; prose color references are aligned with the approved palette. The original plotting cells remain available in Git history.

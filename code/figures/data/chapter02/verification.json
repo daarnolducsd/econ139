@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fig-production-function",
+    "theme": "light",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-mrp-vs-cost",
+    "theme": "light",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-labor-demand-curve",
+    "theme": "light",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-two-cafes-mrp",
+    "theme": "light",
+    "principal_curves": 2,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-market-demand",
+    "theme": "light",
+    "principal_curves": 3,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-market-equilibrium",
+    "theme": "light",
+    "principal_curves": 2,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-production-function",
+    "theme": "dark",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-mrp-vs-cost",
+    "theme": "dark",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-labor-demand-curve",
+    "theme": "dark",
+    "principal_curves": 1,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-two-cafes-mrp",
+    "theme": "dark",
+    "principal_curves": 2,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-market-demand",
+    "theme": "dark",
+    "principal_curves": 3,
+    "source_coordinates_unchanged": true
+  },
+  {
+    "id": "fig-market-equilibrium",
+    "theme": "dark",
+    "principal_curves": 2,
+    "source_coordinates_unchanged": true
+  }
+]

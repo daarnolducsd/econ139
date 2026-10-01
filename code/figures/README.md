@@ -78,3 +78,25 @@ Render the affected chapter with Quarto and inspect it in both themes. Preserve 
 Source changes and GitHub Pages output are committed separately in this repository's existing `main` and `gh-pages` workflow. Render in an isolated publication checkout when the working tree contains unrelated unpublished chapter changes. Push only when David requests publication and verify the deployed files afterward.
 
 The installed Stata SE license was expired during this exercise; a successful Stata rerun is **not** claimed. The documented Python reconstruction was checked against separate scalar implementations of the source formulas.
+
+## Chapter 2
+
+`chapter02.py` renders the six approved figures from `data/chapter02/models.json`. This JSON contains the deterministic plotted values, original curve coordinates, and hashes of the six original plotting cells. The original cells remain in Git history at commit `be15918`, in `02.qmd`. No external empirical dataset is needed.
+
+From `textbook/`:
+
+```bash
+python3 code/figures/chapter02.py
+```
+
+This writes paired light/dark SVGs and a coordinate verification record to `images/02_images/editorial/`. For isolated PNG/PDF review proofs:
+
+```bash
+python3 code/figures/chapter02.py --output-dir ../outputs/textbook-chapter02-rebuild --proofs
+```
+
+The renderer checks every principal curve against the original coordinates. It also verifies the $15 cost level, eight-worker hiring marker, market-demand aggregation, and equilibrium at 12 workers and $20. Discrete quantities, plotted markers, and the original connecting segments are retained. The market figures label every second integer tick for readability; no data points are removed.
+
+All series use labels beside their curves. The aggregation figure uses short leaders to interior points because both cafes share their last point. Its cafe colors match the preceding two-cafe figure. Labor demand is green; labor supply and the cost comparison are rust.
+
+`02.qmd` references one SVG pair per figure with its original caption and ID. Its two native tables are retained. Prose color descriptions are aligned with sage green and rust; no economic claims or quantities were changed. As with Chapter 1, this release targets HTML; PDF book output has not been redesigned or verified.
