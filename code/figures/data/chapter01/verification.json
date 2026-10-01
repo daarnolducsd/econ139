@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "inequality": {
+      "plotted_observations": 214,
+      "independent_calculation_max_error": 0.0,
+      "first_year": 1917,
+      "last_year": 2023
+    },
+    "labor_share": {
+      "plotted_observations": 70,
+      "independent_calculation_max_error": 0.0,
+      "first_year": 1947,
+      "last_year": 2016,
+      "last_year_quarters": 3
+    },
+    "participation_men": {
+      "plotted_observations": 78,
+      "independent_calculation_max_error": 0.0,
+      "first_year": 1948,
+      "last_year": 2025,
+      "last_year_months": 5
+    },
+    "participation_women": {
+      "plotted_observations": 78,
+      "independent_calculation_max_error": 0.0,
+      "first_year": 1948,
+      "last_year": 2025,
+      "last_year_months": 5
+    },
+    "education": {
+      "plotted_observations": 275,
+      "independent_calculation_max_error": 0.0,
+      "first_year": 1963,
+      "last_year": 2017,
+      "groups": 5,
+      "definition": "Analytic-weighted mean log real weekly wages of men, minus 1963 mean; float storage follows original Stata script."
+    }
+  },
+  "inputs_sha256": {
+    "code/textbook/01/data/inequality1.csv": "0b868ebb39ee9b9ae4f9d0b82cc25f3c1c4b92e5b9830b20f1ef6e3c03d42cb8",
+    "code/textbook/01/data/labor_share.csv": "122181e5c42cef490d9452bb838b4bcdded3db7e8155c75d7777869dce0bb83e",
+    "code/textbook/01/data/LFP_men.csv": "7cf7d5d83484f1d643e0cde1f10eb4728bfebdad3477e9be4ee766ab6896545b",
+    "code/textbook/01/data/LFP_women.csv": "cbd05819496ce6928360845f2034ab3cbe52f382567105c57fd57456e28c0e90",
+    "code/textbook/01/code/autor/wages.dta": "662231cf130b66ffc55ffde6037c12853a6a0f079451278f72828bb7195962e2",
+    "textbook/images/01_images/income_inequality.png": "8ee991cdb647f4c6998bd7ab7718ae777db8de66ef651d3ccf4348f9d91e0ffb",
+    "textbook/images/01_images/autor_fig.png": "1c6f3ce93caba2b4334475e39b18a09026b250e10255ec41ee76c234cea7bb0a",
+    "textbook/images/01_images/labor_share.png": "11660fb7188368b3d23df222b36e1da75d2ebcb0f996e5b758159e5a86dd912d",
+    "textbook/images/01_images/lfp_full.png": "0327ab6426501dbde6f6feb54f0aa7d574b0b4808c66046e021a0c8942631ba4"
+  },
+  "stata": "Installed Stata SE license expired; Stata replication could not run. Python independently checks calculations against scalar implementations of the source formulas.",
+  "originals_unchanged": true
+}

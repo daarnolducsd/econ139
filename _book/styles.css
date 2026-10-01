@@ -82,3 +82,7 @@ main .math.display {display:block;margin:1.75rem 0;overflow-x:auto;overflow-y:hi
  .callout {break-inside:auto;}
  figure {break-inside:avoid;}
 }
+
+/* Paired external figure assets share one caption and reference ID. */
+body.quarto-light img.quarto-dark {display:none!important;}
+body.quarto-dark img.quarto-light {display:none!important;}

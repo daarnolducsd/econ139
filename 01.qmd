@@ -13,7 +13,14 @@ World War II, however, brought about a dramatic change in the U.S. economy. The 
 
 However, things started to change in the 1980s. The dramatic decrease in inequality brought about by the post-war boom was eroded away. In 2020, inequality reached levels not seen since the 1920s. 
 
-![Income Inequality in the United States](/images/01_images/income_inequality.png){#fig-piketty-saez width=100%}
+::: {#fig-piketty-saez}
+<div class="editorial-figure-pair">
+<img src="images/01_images/editorial/inequality-light.svg" class="quarto-light" alt="Income Inequality in the United States" style="width:100%">
+<img src="images/01_images/editorial/inequality-dark.svg" class="quarto-dark" alt="Income Inequality in the United States" style="width:100%">
+</div>
+
+Income Inequality in the United States
+:::
 
 @fig-piketty-saez shows the complete picture over time. This figure was originally produced by economists Thomas Piketty and Emmanuel Saez in their influential paper *Income Inequality in the United States, 1913-1998* [@piketty2003income]. The more recent data comes from the World Inequality Database, which continues to track income inequality in the U.S. and around the world. Our first big question will focus on one aspect of this figure: the rise in inequality since the 1980s. Before we dig into this question, however, there are two important points to make. First, there is no single definition of inequality. In the figure above, we measured inequality as differences in the share of income going to the top 1% vs. bottom 50%. But why not top 10% vs. bottom 50%? Instead of share of income, we can also measure inequality across groups of people. For example, a common measure of inequality measures differences across individuals of different educational backgrounds. We will return to these different measures shortly, but before we do, let's discuss the second important point about inequality. Inequality doesn't actually tell us anything about how well-off people are in general. Even if inequality is rising, it could be true that everyone is getting richer over time. 
 
@@ -58,7 +65,14 @@ Now that we understand how to compare income over time (and the complications th
 
 Throughout the 1970s wages were mostly stagnant. This was a period of high inflation and low growth, commonly known as stagflation, so it's not too surprising we don't see rapid increases in real incomes. But then in the 1980s, something dramatic happens. 
 
-![Real Income by Education Level in the United States](/images/01_images/autor_fig.png){#fig-autor-income width=100%}
+::: {#fig-autor-income}
+<div class="editorial-figure-pair">
+<img src="images/01_images/editorial/education-light.svg" class="quarto-light" alt="Real Income by Education Level in the United States" style="width:100%">
+<img src="images/01_images/editorial/education-dark.svg" class="quarto-dark" alt="Real Income by Education Level in the United States" style="width:100%">
+</div>
+
+Real Income by Education Level in the United States
+:::
 
 For individuals with graduate degrees, real incomes continue to rise steadily over time. For individuals with a college degree, there is some lag, but by the mid 1990s, we are again seeing increases in real incomes. Other groups are not doing so well. For example, for high-school dropouts, all of that income growth in the 60s is eroded away by around 1990 with little to no growth since then. This is why inequality skyrocketed in the 1980s. While highly-educated individuals (who already earned more on average) were seeing large increases in real income, less-educated individuals were seeing declines in real income. This is our second big question: what drove this rapid increase in inequality that began in the 1980s?
 
@@ -94,7 +108,14 @@ This example illustrates that the labor share of income may vary widely across f
 The first person to draw attention to this fact was Nicholas Kaldor, who wrote a paper called *A Model of Economic Growth* [@kaldor1961]. In this paper, Kaldor documented a number of empirical facts that became extremely influential in the field of macroeconomics. Among these facts was the observation that the labor share of income in the U.S. over time had been stable. To compute the labor share of income for a country (rather than for an individual firm), you can add up all the income paid to workers and then divide by the total GDP of the country. The total GDP represents the value of everything produced in the country. So at a national level, the labor share is the amount of value produced in the economy that goes to workers. The figure below plots the labor share of income in the U.S. from 1947 to 2019.
 
 
-![Labor Share in the United States](/images/01_images/labor_share.png){#fig-laborshare width=90%}
+::: {#fig-laborshare}
+<div class="editorial-figure-pair">
+<img src="images/01_images/editorial/labor-share-light.svg" class="quarto-light" alt="Labor Share in the United States" style="width:100%">
+<img src="images/01_images/editorial/labor-share-dark.svg" class="quarto-dark" alt="Labor Share in the United States" style="width:100%">
+</div>
+
+Labor Share in the United States
+:::
 
 Kaldor had much less data to work with, but between 1947 and 1961, you can see in @fig-laborshare that there is no clear trend in the labor share of income. Yes, it sometimes bounces up, sometimes down, but on average it hovers around 65%. From 1961 to 2000, the labor share of income did fluctuate, but again, it was remarkably stable. While overall there is a slight downward trend, it is not particularly pronounced. In 1961, for example, the labor share was about 65% and in 2000 it was about 63%. This is despite the intervening years being a period of great change for the U.S. economy. The 1960s continued the tremendous growth of the post-war period. In the 1970s, the economy was hit by oil shocks that caused a large inflationary period with high unemployment. In 1987, the stock market crashed, with the single largest one-day drop in the history of the stock market. In the mid-1990s, the U.S. economy experienced a period of rapid growth brought on by the rise of the internet. Despite all these massive changes, the labor share of income, on average, remained fairly steady. 
 
@@ -132,7 +153,14 @@ In this section, we will explore the labor force participation rate. This is the
 
 @fig-lfpr plots the labor force participation rate in the U.S. from 1948 to 2023, separately for men and women. For women, labor force participation started at around 30% and rose to around 60% by the mid 1990s, an incredibly rapid increase. You are likely at least somewhat familiar with this trend, even if the exact numbers are new. 
 
-![Labor Force Participation Rate in the United States](/images/01_images/lfp_full.png){#fig-lfpr width=100%}
+::: {#fig-lfpr}
+<div class="editorial-figure-pair">
+<img src="images/01_images/editorial/participation-light.svg" class="quarto-light" alt="Labor Force Participation Rate in the United States" style="width:100%">
+<img src="images/01_images/editorial/participation-dark.svg" class="quarto-dark" alt="Labor Force Participation Rate in the United States" style="width:100%">
+</div>
+
+Labor Force Participation Rate in the United States
+:::
 
 For men, we see a very different trend. The labor force participation rate for men started at just below 90% in 1948 and has gradually declined over time. Today, it is just below 70%. Of course, these two trends could be related. The increase in female labor force participation could cause some men to drop out of the labor force in order to take care of children in the household. We will find that this can't explain the entire trend. Even from the data so far, we can see that since the mid 1990s, female labor force participation has remained pretty stable, even declining somewhat. But male labor force participation continued to decline, even picking up speed in the 2010s, with a noticeable drop during the COVID-19 pandemic.
 
