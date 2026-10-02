@@ -1,0 +1,26 @@
+[
+  {
+    "id": "fig-noncompetes-education",
+    "caption": "Share of Workers with Non-Compete Agreements by Annual Earnings",
+    "file": "noncompetes2.png",
+    "sha256": "932fa26c0d2e31a9c15f8594772f2a1a343449138c86a20779d870246e0530e8"
+  },
+  {
+    "id": "fig-noncompetes-industry",
+    "caption": "Share of Workers with Non-Compete Agreements by Enforceability",
+    "file": "noncompetes4.png",
+    "sha256": "ff21a912b9f495aee1664dff312e85b7f186288bf451480c6370bb4aff98d978"
+  },
+  {
+    "id": "fig-concentration",
+    "caption": "Concentration in US Labor Markets",
+    "file": "concentration.png",
+    "sha256": "f7331ce624967d9c393922d9953896ed7ad16d368eb9007507cac2fa09abfa04"
+  },
+  {
+    "id": "fig-inequality-decomp",
+    "caption": "Decomposition of Wage Inequality in the US",
+    "file": "adm.png",
+    "sha256": "9b163d38d3f47c062366d30b79dc39c9ee99ade4b7da44debd374d781f813d56"
+  }
+]

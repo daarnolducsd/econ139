@@ -24,420 +24,72 @@ $$
 
 But why might this be the wrong conclusion? To figure this out, let's consider the plot below, which simply plots the number of employees at the firm against the wage.
 
-```{python}
-#| echo: false
-#| label: fig-wage-employment-scatter
-#| fig-cap: "Observed Wage and Employment Data"
 
-import matplotlib.pyplot as plt
+::: {#fig-wage-employment-scatter}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-wage-employment-scatter-light.svg" class="quarto-light" alt="Observed Wage and Employment Data" style="width:100%">
+<img src="images/05_images/editorial/fig-wage-employment-scatter-dark.svg" class="quarto-dark" alt="Observed Wage and Employment Data" style="width:100%">
+</div>
 
-# Data points from the example
-years = ['2023', '2024']
-wages = [100000, 110000]  # In dollars
-employees = [100, 120]
+Observed Wage and Employment Data
+:::
 
-plt.figure(figsize=(8, 6))
-plt.scatter(employees, wages, s=100, color='#2E86AB', alpha=0.8, edgecolors='black', linewidth=1)
-
-# Add labels for each point
-for i, year in enumerate(years):
-    plt.annotate(year, (employees[i], wages[i]), 
-                xytext=(10, 10), textcoords='offset points',
-                fontsize=12, ha='left')
-
-plt.xlabel('Number of Employees')
-plt.ylabel('Annual Wage ($)')
-plt.title('Software Engineering Firm: Wage vs Employment')
-plt.grid(True, alpha=0.3)
-
-# Set axis ranges and ticks
-plt.xlim(50, 150)
-plt.ylim(25000, 275000)
-plt.xticks(range(50, 175, 25))  # 50, 75, 100, 125, 150
-plt.yticks(range(25000, 300000, 25000))  # 25k, 50k, 75k, ..., 275k
-
-plt.tight_layout()
-
-# Format y-axis to show wages in thousands
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${int(x/1000)}K'))
-
-plt.show()
-```
 
 Now, when we use these two estimates to estimate the elasticity of labor supply to the firm, what are we actually doing? We are assuming that these two points are on the labor supply curve to the firm. If we assume it is linear, then we can simply draw a line between the two points and we've identified the entire labor supply curve to the firm.
 
 Let's draw this supply curve to the firm below.
 
-```{python}
-#| echo: false
-#| label: fig-labor-supply-line
-#| fig-cap: "Assumed Labor Supply Curve to the Firm"
 
-import matplotlib.pyplot as plt
-import numpy as np
+::: {#fig-labor-supply-line}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-labor-supply-line-light.svg" class="quarto-light" alt="Assumed Labor Supply Curve to the Firm" style="width:100%">
+<img src="images/05_images/editorial/fig-labor-supply-line-dark.svg" class="quarto-dark" alt="Assumed Labor Supply Curve to the Firm" style="width:100%">
+</div>
 
-# Data points from the example
-years = ['2023', '2024']
-wages = [100000, 110000]  # In dollars
-employees = [100, 120]
+Assumed Labor Supply Curve to the Firm
+:::
 
-plt.figure(figsize=(8, 6))
-
-# Calculate the slope of the line between the two points
-# slope = (y2 - y1) / (x2 - x1) = (110000 - 100000) / (120 - 100) = 10000 / 20 = 500
-slope = (wages[1] - wages[0]) / (employees[1] - employees[0])
-intercept = wages[0] - slope * employees[0]  # y = mx + b, so b = y - mx
-
-# Create line extending across a cropped range (not to edges)
-x_line = np.linspace(60, 140, 100)
-y_line = slope * x_line + intercept
-
-# Plot the supply curve line
-plt.plot(x_line, y_line, color='#2E86AB', linewidth=2, label='Assumed Labor Supply Curve')
-
-# Plot the data points
-plt.scatter(employees, wages, s=100, color='#F18F01', alpha=0.8, edgecolors='black', linewidth=1, zorder=5)
-
-# Add labels for each point
-for i, year in enumerate(years):
-    plt.annotate(year, (employees[i], wages[i]), 
-                xytext=(10, 10), textcoords='offset points',
-                fontsize=12, ha='left')
-
-plt.xlabel('Number of Employees')
-plt.ylabel('Annual Wage ($)')
-plt.title('Linear Labor Supply Curve Through Observed Points')
-plt.grid(True, alpha=0.3)
-plt.legend()
-
-# Set axis ranges and ticks (updated to match other figures)
-plt.xlim(50, 150)
-plt.ylim(25000, 275000)
-plt.xticks(range(50, 175, 25))  # 50, 75, 100, 125, 150
-plt.yticks(range(25000, 300000, 25000))  # 25k, 50k, 75k, ..., 275k
-
-plt.tight_layout()
-
-# Format y-axis to show wages in thousands
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${int(x/1000)}K'))
-
-plt.show()
-```
 
 Now, let's think through why the firm might have raised wages. As we discussed in the previous chapter, the firm continues to hire until marginal revenue product of labor (MRPL) equals the marginal factor cost (MFC). Therefore, if these two points are equilibrium points, then these must be points in which the MRPL equals the MFC. Since the marginal revenue product of labor curve is downward sloping, it must be that the curve shifted upwards between 2023 and 2024 to sustain these as equilibrium points (it is impossible to draw a downward sloping curve that intersects the MFC at these points). This makes perfect sense. The reason the firm is increasing the wage is due to an increase in the MRPL of its workers. Let's draw these marginal revenue product of labor curves and the associated marginal factor cost (MFC) curves below. Why would the MRPL curve shift? It could be many things. For example, maybe the price of the firm's product increased, so that each additional unit now sells for more. Maybe demand for the product increased overall.
 
-```{python}
-#| echo: false
-#| label: fig-mrp-curves-shift
-#| fig-cap: "Equilibrium in the Software Engineering Firm"
 
-import matplotlib.pyplot as plt
-import numpy as np
+::: {#fig-mrp-curves-shift}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-mrp-curves-shift-light.svg" class="quarto-light" alt="Equilibrium in the Software Engineering Firm" style="width:100%">
+<img src="images/05_images/editorial/fig-mrp-curves-shift-dark.svg" class="quarto-dark" alt="Equilibrium in the Software Engineering Firm" style="width:100%">
+</div>
 
-# Data points from the example - these are the equilibrium employment levels
-years = ['2023', '2024']
-wages = [100000, 110000]  # Wages paid to workers
-employees = [100, 120]    # Equilibrium employment levels
+Equilibrium in the Software Engineering Firm
+:::
 
-plt.figure(figsize=(8, 6))
-
-# Labor supply curve (same as before)
-slope_supply = (wages[1] - wages[0]) / (employees[1] - employees[0])
-intercept_supply = wages[0] - slope_supply * employees[0]
-x_line = np.linspace(60, 140, 100)
-y_supply = slope_supply * x_line + intercept_supply
-
-# Marginal Factor Cost curve - has twice the slope of the supply curve for linear supply
-# This is a standard result in monopsony theory
-slope_mfc = 2 * slope_supply
-intercept_mfc = intercept_supply  # Same intercept as supply curve
-y_mfc = slope_mfc * x_line + intercept_mfc
-
-# Plot the supply curve and MFC curve
-plt.plot(x_line, y_supply, color='#2E86AB', linewidth=2, label='Labor Supply Curve')
-plt.plot(x_line, y_mfc, color='#DC3545', linewidth=2, label='Marginal Factor Cost (MFC)')
-
-# For monopsony equilibrium, MRP intersects MFC at the equilibrium employment levels
-# The wage is read off the supply curve at those employment levels
-# So MRP curves must pass through the MFC values at the equilibrium employment levels
-
-# Calculate MFC values at equilibrium employment levels
-mfc_2023 = slope_mfc * employees[0] + intercept_mfc
-mfc_2024 = slope_mfc * employees[1] + intercept_mfc
-
-# Choose a slope for MRP curves (negative since they're downward sloping)
-mrp_slope = -1200  # Steeper than before to ensure proper intersections
-
-# 2023 MRP curve: passes through (100, mfc_2023)
-mrp_2023_intercept = mfc_2023 - mrp_slope * employees[0]
-y_mrp_2023 = mrp_slope * x_line + mrp_2023_intercept
-
-# 2024 MRP curve: passes through (120, mfc_2024) - this curve is shifted up
-mrp_2024_intercept = mfc_2024 - mrp_slope * employees[1]
-y_mrp_2024 = mrp_slope * x_line + mrp_2024_intercept
-
-# Plot MRP curves
-plt.plot(x_line, y_mrp_2023, color='#28A745', linewidth=2, linestyle='--', label='MRP 2023')
-plt.plot(x_line, y_mrp_2024, color='#28A745', linewidth=2, linestyle='-', label='MRP 2024')
-
-# Plot the equilibrium points (wages paid, from supply curve)
-plt.scatter(employees, wages, s=100, color='#F18F01', alpha=0.8, edgecolors='black', linewidth=1, zorder=5)
-
-# Plot the MRP-MFC intersection points
-mfc_values = [mfc_2023, mfc_2024]
-plt.scatter(employees, mfc_values, s=80, color='#8B0000', alpha=0.8, edgecolors='black', linewidth=1, zorder=5, marker='s')
-
-# Add labels for wage points
-for i, year in enumerate(years):
-    plt.annotate(f'{year}\nWage Paid', (employees[i], wages[i]), 
-                xytext=(15, -25), textcoords='offset points',
-                fontsize=9, ha='left', va='top')
-
-# Add vertical lines to show the difference between MFC and wage
-for i in range(len(employees)):
-    plt.plot([employees[i], employees[i]], [wages[i], mfc_values[i]], 
-             color='gray', linestyle=':', linewidth=1, alpha=0.7)
-
-plt.xlabel('Number of Employees')
-plt.ylabel('Annual Wage ($)')
-plt.title('Equilibrium in the Software Engineering Firm')
-plt.grid(True, alpha=0.3)
-plt.legend(loc='lower left')
-
-# Set axis ranges and ticks - updated to 275k range
-plt.xlim(50, 150)
-plt.ylim(25000, 275000)
-plt.xticks(range(50, 175, 25))  # 50, 75, 100, 125, 150
-plt.yticks(range(25000, 300000, 25000))  # 25k, 50k, 75k, ..., 275k
-
-plt.tight_layout()
-
-# Format y-axis to show wages in thousands
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${int(x/1000)}K'))
-
-plt.show()
-```
 
 But this leads to an interesting possibility. If the marginal revenue product of labor curve shifted upwards, what is to say the labor supply curve didn't also shift between 2023 and 2024? For example, imagine that more workers moved into the local area, or that another local software engineering firm closed down. This time, let's see if we can draw two labor supply curves, one for 2023 and one for 2024, that also pass through the two equilibrium points.
 
-```{python}
-#| echo: false
-#| label: fig-shifting-supply-curves
-#| fig-cap: "Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves"
 
-import matplotlib.pyplot as plt
-import numpy as np
+::: {#fig-shifting-supply-curves}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-shifting-supply-curves-light.svg" class="quarto-light" alt="Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves" style="width:100%">
+<img src="images/05_images/editorial/fig-shifting-supply-curves-dark.svg" class="quarto-dark" alt="Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves" style="width:100%">
+</div>
 
-# Data points from the example
-years = ['2023', '2024']
-wages = [100000, 110000]  # In dollars
-employees = [100, 120]
+Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves
+:::
 
-plt.figure(figsize=(8, 6))
-
-# Create a range for plotting
-x_line = np.linspace(60, 140, 100)
-
-# Create two relatively flat labor supply curves
-supply_slope = 200  # Relatively flat - $200 increase per additional employee
-
-# 2023 Labor supply curve: passes through (100, 100000)
-supply_2023_intercept = wages[0] - supply_slope * employees[0]
-y_supply_2023 = supply_slope * x_line + supply_2023_intercept
-
-# 2024 Labor supply curve: shifted up, passes through (120, 110000)
-supply_2024_intercept = wages[1] - supply_slope * employees[1]
-y_supply_2024 = supply_slope * x_line + supply_2024_intercept
-
-# Create corresponding MFC curves (twice the slope of supply curves)
-mfc_slope = 2 * supply_slope
-
-# MFC curves have same intercepts as their corresponding supply curves
-y_mfc_2023 = mfc_slope * x_line + supply_2023_intercept
-y_mfc_2024 = mfc_slope * x_line + supply_2024_intercept
-
-# Calculate MFC values at the equilibrium employment levels
-mfc_2023_eq = mfc_slope * employees[0] + supply_2023_intercept  # MFC at L=100
-mfc_2024_eq = mfc_slope * employees[1] + supply_2024_intercept  # MFC at L=120
-
-# Create two downward sloping MRP curves
-# Both curves should be downward sloping with the same slope
-mrp_slope = -800  # Negative slope for downward sloping MRP
-
-# 2023 MRP curve: passes through (100, mfc_2023_eq)
-mrp_2023_intercept = mfc_2023_eq - mrp_slope * employees[0]
-y_mrp_2023 = mrp_slope * x_line + mrp_2023_intercept
-
-# 2024 MRP curve: shifted right, passes through (120, mfc_2024_eq)
-mrp_2024_intercept = mfc_2024_eq - mrp_slope * employees[1]
-y_mrp_2024 = mrp_slope * x_line + mrp_2024_intercept
-
-# Plot the curves
-plt.plot(x_line, y_supply_2023, color='#2E86AB', linewidth=2, linestyle='--', label='Labor Supply 2023')
-plt.plot(x_line, y_supply_2024, color='#2E86AB', linewidth=2, linestyle='-', label='Labor Supply 2024')
-plt.plot(x_line, y_mfc_2023, color='#DC3545', linewidth=2, linestyle='--', label='MFC 2023')
-plt.plot(x_line, y_mfc_2024, color='#DC3545', linewidth=2, linestyle='-', label='MFC 2024')
-plt.plot(x_line, y_mrp_2023, color='#28A745', linewidth=2, linestyle='--', label='MRPL 2023')
-plt.plot(x_line, y_mrp_2024, color='#28A745', linewidth=2, linestyle='-', label='MRPL 2024')
-
-# Plot the equilibrium points (wages paid, from supply curve)
-plt.scatter(employees, wages, s=100, color='#F18F01', alpha=0.8, edgecolors='black', linewidth=1, zorder=5)
-
-# Plot the MRP-MFC intersection points (true equilibrium points)
-mfc_eq_values = [mfc_2023_eq, mfc_2024_eq]
-plt.scatter(employees, mfc_eq_values, s=80, color='#8B0000', alpha=0.8, edgecolors='black', linewidth=1, zorder=5, marker='s')
-
-# Add labels for wage points
-for i, year in enumerate(years):
-    if year == '2023':
-        plt.annotate(f'{year}\nWage Paid', (employees[i], wages[i]), 
-                    xytext=(10, -25), textcoords='offset points',
-                    fontsize=9, ha='left', va='top')
-    else:
-        plt.annotate(f'{year}\nWage Paid', (employees[i], wages[i]), 
-                    xytext=(10, 15), textcoords='offset points',
-                    fontsize=9, ha='left', va='bottom')
-
-# Add vertical lines to show the difference between MFC and wage
-for i in range(len(employees)):
-    plt.plot([employees[i], employees[i]], [wages[i], mfc_eq_values[i]], 
-             color='gray', linestyle=':', linewidth=1, alpha=0.7)
-
-plt.xlabel('Number of Employees')
-plt.ylabel('Annual Wage ($)')
-plt.title('Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves')
-plt.grid(True, alpha=0.3)
-plt.legend(loc='lower left')
-
-# Set axis ranges and ticks
-plt.xlim(50, 150)
-plt.ylim(25000, 275000)
-plt.xticks(range(50, 175, 25))  # 50, 75, 100, 125, 150
-plt.yticks(range(25000, 300000, 25000))  # 25k, 50k, 75k, ..., 275k
-
-plt.tight_layout()
-
-# Format y-axis to show wages in thousands
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${int(x/1000)}K'))
-
-plt.show()
-```
 
 Now in this second scenario, the labor supply curve we drew was purposely quite flat. Therefore, a small change in wages leads to a much larger change in employment. This implies the firm has less monopsony power than in the first scenario.
 
 But it did not need to be this way. For example, the plot below changes the labor supply curve to be much steeper. In this scenario, labor supply is shifting down instead of up. But the main point here is that these labor supply curves are also consistent with the observed data!
 
-```{python}
-#| echo: false
-#| label: fig-steep-supply-curves-shifting
-#| fig-cap: "Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves"
 
-import matplotlib.pyplot as plt
-import numpy as np
+::: {#fig-steep-supply-curves-shifting}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-steep-supply-curves-shifting-light.svg" class="quarto-light" alt="Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves" style="width:100%">
+<img src="images/05_images/editorial/fig-steep-supply-curves-shifting-dark.svg" class="quarto-dark" alt="Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves" style="width:100%">
+</div>
 
-# Data points from the example
-years = ['2023', '2024']
-wages = [100000, 110000]  # In dollars
-employees = [100, 120]
+Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves
+:::
 
-plt.figure(figsize=(8, 6))
-
-# Create a range for plotting
-x_line = np.linspace(60, 140, 100)
-
-# Create two STEEPER labor supply curves (much steeper than the previous graph)
-supply_slope = 1200  # Even steeper - $1200 increase per additional employee
-
-# 2023 Labor supply curve: passes through (100, 100000)
-supply_2023_intercept = wages[0] - supply_slope * employees[0]
-y_supply_2023 = supply_slope * x_line + supply_2023_intercept
-
-# 2024 Labor supply curve: shifted up, passes through (120, 110000)
-supply_2024_intercept = wages[1] - supply_slope * employees[1]
-y_supply_2024 = supply_slope * x_line + supply_2024_intercept
-
-# Create corresponding MFC curves (twice the slope of supply curves)
-mfc_slope = 2 * supply_slope
-
-# Adjust MFC intercept so that at 60 workers, MFC = $75,000
-target_mfc_at_60 = 75000  # Target MFC value at 60 workers
-mfc_intercept_adjustment = target_mfc_at_60 - mfc_slope * 60
-
-# For 2023: Calculate shift needed relative to supply curve
-mfc_2023_intercept = mfc_intercept_adjustment
-y_mfc_2023 = mfc_slope * x_line + mfc_2023_intercept
-
-# For 2024: Keep the same relationship (parallel shift)
-mfc_shift_between_years = supply_2024_intercept - supply_2023_intercept
-mfc_2024_intercept = mfc_2023_intercept + mfc_shift_between_years
-y_mfc_2024 = mfc_slope * x_line + mfc_2024_intercept
-
-# Calculate MFC values at the equilibrium employment levels
-mfc_2023_eq = mfc_slope * employees[0] + mfc_2023_intercept  # MFC at L=100
-mfc_2024_eq = mfc_slope * employees[1] + mfc_2024_intercept  # MFC at L=120
-
-# Create two downward sloping MRP curves
-# Both curves should be downward sloping with the same slope
-mrp_slope = -800  # Negative slope for downward sloping MRP
-
-# 2023 MRP curve: passes through (100, mfc_2023_eq)
-mrp_2023_intercept = mfc_2023_eq - mrp_slope * employees[0]
-y_mrp_2023 = mrp_slope * x_line + mrp_2023_intercept
-
-# 2024 MRP curve: shifted right, passes through (120, mfc_2024_eq)
-mrp_2024_intercept = mfc_2024_eq - mrp_slope * employees[1]
-y_mrp_2024 = mrp_slope * x_line + mrp_2024_intercept
-
-# Plot the curves
-plt.plot(x_line, y_supply_2023, color='#2E86AB', linewidth=2, linestyle='--', label='Labor Supply 2023')
-plt.plot(x_line, y_supply_2024, color='#2E86AB', linewidth=2, linestyle='-', label='Labor Supply 2024')
-plt.plot(x_line, y_mfc_2023, color='#DC3545', linewidth=2, linestyle='--', label='MFC 2023')
-plt.plot(x_line, y_mfc_2024, color='#DC3545', linewidth=2, linestyle='-', label='MFC 2024')
-plt.plot(x_line, y_mrp_2023, color='#28A745', linewidth=2, linestyle='--', label='MRPL 2023')
-plt.plot(x_line, y_mrp_2024, color='#28A745', linewidth=2, linestyle='-', label='MRPL 2024')
-
-# Plot the equilibrium points (wages paid, from supply curve)
-plt.scatter(employees, wages, s=100, color='#F18F01', alpha=0.8, edgecolors='black', linewidth=1, zorder=5)
-
-# Plot the MRP-MFC intersection points (true equilibrium points)
-mfc_eq_values = [mfc_2023_eq, mfc_2024_eq]
-plt.scatter(employees, mfc_eq_values, s=80, color='#8B0000', alpha=0.8, edgecolors='black', linewidth=1, zorder=5, marker='s')
-
-# Add labels for wage points
-for i, year in enumerate(years):
-    if year == '2023':
-        plt.annotate(f'{year}\nWage Paid', (employees[i], wages[i]), 
-                    xytext=(10, -25), textcoords='offset points',
-                    fontsize=9, ha='left', va='top')
-    else:
-        plt.annotate(f'{year}\nWage Paid', (employees[i], wages[i]), 
-                    xytext=(10, 15), textcoords='offset points',
-                    fontsize=9, ha='left', va='bottom')
-
-# Add vertical lines to show the difference between MFC and wage
-for i in range(len(employees)):
-    plt.plot([employees[i], employees[i]], [wages[i], mfc_eq_values[i]], 
-             color='gray', linestyle=':', linewidth=1, alpha=0.7)
-
-plt.xlabel('Number of Employees')
-plt.ylabel('Annual Wage ($)')
-plt.title('Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves')
-plt.grid(True, alpha=0.3)
-plt.legend(loc='lower left')
-
-# Set axis ranges and ticks - standardized scale
-plt.xlim(50, 150)
-plt.ylim(25000, 275000)
-plt.xticks(range(50, 175, 25))  # 50, 75, 100, 125, 150
-plt.yticks(range(25000, 300000, 25000))  # 25k, 50k, 75k, ..., 275k
-
-plt.tight_layout()
-
-# Format y-axis to show wages in thousands
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${int(x/1000)}K'))
-
-plt.show()
-```
 
 
 What has this exercise shown us? From two sets of employment and wages, we can't really draw any strong conclusions about the labor supply curve to the firm. We have drawn three different versions of supply curves all consistent with the data, but which have different implications for the elasticity of labor supply facing the firm. The problem is that when both MRPL and labor supply can shift, then there is no way to conclude what the labor supply curve looks like. This is a very general problem in economics when estimating supply and demand. 
@@ -466,78 +118,16 @@ The solution proposed by @abowd1999high is to compare the wages of workers as th
 
 This basic idea was expanded on in @card2013workplace, who also proposed methods to test the assumptions underlying this approach. Since the publication of @card2013workplace, this approach has been used in a number of different countries to understand the importance of firm-specific pay premia. In the U.S., the standard deviation of log pay across firms has been consistently estimated to be around 0.2 (@kline2024firm). What does this mean exactly? Let's plot a normal distribution with a standard deviation of 0.2 and mean zero below. When comparing firm-specific pay premia, we often de-mean the estimates meaning the average firm pay is zero.
 
-```{python}
-#| echo: false
-#| label: fig-firm-pay-premia-distribution
-#| fig-cap: "Hypothetical Distribution of Firm-Specific Pay Premia"
 
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import norm
+::: {#fig-firm-pay-premia-distribution}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-firm-pay-premia-distribution-light.svg" class="quarto-light" alt="Hypothetical Distribution of Firm-Specific Pay Premia" style="width:100%">
+<img src="images/05_images/editorial/fig-firm-pay-premia-distribution-dark.svg" class="quarto-dark" alt="Hypothetical Distribution of Firm-Specific Pay Premia" style="width:100%">
+</div>
 
-# Create the distribution
-x = np.linspace(-0.6, 0.6, 1000)
-y = norm.pdf(x, loc=0, scale=0.2)
+Hypothetical Distribution of Firm-Specific Pay Premia
+:::
 
-# Calculate percentiles
-p25 = norm.ppf(0.25, loc=0, scale=0.2)  # 25th percentile
-p75 = norm.ppf(0.75, loc=0, scale=0.2)  # 75th percentile
-median = 0  # 50th percentile (mean of normal distribution)
-
-plt.figure(figsize=(8, 6))
-
-# Plot the distribution
-plt.plot(x, y, color='#2E86AB', linewidth=2, label='Firm Pay Premia Distribution')
-plt.fill_between(x, y, alpha=0.3, color='#2E86AB')
-
-# Add percentile lines and labels
-percentiles = [
-    (p25, '25th Percentile', '#DC3545'),
-    (median, 'Median (Average Firm)', '#F18F01'),
-    (p75, '75th Percentile', '#28A745')
-]
-
-for value, label, color in percentiles:
-    plt.axvline(value, color=color, linestyle='--', alpha=0.8, linewidth=2)
-    # Position labels lower and spread them out horizontally
-    if label == 'Median (Average Firm)':
-        y_pos = norm.pdf(value, loc=0, scale=0.2) + 0.2
-        plt.annotate(f'{label}\n({value:.3f})', 
-                    xy=(value, y_pos), 
-                    ha='center', va='bottom',
-                    fontsize=9, color=color, fontweight='bold')
-    elif label == '25th Percentile':
-        y_pos = norm.pdf(value, loc=0, scale=0.2) + 0.2
-        plt.annotate(f'{label}\n({value:.3f})', 
-                    xy=(value, y_pos), 
-                    ha='right', va='bottom',
-                    fontsize=9, color=color, fontweight='bold',
-                    xytext=(-15, 0), textcoords='offset points')
-    else:  # 75th Percentile
-        y_pos = norm.pdf(value, loc=0, scale=0.2) + 0.2
-        plt.annotate(f'{label}\n({value:.3f})', 
-                    xy=(value, y_pos), 
-                    ha='left', va='bottom',
-                    fontsize=9, color=color, fontweight='bold',
-                    xytext=(15, 0), textcoords='offset points')
-
-plt.xlabel('Log Wage Premium (Firm Effect)')
-plt.ylabel('Density')
-plt.title('Hypothetical Distribution of Firm-Specific Pay Premia\n(Standard Deviation = 0.2)')
-plt.grid(True, alpha=0.3)
-
-# Set x-axis ticks
-plt.xticks(np.arange(-0.6, 0.7, 0.2))
-
-# Add explanatory text boxes
-plt.text(p75, 1.3, '25% of firms pay\nmore than this', ha='center', va='center', 
-         bbox=dict(boxstyle='round,pad=0.3', facecolor='lightgreen', alpha=0.7), fontsize=8)
-plt.text(p25, 1.3, '25% of firms pay\nless than this', ha='center', va='center',
-         bbox=dict(boxstyle='round,pad=0.3', facecolor='lightcoral', alpha=0.7), fontsize=8)
-
-plt.tight_layout()
-plt.show()
-```
 
 Now if moving from an average firm to the 75th percentile firm raises your log wage by 0.135, this implies that your wage increases by approximately 14.5% ($exp(0.135)-1=0.145$). This is a substantial difference in wages! Remember, this is a difference in wages for the same worker. So we can't necessarily attribute this to differences in the background skills of the workers. 
 
@@ -554,9 +144,27 @@ If they fear that a worker can leave the firm and immediately start working for 
 However, @starr2021noncompete document some striking facts about the prevalence of non-compete agreements in the United States using a survey of workers. While non-competes are generally discussed as most relevant for high-skilled workers, they find that for workers with high-school education or less, 20% report having signed a non-compete agreement. Non-compete agreements are non-negligible in industries with little theoretical justification for them. They are even prevalent in states in which they are illegal. For example, California and North Dakota both do not enforce non-compete agreements, but about 19% of the surveyed workers in these states report having signed a non-compete agreement.
 
 
-![Share of Workers with Non-Compete Agreements by Education](/images/05_images/noncompetes2.png){#fig-noncompetes-education width=70%}
 
-![Share of Workers with Non-Compete Agreements by Industry](/images/05_images/noncompetes4.png){#fig-noncompetes-industry width=70%}
+::: {#fig-noncompetes-education}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-noncompetes-education-light.svg" class="quarto-light" alt="Share of Workers with Non-Compete Agreements by Annual Earnings" style="width:100%">
+<img src="images/05_images/editorial/fig-noncompetes-education-dark.svg" class="quarto-dark" alt="Share of Workers with Non-Compete Agreements by Annual Earnings" style="width:100%">
+</div>
+
+Share of Workers with Non-Compete Agreements by Annual Earnings
+:::
+
+
+
+::: {#fig-noncompetes-industry}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-noncompetes-industry-light.svg" class="quarto-light" alt="Share of Workers with Non-Compete Agreements by Enforceability" style="width:100%">
+<img src="images/05_images/editorial/fig-noncompetes-industry-dark.svg" class="quarto-dark" alt="Share of Workers with Non-Compete Agreements by Enforceability" style="width:100%">
+</div>
+
+Share of Workers with Non-Compete Agreements by Enforceability
+:::
+
 
 One way to rationalize the prevalence of non-compete agreements is that they are also being used to restrict labor mobility. If a worker is not allowed to work for a competitor, then they will be less responsive to changes in wages at their own firm. This is one reason that the Federal Trade Commission proposed making the majority of non-compete agreements illegal in 2024. However, this proposal was blocked by federal courts in 2024, arguing the FTC exceeded its authority by proposing the ban on noncompetes.
 
@@ -591,7 +199,16 @@ In the United States, the Department of Justice (DOJ) and Federal Trade Commissi
 
 To test this, @azar2022labor measured HHI in labor markets across the United States. They defined a labor market as an occupation in a given commuting zone (a commuting zone is a geographic region defined by the U.S. Census Bureau that groups together counties based on commuting patterns). They then computed the HHI for each labor market, using the share of employment at each firm in a given commuting zone. What they find is that once you look within a given region and occupation, labor markets are actually quite concentrated. The figure below shows the average HHI within different commuting zones in the United States (the average is taken over the occupations in the commuting zone).
 
-![Concentration in US Labor Markets](/images/05_images/concentration.png){#fig-concentration width=90%}
+
+::: {#fig-concentration}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-concentration-light.svg" class="quarto-light" alt="Concentration in US Labor Markets" style="width:100%">
+<img src="images/05_images/editorial/fig-concentration-dark.svg" class="quarto-dark" alt="Concentration in US Labor Markets" style="width:100%">
+</div>
+
+Concentration in US Labor Markets
+:::
+
 
 Further, they find evidence that labor markets that experience increases in concentration experience declines in wages. This provides empirical evidence that monopsony power is higher in more concentrated labor markets.
 
@@ -603,51 +220,16 @@ One way to assess this concern is to look for events where this story is potenti
 
 For example, @arnold2025mergers distinguishes between three different types of mergers. Low-impact mergers occur between two firms that are operating in different areas. Because labor-market competition is likely local in nature, these mergers have no impact on monopsony power. Indeed, @arnold2025mergers finds a minuscule 0.5 percent decline in earnings in these types of events. In mergers that do increase concentration, the impact depends on the baseline level of concentration. For markets with relatively low levels of concentration, there is again a small and statistically insignificant decline in earnings of about 0.8 percent. Again, these medium-impact mergers likely have no impact on monopsony power, because these are not concentrated markets to begin with. However, in the high-impact mergers, which occur in high-concentration markets, @arnold2025mergers finds a decline in earnings of about 3.1 percent.  
 
-```{python}
-#| echo: false
-#| label: fig-merger-earnings-impact
-#| fig-cap: "Impact of Different Types of Mergers on Worker Earnings"
 
-import matplotlib.pyplot as plt
-import numpy as np
+::: {#fig-merger-earnings-impact}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-merger-earnings-impact-light.svg" class="quarto-light" alt="Impact of Different Types of Mergers on Worker Earnings" style="width:100%">
+<img src="images/05_images/editorial/fig-merger-earnings-impact-dark.svg" class="quarto-dark" alt="Impact of Different Types of Mergers on Worker Earnings" style="width:100%">
+</div>
 
-# Data from @arnold2025mergers
-merger_types = ['Low-Impact\nMergers', 'Medium-Impact\nMergers', 'High-Impact\nMergers']
-earnings_impact = [-0.5, -0.8, -3.1]  # Percent change in earnings
+Impact of Different Types of Mergers on Worker Earnings
+:::
 
-# Create colors - using blue color scheme
-colors = ['#2E86AB', '#1E5F7A', '#1A4E6B']  # Light to dark blue
-
-plt.figure(figsize=(7, 5))
-
-# Create bar chart
-bars = plt.bar(merger_types, earnings_impact, color=colors, alpha=0.8, 
-               edgecolor='black', linewidth=1)
-
-# Add value labels on top of bars
-for i, (bar, value) in enumerate(zip(bars, earnings_impact)):
-    plt.text(bar.get_x() + bar.get_width()/2, value - 0.15, 
-             f'{value}%', ha='center', va='top', fontweight='bold', fontsize=11)
-
-# Customize the plot
-plt.ylabel('Change in Earnings (%)', fontsize=12, fontweight='bold')
-plt.xlabel('Type of Merger', fontsize=12, fontweight='bold')
-plt.title('Impact of Mergers on Worker Earnings by Merger Type', 
-          fontsize=13, fontweight='bold', pad=20)
-
-# Add horizontal line at zero
-plt.axhline(y=0, color='black', linestyle='-', alpha=0.3, linewidth=1)
-
-# Set y-axis limits and ticks
-plt.ylim(-4, 0.5)
-plt.yticks(np.arange(-4, 1, 0.5))
-
-# Add grid for easier reading
-plt.grid(True, alpha=0.3, axis='y')
-
-plt.tight_layout()
-plt.show()
-```
 
 The fact that these large mergers lead to wage losses is a potential concern for antitrust authorities. However, traditionally antitrust authorities have been solely focused on product-market competition. This is changing. A recent complaint against Kroger and Albertsons, two large grocery chains in the United States, alleged that the merger would not only increase grocery prices, but also lower wages for grocery store workers. This is one of the first examples of labor-market concerns making their way into merger enforcement.
 
@@ -683,7 +265,16 @@ This decomposition is useful for understanding the dynamics of wage inequality. 
 
 In @autor2023unexpected, the authors plot this decomposition for three different time periods. The first they refer to as the great compression (1940-1950). We found similar results in [Chapter 1](01.qmd). During this period, inequality was falling. The majority of this decline in inequality was driven by a decline in the log(90/50) ratio. In other words, median workers were catching up to higher-wage workers. This is the classic story of the middle class growing in the post-war period.
 
-![Decomposition of Wage Inequality in the US](/images/05_images/adm.png){#fig-inequality-decomp width=90%}
+
+::: {#fig-inequality-decomp}
+<div class="editorial-figure-pair">
+<img src="images/05_images/editorial/fig-inequality-decomp-light.svg" class="quarto-light" alt="Decomposition of Wage Inequality in the US" style="width:100%">
+<img src="images/05_images/editorial/fig-inequality-decomp-dark.svg" class="quarto-dark" alt="Decomposition of Wage Inequality in the US" style="width:100%">
+</div>
+
+Decomposition of Wage Inequality in the US
+:::
+
 
 The second period is the great divergence (1979-2019). During this period, inequality was rising. We have already talked about this a bit in [Chapter 3](03.qmd), arguing at least a portion of it was due to the falling real value of the minimum wage. However, we can also see that the log(90/50) ratio was rising. In other words, inequality was rising both among higher-wage workers and lower-wage workers during this period. 
 

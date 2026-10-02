@@ -167,3 +167,53 @@ The original chapter uses a discrete cost increment for steep supply and a conti
 Labor supply is rust, MFC is muted sage with its original line patterns, and MRP is green. Original markers distinguish the series. Direct labels replace legends, and equilibrium/efficiency guides stop at their relevant plotted values. Original equilibrium quantities and wages are identified beside their points; loss regions use transparent rust shading. The multiseries panels share a $0–$110 scale with quieter major ticks; the single supply chart uses $0–$55. The renderer checks all principal coordinates, markers, and loss polygons against the captured originals.
 
 Review `../outputs/textbook-chapter04-figures/index.html` for side-by-side comparisons and light/dark/reading-width controls, or `render/_book/04.html` inside that directory for chapter context. All seven figures are approved and integrated into `04.qmd` with their existing captions and IDs. The final deadweight-loss labels in 4.4 and 4.5 are centered at 6.5 workers and split over two lines to separate them from the efficient-employment labels. David requested commitment and publication. No PDF book redesign is claimed.
+
+## Chapter 5 — approved figures
+
+`chapter05.py` renders all eleven candidates from documented snapshots under
+`data/chapter05/`. `05.qmd` references the approved light/dark SVG pairs and retains its existing
+local corrections. David approved all eleven review candidates and requested
+commitment and publication.
+
+From `textbook/`:
+
+```bash
+python3 code/figures/chapter05.py --output-dir ../outputs/textbook-chapter05-figures/figures --proofs
+```
+
+Omit `--proofs` for paired SVGs only. The script writes `manifest.json` and
+`verification.json` beside its outputs. It uses the existing NumPy/matplotlib
+requirements plus Pillow (also required by matplotlib); no SciPy is needed to
+render. Its functions separate firm diagrams, density, merger effects,
+non-competes, decomposition, and map styling.
+
+| Figures | Inputs and reconstruction status |
+| --- | --- |
+| 5.1–5.5 software firm | `models.json`: captured source curves, observed points, caption/ID and source-cell hashes. All plotted coordinates are checked. The common original $25K–$275K and 50–150 employee axes are retained. Supply is rust, MFC sage, MRP green; 2023 dashed/2024 solid. |
+| 5.6 pay premia | Same source normal density (mean 0, standard deviation 0.2) on 1,000 points, checked against the independent analytical PDF. Original quartiles and explanatory text retained. |
+| 5.7–5.8 non-competes | `noncompetes-approximate.json`: printed means retained; CI endpoints, incidence bounds, CIs around bounds, and overall line manually digitized from the original PNGs. Pixel readings and axis calibration are recorded. **Approximate review candidates, not empirical replications.** All original uncertainty layers remain. |
+| 5.9 concentration | Existing `images/05_images/concentration.png`, SHA-256 checked against `imports.json`. Crop removes only margins/embedded legend. Nearest-color classification recolors the raster; original geographic shapes and striping persist. A native legend uses the same five categories. **Raster style preview; no original HHI dataset or commuting-zone geometry was recovered.** |
+| 5.10 merger effects | Source typed summary values −0.5%, −0.8%, −3.1%, checked against bar heights. This is not a new replication of the paper. |
+| 5.11 decomposition | `decomposition.json`: six rounded values printed in the original image. Upper-tail component −0.202, +0.188, −0.027; lower-tail −0.035, +0.098, −0.059. Exact at the displayed three-decimal precision, not a microdata reconstruction. |
+
+The steep-supply example uses the **current local corrections**: supply slope
+1,000 and intercepts 0/−10,000, MFC slope 2,000 with the same intercepts, and
+MRP slope −800 with intercepts 280,000/326,000. Equilibrium marginal values are
+$200,000/$230,000; observed wages remain $100,000/$110,000 at 100/120 workers.
+The pre-design local chapter is backed up in the preview directory. Model
+snapshots intentionally follow that local source rather than overwriting it
+with the earlier Git version.
+
+David authorized approximate imported redraws, clearly documented for review.
+Approximation labels appear in the comparison page and provenance files, not
+as added textbook content. The two non-compete charts require original plotting
+inputs to claim exact interval replication. The map requires original CZ data
+and geometry for a clean vector rebuild; recoloring cannot repair its artifacts.
+
+**Unresolved source discrepancy:** the printed Great Divergence components sum
+to 0.286, while the existing prose says 0.282. Both are preserved for review;
+no prose correction is silently bundled with the figure redesign.
+
+Review: `../outputs/textbook-chapter05-figures/index.html` (light/dark and reading
+width controls), or `render/_book/05.html` inside that directory for chapter
+context. This preview targets HTML; no PDF book redesign is claimed.

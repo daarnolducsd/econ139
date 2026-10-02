@@ -181,3 +181,30 @@ Current status: **reviewed and integrated; publication requested** for seven loc
 - The source's flatter-supply figure uses the continuous MFC derivative, while its steep-supply figure uses discrete cost increments. This existing convention is recorded and retained, not changed during styling.
 
 Review page: `../outputs/textbook-chapter04-figures/index.html`; chapter context: `render/_book/04.html` inside that directory. Both themes use transparent SVGs, direct labels, quiet grids, and guides ending at the relevant points. All seven Chapter 4 replacements were approved and integrated. Final deadweight-loss labels in 4.4/4.5 are centered at 6.5 workers, split over two lines, and clear of the efficient-employment labels. Commitment and publication were requested. Chapter 3 was committed as `829959b` and its deployment verified live before this preview work.
+
+## Chapter 5 implementation record
+
+Current status: **reviewed and integrated; publication requested** for eleven
+figures. David approved the review candidates and requested commitment and
+publication. Maintained renderer:
+`code/figures/chapter05.py`; documented inputs and approximate pixel readings:
+`code/figures/data/chapter05/`; construction details: `code/figures/README.md`.
+
+- Seven existing deterministic/summary charts preserve the current local
+  chapter's curves, observed points, normal density and merger-effect values.
+  Existing steep-supply corrections are preserved in the candidate source.
+- Two non-compete charts retain printed means and all uncertainty layers;
+  interval endpoints/bounds/overall incidence are approximate pixel readings.
+  David explicitly authorized approximate redraws, documented for review.
+- The concentration map is a raster recoloring with the original categories,
+  geography and artifacts, and a new native legend. It is not a data/geometry
+  reconstruction; a clean vector map still requires matching source inputs.
+- The inequality decomposition uses six printed, rounded bar values. These
+  imply a Great Divergence total of 0.286; the current prose says 0.282. Preserve
+  both and flag the discrepancy before integration.
+
+Review page: `../outputs/textbook-chapter05-figures/index.html`; chapter context:
+`render/_book/05.html` inside that directory. Both modes follow the approved
+palette. Figure IDs, original captions, and existing chapter prose are retained.
+Imported approximate candidates remain explicitly documented as approximations.
+The 0.286/0.282 discrepancy remains unresolved; neither value was silently changed.
