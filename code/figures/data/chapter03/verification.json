@@ -1,0 +1,27 @@
+{
+  "inputs_sha256": {
+    "data/03_data/morg_cleaned_1979.dta": "3481ec0eb135bd985845409a189cf5c39f6032f5775671c19629dbab5d76ebf2",
+    "data/03_data/morg_cleaned_1980.dta": "2d1f4cfcc77e8d5e0ac482c6cea868c076736eb915a0154b4acb8f7f29048822",
+    "data/03_data/morg_cleaned_1981.dta": "135409e808e1e593a23c6bb59b90446394cb2af879e6ac29509efc18b23fb1b2",
+    "data/03_data/morg_cleaned_1982.dta": "5edaac324e7b5b956b12a7a79abb10f931da9be5ab1ba76303ca22960f94a3ae",
+    "data/03_data/morg_cleaned_1983.dta": "e7e2dbf69933e88ce55688df6ab09901b6f1be8851c0d8ed07f188f119e8d1ca",
+    "data/03_data/morg_cleaned_1984.dta": "4b3dc70319d222879e7361b9a8c2cbc1337beb227c27a7b0d0f6430354e04b2e",
+    "data/03_data/morg_cleaned_1985.dta": "94603cab0fb7739b953a1906af0bd8a788e6aa55191eed5a7e5e9940104081dc",
+    "data/03_data/morg_cleaned_1986.dta": "61a9ee363776f671474d305f4b63f957d43faf6045581f5741c7b578c3bf7911",
+    "data/03_data/morg_cleaned_1987.dta": "aedaf91b0450464c54262c89ead754a3ad1cddcf53871c15676995cc2f972e30",
+    "data/03_data/morg_cleaned_1988.dta": "00dded58d786b8228837c0fa40534e791844d7c70e77a5576e32a709fcc2d0fa",
+    "data/03_data/morg_cleaned_1989.dta": "e46a67105ed2d9357063ea3b5e41116803f897aedca7457bc125b21c3aabc108"
+  },
+  "inequality_years": [
+    1979,
+    1989
+  ],
+  "histogram_observations": 168438,
+  "histogram_bins": 165,
+  "bin_width": 0.5,
+  "counts_preserved": true,
+  "independent_percentiles_match": true,
+  "independent_histogram_counts_match": true,
+  "raw_inputs_unchanged": true,
+  "stata": "Python implementation of the source formulas; no successful Stata rerun is claimed."
+}

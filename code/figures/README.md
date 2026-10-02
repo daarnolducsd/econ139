@@ -100,3 +100,42 @@ The renderer checks every principal curve against the original coordinates. It a
 All series use labels beside their curves. The aggregation figure uses short leaders to interior points because both cafes share their last point. Its cafe colors match the preceding two-cafe figure. Labor demand is green; labor supply and the cost comparison are rust.
 
 `02.qmd` references one SVG pair per figure with its original caption and ID. Its two native tables are retained. Prose color descriptions are aligned with sage green and rust; no economic claims or quantities were changed. As with Chapter 1, this release targets HTML; PDF book output has not been redesigned or verified.
+
+## Chapter 3 — approved figures
+
+David requested removal of the historical-opinions composite and its adjacent timeline. Their figure blocks and references are removed from `03.qmd`; their old asset files are retained. The eleven remaining figures are reviewed and approved for integration and publication.
+
+### Rebuild the previews
+
+From `textbook/` with the dependencies in `requirements.txt`:
+
+```bash
+python3 code/figures/chapter03.py --proofs
+```
+
+The default output is `images/03_images/editorial/`. To rebuild the review proofs, pass `--output-dir ../outputs/textbook-chapter03-figures/figures`. Use `--output-dir /path/to/output` for another destination; omit `--proofs` for SVG-only output. Each figure has one light and one dark SVG. `manifest.json` lists IDs and captions; output `verification.json` records the rendering checks. The renderer reads only the aggregate files below and requires no local microdata.
+
+### Inputs and preserved definitions
+
+- `data/chapter03/models.json`: values, original line coordinates, histogram bars, and source-cell hashes for the eight remaining Python figures in `03.qmd`. Captured from the local source after removal of the two opening visuals; a full pre-change source backup is in the preview directory. The Card–Krueger figure uses the chapter's typed summary values, not a new microdata replication. Five employment diagrams share green New Jersey, rust Pennsylvania, original markers, and dashed counterfactual lines.
+- `data/chapter03/inequality.csv`: eleven annual 90/10 ratios, 1979–1989. Reconstruction follows `code/03_code/min_wage_erosion.do` in the course root: no weights or extra sample filters; double-precision wage/GDP calculation stored back to float; Stata's default order-statistic percentiles, averaged when N*p/100 is integer; final ratio stored as float. Reference formula: [Stata percentile documentation](https://www.stata.com/manuals/dpctile.pdf). The rendered curve agrees with the shape and endpoints of the existing image; no successful Stata execution is claimed.
+- `data/chapter03/histograms.csv`: original and counterfactual sample counts for the 1989 distributions. Preserve the chapter's Python float arithmetic `hr_wage * (1 / gdp)`, missing-value exclusion, unweighted frequencies, complete 50-cent bins, visible $0–$40 range, actual $3.35 minimum, and counterfactual $4.77 floor. Both distributions contain 168,438 observations. The renderer compares every bin edge and count to the original matplotlib artists; the two-panel comparison retains a common y-axis scale.
+- `data/chapter03/verification.json`: raw input hashes, observation counts, independent percentile and histogram calculations, and read-only input confirmation.
+
+The two Clemens schematics are redrawn from the chapter's supplied images. Their construction is explicitly commented in `chapter03.py`: normalized D1=10−L and S=L, equilibrium L1=5/w1=5, new minimum wage=7, and D2=11.5−L for price pass-through. These values are illustration coordinates, not measured observations or exact image digitization. Both versions retain the source's symbolic labels, wage increase, unemployment bracket, and employment decline; pass-through moves L2 from 3 to 4.5, still below L1. The chapter's existing citation remains in the in-context preview.
+
+### Reconstruct aggregates from local inputs
+
+```bash
+python3 code/figures/replicate_chapter03.py
+```
+
+This reads `../data/03_data/morg_cleaned_1979.dta` through `morg_cleaned_1989.dta` and writes derived CSVs and verification metadata to `../outputs/textbook-chapter03-replication/`. Flags `--course-root` and `--output-dir` select alternate locations. Raw files are never modified. Percentiles are independently checked using partial selection rather than sorting; histogram counts are independently checked using bin assignments. Deliberately compare output to the committed plotted snapshots before refreshing snapshots. Raw CPS microdata remain outside the textbook repository.
+
+### Review artifacts
+
+- `../outputs/textbook-chapter03-figures/index.html`: original/candidate comparisons, both modes, reading-width toggle.
+- `../outputs/textbook-chapter03-figures/render/_book/03.html`: Quarto-rendered chapter context with both requested removals and renumbered figures.
+- `../outputs/textbook-chapter03-figures/03-preview.qmd`: candidate source references. Only necessary prose color descriptions are aligned with the new palette; captions and remaining figure IDs are retained.
+
+All eleven replacements were approved, including the raised employment-decline labels and the single arrow from the actual to counterfactual minimum wage with its label nearby. The approved chapter preview also retains its existing Before/After wording and date corrections. Publish only when requested. This workflow targets HTML; no PDF book redesign is claimed.
