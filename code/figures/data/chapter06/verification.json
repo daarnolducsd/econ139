@@ -1,0 +1,26 @@
+{
+  "input": "data/acs/acs_clean.dta",
+  "input_sha256": "d88e876c5e5c9a816299e41b38081201a39a7b0ea45c26b497dc07608f86e7dc",
+  "raw_input_unchanged": true,
+  "years": [
+    2023
+  ],
+  "source_script": "code/acs/mincer.do",
+  "sample_size": 1370496,
+  "means": "unweighted; Stata-default float log wages",
+  "marker_weights": "observation counts, not survey weights",
+  "checks": [
+    {
+      "file": "experience.csv",
+      "groups": 60,
+      "sample_count": 1370496,
+      "independent_bincount_check": true
+    },
+    {
+      "file": "schooling.csv",
+      "groups": 19,
+      "sample_count": 1370496,
+      "independent_bincount_check": true
+    }
+  ]
+}

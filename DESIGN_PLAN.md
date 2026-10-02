@@ -208,3 +208,40 @@ Review page: `../outputs/textbook-chapter05-figures/index.html`; chapter context
 palette. Figure IDs, original captions, and existing chapter prose are retained.
 Imported approximate candidates remain explicitly documented as approximations.
 The 0.286/0.282 discrepancy remains unresolved; neither value was silently changed.
+
+## Chapter 6 implementation record
+
+Current status: **reviewed and integrated; publication requested** for fifteen
+charts: fourteen numbered figures and the existing unnumbered Mincer model.
+David approved the final revisions and requested commitment and publication. Maintained code: `code/figures/chapter06.py` and
+`code/figures/replicate_chapter06.py`; plotted aggregates and digitization
+coordinates: `code/figures/data/chapter06/`.
+
+- Mincer: all 100 original formula points retained and verified. No caption or
+  figure number is added to its previously unnumbered plot.
+- Four ACS charts: 2023 sample, 1,370,496 observations after the source's age and
+  earnings restrictions; unweighted means, float log wages, count-based marker
+  areas and experience ≤40 retained. Independent aggregation checks pass and
+  raw-file SHA-256 is unchanged.
+- Eight imported chart redraws: explicit approximate digitizations of source
+  dots/bubbles, relative bubble areas, separate RD fitted segments, confidence
+  bands where originally present, histogram heights and popularity series.
+  Printed statistical estimates/standard errors remain exact as displayed.
+- Two Gapminder previews: visible source silhouettes traced into scalable
+  paths, with native axes and legend. Original positions and overlaps remain;
+  these are not country-data replications. Supporting region colors are ochre
+  and sage alongside green/rust; prose colors are aligned with the approved palette.
+- The source UCSC dashed line remains at its plotted midpoint (~2.75); the
+  institutional threshold in prose remains 2.8. The Colombia attendance prose
+  inconsistently says 40 and 32 percentage points; preserve both for review.
+
+Public-source checks and approximation limits are documented in
+`code/figures/README.md`. Review page:
+`../outputs/textbook-chapter06-figures/index.html`; chapter context:
+`render/_book/06.html` inside that directory. Preserve 6.1–6.14 numbering,
+original captions/IDs and all unrelated prose. The approved replacements are
+integrated in `06.qmd`; publication uses the isolated build workflow.
+
+Chapter 6 review revisions: native vector bubble traces replace the initial
+raster previews in 6.1/6.2; β/coefficient text is enlarged to 13 points in
+6.12–6.14, with extra line spacing for the two estimates in 6.14.

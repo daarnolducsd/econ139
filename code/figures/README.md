@@ -217,3 +217,67 @@ no prose correction is silently bundled with the figure redesign.
 Review: `../outputs/textbook-chapter05-figures/index.html` (light/dark and reading
 width controls), or `render/_book/05.html` inside that directory for chapter
 context. This preview targets HTML; no PDF book redesign is claimed.
+
+## Chapter 6 — approved figures
+
+`chapter06.py` renders fifteen charts (fourteen numbered figures plus the
+original unnumbered Mincer plot). All fifteen replacements and final revisions
+were approved and integrated in `06.qmd`; publication was requested.
+
+From `textbook/`:
+
+```bash
+python3 code/figures/chapter06.py --output-dir ../outputs/textbook-chapter06-figures/figures --proofs
+python3 code/figures/replicate_chapter06.py
+```
+
+The renderer uses NumPy, pandas and matplotlib. Omit `--proofs` for SVG-only output. Reconstruction reads local
+`../data/acs/acs_clean.dta` and writes derived aggregates/verification to
+`../outputs/textbook-chapter06-replication/`; flags `--course-root` and
+`--output-dir` select other locations. Compare reconstructed aggregates to the
+snapshots before refreshing `data/chapter06/`; raw inputs remain read-only.
+No randomized calculations are used.
+
+### Construction and inputs
+
+| Figures | Input / preserved definition | Status |
+| --- | --- | --- |
+| 6.1–6.2 Gapminder | Source PNGs, hashes in `imports.json`. Visible bubble silhouettes are traced into scalable paths (`bubble-traces.json`), with crisp native outlines; original positions and overlaps remain. No hidden circles or country data are inferred. New native axes retain the original GDP doublings and schooling coordinates. Africa green, Asia rust, Europe ochre, Americas sage. | Vector silhouette preview, not country-data replication. Exact country records, population values and year are not recovered. |
+| Unnumbered Mincer model | `mincer.json`: 100 original points, E=0–25; log earnings=10+0.02E−0.0005E². Both x/y arrays checked against source capture. | Original deterministic model; no caption or figure number added. |
+| 6.3–6.6 ACS | `experience.csv`, `schooling.csv`, `verification.json`; 2023 ACS, ages 18–65, positive nonmissing wages, unweighted arithmetic means following `code/acs/mincer.do`. Stata-default float log wages retained; markers use observation-count areas, not survey weights. Experience plots restrict groups to ≤40 years. | Reconstructed from 1,370,496 observations. Means and counts independently checked with NumPy accumulation; raw-file hash unchanged. |
+| 6.7 RDD popularity | `rdd-popularity-approximate.json`: annual gray-curve readings from source image, 1960–2019, reference at 1999. Marker-obscured 1999 value interpolated from neighbors. | Approximate image digitization, not bibliographic counts. |
+| 6.8–6.9 Colombia scholarship/density | `rd-approximate.json`: 50 binned points plus separate left/right fits and small confidence bands. `scores-approximate.json`: 5-point score-bin heights, cutoff 310. | Approximate source pixel readings. Histogram sum ~101.1% reflects digitization precision; not renormalized or treated as raw counts. |
+| 6.10–6.11 Colombia attendance/earnings | Same RD snapshot: 50 attendance points with bands; 40 earnings points and two original fitted segments. Original sample restrictions retained. | Approximate source pixel readings; earnings chart has no new confidence band. |
+| 6.12–6.14 UCSC | Same RD snapshot: 20/19/20 hollow bubbles, relative areas and separate fitted segments; printed β/IV values and standard errors retained. | Approximate image digitization, not student-record analysis. The source dashed line is placed between discrete GPA values at ~2.75; prose describes the institutional rule as 2.8. |
+
+The plotting functions separate the model, ACS, RD, histogram, popularity and
+bubble-chart logic. Aggregate/snapshot files contain only plotted summaries or
+image coordinates. The original assets and source-cell/image hashes make the
+construction auditable; no local course student records are accessed.
+
+### Public-source checks and limits
+
+- [Bleemer–Mehta replication package](https://www.openicpsr.org/openicpsr/project/126941/version/V1/view): the public package explicitly omits confidential data. Its public derived-data listing contains ACS-based files; matching UCSC RD plotting inputs were not recovered.
+- [Colombia replication package](https://www.openicpsr.org/openicpsr/project/231594/version/V1/view): data_RD.dta is listed, but its download redirects to ICPSR login. No successful data download or paper replication is claimed.
+- [Cunningham's RD chapter](https://mixtape.scunning.com/06-regression_discontinuity) links the original popularity image; matching underlying annual counts were not recovered.
+
+Imported approximations use the documented review approach accepted during
+Chapter 5. They are explicitly identified on the comparison page and in input
+metadata. No approximation notice, motivating question, learning goal or new
+explanation is added to the textbook itself. The chapter only aligns the
+Gapminder prose's region-color names with the new palette.
+
+**Existing prose issue:** the Colombia attendance paragraph says both 40 and
+32 percentage points. Both statements remain unchanged for review. The
+candidate chart retains the original approximately 0.35 jump.
+
+Review: `../outputs/textbook-chapter06-figures/index.html`, or
+`render/_book/06.html` inside that directory for chapter context. Both modes,
+original numbering and local resources are checked. No PDF book redesign or
+full-book PDF redesign is claimed; approved HTML publication is requested.
+
+Chapter 6 review revision: Figures 6.1/6.2 now use native vector silhouette
+paths instead of embedded raster pixels, removing the blurred screenshot
+appearance. Figures 6.12–6.14 use 13-point β/coefficient text (previously 9.5),
+with increased line spacing for the β and IV estimates in 6.14. Original
+printed values remain unchanged.

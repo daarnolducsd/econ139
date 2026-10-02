@@ -10,11 +10,29 @@ So far in this book we have generally considered workers' skills as fixed. But i
 
 Human capital has always played a key role in Economics. One of the earliest discussions comes from Adam Smith, who recognized that investments in education, training, and health improve worker productivity. Modern growth theory also emphasizes the importance of human capital in explaining differences in income across countries. Below we consider data that was made available by Gapminder, an organization that collects data from around the world to make cross-country comparisons. 
 
-In @fig-edu-gdp-men we plot on the vertical axis the GDP per capita of a country. This is a common measure of the average wealth of a country. A higher GDP per capita implies the country produces more (in dollar terms) per person relative a lower GDP per capita country. Note that this scale is on the logarithmic scale. That is, each tick mark is double the previous tick mark. On the horizontal axis we plot the mean years of schooling for men 25 years and older. @fig-edu-gdp-women plots the same variables, but for women 25 years and older. The size of the bubble indicates the population of the country. The color indicates the region with blue indicating Africa, red indicating Asia, yellow indicating Europe, and green indicating the Americas.
+In @fig-edu-gdp-men we plot on the vertical axis the GDP per capita of a country. This is a common measure of the average wealth of a country. A higher GDP per capita implies the country produces more (in dollar terms) per person relative a lower GDP per capita country. Note that this scale is on the logarithmic scale. That is, each tick mark is double the previous tick mark. On the horizontal axis we plot the mean years of schooling for men 25 years and older. @fig-edu-gdp-women plots the same variables, but for women 25 years and older. The size of the bubble indicates the population of the country. The color indicates the region with green indicating Africa, rust indicating Asia, ochre indicating Europe, and sage indicating the Americas.
 
-![GDP Per Capita and Mean Schooling (Men)](/images/06_images/gap1.png){#fig-edu-gdp-men}
 
-![GDP Per Capita and Mean Schooling (Women)](/images/06_images/gap2.png){#fig-edu-gdp-women}
+::: {#fig-edu-gdp-men}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-edu-gdp-men-light.svg" class="quarto-light" alt="GDP Per Capita and Mean Schooling (Men)" style="width:100%">
+<img src="images/06_images/editorial/fig-edu-gdp-men-dark.svg" class="quarto-dark" alt="GDP Per Capita and Mean Schooling (Men)" style="width:100%">
+</div>
+
+GDP Per Capita and Mean Schooling (Men)
+:::
+
+
+
+::: {#fig-edu-gdp-women}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-edu-gdp-women-light.svg" class="quarto-light" alt="GDP Per Capita and Mean Schooling (Women)" style="width:100%">
+<img src="images/06_images/editorial/fig-edu-gdp-women-dark.svg" class="quarto-dark" alt="GDP Per Capita and Mean Schooling (Women)" style="width:100%">
+</div>
+
+GDP Per Capita and Mean Schooling (Women)
+:::
+
 
 The patterns in both of these figures are clear. Places with higher levels of schooling tend to have higher GDP per Capita. Of course we can't explain all of the variation with schooling alone, but the patterns are striking. 
 
@@ -92,33 +110,12 @@ $$\ln(w) = \alpha + \beta_2 E + \beta_3 E^2 + \varepsilon$$
 
 Let's choose some arbitrary values for the parameters and plot this relationship. We'll set $\alpha = 10$, $\beta_2 = 0.02$, and $\beta_3 = -0.0005$. Now we can plot the relationship between earnings and experience.
 
-```{python}
-#| echo: false
 
-import numpy as np
-import matplotlib.pyplot as plt
+<div class="editorial-figure-pair" id="mincer-experience-model">
+<img src="images/06_images/editorial/mincer-experience-model-light.svg" class="quarto-light" alt="Relationship Between Experience and Log Earnings (Mincer Equation)" style="width:100%">
+<img src="images/06_images/editorial/mincer-experience-model-dark.svg" class="quarto-dark" alt="Relationship Between Experience and Log Earnings (Mincer Equation)" style="width:100%">
+</div>
 
-# Set parameters
-alpha = 10
-beta_2 = 0.02
-beta_3 = -0.0005
-
-# Create experience values from 0 to 25 years
-experience = np.linspace(0, 25, 100)
-
-# Calculate log earnings using the simplified Mincer equation
-log_earnings = alpha + beta_2 * experience + beta_3 * (experience ** 2)
-
-# Create the plot
-plt.figure(figsize=(10, 6))
-plt.plot(experience, log_earnings, 'b-', linewidth=2, label='Log Earnings')
-plt.xlabel('Years of Experience')
-plt.ylabel('Log Earnings')
-plt.title('Relationship Between Experience and Log Earnings (Mincer Equation)')
-plt.grid(True, alpha=0.3)
-plt.legend()
-plt.show()
-```
 
 The Mincer Equation assumes a shape for how earnings change with respect to experience. But we don't need to necessarily believe this shape is correct. We can look in the data and see the shape for ourselves. 
 
@@ -132,9 +129,27 @@ This assumes that a person starts school at age 6 and goes straight through scho
 
 In @fig-experience-earnings, we show the relationship between experience and annual wage income. However, the Mincer Equation we used above modeled log wages, therefore in @fig-experience-earnings-log we show the relationship between experience and log annual wage income. We plotted this for experience values between 0 and 40 years. Once you get to very high years of experience, the sample size starts to get quite small, so the estimates become noisy. The size of the markers in this graph are proportional to the number of observations. As you can see, they are all roughly the same size, indicating we have a similar sample size for various experience levels.
 
-![Experience and Annual Wage Income](/images/06_images/experience.png){#fig-experience-earnings}
 
-![Experience and Log Annual Wage Income](/images/06_images/experience_log.png){#fig-experience-earnings-log}
+::: {#fig-experience-earnings}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-experience-earnings-light.svg" class="quarto-light" alt="Experience and Annual Wage Income" style="width:100%">
+<img src="images/06_images/editorial/fig-experience-earnings-dark.svg" class="quarto-dark" alt="Experience and Annual Wage Income" style="width:100%">
+</div>
+
+Experience and Annual Wage Income
+:::
+
+
+
+::: {#fig-experience-earnings-log}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-experience-earnings-log-light.svg" class="quarto-light" alt="Experience and Log Annual Wage Income" style="width:100%">
+<img src="images/06_images/editorial/fig-experience-earnings-log-dark.svg" class="quarto-dark" alt="Experience and Log Annual Wage Income" style="width:100%">
+</div>
+
+Experience and Log Annual Wage Income
+:::
+
 
 In both of these figures, we see rapid earnings growth at the beginning of a person's career, which eventually slows down. This type of relationship is consistent with Mincer's equation.
 
@@ -142,9 +157,27 @@ Now the key parameter we are actually interested in is the return to schooling, 
 
 As in the experience figures, the size of the dots is proportional to the number of individuals in the sample with that level of schooling. In the U.S. there are compulsory schooling laws that mandate children stay in school until a certain age, which can vary across state from a minimum of 16 to a maximum of 18. This may be one reason that we have very few individuals with low levels of schooling. Until we hit 12 years of schooling, we have very few observations.
 
-![Years of Schooling and Annual Wage Income](/images/06_images/schooling.png){#fig-school-earnings}
 
-![Years of Schooling and Log Annual Wage Income](/images/06_images/schooling_log.png){#fig-school-earnings-log}
+::: {#fig-school-earnings}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-school-earnings-light.svg" class="quarto-light" alt="Years of Schooling and Annual Wage Income" style="width:100%">
+<img src="images/06_images/editorial/fig-school-earnings-dark.svg" class="quarto-dark" alt="Years of Schooling and Annual Wage Income" style="width:100%">
+</div>
+
+Years of Schooling and Annual Wage Income
+:::
+
+
+
+::: {#fig-school-earnings-log}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-school-earnings-log-light.svg" class="quarto-light" alt="Years of Schooling and Log Annual Wage Income" style="width:100%">
+<img src="images/06_images/editorial/fig-school-earnings-log-dark.svg" class="quarto-dark" alt="Years of Schooling and Log Annual Wage Income" style="width:100%">
+</div>
+
+Years of Schooling and Log Annual Wage Income
+:::
+
 
 If we consider the part of the figure where we have ample data (12 or more years of schooling), we can see a stark increase in earnings for each additional year of school.
 
@@ -212,7 +245,16 @@ The idea in @thistlethwaite1960regression is relatively simple. Because they had
 
 This idea, regression discontinuity design, did not catch on for quite a while. However, recently, more and more researchers have been taking advantage of this relatively simple idea. The plot below shows the number of papers in top economics journals that use a regression discontinuity design. As you can see, there was very little interest in this design until around 2000, after which there has been an explosion of research using this design.
 
-![Source: Causal Inference the Mixtape](/images/06_images/mixtape1.png){#fig-rdd-papers}
+
+::: {#fig-rdd-papers}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-rdd-papers-light.svg" class="quarto-light" alt="Source: Causal Inference the Mixtape" style="width:100%">
+<img src="images/06_images/editorial/fig-rdd-papers-dark.svg" class="quarto-dark" alt="Source: Causal Inference the Mixtape" style="width:100%">
+</div>
+
+Source: Causal Inference the Mixtape
+:::
+
 
 Now the regression discontinuity design has become influential for a variety of reasons. First, the basic idea requires that some treatment of interest is determined by a cutoff rule. This ends up being relatively common in various policy settings. For example, elections also have cutoff rules. Imagine you are interested in the effect of having a Democratic vs. Republican mayor on city outcomes. You could compare cities that just barely elected a Democratic mayor vs. cities that just barely elected a Republican mayor. The idea is that these cities are likely very similar, and the difference in election outcomes is likely due to random chance (i.e. a few more people showing up to vote). Therefore, you can use this design to estimate the causal impact of having a Democratic vs. Republican mayor.
 
@@ -226,7 +268,16 @@ The key feature of this program that allowed us to use a regression discontinuit
 
 The plot below shows the probability of receiving the scholarship based on the SABER 11 exam score. As you can see, there is a big jump in the probability of receiving the scholarship at the cutoff. However, you might also notice that it is not a perfect jump from 0 percent to 100 percent. Instead, it jumps from 0 to about 60 percent (0.6 in the graph). The reason is because passing the cutoff implies you are eligible for the scholarship, not that you are required to take it. Some of these individuals may choose not to attend college. If they do attend college, they may not be attending a High Quality Accredited university for which the scholarship is valid. This is therefore an example of a fuzzy regression discontinuity design. The treatment here is receiving a scholarship. Because it does not jump from 0 to 1, we have a fuzzy design.
 
-![Probability of Receiving Scholarship by SABER 11 Score](/images/06_images/velez1.png){#fig-scholarship-prob}
+
+::: {#fig-scholarship-prob}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-scholarship-prob-light.svg" class="quarto-light" alt="Probability of Receiving Scholarship by SABER 11 Score" style="width:100%">
+<img src="images/06_images/editorial/fig-scholarship-prob-dark.svg" class="quarto-dark" alt="Probability of Receiving Scholarship by SABER 11 Score" style="width:100%">
+</div>
+
+Probability of Receiving Scholarship by SABER 11 Score
+:::
+
 
 Now, the key assumption of a regression discontinuity design is that individuals just above vs. just below the cutoff are similar. This is true if students cannot precisely manipulate their test scores. The definition of precisely manipulate has a statistical definition. However, the intuition is the following: imagine a subset of students were given access to the electronic records where their SABER 11 test score was held. 
 
@@ -238,17 +289,44 @@ Well, this sounds like a pretty convoluted story, right? And that suggests that 
 
 The plot below shows the distribution of SABER 11 test scores. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is no unusual spike in test scores right at the cutoff. This implies that students are not able to precisely manipulate their test scores. This is a valid regression discontinuity design.
 
-![Distribution of SABER 11 Test Scores](/images/06_images/velez2.png){#fig-saber-scores}
+
+::: {#fig-saber-scores}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-saber-scores-light.svg" class="quarto-light" alt="Distribution of SABER 11 Test Scores" style="width:100%">
+<img src="images/06_images/editorial/fig-saber-scores-dark.svg" class="quarto-dark" alt="Distribution of SABER 11 Test Scores" style="width:100%">
+</div>
+
+Distribution of SABER 11 Test Scores
+:::
+
 
 Now let's get to some results. What is the impact of receiving financial assistance on college attendance and future earnings. In the plot below, we see the impact of receiving the scholarship on college attendance. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is a big jump in college attendance at the cutoff. Receiving the scholarship increases college attendance by about 40 percentage points. This is a huge impact! These students at the cutoff are very high achieving students, in the top decile of test scores. Yet, receiving the scholarship increases their college attendance by 32 percentage points. This shows that in this setting the financial constraints play an enormous role in determining college attendance.
 
-![Impact of Scholarship on College Attendance](/images/06_images/velez3.png){#fig-college-attendance}
+
+::: {#fig-college-attendance}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-college-attendance-light.svg" class="quarto-light" alt="Impact of Scholarship on College Attendance" style="width:100%">
+<img src="images/06_images/editorial/fig-college-attendance-dark.svg" class="quarto-dark" alt="Impact of Scholarship on College Attendance" style="width:100%">
+</div>
+
+Impact of Scholarship on College Attendance
+:::
+
 
 In a follow-up study, @londono2025financial study the impact of the financial aid on future earnings. The literature on financial aid often considers two potential impacts. First, if financial aid is given to students that would have attended college anyways then the impact on future earnings may be small. This is not to discount the importance of financial aid for equity reasons, but if the goal is to increase future earnings, then giving aid to students that would have attended college anyways may not be the most effective way to do this. From what we've seen above, this seems unlikely to be the case here, but we can also directly study the impact of being eligible for the scholarship on future earnings. This is one of the goals of @londono2025financial.
 
 Below, we show the plot of the impact of receiving the scholarship on future earnings. The vertical dashed line indicates the cutoff for receiving the scholarship. As you can see, there is a big jump in earnings at the cutoff. The y-axis is denoted in multiples of the monthly minimum wage in Colombia. If you receive zero formal earnings, you would be coded as having zero multiples of the minimum wage, so this is why averages can be well below one. 
 
-![Impact of Scholarship on Future Earnings](/images/06_images/velez4.png){#fig-future-earnings}
+
+::: {#fig-future-earnings}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-future-earnings-light.svg" class="quarto-light" alt="Impact of Scholarship on Future Earnings" style="width:100%">
+<img src="images/06_images/editorial/fig-future-earnings-dark.svg" class="quarto-dark" alt="Impact of Scholarship on Future Earnings" style="width:100%">
+</div>
+
+Impact of Scholarship on Future Earnings
+:::
+
 
 As you can see in @fig-future-earnings, individuals just below the cutoff earning about 1.0 times the monthly minimum wage, while individuals just above the cutoff earn about 1.2 times the monthly minimum wage. Therefore, one way to interpret this is that being eligible for the scholarship increases monthly earnings by 0.2 times the monthly minimum wage. Now, recall that not everyone even takes up the scholarship or attends college due to being eligible. So this isn't exactly the impact of attending college on earnings. To scale this up to get the impact of attending college on earnings, we need to divide this estimate by the increase in college attendance at the cutoff. In this context, we would then get an increase of about 0.35 times the monthly minimum wage. Since the average earnings for individuals just below the cutoff was about 1 monthly minimum wage, this represents a 35 percent increase in earnings from attending college. 
 
@@ -256,7 +334,16 @@ Next, we are going to turn to our second example which brings us back to the U.S
 
 This is exactly what @bleemer2022will does. As always, the first thing to check in a regression discontinuity design is does the threshold rule have an effect. The plot below shows the probability of receiving an Economics degree based on the combined GPA in Econ 1 and Econ 2. The vertical dashed line indicates the cutoff GPA of 2.8. As you can see, there is a big jump in the probability of receiving an Economics degree at the cutoff. 
 
-![Probability of Receiving Economics Degree by GPA](/images/06_images/bleemer1.png){#fig-ec-deg-prob}
+
+::: {#fig-ec-deg-prob}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-ec-deg-prob-light.svg" class="quarto-light" alt="Probability of Receiving Economics Degree by GPA" style="width:100%">
+<img src="images/06_images/editorial/fig-ec-deg-prob-dark.svg" class="quarto-dark" alt="Probability of Receiving Economics Degree by GPA" style="width:100%">
+</div>
+
+Probability of Receiving Economics Degree by GPA
+:::
+
 
 This is again a fuzzy regression discontinuity design. Why, because not everyone that passes the cutoff will receive an Economics degree, and some of the individuals that do not pass the cutoff may still receive an Economics degree. Individuals to the left of the cutoff can petition to be admitted into the major, and some of them are successful. Additionally, some individuals that pass the cutoff may decide to switch to a different major later on. Therefore, we have a fuzzy design. Regardless, we can see that the threshold is influential on whether an individual receives an Economics degree. If you fall just below, your probability of receiving an Economics degree is about 40 percent. If you fall just above, your probability of receiving an Economics degree is about 80 percent. Therefore, passing the cutoff increases your probability of receiving an Economics degree by about 40 percentage points.
 
@@ -265,13 +352,31 @@ Now, again, what is the key assumption of a regression discontinuity design? Tha
 Therefore, another way to check for this is to look at other characteristics of individuals just above vs. just below the cutoff. Our real goal is to argue that individuals just below vs. just above the cutoff are similar in all characteristics except for receiving an Economics degree. In @bleemer2022will, the authors have a rich set of characteristics to study. For example, one compelling characteristic is the SAT score of individuals. If individuals just above vs. just below the cutoff have similar SAT scores, that is evidence that they are similar in terms of overall academic ability. 
 
 
-![SAT Score by GPA](/images/06_images/bleemer6.png){#fig-ec-sat}
+
+::: {#fig-ec-sat}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-ec-sat-light.svg" class="quarto-light" alt="SAT Score by GPA" style="width:100%">
+<img src="images/06_images/editorial/fig-ec-sat-dark.svg" class="quarto-dark" alt="SAT Score by GPA" style="width:100%">
+</div>
+
+SAT Score by GPA
+:::
+
 
 As can be seen in the graph, there is no clear break around the cutoff. It is true that individuals that had higher SAT scores tend to have higher GPAs in Econ 1 and Econ 2. But there is no unusual jump in SAT scores at the cutoff. This suggests that individuals just above vs. just below the cutoff are similar in terms of academic ability, at least measured by the SAT. The authors check many other characteristics as well and find similar results. Therefore, we can be more confident that this is a valid regression discontinuity design.
 
 So let's get to the results. Below we plot earnings by GPA in Econ 1 and Econ 2. The vertical dashed line indicates the cutoff GPA of 2.8. These earnings are for the years 2017 and 2018, which implies that the students in the sample are between 23 and 28 years old. Therefore, this should be interpreted as an estimate of the change in earnings early in a person's career. 
 
-![Earnings by GPA](/images/06_images/bleemer2.png){#fig-ec-earnings}
+
+::: {#fig-ec-earnings}
+<div class="editorial-figure-pair">
+<img src="images/06_images/editorial/fig-ec-earnings-light.svg" class="quarto-light" alt="Earnings by GPA" style="width:100%">
+<img src="images/06_images/editorial/fig-ec-earnings-dark.svg" class="quarto-dark" alt="Earnings by GPA" style="width:100%">
+</div>
+
+Earnings by GPA
+:::
+
 
 Individuals just below the cutoff earn about $47,000 per year, while individuals just above the cutoff earn about $55,000 per year. Therefore, being eligible for an Economics degree increases earnings by about \$8,000. Again, recall that not everyone that passes the cutoff will receive an Economics degree, and some of the individuals that do not pass the cutoff may still receive an Economics degree. Therefore, if we scale this impact by the increase in probability of receiving an Economics degree at the cutoff (40 percentage points), we get that receiving an Economics degree increases earnings by about \$20,000 per year. This is what the term IV is referring to in the figure (although we have just approximated the numbers, the exact effect of a Economics degree is \$22,123).
 

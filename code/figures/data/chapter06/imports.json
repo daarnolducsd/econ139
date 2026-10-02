@@ -1,0 +1,86 @@
+[
+  {
+    "id": "fig-edu-gdp-men",
+    "caption": "GDP Per Capita and Mean Schooling (Men)",
+    "file": "gap1.png",
+    "sha256": "7583de8cc4d3b1e497c5a30b0e4be89b751be1b26cf43f1188a5a0b53667d60e"
+  },
+  {
+    "id": "fig-edu-gdp-women",
+    "caption": "GDP Per Capita and Mean Schooling (Women)",
+    "file": "gap2.png",
+    "sha256": "86018ad16c8a4e6ecbde3eb4cab293750dbf1b182a8dec7f3b0a932d5a72b814"
+  },
+  {
+    "id": "fig-experience-earnings",
+    "caption": "Experience and Annual Wage Income",
+    "file": "experience.png",
+    "sha256": "0833c365bfe0e038a9ca1e3f82ac5feec8dcfdb75fdda8b38232525d41b01bf3"
+  },
+  {
+    "id": "fig-experience-earnings-log",
+    "caption": "Experience and Log Annual Wage Income",
+    "file": "experience_log.png",
+    "sha256": "6f9cf9fdab9737fe32b3a9520a009f4cd52e68d1646786cc99ac803fb11bf2f7"
+  },
+  {
+    "id": "fig-school-earnings",
+    "caption": "Years of Schooling and Annual Wage Income",
+    "file": "schooling.png",
+    "sha256": "bbe265419010db84f215e8ffdefa10953df5323a17c3409df18d6bc6b03eb3b2"
+  },
+  {
+    "id": "fig-school-earnings-log",
+    "caption": "Years of Schooling and Log Annual Wage Income",
+    "file": "schooling_log.png",
+    "sha256": "2dc2e0206d98c2a04fbbcc04b64a94e065e39175e3e06daf98fc2bd30a2da0c1"
+  },
+  {
+    "id": "fig-rdd-papers",
+    "caption": "Source: Causal Inference the Mixtape",
+    "file": "mixtape1.png",
+    "sha256": "63f6ba75e40e792fb081dc7d1f11f9a4d014a4da8abc0e5d2d84e42c0b9ce5f7"
+  },
+  {
+    "id": "fig-scholarship-prob",
+    "caption": "Probability of Receiving Scholarship by SABER 11 Score",
+    "file": "velez1.png",
+    "sha256": "dbb3c616aad362ce580864fdf3b4cbfa1082a0fcc71568c5f772c91488aee57c"
+  },
+  {
+    "id": "fig-saber-scores",
+    "caption": "Distribution of SABER 11 Test Scores",
+    "file": "velez2.png",
+    "sha256": "4d73fd52b008f09637bf62db9634b6b6148499f70d523b707f455b18ab7afb84"
+  },
+  {
+    "id": "fig-college-attendance",
+    "caption": "Impact of Scholarship on College Attendance",
+    "file": "velez3.png",
+    "sha256": "e235836ec04e6eaf7aa81f6cb3fa6503cb7cf0a140af4af16b6c75c0f8d8141d"
+  },
+  {
+    "id": "fig-future-earnings",
+    "caption": "Impact of Scholarship on Future Earnings",
+    "file": "velez4.png",
+    "sha256": "f7ea6032197e9d2a61dcc591c371d4ce380b353bcc1682c6c22268a9a4313058"
+  },
+  {
+    "id": "fig-ec-deg-prob",
+    "caption": "Probability of Receiving Economics Degree by GPA",
+    "file": "bleemer1.png",
+    "sha256": "0c56092adb58f7eb43fe66881d9431d6f7eaf892578044f2f7294a2d8fe91f7c"
+  },
+  {
+    "id": "fig-ec-sat",
+    "caption": "SAT Score by GPA",
+    "file": "bleemer6.png",
+    "sha256": "b8b00136997990de2d663b79efba84abde3c37b6d43b1d4b246a7c7bc2973e6a"
+  },
+  {
+    "id": "fig-ec-earnings",
+    "caption": "Earnings by GPA",
+    "file": "bleemer2.png",
+    "sha256": "d709d90ad26fc2fa5550fc2ae2c14e7952d0f2e8a296c9f97c587ef5facdb137"
+  }
+]
