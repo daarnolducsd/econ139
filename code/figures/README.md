@@ -222,7 +222,7 @@ context. This preview targets HTML; no PDF book redesign is claimed.
 
 `chapter06.py` renders fifteen charts (fourteen numbered figures plus the
 original unnumbered Mincer plot). All fifteen replacements and final revisions
-were approved and integrated in `06.qmd`; publication was requested.
+were approved, integrated in `06.qmd`, and published.
 
 From `textbook/`:
 
@@ -273,11 +273,67 @@ candidate chart retains the original approximately 0.35 jump.
 
 Review: `../outputs/textbook-chapter06-figures/index.html`, or
 `render/_book/06.html` inside that directory for chapter context. Both modes,
-original numbering and local resources are checked. No PDF book redesign or
-full-book PDF redesign is claimed; approved HTML publication is requested.
+original numbering and local resources are checked. No PDF book redesign is
+claimed. The approved HTML replacements are published.
 
 Chapter 6 review revision: Figures 6.1/6.2 now use native vector silhouette
 paths instead of embedded raster pixels, removing the blurred screenshot
 appearance. Figures 6.12–6.14 use 13-point β/coefficient text (previously 9.5),
 with increased line spacing for the β and IV estimates in 6.14. Original
 printed values remain unchanged.
+
+## Chapter 7 — approved figures
+
+`chapter07.py` renders six charts as transparent light/dark SVG pairs. The
+approved replacements are integrated in `07.qmd`; publication was requested. `replicate_chapter07.py` creates
+three public-data snapshots in a derived output directory. No approximate
+image digitization is needed for this chapter.
+
+From `textbook/`, using Python with the packages in `requirements.txt`:
+
+```bash
+python3 code/figures/replicate_chapter07.py
+python3 code/figures/chapter07.py --output-dir ../outputs/textbook-chapter07-figures/figures --proofs
+```
+
+The renderer reads `code/figures/data/chapter07/`; omit `--proofs` for SVG only.
+The reconstruction writes to `../outputs/textbook-chapter07-replication/`
+(`--output-dir` overrides this). Compare outputs to committed snapshots before
+refreshing them. No randomness is used, and all inputs remain read-only.
+
+| Figures | Construction / inputs | Verification and limits |
+| --- | --- | --- |
+| 7.1–7.3 occupation examples | `models.json` captures the original three Python cells: employment changes 35, −27; 27, −27, 35; 27, −27, −72, 35. Wage labels remain $3,800, $6,900, $8,200, $13,800 where originally shown. | All bars checked against captured values. Source-cell hashes retained. Values are the existing rounded teaching examples; the local `code/textbook/06/code/accountants.do` and 1.3 GB `usa_occ.dta` were located but not rerun for these redraws. They describe occupation **share** changes; no fresh employment-count calculation is claimed. |
+| 7.4 polarization | `polarization.csv`: all 100 exact smoothed plot points from `source/demp-pct-1980-2005-czall-color.gph` in Autor–Dorn's public package. Original program uses observed 1980–2005 share changes and Stata LOWESS bandwidth .75. | Reads the archived graph's `pdsh0` double / `perc` byte series, with explicit layout, 1–100 percentile, and graph min/max checks. The companion source employment-share dataset totals 100 for every year. This preserves the authors' smoother output; it does not rerun their microdata preparation or substitute a different LOWESS implementation. |
+| 7.5 country polarization | `countries.csv`: all 18 rows of `source/goos-manning-data.dta`, sorted by original `n`; `lo`, `mid`, `hi` divided by 100 following the authors' do-file. | Order and row count checked; the three changes sum to zero within published rounding precision. EU Average and USA retained. Wage-tercile legend maps green low, rust middle, sage high. |
+| 7.6 task groups | `tasks.csv`: `source/census-cells-occ10-demog-1960-2008.dta` employment totals summed by original four groups and year, after excluding agriculture (`occ10==40`); shares divide by each year's nonagricultural total. Sexes pooled, year shifted −1 following the authors' earnings-year convention. | Independently checked with NumPy accumulation; missing employment cells ignored as in Stata rawsum, six sets of four shares sum to one. Existing weighted totals are not weighted a second time. Original circle/square/triangle/diamond markers retained with color and line patterns; direct labels replace the legend. |
+
+### Public source files and provenance
+
+Downloaded 2026-10-02 from the authors' public archives:
+
+- [Autor's MIT data archive](https://economics.mit.edu/people/faculty/david-h-autor/data-archive): *Skills, Tasks and Technologies*, Figure 11 and Figure 13 packages.
+  - [Figure 11 package](https://www.dropbox.com/s/zi14yafyif6402b/fig-11.zip?dl=1)
+  - [Figure 13 package](https://www.dropbox.com/s/5r8gaczoefl0zx9/fig-13.zip?dl=1)
+- [Dorn's data archive](https://www.ddorn.net/data.htm):
+  [Autor–Dorn 2013 package](https://www.ddorn.net/data/Autor-Dorn-LowSkillServices-FileArchive.zip).
+
+Only the seven small files needed to document/reconstruct these figures are
+kept under `data/chapter07/source/`. They are public paper plotting inputs,
+aggregate cells, source programs, and an archived graph, not course student
+records. The downloaded packages stay in the local review output directory.
+`verification.json` records their SHA-256 hashes and the reconstruction checks;
+original image hashes and source-cell hashes are in `models.json`.
+
+**Existing date mismatch:** 7.4's source figure and public plotting data cover
+1980–2005; the chapter's surrounding prose describes 1980–2000. The redraw keeps
+the original 1980–2005 series and period; prose is unchanged and the mismatch is
+flagged on the review page. The countries figure's original 1993–2006 heading
+is retained. No new teaching prose, learning goals, or captions are added.
+
+Review: `../outputs/textbook-chapter07-figures/index.html`; chapter context:
+`render/_book/07.html` inside that directory. The three historical illustrations
+(Ned Ludd, abacus, tabulating machine) retain their existing treatment. This
+workflow targets HTML; no PDF book redesign is claimed. Chapter 7 is not
+published until the requested deployment completes. The final approved
+headings in 7.1–7.3 read “Change in employment between 1980 and 2000 (%)”.

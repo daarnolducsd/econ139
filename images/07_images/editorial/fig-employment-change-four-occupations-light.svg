@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="367.2pt" viewBox="0 0 518.4 367.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-02T16:25:14.957365</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.5.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 367.2 
+L 518.4 367.2 
+L 518.4 0 
+L 0 0 
+L 0 367.2 
+z
+" style="fill: none; opacity: 0"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 57.024 271.728 
+L 502.848 271.728 
+L 502.848 51.408 
+L 57.024 51.408 
+L 57.024 271.728 
+z
+" style="fill: none; opacity: 0"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="107.225256" y="285.527922" transform="rotate(-0, 107.225256, 285.527922)">Cashiers</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(167.703643 285.527922)">Bookkeeping, Accounting,</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(181.440049 295.826219)">and Auditing Clerks</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(302.655349 285.643703)">Sewing Machine</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(316.388045 295.949125)">Operators</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(417.262955 285.527922)">Accountants and</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'" transform="translate(435.222408 295.575953)">Auditors</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 57.024 263.445293 
+L 502.848 263.445293 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_5">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="267.203145" transform="rotate(-0, 49.024, 267.203145)">−80</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 57.024 230.314466 
+L 502.848 230.314466 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_6">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="234.072318" transform="rotate(-0, 49.024, 234.072318)">−60</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 57.024 197.183639 
+L 502.848 197.183639 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="200.941491" transform="rotate(-0, 49.024, 200.941491)">−40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 57.024 164.052812 
+L 502.848 164.052812 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="167.810664" transform="rotate(-0, 49.024, 167.810664)">−20</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 57.024 130.921985 
+L 502.848 130.921985 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_9">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="134.679837" transform="rotate(-0, 49.024, 134.679837)">0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 57.024 97.791158 
+L 502.848 97.791158 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="101.549009" transform="rotate(-0, 49.024, 101.549009)">20</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17">
+      <path d="M 57.024 64.660331 
+L 502.848 64.660331 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_11">
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="68.418182" transform="rotate(-0, 49.024, 68.418182)">40</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 57.024 130.921985 
+L 502.848 130.921985 
+" clip-path="url(#pecd473ffc6)" style="fill: none; stroke: #616962; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 57.024 271.728 
+L 502.848 271.728 
+" style="fill: none; stroke: #e1e5df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="fill: #616962; font: 10px 'Arial'; text-anchor: start" x="57.024" y="35.9856" transform="rotate(-0, 57.024, 35.9856)">Change in employment between 1980 and 2000 (%)</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 77.288727 130.921985 
+L 137.161785 130.921985 
+L 137.161785 86.195368 
+L 77.288727 86.195368 
+z
+" clip-path="url(#pecd473ffc6)" style="fill: #3d6155"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 192.429223 130.921985 
+L 252.302281 130.921985 
+L 252.302281 175.648602 
+L 192.429223 175.648602 
+z
+" clip-path="url(#pecd473ffc6)" style="fill: #a36f49"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 307.569719 130.921985 
+L 367.442777 130.921985 
+L 367.442777 250.192962 
+L 307.569719 250.192962 
+z
+" clip-path="url(#pecd473ffc6)" style="fill: #a36f49"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 422.710215 130.921985 
+L 482.583273 130.921985 
+L 482.583273 72.943038 
+L 422.710215 72.943038 
+z
+" clip-path="url(#pecd473ffc6)" style="fill: #3d6155"/>
+   </g>
+   <g id="text_13">
+    <text style="fill: #3d6155; font: 700 11px 'Arial'; text-anchor: middle" x="107.225256" y="80.711504" transform="rotate(-0, 107.225256, 80.711504)">27%</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #a36f49; font: 700 11px 'Arial'; text-anchor: middle" x="222.365752" y="186.835278" transform="rotate(-0, 222.365752, 186.835278)">-27%</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #a36f49; font: 700 11px 'Arial'; text-anchor: middle" x="337.506248" y="261.379639" transform="rotate(-0, 337.506248, 261.379639)">-72%</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #3d6155; font: 700 11px 'Arial'; text-anchor: middle" x="452.646744" y="67.459174" transform="rotate(-0, 452.646744, 67.459174)">35%</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(75.453147 142.360359)">1980 avg wage:</text>
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(93.462991 152.079515)">$3,800</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(190.593643 114.444455)">1980 avg wage:</text>
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(208.603486 124.163611)">$6,900</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(305.734139 114.444455)">1980 avg wage:</text>
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(323.743982 124.163611)">$8,200</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(420.874634 142.360359)">1980 avg wage:</text>
+    <text style="fill: #616962; font: 9px 'Arial'" transform="translate(436.382056 152.079515)">$13,800</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pecd473ffc6">
+   <rect x="57.024" y="51.408" width="445.824" height="220.32"/>
+  </clipPath>
+ </defs>
+</svg>

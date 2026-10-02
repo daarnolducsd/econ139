@@ -94,41 +94,16 @@ The figure below shows the change in employment and wages for these two occupati
 
 To compute changes in employment, I calculated the fraction of the total workforce in each year that reported being in each occupation. I then computed the percentage change in this fraction between 1980 and 2000. The figure below shows the results.
 
-```{python}
-#| echo: false
-#| label: fig-employment-change-accountants
-#| fig-cap: "Change in Employment by Occupation, 1980-2000"
-import matplotlib.pyplot as plt
-import numpy as np
 
-# Data for the chart
-occupations = ['Accountants and\nAuditors', 'Bookkeeping, Accounting,\nand Auditing Clerks']
-percent_changes = [35, -27]
-colors = ['#2E8B57', '#DC143C']  # Green for positive, red for negative
+::: {#fig-employment-change-accountants}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-employment-change-accountants-light.svg" class="quarto-light" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+<img src="images/07_images/editorial/fig-employment-change-accountants-dark.svg" class="quarto-dark" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+</div>
 
-# Create the bar chart
-fig, ax = plt.subplots(figsize=(7, 5))
-bars = ax.bar(occupations, percent_changes, color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+Change in Employment by Occupation, 1980-2000
+:::
 
-# Customize the chart
-ax.set_ylabel('Percent Change in Employment (%)', fontsize=12, fontweight='bold')
-ax.set_title('Change in Employment by Occupation, 1980-2000', fontsize=14, fontweight='bold', pad=20)
-ax.grid(axis='y', alpha=0.3, linestyle='--')
-ax.set_ylim(-35, 40)
-
-# Add value labels on bars
-for bar, value in zip(bars, percent_changes):
-    height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2., height + (1 if height > 0 else -2),
-            f'{value}%', ha='center', va='bottom' if height > 0 else 'top', 
-            fontweight='bold', fontsize=11)
-
-# Add a horizontal line at zero
-ax.axhline(y=0, color='black', linewidth=0.8)
-
-plt.tight_layout()
-plt.show()
-```
 
 These are some pretty striking results. The employment of accountants and auditors increased by 35% between 1980 and 2000. In contrast, the employment of bookkeeping, accounting, and auditing clerks decreased by 27%. This is consistent with our theory that computers have increased the productivity of accountants, leading to higher demand for their services, while reducing the demand for routine clerical tasks which accountants use as inputs and can often be performed by computers. To be clear, it is not as if the raw number of accountants is much larger than the number of clerks. In 2000, there are still many clerks. About 0.8 percent of all workers are in these bookkeeping, accounting, and auditing clerk roles. This is actually similar to the total number of accountants and auditors. 
 
@@ -138,109 +113,31 @@ The key here is the growth rates vary wildly. In 1980, about 0.5 percent of all 
 
 The relative decline in the demand for clerks is notable. One natural question is where might these workers go? One possibility is that they move to occupations that are not as exposed to automation by computers. For example, cashiers are likely not as exposed to automation. While it was easier to monitor revenue and sales with computers, the actual task of checking out customers was not easily automated. In the figure below, we show the change in employment for cashiers between 1980 and 2000, plotted alongside the changes for accountants and clerks.
 
-```{python}
-#| echo: false
-#| label: fig-employment-change-three-occupations
-#| fig-cap: "Change in Employment by Occupation, 1980-2000"
-import matplotlib.pyplot as plt
-import numpy as np
 
-# Data for all three occupations ordered as requested
-occupations = ['Cashiers', 'Bookkeeping, Accounting,\nand Auditing Clerks', 'Accountants and\nAuditors']
-employment_changes = [27, -27, 35]
-avg_wages_1980 = [3800, 6900, 13800]
-colors = ['#FF6B35', '#DC143C', '#2E8B57']  # Orange, red, green
+::: {#fig-employment-change-three-occupations}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-employment-change-three-occupations-light.svg" class="quarto-light" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+<img src="images/07_images/editorial/fig-employment-change-three-occupations-dark.svg" class="quarto-dark" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+</div>
 
-# Create the bar chart
-fig, ax = plt.subplots(figsize=(8, 6))
-bars = ax.bar(occupations, employment_changes, color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+Change in Employment by Occupation, 1980-2000
+:::
 
-# Customize the chart
-ax.set_ylabel('Percent Change in Employment (%)', fontsize=12, fontweight='bold')
-ax.set_title('Change in Employment by Occupation, 1980-2000', fontsize=14, fontweight='bold', pad=20)
-ax.grid(axis='y', alpha=0.3, linestyle='--')
-ax.set_ylim(-35, 40)
-
-# Add employment change labels on bars
-for bar, value in zip(bars, employment_changes):
-    height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2., height + (1 if height > 0 else -2),
-            f'{value}%', ha='center', va='bottom' if height > 0 else 'top', 
-            fontweight='bold', fontsize=11)
-
-# Add wage labels positioned relative to zero line
-for i, (bar, wage, emp_change) in enumerate(zip(bars, avg_wages_1980, employment_changes)):
-    if i == 1:  # Bookkeeping clerks (negative change) - label above zero line
-        y_pos = 2
-        va = 'bottom'
-    else:  # Cashiers and Accountants (positive change) - label below zero line
-        y_pos = -2
-        va = 'top'
-    
-    ax.text(bar.get_x() + bar.get_width()/2., y_pos,
-            f'1980 Avg Wage:\n${wage:,}', ha='center', va=va, 
-            fontsize=9, style='italic', color='black')
-
-# Add a horizontal line at zero
-ax.axhline(y=0, color='black', linewidth=0.8)
-
-plt.tight_layout()
-plt.show()
-```
 
 As can be seen in the figure, cashiers saw a 27% increase in employment between 1980 and 2000, similar to our increase for accountants. As you may have noticed in the figure, we also ordered these occupations by their average wage level in 1980. Cashiers were the lowest paid of the three, clerks were in the middle, and accountants were the highest paid. Therefore, from 1980 to 2000, we see growth in employment at both the low-wage end (cashiers) and the high-wage end (accountants), while we see a decline in employment in the middle (clerks). This pattern is referred to as *job polarization*. Technology has displaced middle-skill workers.
 
 So far we have three occupations: accountants, clerks, and cashiers. Let's map these back to our task framework. Accountants generally perform non-routine cognitive tasks. Clerks generally perform routine cognitive tasks. Cashiers generally perform non-routine manual tasks. This begs the question: what about routine manual tasks? Are there occupations that perform routine manual tasks that have also seen declines in employment? Let's assume the accountant is an accountant for a firm that produces clothes, and as part of the production process they have workers who operate sewing machines. This is a routine manual task (replacing sewers with machines is a long tradition, with the original luddite movement being a reaction to the mechanized looms). The figure below shows the change in employment for sewing machine operators between 1980 and 2000, alongside our other three occupations.
 
-```{python}
-#| echo: false
-#| label: fig-employment-change-four-occupations
-#| fig-cap: "Change in Employment by Occupation, 1980-2000"
-import matplotlib.pyplot as plt
-import numpy as np
 
-# Data for all four occupations ordered by 1980 wage level
-occupations = ['Cashiers', 'Bookkeeping, Accounting,\nand Auditing Clerks', 'Sewing Machine\nOperators', 'Accountants and\nAuditors']
-employment_changes = [27, -27, -72, 35]
-avg_wages_1980 = [3800, 6900, 8200, 13800]
-colors = ['#FF6B35', '#DC143C', '#9370DB', '#2E8B57']  # Orange, red, purple, green
+::: {#fig-employment-change-four-occupations}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-employment-change-four-occupations-light.svg" class="quarto-light" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+<img src="images/07_images/editorial/fig-employment-change-four-occupations-dark.svg" class="quarto-dark" alt="Change in Employment by Occupation, 1980-2000" style="width:100%">
+</div>
 
-# Create the bar chart
-fig, ax = plt.subplots(figsize=(8, 5))
-bars = ax.bar(occupations, employment_changes, color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+Change in Employment by Occupation, 1980-2000
+:::
 
-# Customize the chart
-ax.set_ylabel('Percent Change in Employment (%)', fontsize=12, fontweight='bold')
-ax.set_title('Change in Employment by Occupation, 1980-2000', fontsize=14, fontweight='bold', pad=20)
-ax.grid(axis='y', alpha=0.3, linestyle='--')
-ax.set_ylim(-80, 50)
-
-# Add employment change labels on bars
-for bar, value in zip(bars, employment_changes):
-    height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2., height + (3 if height > 0 else -4),
-            f'{value}%', ha='center', va='bottom' if height > 0 else 'top', 
-            fontweight='bold', fontsize=11)
-
-# Add wage labels positioned relative to zero line
-for i, (bar, wage, emp_change) in enumerate(zip(bars, avg_wages_1980, employment_changes)):
-    if emp_change < 0:  # Negative changes - label above zero line
-        y_pos = 4
-        va = 'bottom'
-    else:  # Positive changes - label below zero line
-        y_pos = -4
-        va = 'top'
-    
-    ax.text(bar.get_x() + bar.get_width()/2., y_pos,
-            f'1980 Avg Wage:\n${wage:,}', ha='center', va=va, 
-            fontsize=9, style='italic', color='black')
-
-# Add a horizontal line at zero
-ax.axhline(y=0, color='black', linewidth=0.8)
-
-plt.tight_layout()
-plt.show()
-```
 
 So in this figure, we see that sewing machine operators saw an enormous 72% decline in employment between 1980 and 2000. This is consistent with our theory that routine tasks are being displaced during this period. To summarize, we considered four occupations:
 - Accountants and Auditors: non-routine cognitive tasks, saw a 35% increase in employment
@@ -255,13 +152,31 @@ Now, we've done this for a few set of occupations. This is useful as it gives us
 One way to do this is to look across all occupations and rank them in terms of their average wage in 1980. Then, we can compute the change in employment for each occupation between 1980 and 2000. If job polarization is a general phenomenon, we should see that occupations at the low end and high end of the wage distribution saw increases in employment, while those in the middle saw decreases. The figure below (@autor2013growth) shows this relationship. The horizontal axis is the rank of the occupation in terms of its average wage in 1980. The vertical axis is the change in employment between 1980 and 2000. So to be concrete, the average wage for accountants in 1980 put them at just above the 70th percentile of this distribution. So 70 percent of occupations had lower average wages than accountants. Accounting clerks were around the 23rd percentile, while cashiers were around the 6th percentile. The figure shows a
 smoothed version of the relationship between employment changes and the average wage of the occupation. Smoothed in this context means that we are not plotting the raw data for every single occupation, instead we are plotting a smoothed curve that captures the general trend.
 
-![Employment growth across occupations by initial wage level](/images/07_images/autor_dorn_2013.png){#fig-job-polarization}
+
+::: {#fig-job-polarization}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-job-polarization-light.svg" class="quarto-light" alt="Employment growth across occupations by initial wage level" style="width:100%">
+<img src="images/07_images/editorial/fig-job-polarization-dark.svg" class="quarto-dark" alt="Employment growth across occupations by initial wage level" style="width:100%">
+</div>
+
+Employment growth across occupations by initial wage level
+:::
+
 
 As we can see in the figure, occupations at the low end of the wage distribution (left side of the figure) saw large increases in employment. Many of these low-wage occupations are in the service sector, things like food preparation, cleaning, and waiting tables. Occupations at the high end of the wage distribution (right side of the figure) also saw increases in employment. Many of these high-wage occupations are in professional and technical fields, like management, law, and medicine. In contrast, occupations in the middle of the wage distribution saw decreases in employment. Many of these middle-wage occupations are in clerical and administrative support roles.
 
 One remarkable aspect of this story is that it is not at all specific to the United States. For example, @acemoglu2011skills present results for a number of countries. To make things easy-to-visualize, they break occupations into three groups: low-wage (bottom third of the distribution), middle-wage (between 33rd percentile and 66th percentile), and high-wage (top third of the distribution). They then plot the change in employment for each group over time. The figure below shows the results for a number of countries.
 
-![Job polarization patterns across multiple countries](/images/07_images/acemoglu_autor_2011.png){#fig-polarization-countries}
+
+::: {#fig-polarization-countries}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-polarization-countries-light.svg" class="quarto-light" alt="Job polarization patterns across multiple countries" style="width:100%">
+<img src="images/07_images/editorial/fig-polarization-countries-dark.svg" class="quarto-dark" alt="Job polarization patterns across multiple countries" style="width:100%">
+</div>
+
+Job polarization patterns across multiple countries
+:::
+
 
 If we zoom in on the right-most part of the figure, we see the USA, where we know lowest paying jobs and highest paying jobs have grown, while middle-paying jobs have shrunk. But we see this same pattern across many countries. The most stark pattern is the persistent increase in growth of high-wage jobs in many countries, and the persistent decline in middle-wage jobs. The low-wage jobs have more mixed results, but many countries show increases in low-wage jobs as well. Overall for the EU, the pattern is remarkably similar to the US.
 
@@ -292,7 +207,16 @@ The table below summarizes this classification as well as the prediction of how 
 
 So let's see what this looks like in the data. The figure below (@acemoglu2011skills) shows the change in employment shares for each of these four groups between 1959 and 2007. The vertical axis is the change in employment share, which is the fraction of all workers in that group. 
 
-![Change in Employment Shares by Task Type, 1959-2007](/images/07_images/aa_11_2.png){#fig-task-changes}
+
+::: {#fig-task-changes}
+<div class="editorial-figure-pair">
+<img src="images/07_images/editorial/fig-task-changes-light.svg" class="quarto-light" alt="Change in Employment Shares by Task Type, 1959-2007" style="width:100%">
+<img src="images/07_images/editorial/fig-task-changes-dark.svg" class="quarto-dark" alt="Change in Employment Shares by Task Type, 1959-2007" style="width:100%">
+</div>
+
+Change in Employment Shares by Task Type, 1959-2007
+:::
+
 
 Let's first look at the production and operators group, which tend to perform routine manual tasks. This group has seen an incredibly large decline in employment share, falling from about 40 percent of all workers in 1959 to just over 20 percent in 2007. Clerical and sales support occupations, which are also exposed to automation, saw a rise in the earlier part of the period, but declined throughout the 1990s and 2000s. 
 

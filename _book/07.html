@@ -526,19 +526,17 @@ div.csl-indent {
 <p>At the end of the day, what happened is an empirical question. We can probably come up with alternative stories that make sense, so let’s see what actually happened in the data. To do so, we are going to take advantage of the fact that the US Census has been collecting data on the occupations of workers for a long time. In particular, we are going to look at the 1980 Census, which was the last Census before computers were widely used in the workplace, and compare it to the 2000 Census. We will compare accountants and auditors. These workers tend to be highly educated and as described above, perform a number of non-routine cognitive tasks. We will compare them to bookkeeping, accounting, and auditing clerks. These workers tend to perform more routine cognitive tasks.</p>
 <p>The figure below shows the change in employment and wages for these two occupations between 1980 and 2000, the period in which computers were introduced into the workforce. To compute these changes, I utilized the IPUMS USA database, which provides microdata for a 5% sample of the US Census. I identified individuals in the 1980 and 2000 Censuses who reported their occupation as either “Accountants and Auditors” or “Bookkeeping, Accounting, and Auditing Clerks”.</p>
 <p>To compute changes in employment, I calculated the fraction of the total workforce in each year that reported being in each occupation. I then computed the percentage change in this fraction between 1980 and 2000. The figure below shows the results.</p>
-<div id="cell-fig-employment-change-accountants" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
 <div id="fig-employment-change-accountants" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-employment-change-accountants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/07/fig-employment-change-accountants-output-1.png" width="663" height="470" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-employment-change-accountants-light.svg" class="quarto-light figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"> <img src="images/07_images/editorial/fig-employment-change-accountants-dark.svg" class="quarto-dark figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-accountants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.1: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>These are some pretty striking results. The employment of accountants and auditors increased by 35% between 1980 and 2000. In contrast, the employment of bookkeeping, accounting, and auditing clerks decreased by 27%. This is consistent with our theory that computers have increased the productivity of accountants, leading to higher demand for their services, while reducing the demand for routine clerical tasks which accountants use as inputs and can often be performed by computers. To be clear, it is not as if the raw number of accountants is much larger than the number of clerks. In 2000, there are still many clerks. About 0.8 percent of all workers are in these bookkeeping, accounting, and auditing clerk roles. This is actually similar to the total number of accountants and auditors.</p>
 <p>The key here is the growth rates vary wildly. In 1980, about 0.5 percent of all workers were accountants and auditors. By 2000, this had grown to about 0.67 percent. In contrast, bookkeeping, accounting, and auditing clerks made up about 1.0 percent of all workers in 1980, but this had fallen to about 0.8 percent by 2000.</p>
@@ -546,35 +544,31 @@ Figure&nbsp;7.1: Change in Employment by Occupation, 1980-2000
 <section id="job-polarization" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="job-polarization"><span class="header-section-number">7.6</span> Job Polarization</h2>
 <p>The relative decline in the demand for clerks is notable. One natural question is where might these workers go? One possibility is that they move to occupations that are not as exposed to automation by computers. For example, cashiers are likely not as exposed to automation. While it was easier to monitor revenue and sales with computers, the actual task of checking out customers was not easily automated. In the figure below, we show the change in employment for cashiers between 1980 and 2000, plotted alongside the changes for accountants and clerks.</p>
-<div id="cell-fig-employment-change-three-occupations" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
 <div id="fig-employment-change-three-occupations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-employment-change-three-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/07/fig-employment-change-three-occupations-output-1.png" width="759" height="566" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-employment-change-three-occupations-light.svg" class="quarto-light figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"> <img src="images/07_images/editorial/fig-employment-change-three-occupations-dark.svg" class="quarto-dark figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-three-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.2: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
 <p>As can be seen in the figure, cashiers saw a 27% increase in employment between 1980 and 2000, similar to our increase for accountants. As you may have noticed in the figure, we also ordered these occupations by their average wage level in 1980. Cashiers were the lowest paid of the three, clerks were in the middle, and accountants were the highest paid. Therefore, from 1980 to 2000, we see growth in employment at both the low-wage end (cashiers) and the high-wage end (accountants), while we see a decline in employment in the middle (clerks). This pattern is referred to as <em>job polarization</em>. Technology has displaced middle-skill workers.</p>
 <p>So far we have three occupations: accountants, clerks, and cashiers. Let’s map these back to our task framework. Accountants generally perform non-routine cognitive tasks. Clerks generally perform routine cognitive tasks. Cashiers generally perform non-routine manual tasks. This begs the question: what about routine manual tasks? Are there occupations that perform routine manual tasks that have also seen declines in employment? Let’s assume the accountant is an accountant for a firm that produces clothes, and as part of the production process they have workers who operate sewing machines. This is a routine manual task (replacing sewers with machines is a long tradition, with the original luddite movement being a reaction to the mechanized looms). The figure below shows the change in employment for sewing machine operators between 1980 and 2000, alongside our other three occupations.</p>
-<div id="cell-fig-employment-change-four-occupations" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
 <div id="fig-employment-change-four-occupations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-employment-change-four-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/07/fig-employment-change-four-occupations-output-1.png" width="759" height="470" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-employment-change-four-occupations-light.svg" class="quarto-light figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"> <img src="images/07_images/editorial/fig-employment-change-four-occupations-dark.svg" class="quarto-dark figure-img" alt="Change in Employment by Occupation, 1980-2000" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employment-change-four-occupations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.3: Change in Employment by Occupation, 1980-2000
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>So in this figure, we see that sewing machine operators saw an enormous 72% decline in employment between 1980 and 2000. This is consistent with our theory that routine tasks are being displaced during this period. To summarize, we considered four occupations: - Accountants and Auditors: non-routine cognitive tasks, saw a 35% increase in employment - Bookkeeping, Accounting, and Auditing Clerks: routine cognitive tasks, saw a 27% decrease in employment - Cashiers: non-routine manual tasks, saw a 27% increase in employment - Sewing Machine Operators: routine manual tasks, saw a 72% decrease in employment</p>
 <p>Because the routine tasks (both cognitive and manual) had wages in the middle of the wage distribution (relative to accountants and cashiers), we see a pattern of job polarization: growth in low-wage and high-wage occupations, and decline in middle-wage occupations.</p>
@@ -583,7 +577,9 @@ Figure&nbsp;7.3: Change in Employment by Occupation, 1980-2000
 <div id="fig-job-polarization" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-job-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/07_images/autor_dorn_2013.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-job-polarization-light.svg" class="quarto-light figure-img" alt="Employment growth across occupations by initial wage level" style="width:100%"> <img src="images/07_images/editorial/fig-job-polarization-dark.svg" class="quarto-dark figure-img" alt="Employment growth across occupations by initial wage level" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-job-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.4: Employment growth across occupations by initial wage level
@@ -595,7 +591,9 @@ Figure&nbsp;7.4: Employment growth across occupations by initial wage level
 <div id="fig-polarization-countries" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-polarization-countries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/07_images/acemoglu_autor_2011.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-polarization-countries-light.svg" class="quarto-light figure-img" alt="Job polarization patterns across multiple countries" style="width:100%"> <img src="images/07_images/editorial/fig-polarization-countries-dark.svg" class="quarto-dark figure-img" alt="Job polarization patterns across multiple countries" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polarization-countries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.5: Job polarization patterns across multiple countries
@@ -675,7 +673,9 @@ Table&nbsp;7.1: Task Classification and Predicted Employment Changes
 <div id="fig-task-changes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-task-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/07_images/aa_11_2.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/07_images/editorial/fig-task-changes-light.svg" class="quarto-light figure-img" alt="Change in Employment Shares by Task Type, 1959-2007" style="width:100%"> <img src="images/07_images/editorial/fig-task-changes-dark.svg" class="quarto-dark figure-img" alt="Change in Employment Shares by Task Type, 1959-2007" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-task-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.6: Change in Employment Shares by Task Type, 1959-2007

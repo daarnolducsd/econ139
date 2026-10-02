@@ -1,0 +1,31 @@
+{
+  "source_sha256": {
+    "emp-bypctile-1980-2005-rewt-0-czall.dta": "698e098f3a8f59befc0a6b001ec753742dd300f1c41d778f170acd7ec3ebb1dc",
+    "census-cells-occ10-demog-1960-2008.dta": "73835fb2f605d399eeaa185109ffe0b7b9d52728c7e3dae261b24461aba9975a",
+    "demp-pct-1980-2005-czall-color.gph": "3117e18e7a5eb47307e2a612aca3924af3aaba3b69fb4e2c126b90d5b465463a",
+    "goos-manning-data.dta": "1f07c64db9f4129aad5ce61c3eda706ae9a9ffc037c42ea444726feff8610862",
+    "plot-emp-shares-byocc.do": "ed41a9526e2162e1ed2af6933e7bcf0cf2571caf3f5078febb7f7a5db6fc99c4",
+    "plot-demp-bypctile-1980-2005-rewt.do": "82876917bc514723acd1be63cc034226adbc92dfb9e4fad7ff0fa8340e268fa2",
+    "fig-11-goos-manning.do": "0cc5456a6c5d13a9e8938c24f17546efabdb5b9070bc8b9ef7e051131794dc66"
+  },
+  "polarization_points": 100,
+  "countries": 18,
+  "task_source_cells": 57600,
+  "task_years": [
+    1959,
+    1969,
+    1979,
+    1989,
+    1999,
+    2007
+  ],
+  "checks": [
+    "exact archived graph bounds and percentiles",
+    "source employment shares total 100",
+    "country changes sum approximately zero at published precision",
+    "independent task aggregation",
+    "task shares sum to one",
+    "source hashes unchanged"
+  ],
+  "limitation": "Reads the archived Stata LOWESS series; does not rerun raw microdata preparation or Stata LOWESS."
+}

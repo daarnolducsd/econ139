@@ -1,0 +1,76 @@
+[
+  {
+    "id": "fig-employment-change-accountants",
+    "caption": "Change in Employment by Occupation, 1980-2000",
+    "source_cell_sha256": "5954301e4354b00bd941fc8e249fa9b62ba2e424788041bea2851b37a1e03570",
+    "occupations": [
+      "Accountants and\nAuditors",
+      "Bookkeeping, Accounting,\nand Auditing Clerks"
+    ],
+    "percent_changes": [
+      35,
+      -27
+    ]
+  },
+  {
+    "id": "fig-employment-change-three-occupations",
+    "caption": "Change in Employment by Occupation, 1980-2000",
+    "source_cell_sha256": "99cfe00e6bfc5c42929bb957004bd432770141dc0c66abeaf9847adc0605e1f2",
+    "occupations": [
+      "Cashiers",
+      "Bookkeeping, Accounting,\nand Auditing Clerks",
+      "Accountants and\nAuditors"
+    ],
+    "employment_changes": [
+      27,
+      -27,
+      35
+    ],
+    "avg_wages_1980": [
+      3800,
+      6900,
+      13800
+    ]
+  },
+  {
+    "id": "fig-employment-change-four-occupations",
+    "caption": "Change in Employment by Occupation, 1980-2000",
+    "source_cell_sha256": "7da7e468567cba578c81a2d6a957e2eed85bb64dd5a0ab7f5e260d5870bbd86a",
+    "occupations": [
+      "Cashiers",
+      "Bookkeeping, Accounting,\nand Auditing Clerks",
+      "Sewing Machine\nOperators",
+      "Accountants and\nAuditors"
+    ],
+    "employment_changes": [
+      27,
+      -27,
+      -72,
+      35
+    ],
+    "avg_wages_1980": [
+      3800,
+      6900,
+      8200,
+      13800
+    ]
+  },
+  {
+    "id": "fig-job-polarization",
+    "caption": "Employment growth across occupations by initial wage level",
+    "file": "autor_dorn_2013.png",
+    "source_sha256": "37471cc4720d7abca8dfa1b3f611a2f2fe20d432074157c9f9f51b291fada86d"
+  },
+  {
+    "id": "fig-polarization-countries",
+    "caption": "Job polarization patterns across multiple countries",
+    "file": "acemoglu_autor_2011.png",
+    "source_sha256": "782e27f4540067b97dcd80dc685f68ae5614b108c3be9534dd11886fb1b056bb"
+  },
+  {
+    "id": "fig-task-changes",
+    "caption": "Change in Employment Shares by Task Type, 1959-2007",
+    "file": "aa_11_2.png",
+    "source_sha256": "43778bf0ecee7cdb0a03627aa43a64546af0279288a78f52d260205f89beb2f6"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "retrieved": "2026-10-02",
+  "archive_index": "https://economics.mit.edu/people/faculty/david-h-autor/data-archive",
+  "packages": [
+    {
+      "file": "fig-11.zip",
+      "url": "https://www.dropbox.com/s/zi14yafyif6402b/fig-11.zip?dl=1",
+      "sha256": "6066cd29a7c4ab534d801905848a0f135c289f14b603f37b293b1ed1d41c7311"
+    },
+    {
+      "file": "fig-13.zip",
+      "url": "https://www.dropbox.com/s/5r8gaczoefl0zx9/fig-13.zip?dl=1",
+      "sha256": "653abab5fb8f93a774aa528ce7d9c8b5b8aad0af8ee17ef82387cca92f3129af"
+    },
+    {
+      "file": "autor-dorn.zip",
+      "url": "https://www.ddorn.net/data/Autor-Dorn-LowSkillServices-FileArchive.zip",
+      "sha256": "a4c9b8200a39d357c1141cfe3cb8b54b7ed586dcf9768e3b1c6689d79c45be0b"
+    }
+  ],
+  "status": "public author plotting files; no approximate digitization; no full raw-microdata replication"
+}

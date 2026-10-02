@@ -211,7 +211,7 @@ The 0.286/0.282 discrepancy remains unresolved; neither value was silently chang
 
 ## Chapter 6 implementation record
 
-Current status: **reviewed and integrated; publication requested** for fifteen
+Current status: **reviewed, integrated, and published** for fifteen
 charts: fourteen numbered figures and the existing unnumbered Mincer model.
 David approved the final revisions and requested commitment and publication. Maintained code: `code/figures/chapter06.py` and
 `code/figures/replicate_chapter06.py`; plotted aggregates and digitization
@@ -245,3 +245,34 @@ integrated in `06.qmd`; publication uses the isolated build workflow.
 Chapter 6 review revisions: native vector bubble traces replace the initial
 raster previews in 6.1/6.2; β/coefficient text is enlarged to 13 points in
 6.12–6.14, with extra line spacing for the two estimates in 6.14.
+
+## Chapter 7 implementation record
+
+Current status: **reviewed and integrated; publication requested** for six
+charts. David approved all figures, including the revised 1980–2000 headings
+in 7.1–7.3, and requested commitment and publication. Three occupation examples retain all existing typed
+employment changes and wage labels; three imported charts use recovered public
+author files, with no approximate redraws. Historical illustrations remain as
+supplied. Captions and IDs stay 7.1–7.6.
+
+Maintained code: `code/figures/chapter07.py` and `replicate_chapter07.py`.
+Public plotted snapshots, original source programs and small aggregate inputs
+are organized under `code/figures/data/chapter07/`; rebuild commands, hashes,
+calculations, aggregation checks and limits are documented in the figure README.
+
+- 7.4 retains the 100 exact original Stata LOWESS points from the archived graph.
+- 7.5 retains all 18 country/aggregate rows and the wage-tercile legend.
+- 7.6 reconstructs the pooled employment shares with agriculture excluded,
+  preserving the original four groups, six years and markers; direct labels
+  replace the external legend.
+- The 7.4 figure covers 1980–2005 but nearby prose says 1980–2000. Preserve the
+  existing dates for now and flag the discrepancy for review.
+
+Comparison: `../outputs/textbook-chapter07-figures/index.html`; chapter context:
+`render/_book/07.html` within that directory. Both modes use transparent SVGs,
+Arial figure text, green/rust and supporting sage/ochre. No additional prose or
+learning material is added. The approved source is integrated in `07.qmd`.
+
+Chapter 6 publication: source commit `36abaac`, Pages commit `3c4e106`.
+GitHub Pages reported the deployment built, and the live `06.html` was checked
+byte-for-byte against the approved deployment output.
