@@ -513,53 +513,47 @@ window.Quarto = {
 <p>In perfect competition, we assumed firms are wage takers. This implies that if a firm decides to pay a wage below the market wage, it will immediately lose all of its workers. In this section, we will make a very simple change to this assumption. We will assume that the wage a firm offers depends on the amount of labor it wants to hire. In particular, we will assume that the higher the wage, the more workers a firm can attract. We will denote <span class="math inline">\(w(L)\)</span> as the inverse labor supply curve. This function tells the firm how much it needs to pay in order to attract a certain number of workers. For example, if a firm needs to pay a wage of $15 to attract 5 workers, then <span class="math inline">\(w(5) = 15\)</span>.</p>
 <p>Now, you might hear arguments against monopsony power claiming that to be a monopsonist you need to be the only employer in the area. This is the classic “factory town” example, where there is literally only one employer in the town. But monopsony power is much more general than this. Monopsony power can exist even when there are many employers. The key distinction will be whether the firm faces an upward sloping labor supply curve. If a firm can hire as many workers as it wants at a fixed wage, then it is a wage taker and does not have monopsony power. If a firm has to raise the wage in order to attract more workers, then it has some monopsony power.</p>
 <p>Let’s go back to the example we considered in the perfect competition section. Suppose we have a cafe hiring baristas. First, we are going to specify the labor supply curve to the cafe. We will assume that the labor supply curve is given in the following figure:</p>
-<div id="cell-fig-labor-supply" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
 <div id="fig-labor-supply" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-labor-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-labor-supply-output-1.png" width="451" height="374" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-labor-supply-light.svg" class="quarto-light figure-img" alt="Labor Supply Curve to a Cafe" style="width:100%"> <img src="images/04_images/editorial/fig-labor-supply-dark.svg" class="quarto-dark figure-img" alt="Labor Supply Curve to a Cafe" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-labor-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: Labor Supply Curve to a Cafe
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
 <p>Now let’s consider the decision of the cafe owner of hiring the first worker. To hire one worker, the cafe needs to pay a wage of $5. Is this worth opening at all? To answer this question, we need to know the marginal revenue product of the worker. How much revenue is going to be brought in by the first worker? Let’s assume that the worker can make 13 lattes an hour, each of which sells for $5, implying the worker generates $65 in revenue per hour. The cost of hiring the worker is $5, so the cafe owner should definitely hire the first worker.</p>
 <p>Now let’s consider the decision of hiring a second worker. To hire two workers the firm needs to pay a wage of $10. Is this worth it? Well, it depends again on the marginal revenue product of the second worker. Let’s assume that the second worker produces 12 lattes an hour, so $60 in revenue per hour.</p>
 <p>Now, what do we compare the $60 in revenue to? One common pitfall is to compare it to the wage you are paying: $10. This is what we did in the perfectly competitive model. But this isn’t right anymore. What you need to compute is the additional cost of hiring the second worker. To hire the second worker, you need to pay that worker $10, but you also need to pay the first worker $5 more (from $5 to $10).</p>
 <p>The increase in cost of hiring an additional worker is referred to as the marginal factor cost (MFC). The MFC of the second worker is $15 ($10 + $5). The marginal revenue product of the second worker is $60, which is greater than the MFC of $15, so the cafe owner should hire the second worker.</p>
 <p>What’s the marginal factor cost of the third worker? To hire the third worker, you need to pay that worker $15, but you also need to pay the first two workers $5 more than they were previously being paid (from $10 to $15). So the MFC of the third worker is $25 ($15 + $5 + $5). Now that we understand conceptually how to compute the MFC, let’s compute it for the entire range of the possible number of workers.</p>
-<div id="cell-fig-mfc-curve" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
 <div id="fig-mfc-curve" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mfc-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-mfc-curve-output-1.png" width="566" height="566" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-mfc-curve-light.svg" class="quarto-light figure-img" alt="Labor Supply Curve and Marginal Factor Cost Curve" style="width:100%"> <img src="images/04_images/editorial/fig-mfc-curve-dark.svg" class="quarto-dark figure-img" alt="Labor Supply Curve and Marginal Factor Cost Curve" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mfc-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.2: Labor Supply Curve and Marginal Factor Cost Curve
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
 <p>Now, to determine how many workers the cafe will hire, we need to find where the marginal revenue product of labor (MRPL) equals the marginal factor cost (MFC). Again, the MRPL is the additional revenue generated by hiring one more worker. We’ve already assumed the MRPL of the first worker is $65 and the second worker is $60. Let’s assume that the MRPL of each additional worker is given in the figure below.</p>
-<div id="cell-fig-monopsony-equilibrium" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
 <div id="fig-monopsony-equilibrium" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monopsony-equilibrium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-monopsony-equilibrium-output-1.png" width="681" height="614" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-monopsony-equilibrium-light.svg" class="quarto-light figure-img" alt="Monopsony Equilibrium: MRP, MFC, and Labor Supply" style="width:100%"> <img src="images/04_images/editorial/fig-monopsony-equilibrium-dark.svg" class="quarto-dark figure-img" alt="Monopsony Equilibrium: MRP, MFC, and Labor Supply" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-equilibrium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.3: Monopsony Equilibrium: MRP, MFC, and Labor Supply
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>When will a firm stop hiring workers? As soon as the marginal factor cost (MFC) of hiring an additional worker is greater than the marginal revenue product of labor (MRPL) of that worker. In our case, the firm will hire 5 workers. For the 6th worker, the marginal factor cost is $55. This is because the firm needs to pay $30 to attract this 6th worker, plus the increase in pay for all the previous workers (from $25 to $30). Therefore the total increase in costs of hiring the 6th worker is $30+$25=$55. The MRPL of the 6th worker is only $40, so from the firm’s perspective, it is not worth hiring the 6th worker. It will be losing money by hiring that worker.</p>
 <p>So we have figured out equilibrium employment. But what about the equilibrium wage? Well, if the firm is hiring 5 workers, then it needs to pay a wage high enough to attract 5 workers. In our case, this is a wage of $25. So the equilibrium wage is $25 and the equilibrium employment is 5 workers. In our case that value comes directly from the inverse labor supply curve. To attract 5 workers, the firm needs to pay a wage of $25.</p>
@@ -572,34 +566,30 @@ Figure&nbsp;4.3: Monopsony Equilibrium: MRP, MFC, and Labor Supply
 <p>What is the size of the inefficiency? It depends on two things. First, how many workers are not being hired even though the marginal revenue product of labor is higher than (or equal to) the wage they are willing to work for. In our case, this is the 6th and 7th worker. It also depends on the gap between the marginal revenue product of labor and the wage they are willing to work for. In our case, the 6th worker is willing to work for $30 and has a MRPL of $40, so there is a large gap. For the 7th worker, the MRPL is equal to the wage ($35), so there is no inefficiency from not hiring this worker.</p>
 <p>Often we allow fractional employment. For example, what if you could hire 5.1 workers? Well, there would be a large inefficiency from not hiring this 0.1 worker because the MRPL at 5.1 is much higher than the wage of $25. This is often a background assumption in introductory economics courses. It allows us to calculate the inefficiency of monopsony more easily.</p>
 <p>For example, in the figure below we have shaded in the inefficiency of monopsony. These are all the units in which the MRPL is greater than the wage, but are not being hired by the firm.</p>
-<div id="cell-fig-monopsony-deadweight-loss" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
 <div id="fig-monopsony-deadweight-loss" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monopsony-deadweight-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-monopsony-deadweight-loss-output-1.png" width="681" height="614" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-monopsony-deadweight-loss-light.svg" class="quarto-light figure-img" alt="Deadweight Loss of Monopsony" style="width:100%"> <img src="images/04_images/editorial/fig-monopsony-deadweight-loss-dark.svg" class="quarto-dark figure-img" alt="Deadweight Loss of Monopsony" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-deadweight-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.4: Deadweight Loss of Monopsony
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
 <p>Now, let’s see how the inefficiency of monopsony changes when we change the labor supply curve. In particular, let’s see how the inefficiency changes when we make the labor supply flatter.</p>
-<div id="cell-fig-monopsony-flat-supply" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
 <div id="fig-monopsony-flat-supply" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monopsony-flat-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-monopsony-flat-supply-output-1.png" width="681" height="614" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-monopsony-flat-supply-light.svg" class="quarto-light figure-img" alt="Monopsony with Flatter Labor Supply Curve" style="width:100%"> <img src="images/04_images/editorial/fig-monopsony-flat-supply-dark.svg" class="quarto-dark figure-img" alt="Monopsony with Flatter Labor Supply Curve" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monopsony-flat-supply-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.5: Monopsony with Flatter Labor Supply Curve
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>Notice that with the flatter labor supply curve, the deadweight loss area is much smaller compared to the steeper supply curve in the previous figure. Why does this make sense?</p>
 <p>Well, let’s again think about the marginal factor cost. To go from 5 to 6 workers, you need to pay a slightly higher wage ($33 to $34). But you also need to pay the first 5 workers a higher wage. But this inframarginal cost is not as large anymore. Instead of having to pay an additional $5 to each of the first 5 workers, you only need to pay an additional $1. The gap between the labor supply curve and the marginal factor cost curve is much smaller when the labor supply curve is flatter. This means that our employment levels and wages will be closer to the efficient levels.</p>
@@ -643,7 +633,7 @@ Figure&nbsp;4.5: Monopsony with Flatter Labor Supply Curve
 <h3 data-number="4.5.3" class="anchored" data-anchor-id="concentration"><span class="header-section-number">4.5.3</span> Concentration</h3>
 <p>We started this chapter with a quote from Adam Smith. He argued that employers have monopsony power because they are few in number and can collude to keep wages low. This is another potential source of monopsony power.</p>
 <p>Outright collusion is illegal in the United States, but we do have some evidence that it occurs in certain settings. For example, in 2010 the Department of Justice brought a case against many of the major firms in Silicon Valley, including Apple, Google, and Intel. The case alleged that these firms had agreed not to poach each other’s workers. In the end, the firms settled the case and agreed to pay hundreds of millions of dollars.</p>
-<p>Even without explicit collusion, a small number of firms can lead to monopsony power. Oligopsony models are a workhorse set of models from industrial organization. In these models, there are a small number of firms that compete with each other. These markets lead to higher prices and lower output. Antitrust in the United States is explicitly concerned with markets getting too concentrated because of the belief that concentrated markets lead to higher prices and lower output.</p>
+<p>Even without explicit collusion, a small number of firms can lead to monopsony power. Oligopsony models are a workhorse set of models from industrial organization. In these models, a small number of employers compete for workers, which can lead to lower wages and employment. The product-market counterpart is oligopoly, where a small number of sellers can lead to higher prices and lower output. These effects of market power motivate concerns about market concentration.</p>
 </section>
 </section>
 <section id="policy-and-monopsony-power" class="level2" data-number="4.6">
@@ -653,36 +643,32 @@ Figure&nbsp;4.5: Monopsony with Flatter Labor Supply Curve
 <p>But let’s see what happens in a monopsonistic labor market. Recall in our original cafe example in this chapter, the firm was hiring 5 workers at a wage of $25. The efficient level of employment was 7 workers at a wage of $35. What happens if we impose a minimum wage of $35?</p>
 <p>The key in analyzing this is to consider the marginal factor cost curve. Let’s consider the marginal factor cost of the 7th worker. To hire the 7th worker, the firm needs to pay that worker $35 to attract the worker. In the previous setup, that would mean increasing the wage for the previous 6 workers by $5. But now the firm is already paying the $35 in order to meet the minimum wage. Therefore, the marginal factor cost of the 7th worker is $35. There are no inframarginal costs anymore. This is true for every single worker below the minimum wage. The marginal factor cost of every worker below the minimum wage is just equal to the minimum wage.</p>
 <p>But once you get above the minimum wage, then you need to again consider inframarginal costs. For example, to hire the 8th worker you need to pay that worker $40, but you also need to pay the first 7 workers $5 more. Therefore, the marginal factor cost of the 8th worker is ($40 + 7 × $5) = $75. So the marginal factor cost curve with a minimum wage is flat at the minimum wage until you reach the number of workers that are willing to work at that wage. After that, the marginal factor cost curve is equal to the original marginal factor cost curve.</p>
-<div id="cell-fig-minimum-wage-mfc" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
 <div id="fig-minimum-wage-mfc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-minimum-wage-mfc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-minimum-wage-mfc-output-1.png" width="681" height="614" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-minimum-wage-mfc-light.svg" class="quarto-light figure-img" alt="Marginal Factor Cost with Minimum Wage" style="width:100%"> <img src="images/04_images/editorial/fig-minimum-wage-mfc-dark.svg" class="quarto-dark figure-img" alt="Marginal Factor Cost with Minimum Wage" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-mfc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.6: Marginal Factor Cost with Minimum Wage
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
 <p>So what will the firm decide to do? Its decision follows the exact same process. Keep hiring workers until the marginal factor cost of hiring an additional worker is greater than the marginal revenue product of that worker. In our case, the firm will hire 7 workers at a wage of $35, because that is where the marginal factor cost curve intersects the marginal revenue product curve.</p>
 <p>This is a very surprising result! We’ve made a seemingly simple change to our model: firms face upward sloping labor supply curves. This change has led to a completely different prediction about the effects of a minimum wage. In this model, we can actually get that an increase in the minimum wage can <strong>increase</strong> employment. If you recall, that is exactly what the original Card and Krueger (1994) paper found.</p>
 <p>However, we have to be a bit careful here. Increases in the minimum wage <strong>can</strong> increase employment in monopsonistic models, but they don’t have to. Imagine the minimum wage in this market was set to $50. Let’s see what happens in this case.</p>
-<div id="cell-fig-minimum-wage-too-high" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
 <div id="fig-minimum-wage-too-high" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-minimum-wage-too-high-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/computed/04/fig-minimum-wage-too-high-output-1.png" width="681" height="614" class="figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/04_images/editorial/fig-minimum-wage-too-high-light.svg" class="quarto-light figure-img" alt="Minimum Wage Set Too High" style="width:100%"> <img src="images/04_images/editorial/fig-minimum-wage-too-high-dark.svg" class="quarto-dark figure-img" alt="Minimum Wage Set Too High" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimum-wage-too-high-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.7: Minimum Wage Set Too High
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>Now the firm will hire only 4 workers at a wage of $50. This is fewer workers than both the original monopsony equilibrium (5 workers) and the efficient outcome (7 workers). When the minimum wage is set too high, it can actually reduce employment below even the monopsony level, demonstrating that there is an optimal range for minimum wage policy in monopsonistic markets.</p>
 </section>

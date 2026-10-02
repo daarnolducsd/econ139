@@ -139,3 +139,31 @@ This reads `../data/03_data/morg_cleaned_1979.dta` through `morg_cleaned_1989.dt
 - `../outputs/textbook-chapter03-figures/03-preview.qmd`: candidate source references. Only necessary prose color descriptions are aligned with the new palette; captions and remaining figure IDs are retained.
 
 All eleven replacements were approved, including the raised employment-decline labels and the single arrow from the actual to counterfactual minimum wage with its label nearby. The approved chapter preview also retains its existing Before/After wording and date corrections. Publish only when requested. This workflow targets HTML; no PDF book redesign is claimed.
+
+## Chapter 4 — approved figures
+
+`chapter04.py` renders seven deterministic charts from `data/chapter04/models.json`. The JSON captures each original source cell's values, line coordinates, marker shapes, shaded polygon vertices, caption, ID, and code hash. No external empirical data are required. The original cells are in `04.qmd` at Git commit `829959b`; the one pre-existing local change in this chapter wraps the Adam Smith illustration and does not change its plotting code.
+
+From `textbook/`:
+
+```bash
+python3 code/figures/chapter04.py --proofs
+```
+
+This writes paired SVGs, optional PNG/PDF proofs, a manifest, and verification metadata to `images/04_images/editorial/`. For isolated review proofs, pass `--output-dir ../outputs/textbook-chapter04-figures/figures`. Use `--output-dir` for a different output directory; omit `--proofs` for SVGs only.
+
+### Preserved construction
+
+| Figures | Definition / source values retained |
+| --- | --- |
+| Labor supply, MFC comparison, equilibrium, steep-supply loss | Ten discrete worker quantities 1–10; wage=5L; discrete MFC=10L−5; MRP=70−5L; employment=5 and wage=$25 |
+| Steep-supply deadweight loss | Original continuous shading bounds 5–7; lower bound 5L, upper bound 70−5L; all 50 source points retained |
+| Flatter supply | Wage=L+28; source uses continuous MFC=2L+28; employment=6, wage=$34, efficient employment=7; exact 6–7 shaded polygon retained |
+| $35 minimum wage | MFC=$35 at workers 1–7, then 10L−5 at 8–10; original connecting segments preserved; equilibrium=7 workers, $35 |
+| $50 minimum wage | MFC=$50 over the displayed ten quantities; equilibrium=4 workers, $50 |
+
+The original chapter uses a discrete cost increment for steep supply and a continuous derivative for the flatter-supply panel. Both conventions and their original values are retained for this styling review. The renderer does not silently change the underlying economic construction. In particular, it does not turn the source's straight segments between discrete minimum-wage MFC points into a different step curve.
+
+Labor supply is rust, MFC is muted sage with its original line patterns, and MRP is green. Original markers distinguish the series. Direct labels replace legends, and equilibrium/efficiency guides stop at their relevant plotted values. Original equilibrium quantities and wages are identified beside their points; loss regions use transparent rust shading. The multiseries panels share a $0–$110 scale with quieter major ticks; the single supply chart uses $0–$55. The renderer checks all principal coordinates, markers, and loss polygons against the captured originals.
+
+Review `../outputs/textbook-chapter04-figures/index.html` for side-by-side comparisons and light/dark/reading-width controls, or `render/_book/04.html` inside that directory for chapter context. All seven figures are approved and integrated into `04.qmd` with their existing captions and IDs. The final deadweight-loss labels in 4.4 and 4.5 are centered at 6.5 workers and split over two lines to separate them from the efficient-employment labels. David requested commitment and publication. No PDF book redesign is claimed.

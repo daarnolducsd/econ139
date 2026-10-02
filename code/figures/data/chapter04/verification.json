@@ -1,0 +1,86 @@
+[
+  {
+    "id": "fig-labor-supply",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-mfc-curve",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-monopsony-equilibrium",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-monopsony-deadweight-loss",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": true
+  },
+  {
+    "id": "fig-monopsony-flat-supply",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": true
+  },
+  {
+    "id": "fig-minimum-wage-mfc",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-minimum-wage-too-high",
+    "theme": "light",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-labor-supply",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-mfc-curve",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-monopsony-equilibrium",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-monopsony-deadweight-loss",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": true
+  },
+  {
+    "id": "fig-monopsony-flat-supply",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": true
+  },
+  {
+    "id": "fig-minimum-wage-mfc",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  },
+  {
+    "id": "fig-minimum-wage-too-high",
+    "theme": "dark",
+    "source_curves_and_markers_unchanged": true,
+    "source_shaded_polygon_unchanged": false
+  }
+]

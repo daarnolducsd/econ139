@@ -170,3 +170,14 @@ Maintained code: `code/figures/chapter03.py` (rendering) and `code/figures/repli
 - Two wage-distribution figures: original Python calculation, sample, 50-cent bins, unweighted counts, $3.35 actual minimum, and $4.77 counterfactual floor preserved. Independent checks and original matplotlib histogram comparisons pass.
 
 Review page: `../outputs/textbook-chapter03-figures/index.html`. Chapter-context preview: `render/_book/03.html` inside that directory. Both modes use the approved green/rust palette and transparent SVG assets. David approved all eleven replacements and requested commitment and publication. Final revisions raise the employment-decline labels in 3.7/3.8 and use a single arrow from $3.35 to $4.77 in 3.10, with the real-value label nearby. The approved chapter context includes the existing Before/After wording and date corrections. The two requested removals are included.
+
+## Chapter 4 implementation record
+
+Current status: **reviewed and integrated; publication requested** for seven locally generated charts. The Adam Smith illustration is retained. All source curves, discrete quantities, markers, captions, and figure IDs are captured in `code/figures/data/chapter04/models.json`; maintained renderer and verification are in `code/figures/chapter04.py` and its outputs. `code/figures/README.md` documents the input values, original MFC conventions, equilibrium checks, shade bounds, and rebuild command.
+
+- Labor supply and MFC comparison establish rust supply and muted sage MFC; MRP is green throughout the chapter.
+- Monopsony employment and wage remain 5/$25 under steep supply and 6/$34 under flatter supply; efficient employment remains 7. Original deadweight-loss polygons are retained exactly.
+- Minimum-wage figures retain the original ten discrete points and their connecting segments. The $35 floor gives 7 workers/$35; the $50 floor gives 4 workers/$50.
+- The source's flatter-supply figure uses the continuous MFC derivative, while its steep-supply figure uses discrete cost increments. This existing convention is recorded and retained, not changed during styling.
+
+Review page: `../outputs/textbook-chapter04-figures/index.html`; chapter context: `render/_book/04.html` inside that directory. Both themes use transparent SVGs, direct labels, quiet grids, and guides ending at the relevant points. All seven Chapter 4 replacements were approved and integrated. Final deadweight-loss labels in 4.4/4.5 are centered at 6.5 workers, split over two lines, and clear of the efficient-employment labels. Commitment and publication were requested. Chapter 3 was committed as `829959b` and its deployment verified live before this preview work.
