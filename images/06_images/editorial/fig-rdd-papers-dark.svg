@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="338.4pt" viewBox="0 0 518.4 338.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-02T15:46:06.025346</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.5.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 338.4 
+L 518.4 338.4 
+L 518.4 0 
+L 0 0 
+L 0 338.4 
+z
+" style="fill: none; opacity: 0"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 57.024 250.416 
+L 502.848 250.416 
+L 502.848 47.376 
+L 57.024 47.376 
+L 57.024 250.416 
+z
+" style="fill: none; opacity: 0"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m30f6274978" d="M 0 0 
+L 0 3 
+" style="stroke: #414942; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m30f6274978" x="57.024" y="250.416" style="fill: #414942; stroke: #414942; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="fill: #b6c0b8; font: 9.5px 'Arial'; text-anchor: middle" x="57.024" y="267.215922" transform="rotate(-0, 57.024, 267.215922)">1960</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m30f6274978" x="205.632" y="250.416" style="fill: #414942; stroke: #414942; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="fill: #b6c0b8; font: 9.5px 'Arial'; text-anchor: middle" x="205.632" y="267.215922" transform="rotate(-0, 205.632, 267.215922)">1980</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m30f6274978" x="354.24" y="250.416" style="fill: #414942; stroke: #414942; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="fill: #b6c0b8; font: 9.5px 'Arial'; text-anchor: middle" x="354.24" y="267.215922" transform="rotate(-0, 354.24, 267.215922)">2000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m30f6274978" x="502.848" y="250.416" style="fill: #414942; stroke: #414942; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="fill: #b6c0b8; font: 9.5px 'Arial'; text-anchor: middle" x="502.848" y="267.215922" transform="rotate(-0, 502.848, 267.215922)">2020</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="fill: #b6c0b8; font: 10.5px 'Arial'; text-anchor: middle" x="279.936" y="286.61975" transform="rotate(-0, 279.936, 286.61975)">Year</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 57.024 250.416 
+L 502.848 250.416 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke: #414942; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="fill: #b6c0b8; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="254.173852" transform="rotate(-0, 49.024, 254.173852)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 57.024 184.919226 
+L 502.848 184.919226 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke: #414942; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_7">
+      <text style="fill: #b6c0b8; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="188.677077" transform="rotate(-0, 49.024, 188.677077)">2000</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 57.024 119.422452 
+L 502.848 119.422452 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke: #414942; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_8">
+      <text style="fill: #b6c0b8; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="123.180303" transform="rotate(-0, 49.024, 123.180303)">4000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 57.024 53.925677 
+L 502.848 53.925677 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke: #414942; stroke-width: 0.65; stroke-linecap: round"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="fill: #b6c0b8; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="57.683529" transform="rotate(-0, 49.024, 57.683529)">6000</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 57.024 250.15303 
+L 64.4544 250.15303 
+L 71.8848 250.15303 
+L 79.3152 250.15303 
+L 86.7456 250.15303 
+L 94.176 250.15303 
+L 101.6064 250.15303 
+L 109.0368 250.15303 
+L 116.4672 250.15303 
+L 123.8976 250.15303 
+L 131.328 249.890061 
+L 138.7584 249.890061 
+L 146.1888 249.890061 
+L 153.6192 249.890061 
+L 161.0496 249.890061 
+L 168.48 249.890061 
+L 175.9104 249.626764 
+L 183.3408 249.626764 
+L 190.7712 249.758412 
+L 198.2016 249.626764 
+L 205.632 249.626764 
+L 213.0624 249.363794 
+L 220.4928 249.626764 
+L 227.9232 249.758412 
+L 235.3536 249.626764 
+L 242.784 249.626764 
+L 250.2144 249.363794 
+L 257.6448 249.626764 
+L 265.0752 249.626764 
+L 272.5056 249.363794 
+L 279.936 249.363794 
+L 287.3664 249.100825 
+L 294.7968 248.837855 
+L 302.2272 249.363794 
+L 309.6576 248.837855 
+L 317.088 249.100825 
+L 324.5184 249.100825 
+L 331.9488 249.363794 
+L 339.3792 248.706207 
+L 346.8096 247.193559 
+L 354.24 245.681238 
+L 361.6704 245.155299 
+L 369.1008 244.103093 
+L 376.5312 241.735713 
+L 383.9616 239.105362 
+L 391.392 237.790187 
+L 398.8224 231.213983 
+L 406.2528 227.268458 
+L 413.6832 220.82423 
+L 421.1136 211.486027 
+L 428.544 202.148152 
+L 435.9744 189.391018 
+L 443.4048 181.105021 
+L 450.8352 165.980506 
+L 458.2656 149.671809 
+L 465.696 135.99379 
+L 473.1264 121.789833 
+L 480.5568 112.583278 
+L 487.9872 89.830682 
+L 495.4176 66.551491 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke: #acc9bb; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 346.8096 250.416 
+L 346.8096 47.376 
+" clip-path="url(#p8ad110a305)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #d9a278"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 57.024 250.416 
+L 502.848 250.416 
+" style="fill: none; stroke: #414942; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="fill: #b6c0b8; font: 10px 'Arial'; text-anchor: start" x="57.024" y="33.1632" transform="rotate(-0, 57.024, 33.1632)">Number of studies mentioning RDD</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #b6c0b8; font: 9px 'Arial'; text-anchor: start" x="57.024" y="317.4192" transform="rotate(-0, 57.024, 317.4192)">Vertical bar: Angrist and Lavy (1999) and Black (1999)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8ad110a305">
+   <rect x="57.024" y="47.376" width="445.824" height="203.04"/>
+  </clipPath>
+ </defs>
+</svg>

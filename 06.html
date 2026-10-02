@@ -482,11 +482,13 @@ window.Quarto = {
 <h2 data-number="6.1" class="anchored" data-anchor-id="human-capital"><span class="header-section-number">6.1</span> Human Capital</h2>
 <p>So far in this book we have generally considered workers’ skills as fixed. But individuals invest a lot into their skills. We call the accumulation of an individual’s skills their human capital.</p>
 <p>Human capital has always played a key role in Economics. One of the earliest discussions comes from Adam Smith, who recognized that investments in education, training, and health improve worker productivity. Modern growth theory also emphasizes the importance of human capital in explaining differences in income across countries. Below we consider data that was made available by Gapminder, an organization that collects data from around the world to make cross-country comparisons.</p>
-<p>In <a href="#fig-edu-gdp-men" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> we plot on the vertical axis the GDP per capita of a country. This is a common measure of the average wealth of a country. A higher GDP per capita implies the country produces more (in dollar terms) per person relative a lower GDP per capita country. Note that this scale is on the logarithmic scale. That is, each tick mark is double the previous tick mark. On the horizontal axis we plot the mean years of schooling for men 25 years and older. <a href="#fig-edu-gdp-women" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> plots the same variables, but for women 25 years and older. The size of the bubble indicates the population of the country. The color indicates the region with blue indicating Africa, red indicating Asia, yellow indicating Europe, and green indicating the Americas.</p>
+<p>In <a href="#fig-edu-gdp-men" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> we plot on the vertical axis the GDP per capita of a country. This is a common measure of the average wealth of a country. A higher GDP per capita implies the country produces more (in dollar terms) per person relative a lower GDP per capita country. Note that this scale is on the logarithmic scale. That is, each tick mark is double the previous tick mark. On the horizontal axis we plot the mean years of schooling for men 25 years and older. <a href="#fig-edu-gdp-women" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> plots the same variables, but for women 25 years and older. The size of the bubble indicates the population of the country. The color indicates the region with green indicating Africa, rust indicating Asia, ochre indicating Europe, and sage indicating the Americas.</p>
 <div id="fig-edu-gdp-men" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-edu-gdp-men-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/gap1.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-edu-gdp-men-light.svg" class="quarto-light figure-img" alt="GDP Per Capita and Mean Schooling (Men)" style="width:100%"> <img src="images/06_images/editorial/fig-edu-gdp-men-dark.svg" class="quarto-dark figure-img" alt="GDP Per Capita and Mean Schooling (Men)" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edu-gdp-men-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.1: GDP Per Capita and Mean Schooling (Men)
@@ -496,7 +498,9 @@ Figure&nbsp;6.1: GDP Per Capita and Mean Schooling (Men)
 <div id="fig-edu-gdp-women" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-edu-gdp-women-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/gap2.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-edu-gdp-women-light.svg" class="quarto-light figure-img" alt="GDP Per Capita and Mean Schooling (Women)" style="width:100%"> <img src="images/06_images/editorial/fig-edu-gdp-women-dark.svg" class="quarto-dark figure-img" alt="GDP Per Capita and Mean Schooling (Women)" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edu-gdp-women-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.2: GDP Per Capita and Mean Schooling (Women)
@@ -551,14 +555,8 @@ Figure&nbsp;6.2: GDP Per Capita and Mean Schooling (Women)
 <p>To see this in action, let’s ignore schooling for a moment and just consider experience. The equation becomes:</p>
 <p><span class="math display">\[\ln(w) = \alpha + \beta_2 E + \beta_3 E^2 + \varepsilon\]</span></p>
 <p>Let’s choose some arbitrary values for the parameters and plot this relationship. We’ll set <span class="math inline">\(\alpha = 10\)</span>, <span class="math inline">\(\beta_2 = 0.02\)</span>, and <span class="math inline">\(\beta_3 = -0.0005\)</span>. Now we can plot the relationship between earnings and experience.</p>
-<div id="3f58288b" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/computed/06/cell-2-output-1.png" width="837" height="523" class="figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="mincer-experience-model" class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/mincer-experience-model-light.svg" class="quarto-light" alt="Relationship Between Experience and Log Earnings (Mincer Equation)" style="width:100%"> <img src="images/06_images/editorial/mincer-experience-model-dark.svg" class="quarto-dark" alt="Relationship Between Experience and Log Earnings (Mincer Equation)" style="width:100%"></p>
 </div>
 <p>The Mincer Equation assumes a shape for how earnings change with respect to experience. But we don’t need to necessarily believe this shape is correct. We can look in the data and see the shape for ourselves.</p>
 <p>To do this, we are going to use data from the American Community Survey (ACS). Now, for this particular graph, we could have also used the Current Population Survey (CPS) data. The CPS and ACS are both surveys run by the U.S. Census Bureau that collect information on individuals’ demographics, employment, and income. The CPS is conducted monthly and is primarily used to measure labor force statistics, while the ACS is conducted annually and provides more detailed information on social, economic, housing, and demographic characteristics. Additionally, the sample size for the ACS is larger than the CPS. While the two overlap considerably, each has its own strengths and weaknesses.</p>
@@ -569,7 +567,9 @@ Figure&nbsp;6.2: GDP Per Capita and Mean Schooling (Women)
 <div id="fig-experience-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-experience-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/experience.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-experience-earnings-light.svg" class="quarto-light figure-img" alt="Experience and Annual Wage Income" style="width:100%"> <img src="images/06_images/editorial/fig-experience-earnings-dark.svg" class="quarto-dark figure-img" alt="Experience and Annual Wage Income" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.3: Experience and Annual Wage Income
@@ -579,7 +579,9 @@ Figure&nbsp;6.3: Experience and Annual Wage Income
 <div id="fig-experience-earnings-log" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-experience-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/experience_log.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-experience-earnings-log-light.svg" class="quarto-light figure-img" alt="Experience and Log Annual Wage Income" style="width:100%"> <img src="images/06_images/editorial/fig-experience-earnings-log-dark.svg" class="quarto-dark figure-img" alt="Experience and Log Annual Wage Income" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.4: Experience and Log Annual Wage Income
@@ -592,7 +594,9 @@ Figure&nbsp;6.4: Experience and Log Annual Wage Income
 <div id="fig-school-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-school-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/schooling.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-school-earnings-light.svg" class="quarto-light figure-img" alt="Years of Schooling and Annual Wage Income" style="width:100%"> <img src="images/06_images/editorial/fig-school-earnings-dark.svg" class="quarto-dark figure-img" alt="Years of Schooling and Annual Wage Income" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-school-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.5: Years of Schooling and Annual Wage Income
@@ -602,7 +606,9 @@ Figure&nbsp;6.5: Years of Schooling and Annual Wage Income
 <div id="fig-school-earnings-log" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-school-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/schooling_log.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-school-earnings-log-light.svg" class="quarto-light figure-img" alt="Years of Schooling and Log Annual Wage Income" style="width:100%"> <img src="images/06_images/editorial/fig-school-earnings-log-dark.svg" class="quarto-dark figure-img" alt="Years of Schooling and Log Annual Wage Income" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-school-earnings-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.6: Years of Schooling and Log Annual Wage Income
@@ -648,7 +654,9 @@ Figure&nbsp;6.6: Years of Schooling and Log Annual Wage Income
 <div id="fig-rdd-papers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rdd-papers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/mixtape1.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-rdd-papers-light.svg" class="quarto-light figure-img" alt="Source: Causal Inference the Mixtape" style="width:100%"> <img src="images/06_images/editorial/fig-rdd-papers-dark.svg" class="quarto-dark figure-img" alt="Source: Causal Inference the Mixtape" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rdd-papers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.7: Source: Causal Inference the Mixtape
@@ -664,7 +672,9 @@ Figure&nbsp;6.7: Source: Causal Inference the Mixtape
 <div id="fig-scholarship-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scholarship-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/velez1.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-scholarship-prob-light.svg" class="quarto-light figure-img" alt="Probability of Receiving Scholarship by SABER 11 Score" style="width:100%"> <img src="images/06_images/editorial/fig-scholarship-prob-dark.svg" class="quarto-dark figure-img" alt="Probability of Receiving Scholarship by SABER 11 Score" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scholarship-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.8: Probability of Receiving Scholarship by SABER 11 Score
@@ -679,7 +689,9 @@ Figure&nbsp;6.8: Probability of Receiving Scholarship by SABER 11 Score
 <div id="fig-saber-scores" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-saber-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/velez2.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-saber-scores-light.svg" class="quarto-light figure-img" alt="Distribution of SABER 11 Test Scores" style="width:100%"> <img src="images/06_images/editorial/fig-saber-scores-dark.svg" class="quarto-dark figure-img" alt="Distribution of SABER 11 Test Scores" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-saber-scores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.9: Distribution of SABER 11 Test Scores
@@ -690,7 +702,9 @@ Figure&nbsp;6.9: Distribution of SABER 11 Test Scores
 <div id="fig-college-attendance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-college-attendance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/velez3.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-college-attendance-light.svg" class="quarto-light figure-img" alt="Impact of Scholarship on College Attendance" style="width:100%"> <img src="images/06_images/editorial/fig-college-attendance-dark.svg" class="quarto-dark figure-img" alt="Impact of Scholarship on College Attendance" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-college-attendance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.10: Impact of Scholarship on College Attendance
@@ -702,7 +716,9 @@ Figure&nbsp;6.10: Impact of Scholarship on College Attendance
 <div id="fig-future-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-future-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/velez4.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-future-earnings-light.svg" class="quarto-light figure-img" alt="Impact of Scholarship on Future Earnings" style="width:100%"> <img src="images/06_images/editorial/fig-future-earnings-dark.svg" class="quarto-dark figure-img" alt="Impact of Scholarship on Future Earnings" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-future-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.11: Impact of Scholarship on Future Earnings
@@ -715,7 +731,9 @@ Figure&nbsp;6.11: Impact of Scholarship on Future Earnings
 <div id="fig-ec-deg-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ec-deg-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/bleemer1.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-ec-deg-prob-light.svg" class="quarto-light figure-img" alt="Probability of Receiving Economics Degree by GPA" style="width:100%"> <img src="images/06_images/editorial/fig-ec-deg-prob-dark.svg" class="quarto-dark figure-img" alt="Probability of Receiving Economics Degree by GPA" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-deg-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.12: Probability of Receiving Economics Degree by GPA
@@ -728,7 +746,9 @@ Figure&nbsp;6.12: Probability of Receiving Economics Degree by GPA
 <div id="fig-ec-sat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ec-sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/bleemer6.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-ec-sat-light.svg" class="quarto-light figure-img" alt="SAT Score by GPA" style="width:100%"> <img src="images/06_images/editorial/fig-ec-sat-dark.svg" class="quarto-dark figure-img" alt="SAT Score by GPA" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.13: SAT Score by GPA
@@ -740,7 +760,9 @@ Figure&nbsp;6.13: SAT Score by GPA
 <div id="fig-ec-earnings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ec-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/06_images/bleemer2.png" class="img-fluid figure-img">
+<div class="editorial-figure-pair">
+<p><img src="images/06_images/editorial/fig-ec-earnings-light.svg" class="quarto-light figure-img" alt="Earnings by GPA" style="width:100%"> <img src="images/06_images/editorial/fig-ec-earnings-dark.svg" class="quarto-dark figure-img" alt="Earnings by GPA" style="width:100%"></p>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-earnings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.14: Earnings by GPA
