@@ -35,7 +35,7 @@ The dataset contains several binary indicator variables. These are variables tha
 import pandas as pd
 
 # Set file path
-data_path = "/Users/davidarnold/Dropbox/Teaching/ECON139/data/acs/acs_clean_healthcare.csv"
+data_path = "/Users/davidarnold/Dropbox/Teaching/ECON139/materials/acs/data/acs_clean_healthcare.csv"
 
 # Read CSV dataset
 acs = pd.read_csv(data_path)

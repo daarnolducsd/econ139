@@ -114,7 +114,7 @@ Let's first load the data and take a look at the variables that are included.
 import pandas as pd
 from IPython.display import HTML
 
-cps_data = pd.read_csv('/Users/davidarnold/Dropbox/Teaching/ECON139/data/cps/cps_aug_25.csv')
+cps_data = pd.read_csv('/Users/davidarnold/Dropbox/Teaching/ECON139/materials/cps/data/cps_aug_25.csv')
 
 # Get column names and organize them into a DataFrame for display
 column_names = list(cps_data.columns)

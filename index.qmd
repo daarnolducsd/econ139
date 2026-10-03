@@ -2,13 +2,8 @@
 
 
 
-![](/images/cover/robot_cover.png){.editorial-cover width=100%}
+![*Mulberry Street, New York City*, circa 1900.](/images/cover/mulberry_street_1900.jpg){.editorial-cover .historical-cover width=100% fig-alt="A crowded Mulberry Street in New York around 1900, with street vendors, shoppers, and storefronts."}
 
-In this book, we’ll explore some of the biggest questions in labor economics: 
-
-1. Why has wage inequality grown so much?  
-2. What explains the decline in labor’s share of income?  
-3. Why has the labor force participation rate changed so dramatically in the last 50 years?
+In this book, we’ll explore some of the biggest questions in labor economics. Why has wage inequality grown so much? What explains the decline in labor’s share of income? Why has the labor force participation rate changed so dramatically in the last 50 years?
 
 To answer these questions, we'll use a combination of economic theory and empirical evidence. This will take us many places, to understanding how minimum wages affect employment and inequality, to exploring how technology has impacted the nature of work, to examining how competition between firms, both inside and outside the US, shapes labor market outcomes.
-

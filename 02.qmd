@@ -6,7 +6,7 @@ jupyter: python3
 
 ## The Wage Level?
 
-All of our big trends depend crucially on the wage level. For the labor share of income, if wages go down, the labor share of income will also go down, as the total amount of income paid to workers has decreased. Trends in inequality depend directly on the wages paid to different groups of workers. Labor force participation again depends on the wage level. If the wage level goes up, then more individuals will find it worthwhile to work, and the labor force participation rate will increase.
+All of our big trends depend crucially on the wage level. Take labor's share of income. If wages go down, then labor share of income will also go down, as the total amount of income paid to workers has decreased. Trends in inequality depend directly on the wages paid to different groups of workers. Labor force participation again depends on the wage level. If the wage level goes up, then more individuals will find it worthwhile to work, and the labor force participation rate will increase.
 
 Therefore, understanding what determines the wage level will be a recurring theme throughout this course and book. In this section, we will first focus on a perfectly competitive model of the labor market, and in particular, consider how firms decide how many workers to hire and how much to pay them. This will be a valuable baseline for studying the potential impacts of technology on the labor market later in the course.
 

@@ -1,0 +1,39 @@
+--- a/05.qmd
++++ b/05.qmd
+@@ -346,30 +346,25 @@
+ x_line = np.linspace(60, 140, 100)
+ 
+ # Create two STEEPER labor supply curves (much steeper than the previous graph)
+-supply_slope = 1200  # Even steeper - $1200 increase per additional employee
++supply_slope = 1000  # Steeper than the flat example; keeps equilibrium MFC values round
+ 
+ # 2023 Labor supply curve: passes through (100, 100000)
+ supply_2023_intercept = wages[0] - supply_slope * employees[0]
+ y_supply_2023 = supply_slope * x_line + supply_2023_intercept
+ 
+-# 2024 Labor supply curve: shifted up, passes through (120, 110000)
++# 2024 Labor supply curve: shifted down, passes through (120, 110000)
+ supply_2024_intercept = wages[1] - supply_slope * employees[1]
+ y_supply_2024 = supply_slope * x_line + supply_2024_intercept
+ 
+ # Create corresponding MFC curves (twice the slope of supply curves)
+ mfc_slope = 2 * supply_slope
+ 
+-# Adjust MFC intercept so that at 60 workers, MFC = $75,000
+-target_mfc_at_60 = 75000  # Target MFC value at 60 workers
+-mfc_intercept_adjustment = target_mfc_at_60 - mfc_slope * 60
+-
+-# For 2023: Calculate shift needed relative to supply curve
+-mfc_2023_intercept = mfc_intercept_adjustment
++# For supply w(L) = a + bL, payroll is aL + bL^2, so MFC = a + 2bL.
++# MFC therefore has the SAME intercept as its corresponding supply curve.
++mfc_2023_intercept = supply_2023_intercept
+ y_mfc_2023 = mfc_slope * x_line + mfc_2023_intercept
+ 
+-# For 2024: Keep the same relationship (parallel shift)
+-mfc_shift_between_years = supply_2024_intercept - supply_2023_intercept
+-mfc_2024_intercept = mfc_2023_intercept + mfc_shift_between_years
++mfc_2024_intercept = supply_2024_intercept
+ y_mfc_2024 = mfc_slope * x_line + mfc_2024_intercept
+ 
+ # Calculate MFC values at the equilibrium employment levels
