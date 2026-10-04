@@ -1,0 +1,66 @@
+/* Book-wide course-site typography and warm vermilion accents. */
+:root {
+  --ed-accent:#b8322b;
+  --poster-red:#df5145;
+  --bs-link-color:#b8322b;
+  --bs-link-hover-color:#8c2722;
+  --bs-link-color-rgb:184,50,43;
+  --bs-link-hover-color-rgb:140,39,34;
+}
+.press-masthead {border-bottom:5px solid var(--poster-red);}
+.press-masthead a {font-weight:700;letter-spacing:.025em;}
+/* Style the existing book title and metadata, without a second title block. */
+.book-introduction .opening-label > h1,
+.book-introduction h1.opening-label {display:none;}
+.book-introduction #title-block-header h1.title {
+  font:900 clamp(42px,4.5vw,64px)/1.06 Arial,Helvetica,sans-serif;
+  letter-spacing:-.05em;color:#df5145;margin:0 0 24px;
+}
+.book-introduction #title-block-header .author,
+.book-introduction #title-block-header .date {
+  font:15px/1.5 Arial,Helvetica,sans-serif;color:#555;margin:4px 0;
+}
+.quarto-title h1.title {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:58px;font-weight:900;line-height:1.02;
+  letter-spacing:-.055em;color:#191919;text-transform:none;
+}
+.quarto-title h1.title .chapter-number {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:64px;font-weight:900;line-height:1;
+  letter-spacing:-.065em;color:var(--poster-red);margin-bottom:16px;
+}
+.quarto-title h1.title .chapter-number::before {content:none;}
+main h2 {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:30px;font-weight:800;line-height:1.15;
+  letter-spacing:-.035em;color:#191919;
+}
+main h3,main h4 {
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:700;letter-spacing:-.02em;color:#191919;
+}
+.header-section-number {color:#b8322b;font-weight:700;}
+#TOC .header-section-number {font-weight:400;color:inherit;}
+#TOC a.active {color:#b8322b;}
+.sidebar-navigation .sidebar-item .sidebar-link.active,
+.sidebar-navigation .sidebar-item .sidebar-link.active .chapter-number {
+  color:#b8322b;font-weight:700;
+}
+.callout.curious-detour {border:1px solid #df5145!important;background:white!important;}
+.curious-detour .callout-title-container {
+  font-family:Arial,Helvetica,sans-serif;font-size:19px;
+  font-weight:700;line-height:1.35;letter-spacing:-.02em;
+}
+.curious-detour .callout-title-container::before {
+  color:#b8322b;font-weight:700;letter-spacing:.09em;
+}
+.hover-image,.hover-image-container {color:#b8322b!important;border-bottom-color:#b8322b!important;}
+@media(max-width:991.98px) {
+ .quarto-title h1.title{font-size:46px;}
+ .quarto-title h1.title .chapter-number{font-size:52px;}
+}
+@media(max-width:575.98px) {
+ .quarto-title h1.title{font-size:40px;}
+ main h2{font-size:26px;}
+}

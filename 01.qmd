@@ -77,7 +77,7 @@ Real Income by Education Level in the United States
 For individuals with graduate degrees, real incomes continue to rise steadily over time. For individuals with a college degree, there is some lag, but by the mid 1990s, we are again seeing increases in real incomes. Other groups are not doing so well. For example, for high-school dropouts, all of that income growth in the 60s is eroded away by around 1990 with little to no growth since then. This is why inequality skyrocketed in the 1980s. While highly-educated individuals (who already earned more on average) were seeing large increases in real income, less-educated individuals were seeing declines in real income. This is our first big question: what drove this rapid increase in inequality that began in the 1980s?
 
 
-::: {.callout-tip .curious-detour title="The McWage"}
+::: {#detour-mcwage .callout-tip .curious-detour title="The McWage"}
 
 One thing that you may have taken away from this chapter is that comparing income over time is perhaps not as straightforward as you might have thought. The same is true when comparing income across countries. For example, if you want to compare income in the U.S. to income in China, you have a number of hurdles. Just as in comparisons across time, the goods purchased might be very different. 
 

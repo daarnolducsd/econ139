@@ -2,9 +2,11 @@ project:
   type: book
 
 book:
-  title: "Econ 139: Labor Economics"
+  title: "Labor Economics"
   author: "David Arnold"
   date: "2/23/2025"
+  sidebar:
+    collapse-level: 2
   chapters:
   - part: "Main Text"
     chapters:
@@ -31,16 +33,16 @@ bibliography: references.bib
 
 format:
   html:
-    theme:
-      light: [default, theme-light.scss]
-      dark: [default, theme-dark.scss]
-    css: styles.css
+    theme: [default, theme-light.scss]
+    css: [styles.css, vermilion.css]
+    toc-title: "In this chapter"
     grid:
-      body-width: 720px
-      sidebar-width: 230px
+      body-width: 680px
+      sidebar-width: 205px
       margin-width: 170px
       gutter-width: 2rem
     fig-align: center
+    include-before-body: _includes/masthead.html
     include-after-body: _includes/after-body.html
     js: lightbox.js
   pdf:
