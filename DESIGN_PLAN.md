@@ -1,40 +1,49 @@
 # Textbook redesign plan
 
-Last updated: October 1, 2026.
+Last updated: October 4, 2026.
 
 ## Objective and scope
 
 Give the ECON 139 textbook a coherent editorial design while preserving its existing teaching content, evidence, and economic interpretation. Work chapter by chapter, with reviewable figure previews before replacing the originals.
 
-The page design is implemented and published. Figure reconstruction is the next phase. No figures are being replaced as part of the inventory and planning step.
+The vermilion page design is implemented and published. Chapters 1–6 now use the approved dark green and rust figure palette locally; the restoration and shared-palette refactor are local and not yet published. Later chapters require a separate review before reconstruction or recoloring. Chapter 7 already has recreated figures, but is outside this palette update.
 
 ## Decisions already made
 
 ### Pages
 
-- Georgia serif prose; system sans-serif headings, navigation, captions, and figure labels.
-- Approximately 720 px reading width, 18 px desktop prose, and generous line spacing.
-- Light background `#FAFAF7`, sidebar `#F0F0EC`, ink `#2B302D`, muted text `#616962`, borders `#D6D9D3`.
-- Dark background `#202522`, sidebar `#1B201D`, ink `#E5EBE6`, muted text `#B6C0B8`, borders `#414942`.
-- Green links and accents: `#3D6155` in light mode and `#ACC9BB` in dark mode.
-- One wide existing industrial-robot photograph on the title page.
-- Chapter navigation on the left, a quiet section outline on the right, and responsive navigation on narrow screens.
-- Restrained dividers, left-aligned muted captions, consistent tables, and generous equation spacing.
-- The feature label is **Curious Detours**, above the existing specific feature title. These features remain fully visible, have no emojis, and are not marked optional.
-- Preserve the existing prose. Do not add learning goals, motivating questions, or new teaching content during the visual redesign.
+- Pure white background `#FFFFFF`; Georgia prose at 18 px with 1.7 line spacing and an approximately 680 px reading column.
+- Heavy sans-serif chapter titles in normal title case, bold sans-serif section headings, and sans-serif navigation/captions.
+- Warm vermilion `#DF5145` for graphic accents, chapter numbers, and the introduction title. Darker red `#B8322B` for links and small accent text.
+- Introduction title: **Labor Economics**, with the existing author/date metadata. No cover image or duplicate course label/author block.
+- Chapter numbers sit alongside chapter titles. The latest inline-number adjustment is local, not yet published.
+- Expanded chapter navigation on the left and **In this chapter** on the right. No extra All Chapters heading.
+- Curious Detours have a thin vermilion border around the entire passage, white interior, square corners, 24 px padding (18 px on phones), a red uppercase label, and a bold sans-serif specific title.
+- Preserve prose and teaching content except for necessary corrections to literal figure-color descriptions. In student-facing prose, call the accent **red**, not vermilion; reserve the precise color name and hex values for design documentation and code.
 
-### Figures
+### Figures — approved dark green and rust palette
 
-- Use the approved **Style A** inequality preview as the starting reference.
-- Base colors: green `#3D6155` and rust `#A36F49`.
-- Match the book's sans-serif typography, simplify axes, and use quiet horizontal grids where helpful.
-- Prefer direct labels when they are readable. Keep a compact legend when direct labels would overlap or obscure evidence.
-- Prefer vector output for charts and diagrams, with backgrounds that integrate with the page.
-- Use line patterns, meaningful markers, and supporting neutral colors when a figure has more than two series. Decide the extension for the five education series before implementing that figure.
-- Preserve color meanings across related figures. Choose mappings for each related set before drawing it.
-- Keep confidence intervals, uncertainty bands, sample-size markers, zero lines, cutoffs, and other economically meaningful annotations.
-- Use appropriate visual forms for maps, timelines, histograms, scatter plots, conceptual diagrams, and interactive widgets. They share typography and colors without needing identical geometry.
-- Keep photographs, historical illustrations, and survey screenshots in their original colors; integrate them through sizing and placement.
+David chose to restore the original dark green/rust figure palette after reviewing red-led and sage/ochre alternatives. This decision supersedes those previews and their archived instructions. Page headings and rules retain the warm red accents. The shared helper retains the original supporting colors and series assignments.
+
+| Role | Color | Hex |
+| --- | --- | --- |
+| Principal relationship, labor demand / MRP | Dark green | `#3D6155` |
+| Main comparison, labor supply | Rust | `#A36F49` |
+| Third series, marginal factor cost | Sage | `#758C7F` |
+| Fourth series | Muted ochre | `#B39B61` |
+| Reference/annotation | Dark ink | `#2B302D` |
+
+- Shared definitions live in `code/figures/figure_style.py`; import these for future chapter renderers instead of repeating color literals.
+- White backgrounds, dark ink `#2B302D`, muted labels `#616962`, and light-gray grids `#E1E5DF`.
+- Education mapping: dropout taupe `#827568`; high-school graduate muted green `#6F887A`; some college gray-green `#66726B`; bachelor's degree rust; graduate degree dark green. Keep the existing line patterns and endpoint labels.
+- Related demand/supply/MFC diagrams use the role mapping above. Chapter 2 individual cafes use sage and rust; their aggregate demand is dark green.
+- Chapter 6 region mapping: Africa dark green, Asia rust, Europe ochre, Americas sage.
+- Ordered map categories use rust tints (`#A36F49`, `#C49A77`, `#E5D4BD`, white), retaining the existing category thresholds, no-data treatment, and source geography. Do not substitute categorical hues for ordered values.
+- Preserve all source data, coordinates, estimates, uncertainty, line styles, markers, annotations, captions, and figure IDs. Update prose when it explicitly names a changed color.
+- Prefer transparent SVGs and direct labels; retain legends where needed. Figures with many series must use line patterns/markers as well as color.
+- Preserve photographs, historical illustrations, and survey screenshots in their original colors. Existing documented map/diagram reconstructions retain their scientific limitations.
+- The active book has one white theme. Existing dark companions remain legacy exports with their original palette; they are not the design target for this update.
+- This pass covers the recreated figures in Chapters 1–6 only. Preview new reconstructions for later chapters before integrating them.
 
 ## Inventory and starting point
 
@@ -63,7 +72,7 @@ Each chapter's code must document its inputs and provenance, calculations and as
 
 Review the complete chapter list and decide which figures to redraw first. For each figure, identify its teaching purpose, its relationship to neighboring figures, and its current caption/reference ID. Record any choices about color mappings, panels, labels, or legends before implementation.
 
-Start with Chapters 1 and 2: Chapter 1 has local replication inputs for its four charts; Chapter 2 has six conceptual charts with embedded plotting code. Chapter 1's education chart needs more than two distinguishable series.
+Chapters 1–6 have approved reconstructions and now share the palette above. For later chapters, review the inventory and existing reconstruction status first; do not redo completed work unnecessarily.
 
 ### 2. Establish the source of truth
 
@@ -87,7 +96,7 @@ Keep raw data read-only. Write derived data, figures, and logs to output directo
 
 ### 4. Create a reviewable candidate
 
-Produce a new figure in an output directory and show it alongside the original. Use the approved style and preserve the plotted quantities. Make light and dark versions legible; separate theme-specific assets may be needed for labels on externally embedded SVGs. Both variants must share the same data and geometry.
+Produce a new figure in an output directory and show it alongside the original. Use the approved style and preserve the plotted quantities. Target the active white HTML theme. Retain existing legacy dark assets where the maintained renderer already produces them; both variants must share the same data and geometry.
 
 Review the candidate at the actual book reading width. Check text size, direct-label collisions, line distinction, plot whitespace, caption fit, and consistency with the other figures in its chapter. Check zoom and narrow-screen behavior where relevant.
 
@@ -99,7 +108,7 @@ Keep the reconstruction script and provenance alongside the maintained source. U
 
 ### 6. Verify and publish
 
-Render the affected chapter, then verify the book's navigation and cross-references as needed. Check light and dark modes, local asset links, figure/caption pairing, and any scientific invariants established in the baseline. Preserve unrelated working-tree changes.
+Render the affected chapter, then verify the book's navigation and cross-references as needed. Check the active white theme, local asset links, figure/caption pairing, and scientific invariants as appropriate to the requested work. Honor David's current instruction to open the book after routine style edits without screenshot or extra visual-verification passes. Preserve unrelated working-tree changes.
 
 Publish only when requested. Inspect the publication file set; exclude private/student materials. Verify the live output after deployment. Report the figures changed, source method, checks performed, and remaining limitations.
 
@@ -118,8 +127,8 @@ This sequence is a starting point. Each chapter review determines its exact impl
 ## Choices still to make during figure reviews
 
 - Exact fonts and label sizes for figures at the book's reading width.
-- Additional series colors and line patterns beyond green/rust.
-- Which figures need separate light/dark exports and how to maintain them from one source.
+- Additional series beyond the approved five-color palette, if needed; preserve approved line patterns.
+- Whether a future return to dark mode warrants redesigning the legacy companion palette.
 - Direct labels versus legends for dense or multi-series charts.
 - Panel layouts for imported multi-panel evidence.
 - Which screenshot tables merit conversion to native tables.
@@ -169,13 +178,13 @@ Maintained code: `code/figures/chapter03.py` (rendering) and `code/figures/repli
 - Annual 90/10 ratio: eleven original annual inputs, 1979–1989, unweighted Stata percentile definition and float storage preserved.
 - Two wage-distribution figures: original Python calculation, sample, 50-cent bins, unweighted counts, $3.35 actual minimum, and $4.77 counterfactual floor preserved. Independent checks and original matplotlib histogram comparisons pass.
 
-Review page: `../outputs/textbook-chapter03-figures/index.html`. Chapter-context preview: `render/_book/03.html` inside that directory. Both modes use the approved green/rust palette and transparent SVG assets. David approved all eleven replacements and requested commitment and publication. Final revisions raise the employment-decline labels in 3.7/3.8 and use a single arrow from $3.35 to $4.77 in 3.10, with the real-value label nearby. The approved chapter context includes the existing Before/After wording and date corrections. The two requested removals are included.
+Review page: `../outputs/textbook-chapter03-figures/index.html`. Chapter-context preview: `render/_book/03.html` inside that directory. The original review used green/rust in paired transparent SVG assets; the active light versions now use the palette above. David approved all eleven replacements and requested commitment and publication. Final revisions raise the employment-decline labels in 3.7/3.8 and use a single arrow from $3.35 to $4.77 in 3.10, with the real-value label nearby. The approved chapter context includes the existing Before/After wording and date corrections. The two requested removals are included.
 
 ## Chapter 4 implementation record
 
 Current status: **reviewed and integrated; publication requested** for seven locally generated charts. The Adam Smith illustration is retained. All source curves, discrete quantities, markers, captions, and figure IDs are captured in `code/figures/data/chapter04/models.json`; maintained renderer and verification are in `code/figures/chapter04.py` and its outputs. `code/figures/README.md` documents the input values, original MFC conventions, equilibrium checks, shade bounds, and rebuild command.
 
-- Labor supply and MFC comparison establish rust supply and muted sage MFC; MRP is green throughout the chapter.
+- Labor supply and MFC comparison establish rust supply and sage MFC; MRP is dark green throughout the chapter.
 - Monopsony employment and wage remain 5/$25 under steep supply and 6/$34 under flatter supply; efficient employment remains 7. Original deadweight-loss polygons are retained exactly.
 - Minimum-wage figures retain the original ten discrete points and their connecting segments. The $35 floor gives 7 workers/$35; the $50 floor gives 4 workers/$50.
 - The source's flatter-supply figure uses the continuous MFC derivative, while its steep-supply figure uses discrete cost increments. This existing convention is recorded and retained, not changed during styling.
@@ -230,7 +239,7 @@ coordinates: `code/figures/data/chapter06/`.
 - Two Gapminder previews: visible source silhouettes traced into scalable
   paths, with native axes and legend. Original positions and overlaps remain;
   these are not country-data replications. Supporting region colors are ochre
-  and sage alongside green/rust; prose colors are aligned with the approved palette.
+  and sage alongside dark green/rust; prose colors are aligned with the approved palette.
 - The source UCSC dashed line remains at its plotted midpoint (~2.75); the
   institutional threshold in prose remains 2.8. The Colombia attendance prose
   inconsistently says 40 and 32 percentage points; preserve both for review.
@@ -276,3 +285,7 @@ learning material is added. The approved source is integrated in `07.qmd`.
 Chapter 6 publication: source commit `36abaac`, Pages commit `3c4e106`.
 GitHub Pages reported the deployment built, and the live `06.html` was checked
 byte-for-byte against the approved deployment output.
+
+## October 4 palette integration
+
+Status: **approved and integrated locally**, not yet published. Chapters 1–6 render through the shared palette helper. The current page style and inline chapter-number change are preserved. Older review directories and their copied DESIGN_PLAN.md files are historical artifacts; this file is authoritative for subsequent work. Chapter 7 and later assets are unchanged by this pass. Existing reconstruction limitations and source records below remain applicable.

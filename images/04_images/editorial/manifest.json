@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fig-labor-supply",
+    "caption": "Labor Supply Curve to a Cafe"
+  },
+  {
+    "id": "fig-mfc-curve",
+    "caption": "Labor Supply Curve and Marginal Factor Cost Curve"
+  },
+  {
+    "id": "fig-monopsony-equilibrium",
+    "caption": "Monopsony Equilibrium: MRP, MFC, and Labor Supply"
+  },
+  {
+    "id": "fig-monopsony-deadweight-loss",
+    "caption": "Deadweight Loss of Monopsony"
+  },
+  {
+    "id": "fig-monopsony-flat-supply",
+    "caption": "Monopsony with Flatter Labor Supply Curve"
+  },
+  {
+    "id": "fig-minimum-wage-mfc",
+    "caption": "Marginal Factor Cost with Minimum Wage"
+  },
+  {
+    "id": "fig-minimum-wage-too-high",
+    "caption": "Minimum Wage Set Too High"
+  }
+]

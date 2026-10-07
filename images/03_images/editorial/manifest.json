@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fig-minimum-wage-theory",
+    "caption": "Minimum Wage in a Perfectly Competitive Labor Market"
+  },
+  {
+    "id": "fig-did-illustration",
+    "caption": "Difference-in-Differences Illustration: Employment in New Jersey and Pennsylvania"
+  },
+  {
+    "id": "fig-did-growing-employment",
+    "caption": "Difference-in-Differences with Growing Employment Example"
+  },
+  {
+    "id": "fig-card-krueger-data",
+    "caption": "Card and Krueger (1994) Data: Employment in New Jersey and Pennsylvania Fast-Food Restaurants"
+  },
+  {
+    "id": "fig-pre-trends-violation",
+    "caption": "Hypothetical Pre-Trends Assumption Violation"
+  },
+  {
+    "id": "fig-did-stable-pretrends",
+    "caption": "Hypothetical example with stable pre-trends (1988-1991)"
+  },
+  {
+    "id": "fig-clemens0",
+    "caption": "Textbook Minimum Wage Analysis"
+  },
+  {
+    "id": "fig-clemens1",
+    "caption": "Partial Offset Through Price Pass-Through"
+  },
+  {
+    "id": "fig-90-10",
+    "caption": "90-10 Ratio Over Time"
+  },
+  {
+    "id": "fig-wage-distribution",
+    "caption": "Distribution of Hourly Wages in 1989"
+  },
+  {
+    "id": "fig-counterfactual-wage-distribution",
+    "caption": "Counterfactual Wage Distribution in 1989 with Minimum Wage Adjusted for Inflation"
+  }
+]

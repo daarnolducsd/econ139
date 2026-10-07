@@ -1,0 +1,152 @@
+[
+  {
+    "id": "fig-edu-gdp-men",
+    "theme": "light",
+    "construction": "vector source silhouette tracing; approximate image reconstruction"
+  },
+  {
+    "id": "fig-edu-gdp-women",
+    "theme": "light",
+    "construction": "vector source silhouette tracing; approximate image reconstruction"
+  },
+  {
+    "id": "mincer-experience-model",
+    "theme": "light",
+    "construction": "original deterministic model"
+  },
+  {
+    "id": "fig-experience-earnings",
+    "theme": "light",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-experience-earnings-log",
+    "theme": "light",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-school-earnings",
+    "theme": "light",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-school-earnings-log",
+    "theme": "light",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-rdd-papers",
+    "theme": "light",
+    "construction": "approximate source curve digitization"
+  },
+  {
+    "id": "fig-scholarship-prob",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-saber-scores",
+    "theme": "light",
+    "construction": "approximate source histogram digitization"
+  },
+  {
+    "id": "fig-college-attendance",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-future-earnings",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-deg-prob",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-sat",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-earnings",
+    "theme": "light",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-edu-gdp-men",
+    "theme": "dark",
+    "construction": "vector source silhouette tracing; approximate image reconstruction"
+  },
+  {
+    "id": "fig-edu-gdp-women",
+    "theme": "dark",
+    "construction": "vector source silhouette tracing; approximate image reconstruction"
+  },
+  {
+    "id": "mincer-experience-model",
+    "theme": "dark",
+    "construction": "original deterministic model"
+  },
+  {
+    "id": "fig-experience-earnings",
+    "theme": "dark",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-experience-earnings-log",
+    "theme": "dark",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-school-earnings",
+    "theme": "dark",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-school-earnings-log",
+    "theme": "dark",
+    "construction": "local ACS reconstruction"
+  },
+  {
+    "id": "fig-rdd-papers",
+    "theme": "dark",
+    "construction": "approximate source curve digitization"
+  },
+  {
+    "id": "fig-scholarship-prob",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-saber-scores",
+    "theme": "dark",
+    "construction": "approximate source histogram digitization"
+  },
+  {
+    "id": "fig-college-attendance",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-future-earnings",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-deg-prob",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-sat",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  },
+  {
+    "id": "fig-ec-earnings",
+    "theme": "dark",
+    "construction": "approximate RD source digitization"
+  }
+]

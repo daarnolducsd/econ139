@@ -3,6 +3,7 @@
 No raw microdata are needed for rendering. See README.md for reconstruction.
 """
 from pathlib import Path
+from figure_style import palette
 import argparse
 import json
 import os
@@ -103,7 +104,7 @@ def histogram_panel(ax, counter=False, maximum=None):
         counts,
         width=hist.right - hist.left,
         align="edge",
-        color=green,
+        color=primary,
         alpha=0.85,
         edgecolor=paper,
         linewidth=0.35,
@@ -114,13 +115,13 @@ def histogram_panel(ax, counter=False, maximum=None):
     ax.yaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
     style(ax, "Frequency", "Hourly wage ($)")
     if not counter:
-        ax.axvline(3.35, color=rust, ls="--", lw=1.5)
+        ax.axvline(3.35, color=comparison, ls="--", lw=1.5)
         leader(
             ax,
             (3.35, maximum * 0.75),
             (10, maximum * 0.82),
             "Actual minimum wage: $3.35",
-            rust,
+            comparison,
         )
     ax.axvline(4.77, color=ink, ls=":", lw=1.5)
     leader(
@@ -135,12 +136,13 @@ def histogram_panel(ax, counter=False, maximum=None):
 
 for mode in ["light", "dark"]:
     dark = mode == "dark"
-    paper = "#202522" if dark else "#FAFAF7"
-    ink = "#E5EBE6" if dark else "#2B302D"
-    muted = "#B6C0B8" if dark else "#616962"
-    grid = "#414942" if dark else "#E1E5DF"
-    green = "#ACC9BB" if dark else "#3D6155"
-    rust = "#D9A278" if dark else "#A36F49"
+    p = palette(mode)
+    paper = p["paper"]
+    ink = p["ink"]
+    muted = p["muted"]
+    grid = p["grid"]
+    primary = p["primary"]
+    comparison = p["comparison"]
     for model in models:
         ident = model["id"]
         v = model.get("values", {})
@@ -168,8 +170,8 @@ for mode in ["light", "dark"]:
 
         if ident == "fig-minimum-wage-theory":
             style(ax, "Wage ($)", "Quantity of labor", gridlines=False)
-            curve(v["quantity_demand"], v["wage_demand"], green)
-            curve(v["quantity_supply"], v["wage_supply"], rust)
+            curve(v["quantity_demand"], v["wage_demand"], primary)
+            curve(v["quantity_supply"], v["wage_supply"], comparison)
             minimum, equilibrium = v["min_wage"], v["equilibrium_quantity"]
             qd, qs = v["q_demand_at_min_wage"], v["q_supply_at_min_wage"]
             ax.axhline(minimum, color=ink, ls="--", lw=1.4)
@@ -188,8 +190,8 @@ for mode in ["light", "dark"]:
                 yticks=[0, 2.5, 5, 7.25, 10],
             )
             ax.yaxis.set_major_formatter(StrMethodFormatter("${x:g}"))
-            label(ax, 63, 1.3, "Labor demand", green)
-            label(ax, 68, 8.5, "Labor supply", rust)
+            label(ax, 63, 1.3, "Labor demand", primary)
+            label(ax, 68, 8.5, "Labor supply", comparison)
             label(ax, 3, 6.75, "Minimum wage: $7.25", ink)
             bracket(ax, qd, qs, 7.8, "Unemployment")
             assert qd == 27.5 and qs == 72.5 and equilibrium == 50
@@ -210,8 +212,8 @@ for mode in ["light", "dark"]:
             x = v["years"] if stable else v["time_periods"]
             nj = v["nj_employment"] if stable else v["employment_nj"]
             pa = v["pa_employment"] if stable else v["employment_pa"]
-            curve(x, nj, green, "o")
-            curve(x, pa, rust, "s")
+            curve(x, nj, primary, "o")
+            curve(x, pa, comparison, "s")
             pre = len(x) > 2
             limits = {
                 "fig-did-illustration": (12, 30),
@@ -235,11 +237,11 @@ for mode in ["light", "dark"]:
             if pre:
                 ax.set(xlim=(1987.8, 1994.0), xticks=x)
                 # Endpoint values nearly meet; separate direct labels with leaders.
-                leader(ax, (1992, pa[-1]), (1992.3, 23.0), "Pennsylvania", rust)
-                leader(ax, (1992, nj[-1]), (1992.3, 20.0), "New Jersey", green)
+                leader(ax, (1992, pa[-1]), (1992.3, 23.0), "Pennsylvania", comparison)
+                leader(ax, (1992, nj[-1]), (1992.3, 20.0), "New Jersey", primary)
             else:
                 cf = v["employment_nj_counterfactual"]
-                curve(x, cf, green, ls="--", lw=1.5)
+                curve(x, cf, primary, ls="--", lw=1.5)
                 ax.set(
                     xlim=(-0.08, 1.90), xticks=[0, 1], xticklabels=["Before", "After"]
                 )
@@ -254,17 +256,17 @@ for mode in ["light", "dark"]:
                     (1, pa[-1]),
                     (1.15, pa_y),
                     f"Pennsylvania (Control)\nD2 ({d2:+{fmt}})",
-                    rust,
+                    comparison,
                 )
                 leader(
                     ax,
                     (1, nj[-1]),
                     (1.15, nj_y),
                     f"New Jersey (Treatment)\nD1 ({d1:+{fmt}})",
-                    green,
+                    primary,
                 )
                 leader(
-                    ax, (1, cf[-1]), (1.15, cf_y), "New Jersey\n(Counterfactual)", green
+                    ax, (1, cf[-1]), (1.15, cf_y), "New Jersey\n(Counterfactual)", primary
                 )
                 ax.annotate(
                     "",
@@ -290,10 +292,10 @@ for mode in ["light", "dark"]:
             # L2 is 3 in the standard case and 4.5 with pass-through, both < L1=5.
             shift = ident == "fig-clemens1"
             style(ax, "Wage (w)", "Labor (L)", gridlines=False)
-            curve([0.5, 7.5], [9.5, 2.5], green, ls="--" if shift else "-")
-            curve([0.5, 8.5], [0.5, 8.5], rust)
+            curve([0.5, 7.5], [9.5, 2.5], primary, ls="--" if shift else "-")
+            curve([0.5, 8.5], [0.5, 8.5], comparison)
             if shift:
-                curve([2, 8], [9.5, 3.5], green)
+                curve([2, 8], [9.5, 3.5], primary)
             l2 = 4.5 if shift else 3
             ax.set(
                 xlim=(0, 13),
@@ -319,10 +321,10 @@ for mode in ["light", "dark"]:
                 arrowprops={"arrowstyle": "->", "color": ink, "lw": 1},
                 annotation_clip=False,
             )
-            label(ax, 8.5, 9, "S(L)", rust)
+            label(ax, 8.5, 9, "S(L)", comparison)
             if shift:
-                label(ax, 8, 2.5, r"$D_1(L)=MP(L)\times P_1$", green)
-                label(ax, 8.5, 3.7, r"$D_2(L)=MP(L)\times P_2$", green)
+                label(ax, 8, 2.5, r"$D_1(L)=MP(L)\times P_1$", primary)
+                label(ax, 8.5, 3.7, r"$D_2(L)=MP(L)\times P_2$", primary)
                 ax.annotate(
                     "",
                     xy=(7.2, 4.3),
@@ -330,12 +332,12 @@ for mode in ["light", "dark"]:
                     arrowprops={"arrowstyle": "->", "color": muted, "lw": 1},
                 )
             else:
-                label(ax, 8, 2.5, r"$D(L)=MP(L)\times P$", green)
+                label(ax, 8, 2.5, r"$D(L)=MP(L)\times P$", primary)
             assert l2 < 5 < 7
 
         elif ident == "fig-90-10":
             style(ax, "90–10 wage ratio", "Year")
-            curve(inequality.year, inequality.ratio, green, "o")
+            curve(inequality.year, inequality.ratio, primary, "o")
             principal[-1].set_markerfacecolor(paper)
             ax.set(
                 xlim=(1978.8, 1989.3),

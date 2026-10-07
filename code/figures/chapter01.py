@@ -3,6 +3,7 @@ See README.md for provenance, calculations, verification, and regeneration comma
 This renderer reads data only and writes to --output-dir (default: book figure assets).
 """
 from pathlib import Path
+from figure_style import palette
 import argparse, os, tempfile
 
 SCRIPT = Path(__file__).resolve().parent
@@ -48,12 +49,13 @@ plt.rcParams.update(
 )
 for mode in ["light", "dark"]:
     dark = mode == "dark"
-    paper = "#202522" if dark else "#FAFAF7"
-    ink = "#E5EBE6" if dark else "#2B302D"
-    muted = "#B6C0B8" if dark else "#616962"
-    grid = "#414942" if dark else "#E1E5DF"
-    green = "#ACC9BB" if dark else "#3D6155"
-    rust = "#D9A278" if dark else "#A36F49"
+    p = palette(mode)
+    paper = p["paper"]
+    ink = p["ink"]
+    muted = p["muted"]
+    grid = p["grid"]
+    primary = p["primary"]
+    comparison = p["comparison"]
 
     def canvas(label, height=4.2, right=0.99, bottom=0.19):
         fig, ax = plt.subplots(figsize=(7.2, height))
@@ -90,8 +92,8 @@ for mode in ["light", "dark"]:
     # Approved Style A: same layout and color/line assignments as prior sample.
     fig, ax = canvas("Share of total income")
     for group, color, line, label in [
-        ("p99p100", rust, "-", "Top 1%"),
-        ("p0p50", green, "--", "Bottom 50%"),
+        ("p99p100", comparison, "-", "Top 1%"),
+        ("p0p50", primary, "--", "Bottom 50%"),
     ]:
         d = ineq[ineq.group == group]
         ax.plot(d.year, d.share, color=color, lw=2, ls=line)
@@ -110,11 +112,11 @@ for mode in ["light", "dark"]:
         "Change in mean log weekly wage, men (1963 = 0)", height=4.8, right=0.76
     )
     colors = [
-        ("#B9ACA0" if dark else "#827568"),
-        ("#BDCCC3" if dark else "#6F887A"),
-        ("#CFD3CE" if dark else "#66726B"),
-        rust,
-        green,
+        p["education_dropout"],
+        p["education_highschool"],
+        p["education_somecollege"],
+        comparison,
+        primary,
     ]
     patterns = ["-", (0, (5, 2)), (0, (1, 2)), (0, (6, 2, 1, 2)), (0, (3, 1.5))]
     labels = [
@@ -159,7 +161,7 @@ for mode in ["light", "dark"]:
     save(fig, "education")
 
     fig, ax = canvas("Labor share of income", height=4.4, right=0.96)
-    ax.plot(labor.year, labor.share, color=green, lw=2)
+    ax.plot(labor.year, labor.share, color=primary, lw=2)
     ax.set(
         xlim=(1945, 2020),
         ylim=(50, 70),
@@ -194,8 +196,8 @@ for mode in ["light", "dark"]:
 
     fig, ax = canvas("Labor force participation rate")
     for group, color, line, label in [
-        ("men", rust, "-", "Men"),
-        ("women", green, "--", "Women"),
+        ("men", comparison, "-", "Men"),
+        ("women", primary, "--", "Women"),
     ]:
         d = lfp[lfp.group == group]
         ax.plot(d.year, d.rate, color=color, lw=2, ls=line)

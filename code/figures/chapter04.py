@@ -4,6 +4,7 @@ All curve coordinates and deadweight-loss polygons are checked against source.
 See README.md for reconstruction details and the source's MFC conventions.
 """
 from pathlib import Path
+from figure_style import palette
 import argparse
 import json
 import os
@@ -64,13 +65,14 @@ def leader(point, position, text, color, ha="left"):
 
 for mode in ["light", "dark"]:
     dark = mode == "dark"
-    paper = "#202522" if dark else "#FAFAF7"
-    ink = "#E5EBE6" if dark else "#2B302D"
-    muted = "#B6C0B8" if dark else "#616962"
-    grid = "#414942" if dark else "#E1E5DF"
-    green = "#ACC9BB" if dark else "#3D6155"
-    rust = "#D9A278" if dark else "#A36F49"
-    sage = "#C0CFC5" if dark else "#758C7F"
+    p = palette(mode)
+    paper = p["paper"]
+    ink = p["ink"]
+    muted = p["muted"]
+    grid = p["grid"]
+    primary = p["primary"]
+    comparison = p["comparison"]
+    third = p["third"]
     for model in models:
         ident, v = model["id"], model["values"]
         fig, ax = plt.subplots(figsize=(7.2, 4.7))
@@ -106,7 +108,7 @@ for mode in ["light", "dark"]:
             1 if ident == "fig-labor-supply" else 2 if ident == "fig-mfc-curve" else 3
         )
         curves = model["original_curves"][:principal_count]
-        colors = [rust, sage, green]
+        colors = [comparison, third, primary]
         if ident == "fig-labor-supply":
             ax.set(ylim=(0, 55), yticks=range(0, 51, 10))
             ax.texts[0].set_text("Hourly wage ($)")
@@ -124,10 +126,10 @@ for mode in ["light", "dark"]:
             principal.append(line)
 
         if ident == "fig-labor-supply":
-            label(6.4, 48, "Labor supply", rust)
+            label(6.4, 48, "Labor supply", comparison)
         elif ident == "fig-mfc-curve":
-            label(6.7, 94, "Marginal factor cost", sage)
-            label(7.0, 54, "Labor supply", rust)
+            label(6.7, 94, "Marginal factor cost", third)
+            label(7.0, 54, "Labor supply", comparison)
         else:
             flat = ident == "fig-monopsony-flat-supply"
             minimum = ident in ["fig-minimum-wage-mfc", "fig-minimum-wage-too-high"]
@@ -165,29 +167,29 @@ for mode in ["light", "dark"]:
             ax.plot([0.5, q], [w, w], color=muted, ls=":", lw=1)
             for value in sorted(set([w, marginal])):
                 ax.scatter(q, value, s=30, color=ink, zorder=6)
-            label(1.5, 66, "Marginal revenue product", green)
+            label(1.5, 66, "Marginal revenue product", primary)
             if flat:
-                leader((10, 48), (8.7, 57), "Marginal factor cost", sage)
-                leader((10, 38), (9.3, 34), "Labor supply", rust)
+                leader((10, 48), (8.7, 57), "Marginal factor cost", third)
+                leader((10, 38), (9.3, 34), "Labor supply", comparison)
             elif ident == "fig-minimum-wage-mfc":
-                label(8.2, 52, "Labor supply", rust)
-                leader((4, 35), (1.7, 27), "MFC: $35", sage)
-                leader((9, 85), (6.7, 103), "MFC with minimum wage", sage)
+                label(8.2, 52, "Labor supply", comparison)
+                leader((4, 35), (1.7, 27), "MFC: $35", third)
+                leader((9, 85), (6.7, 103), "MFC with minimum wage", third)
             elif ident == "fig-minimum-wage-too-high":
-                label(9.3, 42, "Labor supply", rust)
-                label(6.7, 57, "MFC with minimum wage: $50", sage)
+                label(9.3, 42, "Labor supply", comparison)
+                label(6.7, 57, "MFC with minimum wage: $50", third)
             else:
-                label(6.7, 94, "Marginal factor cost", sage)
-                label(8.2, 52, "Labor supply", rust)
+                label(6.7, 94, "Marginal factor cost", third)
+                label(8.2, 52, "Labor supply", comparison)
 
             # Original shaded polygons are generated from their exact source
             # bounds, with no changes to the units or the employment interval.
             shade = None
             if ident == "fig-monopsony-deadweight-loss":
                 shade = ax.fill_between(
-                    v["x_dwl"], v["wage_dwl"], v["mrp_dwl"], color=rust, alpha=0.22
+                    v["x_dwl"], v["wage_dwl"], v["mrp_dwl"], color=comparison, alpha=0.22
                 )
-                leader((6, 35), (6.5, 19), "Deadweight\nloss", rust, ha="center").set_bbox(
+                leader((6, 35), (6.5, 19), "Deadweight\nloss", comparison, ha="center").set_bbox(
                     {"facecolor": paper, "edgecolor": "none", "pad": 1.5}
                 )
             elif flat:
@@ -195,10 +197,10 @@ for mode in ["light", "dark"]:
                     v["x_dwl_flat"],
                     v["wage_dwl_flat"],
                     v["mrp_dwl_flat"],
-                    color=rust,
+                    color=comparison,
                     alpha=0.22,
                 )
-                leader((6.4, 36), (6.5, 12), "Deadweight\nloss", rust, ha="center").set_bbox(
+                leader((6.4, 36), (6.5, 12), "Deadweight\nloss", comparison, ha="center").set_bbox(
                     {"facecolor": paper, "edgecolor": "none", "pad": 1.5}
                 )
             if shade is not None:

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "fig-wage-employment-scatter",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-labor-supply-line",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-mrp-curves-shift",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-shifting-supply-curves",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-steep-supply-curves-shifting",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-firm-pay-premia-distribution",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-merger-earnings-impact",
+    "theme": "light",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-noncompetes-education",
+    "theme": "light",
+    "approximate_intervals": true,
+    "printed_means_preserved": true
+  },
+  {
+    "id": "fig-noncompetes-industry",
+    "theme": "light",
+    "approximate_intervals": true,
+    "printed_means_preserved": true
+  },
+  {
+    "id": "fig-inequality-decomp",
+    "theme": "light",
+    "printed_rounded_values_preserved": true
+  },
+  {
+    "id": "fig-concentration",
+    "theme": "light",
+    "raster_recolor_only": true
+  },
+  {
+    "id": "fig-wage-employment-scatter",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-labor-supply-line",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-mrp-curves-shift",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-shifting-supply-curves",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-steep-supply-curves-shifting",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-firm-pay-premia-distribution",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-merger-earnings-impact",
+    "theme": "dark",
+    "provenance": "current local 05.qmd",
+    "source_model_preserved": true
+  },
+  {
+    "id": "fig-noncompetes-education",
+    "theme": "dark",
+    "approximate_intervals": true,
+    "printed_means_preserved": true
+  },
+  {
+    "id": "fig-noncompetes-industry",
+    "theme": "dark",
+    "approximate_intervals": true,
+    "printed_means_preserved": true
+  },
+  {
+    "id": "fig-inequality-decomp",
+    "theme": "dark",
+    "printed_rounded_values_preserved": true
+  },
+  {
+    "id": "fig-concentration",
+    "theme": "dark",
+    "raster_recolor_only": true
+  }
+]

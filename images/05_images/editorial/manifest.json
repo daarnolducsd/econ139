@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fig-wage-employment-scatter",
+    "caption": "Observed Wage and Employment Data"
+  },
+  {
+    "id": "fig-labor-supply-line",
+    "caption": "Assumed Labor Supply Curve to the Firm"
+  },
+  {
+    "id": "fig-mrp-curves-shift",
+    "caption": "Equilibrium in the Software Engineering Firm"
+  },
+  {
+    "id": "fig-shifting-supply-curves",
+    "caption": "Equilibrium in the Software Engineering Firm with Flat Labor Supply Curves"
+  },
+  {
+    "id": "fig-steep-supply-curves-shifting",
+    "caption": "Equilibrium in the Software Engineering Firm with Steeper Labor Supply Curves"
+  },
+  {
+    "id": "fig-firm-pay-premia-distribution",
+    "caption": "Hypothetical Distribution of Firm-Specific Pay Premia"
+  },
+  {
+    "id": "fig-noncompetes-education",
+    "caption": "Share of Workers with Non-Compete Agreements by Annual Earnings"
+  },
+  {
+    "id": "fig-noncompetes-industry",
+    "caption": "Share of Workers with Non-Compete Agreements by Enforceability"
+  },
+  {
+    "id": "fig-concentration",
+    "caption": "Concentration in US Labor Markets"
+  },
+  {
+    "id": "fig-merger-earnings-impact",
+    "caption": "Impact of Different Types of Mergers on Worker Earnings"
+  },
+  {
+    "id": "fig-inequality-decomp",
+    "caption": "Decomposition of Wage Inequality in the US"
+  }
+]

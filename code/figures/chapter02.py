@@ -2,6 +2,7 @@
 See README.md for inputs, construction, verification, and rebuild commands.
 """
 from pathlib import Path
+from figure_style import palette
 import argparse
 import json
 import os
@@ -56,13 +57,14 @@ checks = []
 
 for mode in ["light", "dark"]:
     dark = mode == "dark"
-    paper = "#202522" if dark else "#FAFAF7"
-    ink = "#E5EBE6" if dark else "#2B302D"
-    muted = "#B6C0B8" if dark else "#616962"
-    grid = "#414942" if dark else "#E1E5DF"
-    green = "#ACC9BB" if dark else "#3D6155"
-    rust = "#D9A278" if dark else "#A36F49"
-    sage = "#C0CFC5" if dark else "#758C7F"
+    p = palette(mode)
+    paper = p["paper"]
+    ink = p["ink"]
+    muted = p["muted"]
+    grid = p["grid"]
+    primary = p["primary"]
+    comparison = p["comparison"]
+    third = p["third"]
 
     for model in models:
         ident = model["id"]
@@ -117,18 +119,18 @@ for mode in ["light", "dark"]:
             )
 
         if ident == "fig-production-function":
-            curve(v["baristas"], v["lattes"], green)
+            curve(v["baristas"], v["lattes"], primary)
             ax.set(ylim=(0, 60), yticks=[0, 10, 20, 30, 40, 50, 60])
 
         elif ident == "fig-mrp-vs-cost":
-            curve(v["workers"], v["marginal_revenue_product"], green)
+            curve(v["workers"], v["marginal_revenue_product"], primary)
             wage = v["cost_per_worker"]
             n = v["intersection_worker"]
-            ax.axhline(wage, color=rust, ls="--", lw=1.7)
+            ax.axhline(wage, color=comparison, ls="--", lw=1.7)
             ax.plot([n, n], [0, wage], color=muted, ls=":", lw=1)
             ax.scatter(n, wage, s=38, color=ink, zorder=5)
-            label(2.3, 46, "Marginal revenue product", green)
-            label(1.3, 18, f"Cost per worker: ${wage}", rust)
+            label(2.3, 46, "Marginal revenue product", primary)
+            label(1.3, 18, f"Cost per worker: ${wage}", comparison)
             ax.annotate(
                 "Optimal hiring point",
                 xy=(n, wage),
@@ -139,27 +141,27 @@ for mode in ["light", "dark"]:
             )
 
         elif ident == "fig-labor-demand-curve":
-            curve(v["workers_hired"], v["wage_levels"], green)
-            label(5.7, 32, "Labor demand", green)
+            curve(v["workers_hired"], v["wage_levels"], primary)
+            label(5.7, 32, "Labor demand", primary)
 
         elif ident == "fig-two-cafes-mrp":
-            curve(v["workers"], v["mrp_cafe1"], sage)
-            curve(v["workers"], v["mrp_cafe2"], rust, marker="s", ls="--")
-            label(5.4, 32, "Cafe 1", sage)
-            label(5.3, 12, "Cafe 2", rust)
+            curve(v["workers"], v["mrp_cafe1"], third)
+            curve(v["workers"], v["mrp_cafe2"], comparison, marker="s", ls="--")
+            label(5.4, 32, "Cafe 1", third)
+            label(5.3, 12, "Cafe 2", comparison)
 
         elif ident == "fig-market-demand":
-            curve(v["workers"], v["mrp_cafe1"], sage, lw=1.6)
-            curve(v["workers"], v["mrp_cafe2"], rust, marker="s", ls="--", lw=1.6)
-            curve(v["market_quantities"], v["wage_levels"], green, marker="D", lw=2.5)
+            curve(v["workers"], v["mrp_cafe1"], third, lw=1.6)
+            curve(v["workers"], v["mrp_cafe2"], comparison, marker="s", ls="--", lw=1.6)
+            curve(v["market_quantities"], v["wage_levels"], primary, marker="D", lw=2.5)
             ax.set(xlim=(0, 21), xticks=range(0, 21, 2))
             ax.set_xticks(range(0, 22), minor=True)
             ax.tick_params(axis="x", which="minor", color=grid, length=2)
             # Label interior segments because the cafes share their last point.
             for text, point, position, color in [
-                ("Cafe 1", (7, 20), (8.2, 20), sage),
-                ("Cafe 2", (6, 16), (4.2, 16), rust),
-                ("Market demand", (14, 15), (15.2, 17), green),
+                ("Cafe 1", (7, 20), (8.2, 20), third),
+                ("Cafe 2", (6, 16), (4.2, 16), comparison),
+                ("Market demand", (14, 15), (15.2, 17), primary),
             ]:
                 ax.annotate(
                     text,
@@ -179,8 +181,8 @@ for mode in ["light", "dark"]:
                 )
 
         elif ident == "fig-market-equilibrium":
-            curve(v["market_quantities"], v["wage_levels"], green, marker="D", lw=2.5)
-            curve(v["supply_quantities"], v["supply_wages"], rust, ls="--", lw=2.2)
+            curve(v["market_quantities"], v["wage_levels"], primary, marker="D", lw=2.5)
+            curve(v["supply_quantities"], v["supply_wages"], comparison, ls="--", lw=2.2)
             q, w = v["equilibrium_workers"], v["equilibrium_wage"]
             ax.set(xlim=(0, 21), xticks=range(0, 21, 2))
             ax.set_xticks(range(0, 22), minor=True)
@@ -188,8 +190,8 @@ for mode in ["light", "dark"]:
             ax.plot([0, q], [w, w], color=muted, ls=":", lw=1)
             ax.plot([q, q], [0, w], color=muted, ls=":", lw=1)
             ax.scatter(q, w, s=42, color=ink, zorder=6)
-            label(3.4, 43, "Labor demand", green)
-            label(15.7, 31, "Labor supply", rust)
+            label(3.4, 43, "Labor demand", primary)
+            label(15.7, 31, "Labor supply", comparison)
             ax.annotate(
                 f"Equilibrium\n{q} workers, ${w}",
                 xy=(q, w),

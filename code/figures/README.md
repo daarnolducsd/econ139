@@ -2,6 +2,16 @@
 
 This directory contains the maintained code for the approved figure redesign. The files under the course's `outputs/` directory are review artifacts; the renderer here is the source for the book's redesigned assets.
 
+## Current palette policy (October 4, 2026)
+
+The approved **original dark green and rust** palette replaces the experimental red-led and sage/ochre alternatives for Chapters 1–6. `figure_style.py` is the shared source of truth: dark green `#3D6155`, rust `#A36F49`, supporting sage `#758C7F` and ochre `#B39B61`, original education-series neutrals, white background, and light-gray grids. Future chapter renderers should import its `palette` function. See `../../DESIGN_PLAN.md` for role mappings and the current page design.
+
+Demand/MRP is dark green, supply rust, and MFC sage. Education groups return to the original taupe/muted-green/gray-green/rust/dark-green mapping, retaining their line patterns. The Chapter 5 concentration map uses ordered rust tints, preserving its original categories and documented raster-recoloring limitation. Chapter 6 regions are Africa dark green, Asia rust, Europe ochre, and Americas sage. Literal color descriptions in Chapters 2, 3, and 6 are updated with the figures; student-facing prose calls the accent **red**, not vermilion.
+
+Only the active light exports receive this palette. Existing dark exports retain their legacy colors for compatibility; the book currently displays only the white theme. Historical review folders retain their original previews. Chapter 7 and later figures are outside this pass. This palette integration is local until David requests publication.
+
+Run each `chapter01.py` through `chapter06.py` with a Python environment containing `requirements.txt`. The current `python3` environment has the plotting dependencies; the older Anaconda application path recorded below may be unavailable. Scripts read their committed plotted inputs and regenerate derived figure assets, retaining their existing scientific assertions. Do not rerun raw-data reconstruction for a color-only change.
+
 ## Chapter 1
 
 ### Files and responsibilities
@@ -67,7 +77,7 @@ The education y-axis shows changes in **mean log wages**, not ordinary percentag
 
 ### Appearance and review
 
-The four previews were approved before integration. They use Arial/system-compatible sans-serif labels, quiet horizontal grids, transparent SVGs, and the approved green/rust palette. The education chart adds three muted supporting colors and distinct line patterns. Men/top-income shares retain rust, women/bottom-income shares retain green; related series are labeled directly. Labor share retains its four historical annotations.
+The four previews were approved before integration. They use Arial/system-compatible sans-serif labels, quiet horizontal grids, transparent SVGs, and the original dark green/rust palette. The education chart adds three muted supporting colors and distinct line patterns. Men/top-income shares use rust, women/bottom-income shares use dark green; related series are labeled directly. Labor share retains its four historical annotations.
 
 `--proofs` produces themed background PNGs and transparent PDFs for inspection. Published HTML uses the paired SVGs. The PDF edition of the book has not been redesigned or verified as part of this release.
 
@@ -189,7 +199,7 @@ non-competes, decomposition, and map styling.
 
 | Figures | Inputs and reconstruction status |
 | --- | --- |
-| 5.1–5.5 software firm | `models.json`: captured source curves, observed points, caption/ID and source-cell hashes. All plotted coordinates are checked. The common original $25K–$275K and 50–150 employee axes are retained. Supply is rust, MFC sage, MRP green; 2023 dashed/2024 solid. |
+| 5.1–5.5 software firm | `models.json`: captured source curves, observed points, caption/ID and source-cell hashes. All plotted coordinates are checked. The common original $25K–$275K and 50–150 employee axes are retained. Supply is rust, MFC sage, MRP dark green; 2023 dashed/2024 solid. |
 | 5.6 pay premia | Same source normal density (mean 0, standard deviation 0.2) on 1,000 points, checked against the independent analytical PDF. Original quartiles and explanatory text retained. |
 | 5.7–5.8 non-competes | `noncompetes-approximate.json`: printed means retained; CI endpoints, incidence bounds, CIs around bounds, and overall line manually digitized from the original PNGs. Pixel readings and axis calibration are recorded. **Approximate review candidates, not empirical replications.** All original uncertainty layers remain. |
 | 5.9 concentration | Existing `images/05_images/concentration.png`, SHA-256 checked against `imports.json`. Crop removes only margins/embedded legend. Nearest-color classification recolors the raster; original geographic shapes and striping persist. A native legend uses the same five categories. **Raster style preview; no original HHI dataset or commuting-zone geometry was recovered.** |
@@ -242,7 +252,7 @@ No randomized calculations are used.
 
 | Figures | Input / preserved definition | Status |
 | --- | --- | --- |
-| 6.1–6.2 Gapminder | Source PNGs, hashes in `imports.json`. Visible bubble silhouettes are traced into scalable paths (`bubble-traces.json`), with crisp native outlines; original positions and overlaps remain. No hidden circles or country data are inferred. New native axes retain the original GDP doublings and schooling coordinates. Africa green, Asia rust, Europe ochre, Americas sage. | Vector silhouette preview, not country-data replication. Exact country records, population values and year are not recovered. |
+| 6.1–6.2 Gapminder | Source PNGs, hashes in `imports.json`. Visible bubble silhouettes are traced into scalable paths (`bubble-traces.json`), with crisp native outlines; original positions and overlaps remain. No hidden circles or country data are inferred. New native axes retain the original GDP doublings and schooling coordinates. Africa dark green, Asia rust, Europe ochre, Americas sage. | Vector silhouette preview, not country-data replication. Exact country records, population values and year are not recovered. |
 | Unnumbered Mincer model | `mincer.json`: 100 original points, E=0–25; log earnings=10+0.02E−0.0005E². Both x/y arrays checked against source capture. | Original deterministic model; no caption or figure number added. |
 | 6.3–6.6 ACS | `experience.csv`, `schooling.csv`, `verification.json`; 2023 ACS, ages 18–65, positive nonmissing wages, unweighted arithmetic means following `code/acs/mincer.do`. Stata-default float log wages retained; markers use observation-count areas, not survey weights. Experience plots restrict groups to ≤40 years. | Reconstructed from 1,370,496 observations. Means and counts independently checked with NumPy accumulation; raw-file hash unchanged. |
 | 6.7 RDD popularity | `rdd-popularity-approximate.json`: annual gray-curve readings from source image, 1960–2019, reference at 1999. Marker-obscured 1999 value interpolated from neighbors. | Approximate image digitization, not bibliographic counts. |

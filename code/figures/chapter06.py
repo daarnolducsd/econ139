@@ -5,6 +5,7 @@ formula. RD curves are approximate pixel digitizations. Gapminder bubbles use
 vector traces of visible source silhouettes, not reconstructed country data.
 """
 from pathlib import Path
+from figure_style import palette
 import argparse
 import hashlib
 import json
@@ -49,19 +50,6 @@ rds = json.loads((DATA / "rd-approximate.json").read_text())
 checks = []
 
 
-def palette(mode):
-    dark = mode == "dark"
-    return dict(
-        paper="#202522" if dark else "#FAFAF7",
-        ink="#E5EBE6" if dark else "#2B302D",
-        muted="#B6C0B8" if dark else "#616962",
-        grid="#414942" if dark else "#E1E5DF",
-        green="#ACC9BB" if dark else "#3D6155",
-        rust="#D9A278" if dark else "#A36F49",
-        sage="#C0CFC5" if dark else "#758C7F",
-        ochre="#D0BC8F" if dark else "#B39B61",
-    )
-
 
 def panel(p, unit, height=4.7, bottom=0.19):
     fig, ax = plt.subplots(figsize=(7.2, height))
@@ -97,7 +85,7 @@ def mincer(p):
     source = json.loads((DATA / "mincer.json").read_text())
     assert np.array_equal(x, source["experience"])
     assert np.array_equal(y, source["log_earnings"])
-    (curve,) = ax.plot(x, y, color=p["green"], lw=2)
+    (curve,) = ax.plot(x, y, color=p["primary"], lw=2)
     assert np.array_equal(curve.get_ydata(), y)
     ax.set(
         xlim=(0, 25),
@@ -106,7 +94,7 @@ def mincer(p):
         yticks=np.arange(10, 10.201, 0.05),
     )
     ax.set_xlabel("Years of experience", color=p["muted"], labelpad=10)
-    ax.text(12, 10.11, "Log earnings", color=p["green"], fontsize=9.5)
+    ax.text(12, 10.11, "Log earnings", color=p["primary"], fontsize=9.5)
     return fig
 
 
@@ -126,10 +114,10 @@ def acs(ident, p):
         d[variable],
         d[value],
         s=areas,
-        color=p["green"],
+        color=p["primary"],
         alpha=0.45,
         linewidth=0.65,
-        edgecolor=p["green"],
+        edgecolor=p["primary"],
     )
     assert np.allclose(dots.get_offsets(), np.column_stack([d[variable], d[value]]))
     assert np.allclose(dots.get_sizes() / d.obs_count, 220 / d.obs_count.max())
@@ -176,12 +164,12 @@ def rd(model, p):
     # Keep each side's fitted segment separate; never connect across treatment.
     for i, line in enumerate(model["fits"]):
         xy = np.asarray(line)
-        ax.plot(xy[:, 0], xy[:, 1], color=p["green"], lw=1.8)
+        ax.plot(xy[:, 0], xy[:, 1], color=p["primary"], lw=1.8)
         band = model["left_band"] if i == 0 else model["right_band"]
         if band:
             upper, lower = np.asarray(band[0]), np.asarray(band[1])
             ax.fill_between(
-                upper[:, 0], lower[:, 1], upper[:, 1], color=p["green"], alpha=0.15
+                upper[:, 0], lower[:, 1], upper[:, 1], color=p["primary"], alpha=0.15
             )
     if gpa:
         areas = np.asarray(model["relative_areas"], float)
@@ -191,7 +179,7 @@ def rd(model, p):
             points[:, 1],
             s=areas,
             facecolors="none",
-            edgecolor=p["green"],
+            edgecolor=p["primary"],
             lw=1.2,
             zorder=3,
         )
@@ -224,7 +212,7 @@ def rd(model, p):
             )
         ax.set_xlabel("Average GPA in Economics 1 and 2", color=p["muted"], labelpad=10)
     else:
-        ax.scatter(points[:, 0], points[:, 1], s=13, color=p["green"], zorder=3)
+        ax.scatter(points[:, 0], points[:, 1], s=13, color=p["primary"], zorder=3)
         earnings = ident == "fig-future-earnings"
         ax.set(
             xlim=(-52, 52) if not earnings else (-41, 41),
@@ -233,7 +221,7 @@ def rd(model, p):
             yticks=np.arange(0, 1.01, 0.2) if not earnings else np.arange(0, 2.01, 0.4),
         )
         ax.set_xlabel("Distance to SABER 11 cutoff", color=p["muted"], labelpad=10)
-    ax.axvline(cutoff, color=p["rust"], ls="--", lw=1.2)
+    ax.axvline(cutoff, color=p["comparison"], ls="--", lw=1.2)
     if "note" in model:
         note = (
             "Sample restricted to SISBEN-eligible individuals"
@@ -252,14 +240,14 @@ def scores(p):
         xy[:, 0],
         xy[:, 1],
         width=model["bar_width"],
-        color=p["green"],
+        color=p["primary"],
         alpha=0.7,
         edgecolor=p["paper"],
         lw=0.2,
     )
-    ax.axvline(310, color=p["rust"], lw=1.3)
+    ax.axvline(310, color=p["comparison"], lw=1.3)
     ax.text(
-        325, 4.6, "SPP eligibility\n(~ top 9%)", color=p["rust"], fontsize=9.5, va="top"
+        325, 4.6, "SPP eligibility\n(~ top 9%)", color=p["comparison"], fontsize=9.5, va="top"
     )
     ax.set(
         xlim=(-10, 510), ylim=(0, 5.1), xticks=range(0, 501, 100), yticks=range(0, 6)
@@ -272,8 +260,8 @@ def popularity(p):
     m = json.loads((DATA / "rdd-popularity-approximate.json").read_text())
     xy = np.asarray(m["series"])
     fig, ax = panel(p, "Number of studies mentioning RDD", bottom=0.26)
-    ax.plot(xy[:, 0], xy[:, 1], color=p["green"], lw=2)
-    ax.axvline(1999, color=p["rust"], ls="--", lw=1)
+    ax.plot(xy[:, 0], xy[:, 1], color=p["primary"], lw=2)
+    ax.axvline(1999, color=p["comparison"], ls="--", lw=1)
     ax.set(
         xlim=(1960, 2020),
         ylim=(0, 6200),
@@ -303,7 +291,7 @@ def gap(model, p):
     men = model["file"] == "gap1.png"
     bounds = trace["bounds_display_pixels"]
     width, height = trace["crop_size"]
-    colors = [p["green"], p["rust"], p["ochre"], p["sage"]]
+    colors = [p["primary"], p["comparison"], p["fourth"], p["third"]]
     # GDP uses log2 coordinates so equal pixel spacings still represent doublings.
     xtick = 436 if men else 203
     x_at_tick = 2 if men else 0

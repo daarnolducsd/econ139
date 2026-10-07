@@ -1,0 +1,112 @@
+[
+  {
+    "id": "fig-minimum-wage-theory",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-illustration",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-growing-employment",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-card-krueger-data",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-pre-trends-violation",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-stable-pretrends",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-clemens0",
+    "theme": "light",
+    "verification": "schematic relationships and labels"
+  },
+  {
+    "id": "fig-clemens1",
+    "theme": "light",
+    "verification": "schematic relationships and labels"
+  },
+  {
+    "id": "fig-90-10",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-wage-distribution",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-counterfactual-wage-distribution",
+    "theme": "light",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-minimum-wage-theory",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-illustration",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-growing-employment",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-card-krueger-data",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-pre-trends-violation",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-did-stable-pretrends",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-clemens0",
+    "theme": "dark",
+    "verification": "schematic relationships and labels"
+  },
+  {
+    "id": "fig-clemens1",
+    "theme": "dark",
+    "verification": "schematic relationships and labels"
+  },
+  {
+    "id": "fig-90-10",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-wage-distribution",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  },
+  {
+    "id": "fig-counterfactual-wage-distribution",
+    "theme": "dark",
+    "verification": "source curves or aggregate counts unchanged"
+  }
+]

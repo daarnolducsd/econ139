@@ -1,10 +1,11 @@
-"""Render Chapter 5 figure candidates in the approved green/rust style.
+"""Render Chapter 5 figure candidates in the approved dark-green-and-rust palette.
 
 Seven models retain the current chapter's plotted coordinates. Imported charts
 have separate, explicit provenance: printed values, approximate pixel readings,
 and a raster category recoloring (not a geographic/data replication).
 """
 from pathlib import Path
+from figure_style import palette
 import argparse
 import hashlib
 import json
@@ -50,18 +51,6 @@ noncompetes = json.loads((DATA / "noncompetes-approximate.json").read_text())
 decomposition = json.loads((DATA / "decomposition.json").read_text())
 checks = []
 
-
-def palette(mode):
-    dark = mode == "dark"
-    return dict(
-        paper="#202522" if dark else "#FAFAF7",
-        ink="#E5EBE6" if dark else "#2B302D",
-        muted="#B6C0B8" if dark else "#616962",
-        grid="#414942" if dark else "#E1E5DF",
-        green="#ACC9BB" if dark else "#3D6155",
-        rust="#D9A278" if dark else "#A36F49",
-        sage="#C0CFC5" if dark else "#758C7F",
-    )
 
 
 def panel(p, unit, size=(7.2, 4.9), bottom=0.19):
@@ -118,12 +107,12 @@ def firm_diagram(model, index, p):
         ax.texts[0].set_text("Annual wage ($)")
     count = [0, 1, 4, 6, 6][index]
     colors = (
-        [p["rust"]]
+        [p["comparison"]]
         if count == 1
         else (
-            [p["rust"], p["sage"], p["green"], p["green"]]
+            [p["comparison"], p["third"], p["primary"], p["primary"]]
             if count == 4
-            else [p["rust"]] * 2 + [p["sage"]] * 2 + [p["green"]] * 2
+            else [p["comparison"]] * 2 + [p["third"]] * 2 + [p["primary"]] * 2
         )
     )
     for source, color in zip(model["curves"][:count], colors):
@@ -158,7 +147,7 @@ def firm_diagram(model, index, p):
         for (x, w), (_, marginal) in zip(model["scatter"][0], points):
             ax.plot([x, x], [w, marginal], color=p["muted"], ls=":", lw=0.9)
     if index == 1:
-        leader(ax, (135, 117500), (133, 151000), "Labor supply", p["rust"], "right")
+        leader(ax, (135, 117500), (133, 151000), "Labor supply", p["comparison"], "right")
     elif index == 2:
         labels = [
             (0, 135, (133, 67000), "Labor supply", "right"),
@@ -206,8 +195,8 @@ def density(model, p):
     assert np.isclose(v["p75"], normal.inv_cdf(0.75))
     assert v["median"] == 0
     assert np.allclose(y, np.exp(-0.5 * (x / 0.2) ** 2) / (0.2 * np.sqrt(2 * np.pi)))
-    ax.plot(x, y, color=p["green"], lw=2)
-    ax.fill_between(x, y, color=p["green"], alpha=0.13)
+    ax.plot(x, y, color=p["primary"], lw=2)
+    ax.fill_between(x, y, color=p["primary"], alpha=0.13)
     ax.set(
         xlim=(-0.6, 0.6),
         ylim=(0, 2.65),
@@ -220,7 +209,7 @@ def density(model, p):
         (v["median"], "Median (average firm)\n(0.000)", 0),
         (v["p75"], "75th percentile\n(0.135)", 1),
     ]:
-        ax.axvline(q, color=p["rust"] if side else p["sage"], lw=1.1, ls="--")
+        ax.axvline(q, color=p["comparison"] if side else p["third"], lw=1.1, ls="--")
         ax.text(
             q if not side else side * 0.38,
             2.35,
@@ -256,7 +245,7 @@ def merger(model, p):
     fig, ax = panel(p, "Change in earnings (%)", bottom=0.24)
     v = model["values"]
     effects = v["earnings_impact"]
-    bars = ax.bar(range(3), effects, width=0.58, color=p["rust"])
+    bars = ax.bar(range(3), effects, width=0.58, color=p["comparison"])
     assert [b.get_height() for b in bars] == effects
     ax.axhline(0, color=p["muted"], lw=1)
     ax.set(
@@ -294,15 +283,15 @@ def noncompete(model, p):
                 0.72,
                 hi - lo,
                 fill=False,
-                edgecolor=p["sage"],
+                edgecolor=p["third"],
                 linewidth=0.9,
                 alpha=0.7,
             )
         )
         for ci in [lo_ci, hi_ci]:
-            ax.plot([x + 0.10, x + 0.10], ci, color=p["sage"], lw=0.8, alpha=0.7)
-            ax.plot([x + 0.075, x + 0.125], [ci[0]] * 2, color=p["sage"], lw=0.8)
-            ax.plot([x + 0.075, x + 0.125], [ci[1]] * 2, color=p["sage"], lw=0.8)
+            ax.plot([x + 0.10, x + 0.10], ci, color=p["third"], lw=0.8, alpha=0.7)
+            ax.plot([x + 0.075, x + 0.125], [ci[0]] * 2, color=p["third"], lw=0.8)
+            ax.plot([x + 0.075, x + 0.125], [ci[1]] * 2, color=p["third"], lw=0.8)
     means = np.asarray(model["means"])
     intervals = np.asarray(model["mean_ci"])
     ax.errorbar(
@@ -310,7 +299,7 @@ def noncompete(model, p):
         means,
         yerr=[means - intervals[:, 0], intervals[:, 1] - means],
         fmt="o",
-        color=p["green"],
+        color=p["primary"],
         ms=4.7,
         capsize=2,
         lw=1.1,
@@ -325,7 +314,7 @@ def noncompete(model, p):
             color=p["ink"],
             fontsize=9,
         )
-    ax.axhline(model["overall"], color=p["rust"], ls="--", lw=1.2)
+    ax.axhline(model["overall"], color=p["comparison"], ls="--", lw=1.2)
     ax.set_xlabel(
         "Annual earnings in $1,000s" if n == 8 else "Non-compete enforceability level",
         color=p["muted"],
@@ -334,22 +323,22 @@ def noncompete(model, p):
     handles = [
         Patch(
             facecolor="none",
-            edgecolor=p["sage"],
+            edgecolor=p["third"],
             label="Upper–lower bounds of incidence",
         ),
         Line2D(
             [],
             [],
-            color=p["green"],
+            color=p["primary"],
             marker="o",
             lw=0,
             label="Multiple-imputation incidence estimate",
         ),
-        Line2D([], [], color=p["sage"], marker="|", lw=1, label="95% CI"),
+        Line2D([], [], color=p["third"], marker="|", lw=1, label="95% CI"),
         Line2D(
             [],
             [],
-            color=p["rust"],
+            color=p["comparison"],
             ls="--",
             lw=1.2,
             label="Overall multiple-imputation incidence",
@@ -372,8 +361,8 @@ def inequality(p):
     fig, ax = panel(p, "Change in log 90/10 ratio", bottom=0.27)
     a = np.asarray(decomposition["log90_50"])
     b = np.asarray(decomposition["log50_10"])
-    ax.bar(range(3), a, width=0.58, color=p["green"])
-    ax.bar(range(3), b, bottom=a, width=0.58, color=p["rust"])
+    ax.bar(range(3), a, width=0.58, color=p["primary"])
+    ax.bar(range(3), b, bottom=a, width=0.58, color=p["comparison"])
     ax.axhline(0, color=p["muted"], lw=1)
     ax.set(
         ylim=(-0.3, 0.35),
@@ -383,7 +372,7 @@ def inequality(p):
     )
     for x in range(3):
         if abs(a[x]) < 0.04:
-            leader(ax, (x, a[x] / 2), (x, 0.045), f"{a[x]:.3f}", p["green"], "center")
+            leader(ax, (x, a[x] / 2), (x, 0.045), f"{a[x]:.3f}", p["primary"], "center")
         else:
             ax.text(
                 x,
@@ -405,8 +394,8 @@ def inequality(p):
         )
     ax.legend(
         handles=[
-            Patch(color=p["green"], label="log 90/50 ratio"),
-            Patch(color=p["rust"], label="log 50/10 ratio"),
+            Patch(color=p["primary"], label="log 90/50 ratio"),
+            Patch(color=p["comparison"], label="log 50/10 ratio"),
         ],
         loc="upper center",
         bbox_to_anchor=(0.5, -0.24),
@@ -447,9 +436,7 @@ def concentration(p):
     classes = distances.argmin(axis=2)
     from matplotlib.colors import to_rgb
 
-    colors = ["#A36F49", "#C49A77", "#E5D4BD", p["paper"], p["grid"], p["muted"]]
-    if p["paper"] == "#202522":
-        colors[:3] = ["#D9A278", "#A77957", "#685440"]
+    colors = p["sequential"] + [p["paper"], p["grid"], p["muted"]]
     image = np.array([to_rgb(c) for c in colors])[classes]
     # Outside-white is the page color. Low-HHI white uses the same page color,
     # retaining the source's boundaries and category classification.
