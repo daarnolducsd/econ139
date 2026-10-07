@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-02T15:46:04.369776</dc:date>
+    <dc:date>2026-10-04T15:29:29.145934</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.5.2, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.8.1, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -43,50 +43,50 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="mcaaf28ee93" d="M 0 0 
+       <path id="mc09ad74946" d="M 0 0 
 L 0 3 
 " style="stroke: #e1e5df; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#mcaaf28ee93" x="57.024" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
+       <use xlink:href="#mc09ad74946" x="57.024" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
-      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="57.024" y="267.215922" transform="rotate(-0, 57.024, 267.215922)">1960</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="57.024" y="267.215922" transform="rotate(-0 57.024 267.215922)">1960</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#mcaaf28ee93" x="205.632" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
+       <use xlink:href="#mc09ad74946" x="205.632" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
-      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="205.632" y="267.215922" transform="rotate(-0, 205.632, 267.215922)">1980</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="205.632" y="267.215922" transform="rotate(-0 205.632 267.215922)">1980</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#mcaaf28ee93" x="354.24" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
+       <use xlink:href="#mc09ad74946" x="354.24" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
-      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="354.24" y="267.215922" transform="rotate(-0, 354.24, 267.215922)">2000</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="354.24" y="267.215922" transform="rotate(-0 354.24 267.215922)">2000</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#mcaaf28ee93" x="502.848" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
+       <use xlink:href="#mc09ad74946" x="502.848" y="250.416" style="fill: #e1e5df; stroke: #e1e5df; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
-      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="502.848" y="267.215922" transform="rotate(-0, 502.848, 267.215922)">2020</text>
+      <text style="fill: #616962; font: 9.5px 'Arial'; text-anchor: middle" x="502.848" y="267.215922" transform="rotate(-0 502.848 267.215922)">2020</text>
      </g>
     </g>
     <g id="text_5">
-     <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: middle" x="279.936" y="286.61975" transform="rotate(-0, 279.936, 286.61975)">Year</text>
+     <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: middle" x="279.936" y="286.61975" transform="rotate(-0 279.936 286.61975)">Year</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -94,44 +94,44 @@ L 0 3
      <g id="line2d_5">
       <path d="M 57.024 250.416 
 L 502.848 250.416 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
      </g>
      <g id="line2d_6"/>
      <g id="text_6">
-      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="254.173852" transform="rotate(-0, 49.024, 254.173852)">0</text>
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="254.173852" transform="rotate(-0 49.024 254.173852)">0</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_7">
       <path d="M 57.024 184.919226 
 L 502.848 184.919226 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
      </g>
      <g id="line2d_8"/>
      <g id="text_7">
-      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="188.677077" transform="rotate(-0, 49.024, 188.677077)">2000</text>
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="188.677077" transform="rotate(-0 49.024 188.677077)">2000</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_9">
       <path d="M 57.024 119.422452 
 L 502.848 119.422452 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
      </g>
      <g id="line2d_10"/>
      <g id="text_8">
-      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="123.180303" transform="rotate(-0, 49.024, 123.180303)">4000</text>
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="123.180303" transform="rotate(-0 49.024 123.180303)">4000</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_11">
       <path d="M 57.024 53.925677 
 L 502.848 53.925677 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke: #e1e5df; stroke-width: 0.65; stroke-linecap: round"/>
      </g>
      <g id="line2d_12"/>
      <g id="text_9">
-      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="57.683529" transform="rotate(-0, 49.024, 57.683529)">6000</text>
+      <text style="fill: #616962; font: 10.5px 'Arial'; text-anchor: end" x="49.024" y="57.683529" transform="rotate(-0 49.024 57.683529)">6000</text>
      </g>
     </g>
    </g>
@@ -196,12 +196,12 @@ L 473.1264 121.789833
 L 480.5568 112.583278 
 L 487.9872 89.830682 
 L 495.4176 66.551491 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke: #3d6155; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke: #3d6155; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="line2d_14">
     <path d="M 346.8096 250.416 
 L 346.8096 47.376 
-" clip-path="url(#p2af44ce1e7)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #a36f49"/>
+" clip-path="url(#p088483178c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #a36f49"/>
    </g>
    <g id="patch_3">
     <path d="M 57.024 250.416 
@@ -209,15 +209,15 @@ L 502.848 250.416
 " style="fill: none; stroke: #e1e5df; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_10">
-    <text style="fill: #616962; font: 10px 'Arial'; text-anchor: start" x="57.024" y="33.1632" transform="rotate(-0, 57.024, 33.1632)">Number of studies mentioning RDD</text>
+    <text style="fill: #616962; font: 10px 'Arial'; text-anchor: start" x="57.024" y="33.1632" transform="rotate(-0 57.024 33.1632)">Number of studies mentioning RDD</text>
    </g>
    <g id="text_11">
-    <text style="fill: #616962; font: 9px 'Arial'; text-anchor: start" x="57.024" y="317.4192" transform="rotate(-0, 57.024, 317.4192)">Vertical bar: Angrist and Lavy (1999) and Black (1999)</text>
+    <text style="fill: #616962; font: 9px 'Arial'; text-anchor: start" x="57.024" y="317.4192" transform="rotate(-0 57.024 317.4192)">Vertical bar: Angrist and Lavy (1999) and Black (1999)</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p2af44ce1e7">
+  <clipPath id="p088483178c">
    <rect x="57.024" y="47.376" width="445.824" height="203.04"/>
   </clipPath>
  </defs>
