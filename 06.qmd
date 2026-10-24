@@ -386,6 +386,8 @@ And the amazing thing that the regression discontinuity design allows us to do i
 
 When the authors do this, they estimate that Economics majors earn about \$20,000 more than other social science majors. This is remarkably close to the causal estimate of \$22,123 they get from the regression discontinuity design. Now, to emphasize, just because the observational estimate is close to the causal estimate in this particular case does not mean that we didn't need the regression discontinuity design. If you had just shown someone the observational estimate, there would be a number of counterarguments. Maybe Economics majors tend to have higher GPAs and would earn more anyways. Maybe Economics majors are interested in different careers, but even if they were unable to get an Economics degree, they would have still pursued those careers. These arguments are all valid for observational studies. The power of the regression discontinuity design is that it allows us to get around these concerns and estimate a causal impact. So in this context, there is a clear causal impact of receiving an Economics degree on earnings.
 
+{{< include _includes/rd-activity.html >}}
+
 ::: {.content-hidden}
 
 ## Predicting Returns to Education

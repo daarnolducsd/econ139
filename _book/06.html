@@ -607,6 +607,109 @@ Figure&nbsp;6.14: Earnings by GPA
 <p>Now, this is an enormous effect. Remember, we have been consider the impact of an additional year of schooling on earnings. Typical estimates are in the range of 7-10 percent. Here, receiving an Economics degree relative to another college degree increases earnings early in your career by over 40 percent!</p>
 <p>And the amazing thing that the regression discontinuity design allows us to do is argue that this is causal. However, one nice feature of this study is that the authors also consider what the observational data would suggest. For an observational study, one could take all the students at UC Santa Cruz and compute earnings by major. Then to estimate the return to an Economics degree, one could compare the average earnings of Economics majors to the average earnings of non-Economics majors. Or to perhaps be more realistic, you could compare Economics majors to other popular social science majors, such as Psychology or Sociology.</p>
 <p>When the authors do this, they estimate that Economics majors earn about $20,000 more than other social science majors. This is remarkably close to the causal estimate of $22,123 they get from the regression discontinuity design. Now, to emphasize, just because the observational estimate is close to the causal estimate in this particular case does not mean that we didn’t need the regression discontinuity design. If you had just shown someone the observational estimate, there would be a number of counterarguments. Maybe Economics majors tend to have higher GPAs and would earn more anyways. Maybe Economics majors are interested in different careers, but even if they were unable to get an Economics degree, they would have still pursued those careers. These arguments are all valid for observational studies. The power of the regression discontinuity design is that it allows us to get around these concerns and estimate a causal impact. So in this context, there is a clear causal impact of receiving an Economics degree on earnings.</p>
+<link rel="stylesheet" href="widgets/rd-activity.css">
+<section class="rd-activity" id="rd-activity" aria-labelledby="rd-title">
+  <p class="rd-eyebrow">Try it · From eligibility to education</p>
+  <h3 id="rd-title" class="no-anchor">What does the cutoff identify?</h3>
+  <p>At a hypothetical university, students become eligible for an economics major at a GPA cutoff of 3.0. Some eligible students choose another major, and some ineligible students enter through an appeal.</p>
+  <p class="rd-case" id="rd-case">Case 1 of 2 · University A</p>
+  <p id="rd-context">Use the values immediately below and above the cutoff to estimate the effect of eligibility, then the effect of completing the economics degree.</p>
+  <div class="rd-charts" id="rd-charts" hidden="">
+    <figure class="figure"><figcaption>Completing an economics degree</figcaption><svg id="rd-degree-chart" viewbox="0 0 320 240" role="img" aria-labelledby="rd-degree-title rd-degree-desc"><title id="rd-degree-title">Degree completion around the eligibility cutoff</title><desc id="rd-degree-desc"></desc><g id="rd-degree-plot"></g></svg></figure>
+    <figure class="figure"><figcaption>Annual earnings</figcaption><svg id="rd-earnings-chart" viewbox="0 0 320 240" role="img" aria-labelledby="rd-earnings-title rd-earnings-desc"><title id="rd-earnings-title">Annual earnings around the eligibility cutoff</title><desc id="rd-earnings-desc"></desc><g id="rd-earnings-plot"></g></svg></figure>
+  </div>
+  <div class="rd-table-wrap">
+
+<table class="rd-data caption-top table" data-quarto-postprocess="true">
+<caption>Values at the cutoff · hypothetical data, not estimates from the study above</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Outcome</th>
+<th data-quarto-table-cell-role="th" scope="col">Just below</th>
+<th data-quarto-table-cell-role="th" scope="col">Just above</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">Degree completion</td>
+<td id="rd-prob-below">30%</td>
+<td id="rd-prob-above">50%</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">Annual earnings</td>
+<td id="rd-pay-below">$42,000</td>
+<td id="rd-pay-above">$45,600</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+  <details class="rd-assumptions" id="rd-assumptions">
+    <summary>Assumptions for the causal interpretation</summary>
+    <p>Assume students cannot precisely manipulate which side of the cutoff they fall on, and that without the eligibility rule, average potential earnings and degree choices would vary smoothly through the cutoff. Eligibility affects earnings only through completing the economics degree, and becoming eligible does not discourage anyone from completing it. Treat the displayed values as exact for this exercise.</p>
+  </details>
+  <div class="rd-evidence" id="rd-evidence" hidden="">
+    <p><strong>A detail from University B's policy:</strong> crossing 3.0 also grants access to a paid industry internship, regardless of the student's eventual major. The internship can affect later earnings through work experience and job contacts.</p>
+    <p>Assume there is no precise sorting around 3.0 and that, without these policies, average earnings would vary smoothly through the cutoff. Prior SAT scores show no jump at 3.0.</p>
+    <p>An analyst calculates $3,600 ÷ 0.10 = $36,000 and calls this the effect of completing economics. Assess that claim.</p>
+  </div>
+  <form id="rd-form" novalidate="">
+    <fieldset class="rd-calculations" id="rd-calculations">
+      <legend>1. Work out the two jumps and the implied effect</legend>
+      <div class="rd-field">
+        <label for="rd-degree">Jump in degree completion <span>Percentage points, not percent growth</span></label>
+        <input id="rd-degree" name="degree" type="text" inputmode="decimal" autocomplete="off" aria-describedby="rd-degree-hint" required="">
+        <p class="rd-hint" id="rd-degree-hint"></p>
+      </div>
+      <div class="rd-field">
+        <label for="rd-eligibility">Effect of eligibility on annual earnings <span>Dollars per year</span></label>
+        <input id="rd-eligibility" name="eligibility" type="text" inputmode="decimal" autocomplete="off" aria-describedby="rd-eligibility-hint" required="">
+        <p class="rd-hint" id="rd-eligibility-hint"></p>
+      </div>
+      <div class="rd-field">
+        <label for="rd-effect">Implied effect of completing the economics degree <span>Dollars per year, under the assumptions above</span></label>
+        <input id="rd-effect" name="effect" type="text" inputmode="decimal" autocomplete="off" aria-describedby="rd-effect-hint" required="">
+        <p class="rd-hint" id="rd-effect-hint"></p>
+      </div>
+    </fieldset>
+    <fieldset class="rd-interpretation" id="rd-interpretation" aria-describedby="rd-interpretation-hint">
+      <legend>2. Whose degree effect does that estimate describe?</legend>
+      <label><input type="radio" name="rd-population" value="all-majors" required=""> All students who complete an economics degree at this university.</label>
+      <label><input type="radio" name="rd-population" value="all-nearby"> All students with GPAs close to 3.0, whether or not eligibility changes their major.</label>
+      <label><input type="radio" name="rd-population" value="switchers"> Students near the cutoff whose decision to complete economics changes because they become eligible.</label>
+      <label><input type="radio" name="rd-population" value="always"> Students near the cutoff who would complete economics with or without eligibility.</label>
+      <p class="rd-hint" id="rd-interpretation-hint"></p>
+    </fieldset>
+    <fieldset class="rd-interpretation" id="rd-claim" aria-describedby="rd-claim-hint" hidden="" disabled="">
+      <legend>1. Which conclusion is supported?</legend>
+      <label><input type="radio" name="rd-claim-answer" value="degree-ratio"> Completing economics raises earnings by $36,000 for students whose major responds to eligibility.</label>
+      <label><input type="radio" name="rd-claim-answer" value="degree-jump"> Completing economics raises earnings by $3,600; scaling by completion is unnecessary here.</label>
+      <label><input type="radio" name="rd-claim-answer" value="nothing"> The internship makes the cutoff unusable for estimating any causal effect on earnings.</label>
+      <label><input type="radio" name="rd-claim-answer" value="package"> Crossing the cutoff raises earnings by $3,600 through the policy package; the degree-only effect is not identified.</label>
+      <p class="rd-hint" id="rd-claim-hint"></p>
+    </fieldset>
+    <fieldset class="rd-interpretation" id="rd-design" aria-describedby="rd-design-hint" hidden="" disabled="">
+      <legend>2. Which design would isolate the degree effect?</legend>
+      <label><input type="radio" name="rd-design-answer" value="narrower"> Compare only students within a much narrower GPA window around the existing cutoff.</label>
+      <label><input type="radio" name="rd-design-answer" value="separate"> Study a version of the policy with the same internship access on both sides of the major-eligibility cutoff.</label>
+      <label><input type="radio" name="rd-design-answer" value="larger"> Collect a much larger sample and estimate the two discontinuities more precisely.</label>
+      <label><input type="radio" name="rd-design-answer" value="balance"> Verify that additional pre-college characteristics, as well as SAT scores, are smooth at the cutoff.</label>
+      <p class="rd-hint" id="rd-design-hint"></p>
+    </fieldset>
+    <div class="rd-actions" id="rd-actions" hidden="">
+      <button type="submit" class="rd-primary">Check my answers</button>
+      <button type="button" id="rd-solution-button" hidden="">Show worked solution</button>
+    </div>
+  </form>
+  <p id="rd-status" class="rd-status" role="status" aria-atomic="true"></p>
+  <div id="rd-solution" class="rd-solution" hidden=""></div>
+  <div class="rd-navigation" id="rd-navigation" hidden="">
+    <button type="button" id="rd-next" class="rd-primary" hidden="">Assess University B</button>
+    <button type="button" id="rd-reset">Start over</button>
+  </div>
+  <noscript><p class="rd-offline">Write down your three calculations and choose an interpretation. Enable JavaScript for feedback and a second case.</p></noscript>
+</section>
+<script src="widgets/rd-activity.js" defer=""></script>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

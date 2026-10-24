@@ -59,63 +59,35 @@ Now, what about the second barista? The marginal product of labor is 9 lattes, a
 
 ```{python}
 #| echo: false
-#| label: tbl-marginal-products
-#| tbl-cap: "Marginal Product and Marginal Revenue Product of Labor"
+#| output: asis
 
-import pandas as pd
+import json
+from pathlib import Path
 
-# Calculate marginal product
-workers = list(range(1, 11))
-total_output = [10, 19, 27, 34, 40, 45, 49, 52, 54, 55]
-marginal_product = [total_output[0]]  # First worker's marginal product
-for i in range(1, len(total_output)):
-    marginal_product.append(total_output[i] - total_output[i-1])
+# Use the same authoritative production schedule as the figure.
+models = json.loads(Path("code/figures/data/chapter02/models.json").read_text())
+production = next(model["values"] for model in models
+                  if model["id"] == "fig-production-function")
+total_output = [0] + production["lattes"]
+workers = production["baristas"]
+marginal_product = [total_output[n] - total_output[n - 1] for n in workers]
+marginal_revenue_product = [5 * mp for mp in marginal_product]
 
-# Calculate marginal revenue product (assuming $5 per latte)
-price_per_latte = 5
-marginal_revenue_product = [mp * price_per_latte for mp in marginal_product]
-
-# Create DataFrame
-df = pd.DataFrame({
-    'Number of Workers': workers,
-    'Marginal Product (Lattes)': marginal_product,
-    'Marginal Revenue Product ($)': marginal_revenue_product
-})
-
-# Display as HTML table with nice styling
-from IPython.display import HTML
-html_table = df.to_html(index=False, classes='table table-striped table-hover', table_id='marginal-products-table')
-
-# Add some custom styling
-styled_html = f"""
-<style>
-#marginal-products-table {{
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 60%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}}
-#marginal-products-table th {{
-    background-color: #f8f9fa;
-    color: #495057;
-    font-weight: 600;
-    padding: 12px;
-    text-align: center;
-    border-bottom: 2px solid #dee2e6;
-}}
-#marginal-products-table td {{
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #dee2e6;
-}}
-#marginal-products-table tr:hover {{
-    background-color: #f5f5f5;
-}}
-</style>
-{html_table}
-"""
-
-HTML(styled_html)
+rows = []
+for n, mp, mrp in zip(workers, marginal_product, marginal_revenue_product):
+    status = "Profitable" if mrp > 15 else "Break-even" if mrp == 15 else "Unprofitable"
+    row_class = "hiring-cutoff" if mrp == 15 else ""
+    rows.append(f'<tr class="{row_class}"><td>{n}</td><td>{mp}</td><td>${mrp}</td>'
+                f'<td><span class="hiring-status">{status}</span></td></tr>')
+print('::: {#tbl-marginal-products}')
+print('<div class="course-table-scroll" tabindex="0" role="region" aria-label="Marginal product table">')
+print('<table class="course-table" id="marginal-products-table"><thead><tr>'
+      '<th scope="col">Workers</th><th scope="col">Marginal product<br>(lattes/hr)</th>'
+      '<th scope="col">Marginal revenue product<br>($/hr)</th>'
+      '<th scope="col">Hiring at<br>$15/hr</th></tr></thead><tbody>')
+print("".join(rows))
+print('</tbody></table></div>')
+print('\nMarginal Product and Marginal Revenue Product of Labor ($5 per latte, $15 hourly wage)\n:::')
 ```
 
 Given this table, when does it make sense for the cafe to stop hiring baristas? Well, it should keep hiring baristas until the marginal revenue product of labor is less than the cost of hiring that barista. In our case, the cost of hiring each barista is $15. The marginal revenue product of labor is equal to or greater than $15 for the first 8 baristas, but for the 9th barista, the marginal revenue product of labor is $10, which is less than the cost of hiring that barista. Therefore, the cafe should hire 8 baristas.
@@ -141,73 +113,22 @@ Let's repeat this process for a range of wages. Below we plot a table where we s
 
 ```{python}
 #| echo: false
-#| label: tbl-labor-demand
-#| tbl-cap: "Labor Demand: Number of Baristas Hired at Different Wage Levels"
+#| output: asis
 
-import pandas as pd
-
-# Marginal revenue product data from previous table
-marginal_revenue_product = [50, 45, 40, 35, 30, 25, 20, 15, 10, 5]
-workers = list(range(1, 11))
-
-# Use the exact MRP values as wage levels
+# Include a worker when MRP equals the wage, as in the chapter's demand schedule.
 wage_levels = marginal_revenue_product.copy()
-
-# For each wage level, determine how many workers to hire
-# Hire workers as long as their MRP >= wage
-workers_hired = []
+rows = []
 for wage in wage_levels:
-    hired = 0
-    for i, mrp in enumerate(marginal_revenue_product):
-        if mrp >= wage:
-            hired = i + 1  # Worker number is index + 1
-        else:
-            break
-    workers_hired.append(hired)
-
-# Create DataFrame
-demand_df = pd.DataFrame({
-    'Hourly Wage ($)': wage_levels,
-    'Number of Baristas Hired': workers_hired
-})
-
-# Display as HTML table with nice styling
-from IPython.display import HTML
-html_table = demand_df.to_html(index=False, classes='table table-striped table-hover', table_id='labor-demand-table')
-
-# Add custom styling
-styled_html = f"""
-<style>
-#labor-demand-table {{
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 50%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}}
-#labor-demand-table th {{
-    background-color: #e3f2fd;
-    color: #1565c0;
-    font-weight: 600;
-    padding: 12px;
-    text-align: center;
-    border-bottom: 2px solid #90caf9;
-}}
-#labor-demand-table td {{
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #e1f5fe;
-}}
-#labor-demand-table tr:hover {{
-    background-color: #f3e5f5;
-}}
-#labor-demand-table tr:nth-child(even) {{
-    background-color: #fafafa;
-}}
-</style>
-{html_table}
-"""
-
-HTML(styled_html)
+    hired = sum(mrp >= wage for mrp in marginal_revenue_product)
+    rows.append(f'<tr><td>${wage}</td><td>{hired}</td></tr>')
+print('::: {#tbl-labor-demand}')
+print('<div class="course-table-scroll" tabindex="0" role="region" aria-label="Labor demand table">')
+print('<table class="course-table" id="labor-demand-table"><thead><tr>'
+      '<th scope="col">Hourly wage ($)</th><th scope="col">Baristas hired</th>'
+      '</tr></thead><tbody>')
+print("".join(rows))
+print('</tbody></table></div>')
+print('\nLabor Demand: Number of Baristas Hired at Different Wage Levels\n:::')
 ```
 
 Now, let's read through this carefully. When the hourly wage is $50, the cafe will hire 1 barista. Before, what did we say the marginal revenue product of labor was for the first barista? It was $50. This makes perfect sense. If the wage is $50, you will hire until the marginal revenue product of labor is less than the wage. So if the wage is $50, you will hire 1 barista, because the marginal revenue product of labor for any following worker will be less than $50.
