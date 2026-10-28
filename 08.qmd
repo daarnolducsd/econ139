@@ -21,7 +21,7 @@ An industrial robot is defined by the International Federation of Robotics as "a
 
 @acemoglu2020robots is an extremely influential study that considers how industrial robots have impacted the labor market. Below (from @acemoglu2020robots) is a figure that shows the number of industrial robots per thousand workers. As can be seen from this figure, Germany is by far the leader in industrial robots per worker, with over double the rate as the next highest country by 2014. The US is similar in levels to many European countries, however. In the beginning of the 1990s, there were about 0.5 robots per thousand workers. By 2014, there is about 2 robots per thousand workers. The overall goal in the paper is to answer the question: how much does a single industrial robot decrease (or increase) employment and wages?
 
-![Growth in Industrial Robots](/images/08_images/robots2.png)
+![Growth in Industrial Robots](/images/08_images/editorial/robot-growth.svg)
 
 Theoretically, the answer is ambiguous. One common approach to the question of how technology will impact workers is to try and predict which jobs can be automated. You may have seen headlines like this for AI, but prior work has done the same for things like industrial robots. But this misses an important feature of the economy. They don't take into account how other sectors and occupations will respond. For example, if cars become cheaper due to industrial robots, and people have more money to spend on other goods, will other sectors expand? Could these productivity impacts increase overall demand for workers (even if some workers are replaced by robots)? Maybe the workers that are replaced by robots will find new jobs in other sectors relatively quickly?
 
@@ -31,7 +31,7 @@ Next, they compare different areas in the United States that have different indu
 
 Now, in the actual paper the measure of robots is adjusted penetration ratio (APR) of robots. It is a bit more complicated than what we have discussed here, but the key intuition is the same. In practice, there are additional measurement complications. However, for our purposes, we can think about it in this simple way. The figure below shows the exposure to industrial robots by commuting zone in the United States. The darker the color, the more exposure to industrial robots. The value indicates how many more robots per thousand workers the commuting zone is expected to adopt between 1993 and 2007.
 
-![Exposure to Industrial Robots by Commuting Zone](/images/08_images/robots3.png)
+![Exposure to Industrial Robots by Commuting Zone](/images/08_images/editorial/robot-map.svg)
 
 The darker areas around Michigan are likely due to automotive manufacturing. These commuting zones are expected to see an increase in 5-9 robots per thousand workers. However, even within a state, you can sometimes see there is considerable variation. Texas, for example, has areas that are not exposed much at all as well as highly exposed.
 
@@ -70,12 +70,12 @@ In a follow-up paper, @acemoglu2022tasks ask what fraction of an industry's labo
 
 To put some visuals to this, the figure below depicts the relationship between the adoption of these technologies and the decline in labor share across industries. Each bubble is an industry, where the size of the bubble is proportional to the industry's employment. The y-axis is the decline in labor share between 1987 and 2016. The x-axis captures the change in use of specialized software and dedicated machinery (i.e. the technologies we have not yet studied in this chapter) between 1987 and 2016. The measure is a bit more complicated than the number of robots. At an intuitive level, industries with positive values are adopting more of this technology over time. For example, if an industry produced 10 billion in revenue in 1987 and used 1 billion worth of specialized software and dedicated machinery, then the ratio of these technology costs to value added would be 0.1. If in 2016, the same industry produced 20 billion in revenue and used 4 billion worth of specialized software and dedicated machinery, then the ratio would be 0.2. The increase in the share of specialized software services and dedicated machinery would be 0.1 or 10 percentage points. This is what is depicted on the x-axis.
 
-![Labor Share Decline vs. Technology Adoption](/images/08_images/robots7.png)
+![Labor Share Decline vs. Technology Adoption](/images/08_images/editorial/labor-share.svg)
 
 As we can see in this figure, industries that adopted more of these technologies saw larger declines in labor share. For example, the bubble at the far right is the metals industry. This industry adopted a lot of specialized software and dedicated machinery and saw an enormous decline in the labor share (-40%). Of course, this doesn't explain everything. There are other reasons why the labor share in an industry might be declining. For example, the chemical industry had more or less zero growth in the adoption of these technologies, but still saw a large decline in labor share. @acemoglu2022tasks estimate that if you add industrial robots to the mix, about 45 percent of the decline in labor share can be explained by these technologies.
 
 Their main result can be seen in the figure below. In this figure each bubble is a different demographic group. The demographics split workers into 500 different groups, that are defined by education, gender, age, race and native/immigrant status. For example, one group could be college graduate, age 16-25, Black, male, native born. Another group might be some college, 56-65, Hispanic, female, foreign born. You can view the paper to see how the groups are defined in detail. The y-axis is the change in hourly wages between 1980-2016 (real wages, not nominal). The x-axis is the measure of how exposed workers in this group are to technology based on industries that they tend to work in. As can be seen in the figure, focusing on postgraduate groups, these tend to be groups that saw extremely large increases in wages. These groups also tend to be the least exposed to technology. In contrast, high-school dropouts and high-school graduates tend to be the most exposed to technology and saw real wage declines between 1980 and 2016.
-![Labor Share Decline vs. Technology Adoption](/images/08_images/ap.png)
+![Labor Share Decline vs. Technology Adoption](/images/08_images/editorial/task-displacement.svg)
 
 
 ## Inequality 
@@ -86,19 +86,19 @@ The prior paper by @acemoglu2020robots focused on places. Do places that adopt m
 
 This firm-level approach is taken in @humlum2019robot. This paper makes use of impressive data in Denmark which allows one to have information on firm robot adoption, as well as information on all of the workers' earnings at the firm. As we will see, the combination of these two datasets allows us to answer some interesting questions about how robots impact inequality. 
 
-First, @humlum2019robot documents something that might be surprising. Firms that adopt robots tend to **increase** the amount they spend on labor. The Figure below shows this surprising result. The way to interpret this figure is that we are comparing firms that adopt robots to firms that do not adopt robots. The y-axis is the percent change in the wage bill at the firm. The x-axis is time, where time 0 is the year the firm adopts a robot. Therefore, the fact that the blue line jumps up to 5 percent at time 0 indicates that firms that adopt robots see a 5 percent increase in their wage bill relative to firms that do not adopt robots. For our purposes, we are going to focus on the line labeled Data, as this is what actually happens in the data after robot adoption. The "model" line is from a theoretical model developed in the paper, something we will not discuss here.
+First, @humlum2019robot documents something that might be surprising. Firms that adopt robots tend to **increase** the amount they spend on labor. The Figure below shows this surprising result. The way to interpret this figure is that we are comparing firms that adopt robots to firms that do not adopt robots. The y-axis is the percent change in the wage bill at the firm. The x-axis is time, where time 0 is the year the firm adopts a robot. Therefore, the fact that the dark green line jumps up to 5 percent at time 0 indicates that firms that adopt robots see a 5 percent increase in their wage bill relative to firms that do not adopt robots. For our purposes, we are going to focus on the line labeled Data, as this is what actually happens in the data after robot adoption. The "model" line is from a theoretical model developed in the paper, something we will not discuss here.
 
-![Firm Wage Bill Around Robot Adoption](/images/08_images/humlum1.png)
+![Firm Wage Bill Around Robot Adoption](/images/08_images/editorial/wage-bill.svg)
 
 How does this square with our prior evidence from @acemoglu2020robots? Remember that paper found that places that adopted robots saw declines in employment and wages. There are a couple of ways to reconcile these two findings. First, @humlum2019robot is studying firms that adopt robots relative to firms that do not adopt robots. If we look in the data, firms that adopt robots see a real competitive advantage. Their sales increase significantly relative to firms that do not adopt robots. 
 
-![Sales Around Robot Adoption](/images/08_images/humlum2.png)
+![Sales Around Robot Adoption](/images/08_images/editorial/sales.svg)
 
 @acemoglu2020competing similarly studies firm-level evidence on robot adoption and finds similar patterns. What is happening is that robots give firms a competitive advantage. They can produce more at lower costs. This allows them to expand their sales significantly relative to firms that do not adopt robots. If your competitor adopts a robot you should be worried. @acemoglu2020competing find that this generally causes large decreases in your sales. Therefore, overall, while robot adoption increases employment at the firm adopting the robot, the impacts on other firms imply that the overall impact on employment in the economy is negative.
 
 Returning to @humlum2019robot, A key contribution is to study how robot adoption impacts different types of workers. This is very clear at the firm level. We can see how the firm adjusts their employment. What we find is that how you are impacted depends a lot on what type of work you do. Production workers include workers that perform tasks like welding and assembly. These types of tasks are likely to be automated by industrial robots.
 
-![Employment by Skill Level Around Robot Adoption](/images/08_images/humlum3.png)
+![Employment by Skill Level Around Robot Adoption](/images/08_images/editorial/skill-wage-bills.svg)
 
 @humlum2019robot finds that demand for production workers drops significantly around robot adoption. The figure above shows that production employment drops by about 20 percent relative to firms that do not adopt robots. At the same time, demand for tech workers (such as engineers, scientists, etc.) sees an enormous increase in demand. Relative to firms that do not adopt robots, tech employment increases by about 30 percent. Therefore, robot adoption has shifted the composition of employment at firms significantly away from production workers and towards tech workers. 
 
@@ -130,71 +130,7 @@ Today, the word "AI" has become mostly associated with these large language mode
 
 One of the first papers to study the impact of AI on the labor market is @brynjolfsson2025canaries. They take advantage of administrative payroll data to provide some early evidence on the impacts of AI on the labor market. The key aspect of administrative payroll data that is useful is the availability of recent data. For example, the data in this paper ends at July 2025. This is key since AI has only recently been adopted widely. Therefore, we need recent data to study the impacts of AI on the labor market. The timeline below shows some of the key events in the recent history of AI.
 
-```{python}
-#| echo: false
-#| label: fig-llm-timeline
-#| fig-cap: "Key Events in the Modern LLM Timeline"
-
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-from datetime import datetime
-import numpy as np
-
-# Key LLM events
-events = [
-    ("ChatGPT Launch", datetime(2022, 11, 30)),
-    ("GPT-4 Release", datetime(2023, 3, 14)),
-    ("Claude Release", datetime(2023, 3, 14)),
-    ("Claude 2", datetime(2023, 7, 11)),
-    ("Gemini Release", datetime(2023, 12, 6)),
-    ("Claude 3", datetime(2024, 3, 4)),
-    ("GPT-4o", datetime(2024, 5, 13)),
-]
-
-# Create figure
-fig, ax = plt.subplots(figsize=(7, 3))
-
-# Extract dates and labels
-dates = [event[1] for event in events]
-labels = [event[0] for event in events]
-
-# Create y-positions alternating above and below the line
-y_positions = [1.5 if i % 2 == 0 else 0.5 for i in range(len(events))]
-
-# Plot the timeline
-ax.plot([dates[0], dates[-1]], [1, 1], 'k-', linewidth=2, zorder=1)
-
-# Plot each event
-for i, (label, date) in enumerate(events):
-    ax.plot(date, 1, 'o', markersize=10, color='steelblue', zorder=2)
-    
-    # Add text labels
-    va = 'bottom' if y_positions[i] > 1 else 'top'
-    ax.text(date, y_positions[i], label, 
-            ha='center', va=va, fontsize=8, 
-            bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.7))
-    
-    # Add connecting line
-    ax.plot([date, date], [1, y_positions[i]], 'k--', linewidth=1, alpha=0.5, zorder=1)
-
-# Format x-axis
-ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
-ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
-plt.xticks(rotation=45, ha='right')
-
-# Clean up the plot
-ax.set_ylim(0, 2)
-ax.set_xlim(datetime(2022, 10, 1), datetime(2024, 8, 1))
-ax.spines['left'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['top'].set_visible(False)
-ax.set_yticks([])
-ax.set_xlabel('Date', fontsize=11)
-ax.grid(axis='x', alpha=0.3, linestyle='--')
-
-plt.tight_layout()
-plt.show()
-```
+![Key Events in the Modern LLM Timeline](/images/08_images/editorial/llm-timeline.svg){#fig-llm-timeline}
 
 The approach in the paper is similar to approaches we have seen before. The first thing we need to consider is how to measure an occupation's exposure to AI. For general computers, we used a task-based approach. We considered the tasks that workers performed in different occupations and classified them based on whether they were routine vs. nonroutine, or cognitive vs. manual, with the idea being that computers were able to automate many types of routine tasks. 
 
@@ -212,23 +148,23 @@ In O\*NET, each occupation is associated with a group of tasks. If the tasks for
 
 The first fact they document is that age seems to be an important factor in how individuals are impacted by AI exposure. For example, they take one of the most exposed occupations: software developers. They then consider how employment and wages have changed for younger vs. older workers in this occupation. The figure below shows the results. 
 
-First, to understand the Figure, the authors are normalizing the employment of each age group to 1 in October 2022. This implies the line tells us the change in employment relative to October 2022. The blue line is for workers early in their career (age 22-25). For this group, there seems to be fewer software developers being employed over time. For example, by mid-2025, there are about 20 percent fewer software developers age 22-25 than there were in October 2022. In contrast, the mid-career groups (ages 35-40 or 41-49) have continued to see increases in employment and do not seem as impacted by the introduction of AI.
+First, to understand the Figure, the authors are normalizing the employment of each age group to 1 in October 2022. This implies the line tells us the change in employment relative to October 2022. The thick black line is for workers early in their career (age 22-25). For this group, there seems to be fewer software developers being employed over time. For example, by mid-2025, there are about 20 percent fewer software developers age 22-25 than there were in October 2022. In contrast, the mid-career groups (ages 35-40 or 41-49) have continued to see increases in employment and do not seem as impacted by the introduction of AI.
 
-![Software Developer Employment by Age](/images/08_images/ai_1.png)
+![Software Developer Employment by Age](/images/08_images/editorial/ai-age-employment.svg)
 
 Now, software developers are a good case study. Conceptually, it is clear that they are exposed to recent advances in AI and this is also reflected in queries to Claude, which often are about coding tasks. However, let's understand if this pattern holds more generally. To begin, we will focus only on those early career workers (age 22-25). It could be that early career workers are generally seeing declines in employment, and so the decline for software developers is not specific to AI exposure. Therefore, let's see if this decline in employment is only for occupations that are highly exposed to AI. The figure below plots the change in employment for early career workers (age 22-25) for different occupations. The darker the line, the more exposed the occupation is to AI. As we can see, the darker lines tend to see decreases in employment relative to the introduction of AI. But this is not reflected in the lighter lines, which tend to see continued growth in employment. One thing to note is that the drop in employment for early career workers here is much less pronounced than it was for software developers specifically. By 2025, employment has fallen by about 5 percent for early career workers in the most exposed occupations.
 
-![Early Career Employment by AI Exposure](/images/08_images/ai_2.png)
+![Early Career Employment by AI Exposure](/images/08_images/editorial/ai-early-career.svg)
 
 Now, let's see how this looks for mid-career workers (age 41-49). As can be seen in the figure below, there is no clear relationship between AI exposure and employment for mid-career workers. All of the lines tend to be overlapping. 
 
-![Mid Career Employment by AI Exposure](/images/08_images/ai_3.png)
+![Mid Career Employment by AI Exposure](/images/08_images/editorial/ai-mid-career.svg)
 
 ### Fact 2: Wages Have Been Flat
 
-While we see clear evidence of employment declines for early career workers in occupations exposed to AI, wages seem to have seen different patterns. For example, take the four occupations below that are differentially exposed to AI. For example, in Panel A we again return to software developers. Even though we saw large declines in employment for early career workers (the blue line), wages have actually increased for this group relative to other groups. This could be driven by a few different things. First, there could be a selection effect. Maybe only the best software developers are being hired, which is driving up wages. Second, it could be that AI is actually complementing the work of software developers, allowing them to be more productive and therefore command higher wages. Therefore, even though we see declines in employment, the workers that remain are more productive and receive higher wages.
+While we see clear evidence of employment declines for early career workers in occupations exposed to AI, wages seem to have seen different patterns. For example, take the four occupations below that are differentially exposed to AI. For example, in Panel A we again return to software developers. Even though we saw large declines in employment for early career workers (the thick black line), wages have actually increased for this group relative to other groups. This could be driven by a few different things. First, there could be a selection effect. Maybe only the best software developers are being hired, which is driving up wages. Second, it could be that AI is actually complementing the work of software developers, allowing them to be more productive and therefore command higher wages. Therefore, even though we see declines in employment, the workers that remain are more productive and receive higher wages.
 
-![Wages in Different Occupations by AI Exposure](/images/08_images/ai_4.png)
+![Wages in Different Occupations by AI Exposure](/images/08_images/editorial/ai-wages.svg)
 
 
 

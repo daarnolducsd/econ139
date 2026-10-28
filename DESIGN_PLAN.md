@@ -289,3 +289,37 @@ byte-for-byte against the approved deployment output.
 ## October 4 palette integration
 
 Status: **approved and integrated locally**, not yet published. Chapters 1–6 render through the shared palette helper. The current page style and inline chapter-number change are preserved. Older review directories and their copied DESIGN_PLAN.md files are historical artifacts; this file is authoritative for subsequent work. Chapter 7 and later assets are unchanged by this pass. Existing reconstruction limitations and source records below remain applicable.
+
+## Chapter 8 integration — October 28, 2026
+
+Status: **reviewed and integrated; approved for publication**. Twelve redesigned
+charts are selected. David chose the original robot employment and pretrend
+figures for comparison items 03 and 04: `images/08_images/robots4.png` and
+`robots6.png`. Their images are unchanged, and the discarded reconstructions are
+not selected. `code/figures/data/chapter08/selection.json` enforces this choice.
+The robot photograph is also retained.
+
+The maintained renderer is `code/figures/chapter08.py`; assets and provenance
+are under `images/08_images/editorial/`. Exact commands and construction limits
+are in `code/figures/README.md`. Eleven imported charts are approximate visual
+reconstructions of the existing book images. The timeline preserves all seven
+original events and exact dates. No new paper vintage or hidden observations
+are substituted. Existing captions and the timeline ID remain unchanged.
+
+The reviewed figures use the shared green/rust palette, eleven ordered rust map
+categories, sharp vector fitted lines, smooth circles for the labor-share plot,
+and uniform pointwise uncertainty bars. Employment/wage age lines and AI
+exposure lines are grayscale: younger ages or higher exposure use heavier,
+darker strokes; overall exposure series are dashed black. Literal prose color
+references are aligned with those choices. Two existing caption mismatches
+remain documented in the figure README rather than silently rewritten.
+
+The historical comparison is `../outputs/textbook-chapter08-figures/index.html`.
+Superseded bubble reconstruction experiments are archived there, outside this
+repository and the publication file set. Chapters 1–7 remain integrated; the
+October palette source change is recorded in commit `d92cd6e`.
+
+Publication must push the source on `main`, deploy the verified `_book/` contents
+to the root of `gh-pages` with `.nojekyll`, and verify the live Chapter 8 plus
+changed assets and the two retained originals. A source push alone is not
+publication.

@@ -2,6 +2,66 @@
 
 This directory contains the maintained code for the approved figure redesign. The files under the course's `outputs/` directory are review artifacts; the renderer here is the source for the book's redesigned assets.
 
+## Chapter 8 — reviewed figure integration (October 28, 2026)
+
+Twelve redesigned charts are integrated in `08.qmd`; comparison items 03 and 04
+retain the exact originals `images/08_images/robots4.png` and `robots6.png`.
+`data/chapter08/selection.json` records that decision. The robot photograph is
+also unchanged. Existing captions and the timeline ID are retained; literal
+color descriptions now match the figures. Publication status is recorded in
+`../../DESIGN_PLAN.md`.
+
+`chapter08.py` reads the original book PNGs as read-only inputs and writes the
+selected SVGs and construction manifest to `images/08_images/editorial/`.
+Dependencies: Python 3, NumPy, Matplotlib 3.8+, Pillow, and SciPy. There is no
+network access or random generation. From `textbook/`:
+
+```bash
+python3 code/figures/chapter08.py
+```
+
+For an isolated rebuild with PNG proofs:
+
+```bash
+python3 code/figures/chapter08.py --output-dir ../outputs/textbook-chapter08-rebuild --proofs
+```
+
+The twelve assets are robot-growth, robot-map, labor-share, task-displacement,
+wage-bill, sales, skill-wage-bills, llm-timeline, ai-age-employment,
+ai-early-career, ai-mid-career, and ai-wages. All are transparent native SVGs.
+
+Construction and limits:
+
+- Eleven imported charts are explicitly approximate visual reconstructions of
+  the existing book figures, not empirical replications. Original source hashes,
+  crop calibration, approximate coordinates and style weights are in the asset
+  manifest. No updated paper vintage is substituted.
+- Robot growth uses approximate readings of all 22 annual markers per group.
+  The map retains its eleven ordered intervals and uses traced rust silhouettes.
+- The labor-share chart uses smooth circles with uniform 0.7-point outlines;
+  centers/radii are read from visible source silhouettes, including separable
+  touching shapes. Fully hidden circles are not inferred. The demographic
+  scatter retains approximate visible silhouettes and the education palette.
+- Firm data/model paths and pointwise uncertainty endpoints are digitized from
+  the images. All confidence bars have identical 0.95-point strokes and 5/4
+  dashes; the confidence level is not inferred. These are not continuous bands.
+- The timeline retains all seven original events and exact dates. Separate
+  rows resolve the old shared-date label collision.
+- Age and exposure charts use sharp native grayscale paths from approximate
+  monthly readings. Short interior occlusions are joined linearly; obscured
+  endpoints are not extrapolated. Younger ages are heavier/darker in employment
+  and all four wage panels. Higher exposure is heavier/darker in 12–13; overall
+  is dashed black. Reference dates and scales remain unchanged.
+
+Two pre-existing caption issues remain unchanged: the demographic wage scatter
+repeats the preceding labor-share caption, and the worker-type wage-bill panels
+are captioned as employment. These were identified during review.
+
+The comparison remains at `../outputs/textbook-chapter08-figures/index.html`.
+The discarded 03–04 reconstruction code/data are archived outside the book repo
+in that review directory's `superseded-bubble-reconstructions/` folder; they are
+not integrated or included in the publication file set.
+
 ## Current palette policy (October 4, 2026)
 
 The approved **original dark green and rust** palette replaces the experimental red-led and sage/ochre alternatives for Chapters 1–6. `figure_style.py` is the shared source of truth: dark green `#3D6155`, rust `#A36F49`, supporting sage `#758C7F` and ochre `#B39B61`, original education-series neutrals, white background, and light-gray grids. Future chapter renderers should import its `palette` function. See `../../DESIGN_PLAN.md` for role mappings and the current page design.
