@@ -292,7 +292,7 @@ Status: **approved and integrated locally**, not yet published. Chapters 1–6 r
 
 ## Chapter 8 integration — October 28, 2026
 
-Status: **reviewed and integrated; approved for publication**. Twelve redesigned
+Status: **reviewed, integrated, and published**. Twelve redesigned
 charts are selected. David chose the original robot employment and pretrend
 figures for comparison items 03 and 04: `images/08_images/robots4.png` and
 `robots6.png`. Their images are unchanged, and the discarded reconstructions are
@@ -323,3 +323,13 @@ Publication must push the source on `main`, deploy the verified `_book/` content
 to the root of `gh-pages` with `.nojekyll`, and verify the live Chapter 8 plus
 changed assets and the two retained originals. A source push alone is not
 publication.
+
+Publication verified October 28, 2026: source integration commit `7dcf863`;
+`gh-pages` deployment commit `b5bbf88`, preserving parent `66f06ec`. GitHub Pages
+reported the pushed deployment built successfully. The live homepage, Chapter 8,
+stylesheet, all twelve selected SVGs, and both retained original PNGs matched
+the deployed files byte-for-byte (17 checks). Preview content and the obsolete
+cover were absent. Full-book rendering completed without warnings; local link
+checks passed. The deployment file set contains 221 public files, including
+`.nojekyll`, with no student records, exams, or answer keys. Chapters 1–8 are now
+integrated; Chapter 9 is next for figure review.
